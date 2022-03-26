@@ -2,7 +2,7 @@
 
 ## Nyaya Ontology, A Globalized Legal Ontology for Judicial System
 
-NyOn serves as the Ontological Framework created for the annotation of Legal Domain Data. It structure defines the concepts used in the legal domain and can get extended by the different judical systems by inheriting the core/common concepts and later can get changed at the domain specific level for different laws.
+NyOn serves as the Ontological Framework created for the annotation of Legal Domain Data. Its structure defines the concepts used in the legal domain and can get extended by the different judical systems by inheriting the core/common concepts and later can get changed at the domain specific level for different laws.
 
 ## Namespace URI:
 https://w3id.org/def/NyOnLegalOntology#
