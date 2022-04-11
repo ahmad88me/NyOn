@@ -70,9 +70,6 @@
     "Munsif_Court" : {
       "@id" : "https://w3id.org/def/NyOnLegalOntology#Munsif_Court"
     },
-    "Court_Officials" : {
-      "@id" : "https://w3id.org/def/NyOnLegalOntology#Court_Officials"
-    },
     "Metropolitian_Courts" : {
       "@id" : "https://w3id.org/def/NyOnLegalOntology#Metropolitian_Courts"
     },
@@ -164,17 +161,6 @@
     "Investigator" : {
       "@id" : "https://w3id.org/def/NyOnLegalOntology#Investigator"
     },
-    "hasWitness" : {
-      "@id" : "https://w3id.org/def/NyOnLegalOntology#hasWitness",
-      "@type" : "@id"
-    },
-    "witnessName" : {
-      "@id" : "https://w3id.org/def/NyOnLegalOntology#witnessName",
-      "@type" : "http://www.w3.org/2001/XMLSchema#string"
-    },
-    "Party_Type" : {
-      "@id" : "https://w3id.org/def/NyOnLegalOntology#Party_Type"
-    },
     "creator" : {
       "@id" : "http://purl.org/dc/terms/creator"
     },
@@ -197,6 +183,9 @@
     "hasReviewJurisdiction" : {
       "@id" : "https://w3id.org/def/NyOnLegalOntology#hasReviewJurisdiction",
       "@type" : "@id"
+    },
+    "NonLegal_Participants" : {
+      "@id" : "https://w3id.org/def/NyOnLegalOntology#NonLegal_Participants"
     },
     "hasParticipantType" : {
       "@id" : "https://w3id.org/def/NyOnLegalOntology#hasParticipantType",
@@ -221,11 +210,11 @@
       "@id" : "https://w3id.org/def/NyOnLegalOntology#hasLegalParticipants",
       "@type" : "@id"
     },
-    "Parties" : {
-      "@id" : "https://w3id.org/def/NyOnLegalOntology#Parties"
-    },
     "preferredNamespacePrefix" : {
       "@id" : "http://purl.org/vocab/vann/preferredNamespacePrefix"
+    },
+    "Participants" : {
+      "@id" : "https://w3id.org/def/NyOnLegalOntology#Participants"
     },
     "organizationName" : {
       "@id" : "https://w3id.org/def/NyOnLegalOntology#organizationName",
@@ -270,15 +259,14 @@
     "Acts" : {
       "@id" : "https://w3id.org/def/NyOnLegalOntology#Acts"
     },
+    "Legal_Participants" : {
+      "@id" : "https://w3id.org/def/NyOnLegalOntology#Legal_Participants"
+    },
     "FIR" : {
       "@id" : "https://w3id.org/def/NyOnLegalOntology#FIR"
     },
     "Chief_Meterpolitan_Court" : {
       "@id" : "https://w3id.org/def/NyOnLegalOntology#Chief_Meterpolitan_Court"
-    },
-    "isACase" : {
-      "@id" : "https://w3id.org/def/NyOnLegalOntology#isACase",
-      "@type" : "@id"
     },
     "modified" : {
       "@id" : "http://purl.org/dc/terms/modified"
