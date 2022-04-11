@@ -1,4 +1,4 @@
-<h2 id="crossreference" class="list">Cross-reference for NyOn: A Multilingual Legal Ontology for Globalized Judicial System classes, object properties and data properties <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+<h2 id="crossreference" class="list">Cross reference for NyOn: A Multilingual Legal Ontology for Globalized Judicial System classes, object properties and data properties <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
 This section provides details for each class and property defined by NyOn: A Multilingual Legal Ontology for Globalized Judicial System.
 <div xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="classes">
    <h3 id="classes-headline" class="list">Classes</h3>
@@ -385,6 +385,10 @@ This section provides details for each class and property defined by NyOn: A Mul
          <dd>
             <a href="#hasAdvisoryJurisdiction"
                title="https://w3id.org/def/NyOnLegalOntology#hasAdvisoryJurisdiction">hasAdvisoryJurisdiction</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#hasAppellantJurisdiction"
+               title="https://w3id.org/def/NyOnLegalOntology#hasAppellantJurisdiction">hasAppellantJurisdiction</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#hasOriginalJurisdiction"
+               title="https://w3id.org/def/NyOnLegalOntology#hasOriginalJurisdiction">hasOriginalJurisdiction</a>
             <sup class="type-op" title="object property">op</sup>, <a href="#hasReviewJurisdiction"
                title="https://w3id.org/def/NyOnLegalOntology#hasReviewJurisdiction">hasReviewJurisdiction</a>
             <sup class="type-op" title="object property">op</sup>
@@ -620,6 +624,11 @@ This section provides details for each class and property defined by NyOn: A Mul
                title="https://w3id.org/def/NyOnLegalOntology#hasNonLegalParticipants">hasNonLegalParticipants</a>
             <sup class="type-op" title="object property">op</sup>, <a href="#hasPrecedentCase"
                title="https://w3id.org/def/NyOnLegalOntology#hasPrecedentCase">hasPrecedentCase</a>
+            <sup class="type-op" title="object property">op</sup>
+         </dd>
+         <dt>is in range of</dt>
+         <dd>
+            <a href="#isA" title="https://w3id.org/def/NyOnLegalOntology#isA">isA</a>
             <sup class="type-op" title="object property">op</sup>
          </dd>
          <dt>is disjoint with</dt>
@@ -1382,6 +1391,14 @@ This section provides details for each class and property defined by NyOn: A Mul
          <dd>
             <a href="#Courts" title="https://w3id.org/def/NyOnLegalOntology#Courts">Courts</a>
             <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>is in domain of</dt>
+         <dd>
+            <a href="#hasAppellantJurisdiction"
+               title="https://w3id.org/def/NyOnLegalOntology#hasAppellantJurisdiction">hasAppellantJurisdiction</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#hasOriginalJurisdiction"
+               title="https://w3id.org/def/NyOnLegalOntology#hasOriginalJurisdiction">hasOriginalJurisdiction</a>
+            <sup class="type-op" title="object property">op</sup>
          </dd>
       </dl>
    </div>
@@ -2194,6 +2211,11 @@ This section provides details for each class and property defined by NyOn: A Mul
          <span class="markdown">refers to the precedent cases of the cases</span>
       </div>
       <dl class="description">
+         <dt>is in domain of</dt>
+         <dd>
+            <a href="#isA" title="https://w3id.org/def/NyOnLegalOntology#isA">isA</a>
+            <sup class="type-op" title="object property">op</sup>
+         </dd>
          <dt>is in range of</dt>
          <dd>
             <a href="#hasPrecedentCase"
@@ -2681,6 +2703,9 @@ This section provides details for each class and property defined by NyOn: A Mul
          <a href="#hasWritJurisdiction"
             title="https://w3id.org/def/NyOnLegalOntology#hasWritJurisdiction">hasWritJurisdiction</a>
       </li>
+      <li>
+         <a href="#isA" title="https://w3id.org/def/NyOnLegalOntology#isA">isA</a>
+      </li>
    </ul>
    <div class="entity" id="caseBelongsToType">
       <h3>caseBelongsToType<sup class="type-op" title="object property">op</sup>
@@ -2825,11 +2850,9 @@ This section provides details for each class and property defined by NyOn: A Mul
             <dd>
                <a href="#Apex_Court"
                   title="https://w3id.org/def/NyOnLegalOntology#Apex_Court">Apex Court</a>
-               <sup class="type-c" title="class">c</sup> 
-               <span class="logic">or</span> 
-               <a href="#District" title="https://w3id.org/def/NyOnLegalOntology#District">District</a>
-               <sup class="type-c" title="class">c</sup> 
-               <span class="logic">or</span> 
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dd>
                <a href="#High_Court"
                   title="https://w3id.org/def/NyOnLegalOntology#High_Court">High Court</a>
                <sup class="type-c" title="class">c</sup>
@@ -3161,11 +3184,9 @@ This section provides details for each class and property defined by NyOn: A Mul
             <dd>
                <a href="#Apex_Court"
                   title="https://w3id.org/def/NyOnLegalOntology#Apex_Court">Apex Court</a>
-               <sup class="type-c" title="class">c</sup> 
-               <span class="logic">or</span> 
-               <a href="#District" title="https://w3id.org/def/NyOnLegalOntology#District">District</a>
-               <sup class="type-c" title="class">c</sup> 
-               <span class="logic">or</span> 
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dd>
                <a href="#High_Court"
                   title="https://w3id.org/def/NyOnLegalOntology#High_Court">High Court</a>
                <sup class="type-c" title="class">c</sup>
@@ -3280,6 +3301,32 @@ This section provides details for each class and property defined by NyOn: A Mul
          <strong>IRI:</strong> https://w3id.org/def/NyOnLegalOntology#hasWritJurisdiction</p>
       <div class="comment">
          <span class="markdown">property justifies that the jurisdiction of the court is the writ jurisdiction</span>
+      </div>
+   </div>
+   <div class="entity" id="isA">
+      <h3>isA<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/def/NyOnLegalOntology#isA</p>
+      <div class="comment">
+         <span class="markdown">precedent case isA case</span>
+      </div>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#Precedent_Case"
+                  title="https://w3id.org/def/NyOnLegalOntology#Precedent_Case">Precedent Case</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="#Case" title="https://w3id.org/def/NyOnLegalOntology#Case">Case</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+         </dl>
       </div>
    </div>
 </div><div xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="dataproperties">
