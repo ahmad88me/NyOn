@@ -8,8 +8,13 @@ NyOn serves as the Ontological Framework created for the annotation of Legal Dom
 https://w3id.org/def/NyOn
 
 ## Contacts:
-**Pooja Harde (National Institute of Technology Kurukshetra, Haryana) **
-<pmharde29@gmail.com>
 
 **Dr. Sarika Jain (National Institute of Technology Kurukshetra, Haryana) **
 <jasarika@nitkkr.ac.in>, <jasarika@gmail.com>
+
+**Pooja Harde (National Institute of Technology Kurukshetra, Haryana) **
+<pmharde29@gmail.com>
+
+
+**Nandana Mihindukulasooriya, (IBM Research)
+<nandana.cse@gmail.com>
