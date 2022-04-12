@@ -16,5 +16,5 @@ https://w3id.org/def/NyOnLegal#
 <pmharde29@gmail.com>
 
 
-**Nandana Mihindukulasooriya, (IBM Research)
+**Nandana Mihindukulasooriya (IBM Research) **
 <nandana.cse@gmail.com>
