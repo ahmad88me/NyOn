@@ -129,13 +129,13 @@
     "id" : "98",
     "type" : "owl:Class"
   }, {
-    "id" : "116",
+    "id" : "50",
     "type" : "owl:Class"
   }, {
     "id" : "126",
     "type" : "owl:Class"
   }, {
-    "id" : "50",
+    "id" : "116",
     "type" : "owl:Class"
   }, {
     "id" : "4",
@@ -297,10 +297,10 @@
     "id" : "2",
     "type" : "owl:Class"
   }, {
-    "id" : "17",
+    "id" : "143",
     "type" : "owl:Class"
   }, {
-    "id" : "143",
+    "id" : "17",
     "type" : "owl:Class"
   }, {
     "id" : "14",
@@ -380,8 +380,8 @@
     "baseIri" : "https://w3id.org/def/NyOn",
     "instances" : 0,
     "label" : {
-      "de" : "Beschuldigt",
       "hi" : "अभियुक्त",
+      "de" : "Beschuldigt",
       "IRI-based" : "Accussed",
       "en" : "Accused",
       "fr" : "Accusé",
@@ -400,8 +400,8 @@
     "baseIri" : "https://w3id.org/def/NyOn",
     "instances" : 0,
     "label" : {
-      "de" : "Ort",
       "hi" : "स्थान",
+      "de" : "Ort",
       "IRI-based" : "Place",
       "en" : "Place",
       "fr" : "Lieu",
@@ -418,8 +418,8 @@
     "baseIri" : "https://w3id.org/def/NyOn",
     "instances" : 0,
     "label" : {
-      "hi" : "न्यायालय निर्णय",
       "de" : "Gerichtsurteil",
+      "hi" : "न्यायालय निर्णय",
       "IRI-based" : "Court_Judgements",
       "en" : "Court Judgement",
       "fr" : "Jugement de la cour",
@@ -490,8 +490,8 @@
     "baseIri" : "https://w3id.org/def/NyOn",
     "instances" : 0,
     "label" : {
-      "de" : "Gerichtsurteil",
       "hi" : "अदालत का निर्णय",
+      "de" : "Gerichtsurteil",
       "IRI-based" : "Court_Decision",
       "en" : "Court Decision",
       "fr" : "Décision du tribunal",
@@ -508,8 +508,8 @@
     "baseIri" : "https://w3id.org/def/NyOn",
     "instances" : 0,
     "label" : {
-      "de" : "Spezielle Bank",
       "hi" : "विशेष बेंच",
+      "de" : "Spezielle Bank",
       "IRI-based" : "Special_Bench",
       "en" : "Special Bench",
       "fr" : "Banc spécial",
@@ -522,23 +522,23 @@
     "id" : "98",
     "superClasses" : [ "99" ]
   }, {
-    "iri" : "https://w3id.org/def/NyOn#Larger_Bench",
+    "iri" : "https://w3id.org/def/NyOn#Government",
     "baseIri" : "https://w3id.org/def/NyOn",
     "instances" : 0,
     "label" : {
-      "de" : "Größere Bank",
-      "hi" : "बड़ी बेंच",
-      "IRI-based" : "Larger_Bench",
-      "en" : "Larger Bench",
-      "fr" : "Banc plus grand",
-      "es" : "Banco más grande"
+      "hi" : "सरकार",
+      "de" : "Regierung",
+      "IRI-based" : "Government",
+      "en" : "Government",
+      "fr" : "Gouvernement",
+      "es" : "Gobierno"
     },
     "comment" : {
-      "hi" : "भारत में न्यायिक प्रणाली में एक शब्द जिसमें मामला तीन या पांच न्यायाधीशों द्वारा सुना और न्याय किया जाता है",
-      "en" : "a term in judicial system in India in which a case is heard and judged by three or five judges"
+      "hi" : "प्रतिभागियों में शामिल (या तो दोनों तरफ या किसी एक पर) मामले में सरकार है",
+      "en" : "party involved (either on both sides or any one) is the government in the case"
     },
-    "id" : "116",
-    "superClasses" : [ "99" ]
+    "id" : "50",
+    "superClasses" : [ "2" ]
   }, {
     "iri" : "https://w3id.org/def/NyOn#Petition",
     "baseIri" : "https://w3id.org/def/NyOn",
@@ -558,23 +558,23 @@
     "id" : "126",
     "superClasses" : [ "46" ]
   }, {
-    "iri" : "https://w3id.org/def/NyOn#Government",
+    "iri" : "https://w3id.org/def/NyOn#Larger_Bench",
     "baseIri" : "https://w3id.org/def/NyOn",
     "instances" : 0,
     "label" : {
-      "hi" : "सरकार",
-      "de" : "Regierung",
-      "IRI-based" : "Government",
-      "en" : "Government",
-      "fr" : "Gouvernement",
-      "es" : "Gobierno"
+      "hi" : "बड़ी बेंच",
+      "de" : "Größere Bank",
+      "IRI-based" : "Larger_Bench",
+      "en" : "Larger Bench",
+      "fr" : "Banc plus grand",
+      "es" : "Banco más grande"
     },
     "comment" : {
-      "hi" : "प्रतिभागियों में शामिल (या तो दोनों तरफ या किसी एक पर) मामले में सरकार है",
-      "en" : "party involved (either on both sides or any one) is the government in the case"
+      "hi" : "भारत में न्यायिक प्रणाली में एक शब्द जिसमें मामला तीन या पांच न्यायाधीशों द्वारा सुना और न्याय किया जाता है",
+      "en" : "a term in judicial system in India in which a case is heard and judged by three or five judges"
     },
-    "id" : "50",
-    "superClasses" : [ "2" ]
+    "id" : "116",
+    "superClasses" : [ "99" ]
   }, {
     "iri" : "https://w3id.org/def/NyOn#Group",
     "baseIri" : "https://w3id.org/def/NyOn",
@@ -655,8 +655,8 @@
     "baseIri" : "https://w3id.org/def/NyOn",
     "instances" : 0,
     "label" : {
-      "de" : "Überprüfung Gerichtsstand.",
       "hi" : "समीक्षा क्षेत्राधिकार",
+      "de" : "Überprüfung Gerichtsstand.",
       "IRI-based" : "Review_Jurisdiction",
       "en" : "Review Jurisdiction",
       "fr" : "Examiner la juridiction",
@@ -673,8 +673,8 @@
     "baseIri" : "https://w3id.org/def/NyOn",
     "instances" : 0,
     "label" : {
-      "hi" : "प्राथमिकी",
       "de" : "TANNE",
+      "hi" : "प्राथमिकी",
       "IRI-based" : "FIR",
       "en" : "FIR",
       "fr" : "SAPIN",
@@ -709,8 +709,8 @@
     "baseIri" : "https://w3id.org/def/NyOn",
     "instances" : 0,
     "label" : {
-      "hi" : "जिला न्यायालय",
       "de" : "Bezirksgerichte",
+      "hi" : "जिला न्यायालय",
       "IRI-based" : "District_Courts",
       "en" : "District Courts",
       "fr" : "Tribunaux de district",
@@ -762,8 +762,8 @@
     "baseIri" : "https://w3id.org/def/NyOn",
     "instances" : 0,
     "label" : {
-      "hi" : "न्यायिक मजिस्ट्रेट कोर्ट (प्रथम श्रेणी)",
       "de" : "Gerichtsrichtergericht (erstklassig)",
+      "hi" : "न्यायिक मजिस्ट्रेट कोर्ट (प्रथम श्रेणी)",
       "IRI-based" : "Judicial_Magistrate_Court(First_Class)",
       "en" : "Judicial Magistrate Court (First Class)",
       "fr" : "Cour magistrat judiciaire (première classe)",
@@ -780,8 +780,8 @@
     "baseIri" : "https://w3id.org/def/NyOn",
     "instances" : 0,
     "label" : {
-      "de" : "Einzelner Richter",
       "hi" : "एकल न्यायाधीश",
+      "de" : "Einzelner Richter",
       "IRI-based" : "Single_Judge",
       "en" : "Single Judge",
       "fr" : "Juge unique",
@@ -816,8 +816,8 @@
     "baseIri" : "https://w3id.org/def/NyOn",
     "instances" : 0,
     "label" : {
-      "de" : "Strafgericht",
       "hi" : "आपराधिक न्यायालय",
+      "de" : "Strafgericht",
       "IRI-based" : "Courts_for_Criminal",
       "en" : "Criminal Courts",
       "fr" : "Cour criminelle",
@@ -835,8 +835,8 @@
     "baseIri" : "https://w3id.org/def/NyOn",
     "instances" : 0,
     "label" : {
-      "hi" : "सिटी सिविल कोर्ट",
       "de" : "Stadtzivilgerichte",
+      "hi" : "सिटी सिविल कोर्ट",
       "IRI-based" : "City_Civil_Courts",
       "en" : "City Civil Court",
       "fr" : "Courts civils de la ville",
@@ -889,8 +889,8 @@
     "baseIri" : "https://w3id.org/def/NyOn",
     "instances" : 0,
     "label" : {
-      "de" : "Beurteilung",
       "hi" : "निर्णय",
+      "de" : "Beurteilung",
       "IRI-based" : "Judgement",
       "en" : "Judgement",
       "fr" : "Jugement",
@@ -925,8 +925,8 @@
     "baseIri" : "https://w3id.org/def/NyOn",
     "instances" : 0,
     "label" : {
-      "hi" : "बेंच",
       "de" : "Bank",
+      "hi" : "बेंच",
       "IRI-based" : "Bench",
       "en" : "Bench",
       "fr" : "Banc",
@@ -961,8 +961,8 @@
     "baseIri" : "https://w3id.org/def/NyOn",
     "instances" : 0,
     "label" : {
-      "de" : "Bezirksgericht",
       "hi" : "जिला अदालत",
+      "de" : "Bezirksgericht",
       "IRI-based" : "District_Court",
       "en" : "District Court",
       "fr" : "Tribunal de district",
@@ -979,8 +979,8 @@
     "baseIri" : "https://w3id.org/def/NyOn",
     "instances" : 0,
     "label" : {
-      "hi" : "सत्र न्यायालय",
       "de" : "Sessions Court.",
+      "hi" : "सत्र न्यायालय",
       "IRI-based" : "Session_Court",
       "en" : "Sessions Court",
       "fr" : "Sessions cour",
@@ -1182,8 +1182,8 @@
     "baseIri" : "https://w3id.org/def/NyOn",
     "instances" : 0,
     "label" : {
-      "de" : "Principal Junior Civil Court",
       "hi" : "प्रिंसिपल जूनियर सिविल कोर्ट",
+      "de" : "Principal Junior Civil Court",
       "IRI-based" : "Principal_Junior_Civil_Court",
       "en" : "Principal Junior Civil Court",
       "fr" : "Principal Cour civil junior",
@@ -1200,8 +1200,8 @@
     "baseIri" : "https://w3id.org/def/NyOn",
     "instances" : 0,
     "label" : {
-      "hi" : "अपील करनेवाला",
       "de" : "Rechtsmittelführerin",
+      "hi" : "अपील करनेवाला",
       "IRI-based" : "Appellant",
       "en" : "Appellant",
       "fr" : "Appelant",
@@ -1236,8 +1236,8 @@
     "baseIri" : "https://w3id.org/def/NyOn",
     "instances" : 0,
     "label" : {
-      "hi" : "न्यायिक मजिस्ट्रेट कोर्ट (द्वितीय श्रेणी)",
       "de" : "Gerichtsrichtergericht (zweite Klasse)",
+      "hi" : "न्यायिक मजिस्ट्रेट कोर्ट (द्वितीय श्रेणी)",
       "IRI-based" : "Judicial_Magistrate_Court(Second_Class)",
       "en" : "Judicial Magistrate Court (Second Class)",
       "fr" : "Cour magistrat judiciaire (deuxième classe)",
@@ -1254,8 +1254,8 @@
     "baseIri" : "https://w3id.org/def/NyOn",
     "instances" : 0,
     "label" : {
-      "hi" : "प्रतिवादी",
       "de" : "Befragte",
+      "hi" : "प्रतिवादी",
       "IRI-based" : "Respondent",
       "en" : "Respondent",
       "fr" : "Intimé",
@@ -1308,8 +1308,8 @@
     "baseIri" : "https://w3id.org/def/NyOn",
     "instances" : 0,
     "label" : {
-      "hi" : "संगठन",
       "de" : "Organisation",
+      "hi" : "संगठन",
       "IRI-based" : "Organization",
       "en" : "Organization",
       "fr" : "Organisation",
@@ -1326,8 +1326,8 @@
     "baseIri" : "https://w3id.org/def/NyOn",
     "instances" : 0,
     "label" : {
-      "de" : "Rechtsmittelgerichtsbarkeit.",
       "hi" : "अपीलकारी क्षेत्राधिकार",
+      "de" : "Rechtsmittelgerichtsbarkeit.",
       "IRI-based" : "Appellant_Jurisdiction",
       "en" : "Appellant Jurisdiction",
       "fr" : "Juridiction de l'appelant",
@@ -1344,8 +1344,8 @@
     "baseIri" : "https://w3id.org/def/NyOn",
     "instances" : 0,
     "label" : {
-      "hi" : "पार्टी प्रकार",
       "de" : "Partytyp.",
+      "hi" : "पार्टी प्रकार",
       "IRI-based" : "Party_Type",
       "en" : "Party Type",
       "fr" : "Type de fête",
@@ -1357,6 +1357,24 @@
       "en" : "represents the types of party involved in the case viz. individual, organization, govt. etc."
     },
     "id" : "2"
+  }, {
+    "iri" : "https://w3id.org/def/NyOn#Metropolitan_Magistrate_Courts",
+    "baseIri" : "https://w3id.org/def/NyOn",
+    "instances" : 0,
+    "label" : {
+      "hi" : "मेट्रोपॉलिटन मजिस्ट्रेट कोर्ट",
+      "de" : "Metropolitan Magistrat Court",
+      "IRI-based" : "Metropolitan_Magistrate_Courts",
+      "en" : "Metropolitan Magistrate Court",
+      "fr" : "Cour magistrat métropolitain",
+      "es" : "Tribunal de magistrados metropolitanos"
+    },
+    "comment" : {
+      "hi" : "आपराधिक मामलों के लिए मेट्रोपॉलिटन स्तर पर मुख्य मेट्रोपॉलिटन कोर्ट के बाद सबसे कम अदालत",
+      "en" : "lowest court after Chief Metropolitan Court at metropolitan level for criminal cases"
+    },
+    "id" : "143",
+    "superClasses" : [ "86" ]
   }, {
     "iri" : "https://w3id.org/def/NyOn#Munsif_Court",
     "baseIri" : "https://w3id.org/def/NyOn",
@@ -1375,24 +1393,6 @@
     },
     "id" : "17",
     "superClasses" : [ "14" ]
-  }, {
-    "iri" : "https://w3id.org/def/NyOn#Metropolitan_Magistrate_Courts",
-    "baseIri" : "https://w3id.org/def/NyOn",
-    "instances" : 0,
-    "label" : {
-      "de" : "Metropolitan Magistrat Court",
-      "hi" : "मेट्रोपॉलिटन मजिस्ट्रेट कोर्ट",
-      "IRI-based" : "Metropolitan_Magistrate_Courts",
-      "en" : "Metropolitan Magistrate Court",
-      "fr" : "Cour magistrat métropolitain",
-      "es" : "Tribunal de magistrados metropolitanos"
-    },
-    "comment" : {
-      "hi" : "आपराधिक मामलों के लिए मेट्रोपॉलिटन स्तर पर मुख्य मेट्रोपॉलिटन कोर्ट के बाद सबसे कम अदालत",
-      "en" : "lowest court after Chief Metropolitan Court at metropolitan level for criminal cases"
-    },
-    "id" : "143",
-    "superClasses" : [ "86" ]
   }, {
     "iri" : "https://w3id.org/def/NyOn#Courts_for_Civil",
     "baseIri" : "https://w3id.org/def/NyOn",
@@ -1417,8 +1417,8 @@
     "baseIri" : "https://w3id.org/def/NyOn",
     "instances" : 0,
     "label" : {
-      "hi" : "सबूत",
       "de" : "Beweis",
+      "hi" : "सबूत",
       "IRI-based" : "Evidence",
       "en" : "Evidence",
       "fr" : "Preuve",
@@ -1434,8 +1434,8 @@
     "baseIri" : "https://w3id.org/def/NyOn",
     "instances" : 0,
     "label" : {
-      "hi" : "क्षेत्राधिकार",
       "de" : "Zuständigkeit",
+      "hi" : "क्षेत्राधिकार",
       "IRI-based" : "Jurisdiction",
       "en" : "Jurisdiction",
       "fr" : "Juridiction",
@@ -1452,8 +1452,8 @@
     "baseIri" : "https://w3id.org/def/NyOn",
     "instances" : 0,
     "label" : {
-      "hi" : "हाईकोर्ट",
       "de" : "High Court",
+      "hi" : "हाईकोर्ट",
       "IRI-based" : "High_Court",
       "en" : "High Court",
       "fr" : "Cour suprême",
@@ -1470,8 +1470,8 @@
     "baseIri" : "https://w3id.org/def/NyOn",
     "instances" : 0,
     "label" : {
-      "hi" : "सर्वोच्च न्यायालय",
       "de" : "Apex Court",
+      "hi" : "सर्वोच्च न्यायालय",
       "IRI-based" : "Apex_Court",
       "en" : "Apex Court",
       "fr" : "Tribunal d'apex",
@@ -1488,8 +1488,8 @@
     "baseIri" : "https://w3id.org/def/NyOn",
     "instances" : 0,
     "label" : {
-      "de" : "Gericht",
       "hi" : "अदालत",
+      "de" : "Gericht",
       "IRI-based" : "Courts",
       "en" : "Court",
       "fr" : "Rechercher",
@@ -1559,8 +1559,8 @@
     "baseIri" : "https://w3id.org/def/NyOn",
     "instances" : 0,
     "label" : {
-      "de" : "Individuell",
       "hi" : "व्यक्ति",
+      "de" : "Individuell",
       "IRI-based" : "Individual",
       "en" : "Individual",
       "fr" : "Individuel",
@@ -1595,8 +1595,8 @@
     "baseIri" : "https://w3id.org/def/NyOn",
     "instances" : 0,
     "label" : {
-      "hi" : "जिला",
       "de" : "Bezirk",
+      "hi" : "जिला",
       "IRI-based" : "District",
       "en" : "District",
       "fr" : "Quartier",
@@ -1631,8 +1631,8 @@
     "baseIri" : "https://w3id.org/def/NyOn",
     "instances" : 0,
     "label" : {
-      "hi" : "पूर्ववर्ती मामला",
       "de" : "Präzedenzfall Fall.",
+      "hi" : "पूर्ववर्ती मामला",
       "IRI-based" : "Precedent_Case",
       "en" : "Precedent Case",
       "fr" : "Cas de précédent",
@@ -1666,8 +1666,8 @@
     "baseIri" : "https://w3id.org/def/NyOn",
     "instances" : 0,
     "label" : {
-      "hi" : "छोटे कारण के न्यायालय",
       "de" : "Gerichtsversorgung",
+      "hi" : "छोटे कारण के न्यायालय",
       "IRI-based" : "Courts_of_Smaller_Causes",
       "en" : "Court of Smaller Cause",
       "fr" : "Cour de petite cause",
@@ -1702,8 +1702,8 @@
     "baseIri" : "https://w3id.org/def/NyOn",
     "instances" : 0,
     "label" : {
-      "de" : "Antragsteller",
       "hi" : "याचिकाकर्ता",
+      "de" : "Antragsteller",
       "IRI-based" : "Petitioner",
       "en" : "Petitioner",
       "fr" : "Pétitionnaire",
