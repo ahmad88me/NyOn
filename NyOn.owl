@@ -9,7 +9,7 @@
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
      xmlns:vann="http://purl.org/vocab/vann/"
      xmlns:terms="http://purl.org/dc/terms/">
-    <owl:Ontology rdf:about="https://w3id.org/def/NyOn#">
+    <owl:Ontology rdf:about="https://w3id.org/def/NyOnLegal#">
         <dc:publisher rdf:resource="https://www.semintelligence.org/projects"/>
         <terms:created>2020-04-04</terms:created>
         <terms:creator>Harde, Pooja</terms:creator>
@@ -26,7 +26,7 @@
         <terms:title xml:lang="es">NyOn: Una ontología jurídica multilingüe para el sistema judicial globalizado</terms:title>
         <terms:title xml:lang="fr">NyOn: Une ontologie juridique multilingue pour un système judiciaire mondialisé</terms:title>
         <vann:preferredNamespacePrefix>nyon</vann:preferredNamespacePrefix>
-        <vann:preferredNamespaceUri rdf:resource="https://w3id.org/def/NyOn#"/>
+        <vann:preferredNamespaceUri rdf:resource="https://w3id.org/def/NyOnLegal#"/>
         <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1.0</owl:versionInfo>
     </owl:Ontology>
     
@@ -97,6 +97,12 @@
     
 
 
+    <!-- http://www.w3.org/2002/07/owl#sameAs -->
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/2002/07/owl#sameAs"/>
+    
+
+
     <!-- 
     ///////////////////////////////////////////////////////////////////////////////////////
     //
@@ -108,197 +114,331 @@
     
 
 
-    <!-- https://w3id.org/def/NyOn#caseBelongsToType -->
+    <!-- https://w3id.org/def/NyOnLegal#OfDomian -->
 
-    <owl:ObjectProperty rdf:about="https://w3id.org/def/NyOn#caseBelongsToType">
+    <owl:ObjectProperty rdf:about="https://w3id.org/def/NyOnLegal#OfDomian">
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
-        <rdfs:domain rdf:resource="https://w3id.org/def/NyOn#Case"/>
-        <rdfs:range rdf:resource="https://w3id.org/def/NyOn#Case_Type"/>
-        <rdfs:comment xml:lang="en">property justifies the relationship of the case with the particular domain to which it belongs</rdfs:comment>
-        <rdfs:label xml:lang="en">caseBelongsToType</rdfs:label>
+        <rdfs:domain rdf:resource="https://w3id.org/def/NyOnLegal#CaseType"/>
+        <rdfs:range rdf:resource="https://w3id.org/def/NyOnLegal#CaseDomain"/>
+        <rdfs:label xml:lang="en">OfDomain</rdfs:label>
     </owl:ObjectProperty>
     
 
 
-    <!-- https://w3id.org/def/NyOn#documentType -->
+    <!-- https://w3id.org/def/NyOnLegal#citedBy -->
 
-    <owl:ObjectProperty rdf:about="https://w3id.org/def/NyOn#documentType">
-        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
-        <rdfs:domain rdf:resource="https://w3id.org/def/NyOn#Case"/>
-        <rdfs:range rdf:resource="https://w3id.org/def/NyOn#Documents"/>
-        <rdfs:comment xml:lang="en">property defines the type of document involved in the case</rdfs:comment>
-        <rdfs:label xml:lang="en">documentType</rdfs:label>
+    <owl:ObjectProperty rdf:about="https://w3id.org/def/NyOnLegal#citedBy">
+        <owl:inverseOf rdf:resource="https://w3id.org/def/NyOnLegal#cites"/>
+        <rdfs:domain rdf:resource="https://w3id.org/def/NyOnLegal#CourtJudgment"/>
+        <rdfs:range rdf:resource="https://w3id.org/def/NyOnLegal#CourtJudgment"/>
+        <rdfs:label xml:lang="en">citedBy</rdfs:label>
     </owl:ObjectProperty>
     
 
 
-    <!-- https://w3id.org/def/NyOn#hasActs -->
+    <!-- https://w3id.org/def/NyOnLegal#cites -->
 
-    <owl:ObjectProperty rdf:about="https://w3id.org/def/NyOn#hasActs">
-        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
-        <rdfs:domain rdf:resource="https://w3id.org/def/NyOn#Case"/>
-        <rdfs:range rdf:resource="https://w3id.org/def/NyOn#Acts"/>
-        <rdfs:comment xml:lang="en">acts involved in the case</rdfs:comment>
-        <rdfs:label xml:lang="en">hasAct</rdfs:label>
+    <owl:ObjectProperty rdf:about="https://w3id.org/def/NyOnLegal#cites">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="https://w3id.org/def/NyOnLegal#CourtJudgment"/>
+        <rdfs:range rdf:resource="https://w3id.org/def/NyOnLegal#CourtJudgment"/>
+        <rdfs:label xml:lang="en">cites</rdfs:label>
     </owl:ObjectProperty>
     
 
 
-    <!-- https://w3id.org/def/NyOn#hasAuthor -->
+    <!-- https://w3id.org/def/NyOnLegal#hasAuthor -->
 
-    <owl:ObjectProperty rdf:about="https://w3id.org/def/NyOn#hasAuthor">
-        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
-        <rdfs:domain rdf:resource="https://w3id.org/def/NyOn#Case"/>
-        <rdfs:range rdf:resource="https://w3id.org/def/NyOn#Author"/>
-        <rdfs:comment xml:lang="en">case has a author who is one of the judge of the case</rdfs:comment>
+    <owl:ObjectProperty rdf:about="https://w3id.org/def/NyOnLegal#hasAuthor">
+        <rdfs:domain rdf:resource="https://w3id.org/def/NyOnLegal#CourtJudgment"/>
+        <rdfs:range rdf:resource="https://w3id.org/def/NyOnLegal#Judge"/>
         <rdfs:label xml:lang="en">hasAuthor</rdfs:label>
     </owl:ObjectProperty>
     
 
 
-    <!-- https://w3id.org/def/NyOn#hasBench -->
+    <!-- https://w3id.org/def/NyOnLegal#hasBench -->
 
-    <owl:ObjectProperty rdf:about="https://w3id.org/def/NyOn#hasBench">
+    <owl:ObjectProperty rdf:about="https://w3id.org/def/NyOnLegal#hasBench">
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
-        <rdfs:domain rdf:resource="https://w3id.org/def/NyOn#Case"/>
-        <rdfs:range rdf:resource="https://w3id.org/def/NyOn#Bench"/>
-        <rdfs:comment xml:lang="en">case has a bench of judges</rdfs:comment>
+        <rdfs:domain rdf:resource="https://w3id.org/def/NyOnLegal#CourtJudgment"/>
+        <rdfs:range rdf:resource="https://w3id.org/def/NyOnLegal#Bench"/>
         <rdfs:label xml:lang="en">hasBench</rdfs:label>
     </owl:ObjectProperty>
     
 
 
-    <!-- https://w3id.org/def/NyOn#hasCourtDecision -->
+    <!-- https://w3id.org/def/NyOnLegal#hasCourtLoc -->
 
-    <owl:ObjectProperty rdf:about="https://w3id.org/def/NyOn#hasCourtDecision">
+    <owl:ObjectProperty rdf:about="https://w3id.org/def/NyOnLegal#hasCourtLoc">
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
-        <rdfs:domain rdf:resource="https://w3id.org/def/NyOn#Case"/>
-        <rdfs:range rdf:resource="https://w3id.org/def/NyOn#Court_Decision"/>
-        <rdfs:comment xml:lang="en">property justifies the type of courts decision given by the judge in the case</rdfs:comment>
-        <rdfs:label xml:lang="en">hasCourtDecision</rdfs:label>
+        <rdfs:domain rdf:resource="https://w3id.org/def/NyOnLegal#Court"/>
+        <rdfs:range rdf:resource="https://w3id.org/def/NyOnLegal#Location"/>
+        <rdfs:label xml:lang="en">hasCourtLoc</rdfs:label>
     </owl:ObjectProperty>
     
 
 
-    <!-- https://w3id.org/def/NyOn#hasCourtOfficial -->
+    <!-- https://w3id.org/def/NyOnLegal#hasCourtOfficial -->
 
-    <owl:ObjectProperty rdf:about="https://w3id.org/def/NyOn#hasCourtOfficial">
+    <owl:ObjectProperty rdf:about="https://w3id.org/def/NyOnLegal#hasCourtOfficial">
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
-        <rdfs:domain rdf:resource="https://w3id.org/def/NyOn#Case"/>
-        <rdfs:range rdf:resource="https://w3id.org/def/NyOn#Court_Official"/>
-        <rdfs:comment xml:lang="en">specifies the court officiaks involved in the case</rdfs:comment>
-        <rdfs:label xml:lang="en">hasCourtOfficial</rdfs:label>
+        <rdfs:domain rdf:resource="https://w3id.org/def/NyOnLegal#CourtJudgment"/>
+        <rdfs:range rdf:resource="https://w3id.org/def/NyOnLegal#Court_Official"/>
+        <rdfs:label xml:lang="en">hasCourtOfiicial</rdfs:label>
     </owl:ObjectProperty>
     
 
 
-    <!-- https://w3id.org/def/NyOn#hasCourts -->
+    <!-- https://w3id.org/def/NyOnLegal#hasDateOfJudgment -->
 
-    <owl:ObjectProperty rdf:about="https://w3id.org/def/NyOn#hasCourts">
+    <owl:ObjectProperty rdf:about="https://w3id.org/def/NyOnLegal#hasDateOfJudgment">
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
-        <rdfs:domain rdf:resource="https://w3id.org/def/NyOn#Case"/>
-        <rdfs:range rdf:resource="https://w3id.org/def/NyOn#Courts"/>
-        <rdfs:comment xml:lang="en">specifies the different courts involved in the case</rdfs:comment>
-        <rdfs:label xml:lang="en">hasCourt</rdfs:label>
+        <rdfs:domain rdf:resource="https://w3id.org/def/NyOnLegal#Court"/>
+        <rdfs:range rdf:resource="https://w3id.org/def/NyOnLegal#DateOfJudgment"/>
+        <rdfs:label xml:lang="en">hasDateOfJudgment</rdfs:label>
     </owl:ObjectProperty>
     
 
 
-    <!-- https://w3id.org/def/NyOn#hasEvidenceLocation -->
+    <!-- https://w3id.org/def/NyOnLegal#hasEvidence -->
 
-    <owl:ObjectProperty rdf:about="https://w3id.org/def/NyOn#hasEvidenceLocation">
-        <rdfs:domain rdf:resource="https://w3id.org/def/NyOn#Evidence"/>
-        <rdfs:range rdf:resource="https://w3id.org/def/NyOn#Place"/>
-        <rdfs:comment xml:lang="en">property represents the location of the evidence</rdfs:comment>
-        <rdfs:label xml:lang="en">hasEvidenceLocation</rdfs:label>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- https://w3id.org/def/NyOn#hasEvidences -->
-
-    <owl:ObjectProperty rdf:about="https://w3id.org/def/NyOn#hasEvidences">
+    <owl:ObjectProperty rdf:about="https://w3id.org/def/NyOnLegal#hasEvidence">
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
-        <rdfs:domain rdf:resource="https://w3id.org/def/NyOn#Case"/>
-        <rdfs:range rdf:resource="https://w3id.org/def/NyOn#Evidence"/>
-        <rdfs:comment xml:lang="en">proprty represnts the evidences of the case</rdfs:comment>
+        <rdfs:domain rdf:resource="https://w3id.org/def/NyOnLegal#CourtJudgment"/>
+        <rdfs:range rdf:resource="https://w3id.org/def/NyOnLegal#Evidence"/>
         <rdfs:label xml:lang="en">hasEvidence</rdfs:label>
     </owl:ObjectProperty>
     
 
 
-    <!-- https://w3id.org/def/NyOn#hasJurisdiction -->
+    <!-- https://w3id.org/def/NyOnLegal#hasEvidenceLoc -->
 
-    <owl:ObjectProperty rdf:about="https://w3id.org/def/NyOn#hasJurisdiction">
-        <rdfs:comment xml:lang="en">specifies the jurisdiction the court has for the case</rdfs:comment>
+    <owl:ObjectProperty rdf:about="https://w3id.org/def/NyOnLegal#hasEvidenceLoc">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="https://w3id.org/def/NyOnLegal#Evidence"/>
+        <rdfs:range rdf:resource="https://w3id.org/def/NyOnLegal#Location"/>
+        <rdfs:label xml:lang="en">hasEvidenceLoc</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/def/NyOnLegal#hasFact -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/def/NyOnLegal#hasFact">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="https://w3id.org/def/NyOnLegal#CourtJudgment"/>
+        <rdfs:range rdf:resource="https://w3id.org/def/NyOnLegal#Fact"/>
+        <rdfs:label xml:lang="en">hasFact</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/def/NyOnLegal#hasFinalDecision -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/def/NyOnLegal#hasFinalDecision">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="https://w3id.org/def/NyOnLegal#CourtJudgment"/>
+        <rdfs:range rdf:resource="https://w3id.org/def/NyOnLegal#Court_Decision"/>
+        <rdfs:label xml:lang="en">hasFinalDecision</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/def/NyOnLegal#hasIssue -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/def/NyOnLegal#hasIssue">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="https://w3id.org/def/NyOnLegal#CourtJudgment"/>
+        <rdfs:range rdf:resource="https://w3id.org/def/NyOnLegal#Issue"/>
+        <rdfs:label xml:lang="en">hasIssue</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/def/NyOnLegal#hasJudgmentType -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/def/NyOnLegal#hasJudgmentType">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="https://w3id.org/def/NyOnLegal#CourtJudgment"/>
+        <rdfs:range rdf:resource="https://w3id.org/def/NyOnLegal#CaseType"/>
+        <rdfs:label xml:lang="en">hasJudgmentType</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/def/NyOnLegal#hasJurisdiction -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/def/NyOnLegal#hasJurisdiction">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="https://w3id.org/def/NyOnLegal#Court"/>
+        <rdfs:range rdf:resource="https://w3id.org/def/NyOnLegal#Jurisdiction"/>
         <rdfs:label xml:lang="en">hasJurisdiction</rdfs:label>
     </owl:ObjectProperty>
     
 
 
-    <!-- https://w3id.org/def/NyOn#hasLocation -->
+    <!-- https://w3id.org/def/NyOnLegal#hasObiterDictum -->
 
-    <owl:ObjectProperty rdf:about="https://w3id.org/def/NyOn#hasLocation">
-        <rdfs:domain rdf:resource="https://w3id.org/def/NyOn#Courts"/>
-        <rdfs:range rdf:resource="https://w3id.org/def/NyOn#Location"/>
-        <rdfs:comment xml:lang="en">property signifies the location of the court involved in the case</rdfs:comment>
-        <rdfs:label xml:lang="en">hasLocation</rdfs:label>
+    <owl:ObjectProperty rdf:about="https://w3id.org/def/NyOnLegal#hasObiterDictum">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="https://w3id.org/def/NyOnLegal#CourtJudgment"/>
+        <rdfs:range rdf:resource="https://w3id.org/def/NyOnLegal#ObiterDictum"/>
+        <rdfs:label xml:lang="en">hasObiterDictum</rdfs:label>
     </owl:ObjectProperty>
     
 
 
-    <!-- https://w3id.org/def/NyOn#hasParty -->
+    <!-- https://w3id.org/def/NyOnLegal#hasParty -->
 
-    <owl:ObjectProperty rdf:about="https://w3id.org/def/NyOn#hasParty">
-        <rdfs:domain rdf:resource="https://w3id.org/def/NyOn#Case"/>
-        <rdfs:range rdf:resource="https://w3id.org/def/NyOn#Party"/>
-        <rdfs:comment xml:lang="en">specifies the party involved in the case</rdfs:comment>
+    <owl:ObjectProperty rdf:about="https://w3id.org/def/NyOnLegal#hasParty">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="https://w3id.org/def/NyOnLegal#CourtJudgment"/>
+        <rdfs:range rdf:resource="https://w3id.org/def/NyOnLegal#Party"/>
         <rdfs:label xml:lang="en">hasParty</rdfs:label>
     </owl:ObjectProperty>
     
 
 
-    <!-- https://w3id.org/def/NyOn#hasPartyType -->
+    <!-- https://w3id.org/def/NyOnLegal#hasPartyType -->
 
-    <owl:ObjectProperty rdf:about="https://w3id.org/def/NyOn#hasPartyType">
-        <rdfs:domain rdf:resource="https://w3id.org/def/NyOn#Party"/>
-        <rdfs:range rdf:resource="https://w3id.org/def/NyOn#Party_Type"/>
-        <rdfs:comment xml:lang="en">specifies the type of party being individual, organization, government, state etc.</rdfs:comment>
+    <owl:ObjectProperty rdf:about="https://w3id.org/def/NyOnLegal#hasPartyType">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="https://w3id.org/def/NyOnLegal#Party"/>
+        <rdfs:range rdf:resource="https://w3id.org/def/NyOnLegal#Party_Type"/>
         <rdfs:label xml:lang="en">hasPartyType</rdfs:label>
     </owl:ObjectProperty>
     
 
 
-    <!-- https://w3id.org/def/NyOn#hasPrecedentCase -->
+    <!-- https://w3id.org/def/NyOnLegal#hasPolicePersonnel -->
 
-    <owl:ObjectProperty rdf:about="https://w3id.org/def/NyOn#hasPrecedentCase">
-        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
-        <rdfs:domain rdf:resource="https://w3id.org/def/NyOn#Case"/>
-        <rdfs:range rdf:resource="https://w3id.org/def/NyOn#Precedent_Case"/>
-        <rdfs:comment xml:lang="en">case has a relationship with the precedent cases</rdfs:comment>
-        <rdfs:label xml:lang="en">hasPrecedentCase</rdfs:label>
+    <owl:ObjectProperty rdf:about="https://w3id.org/def/NyOnLegal#hasPolicePersonnel">
+        <rdfs:domain rdf:resource="https://w3id.org/def/NyOnLegal#CourtJudgment"/>
+        <rdfs:range rdf:resource="https://w3id.org/def/NyOnLegal#Investigator"/>
+        <rdfs:label xml:lang="en">hasPolicePersonnel</rdfs:label>
     </owl:ObjectProperty>
     
 
 
-    <!-- https://w3id.org/def/NyOn#hasWitness -->
+    <!-- https://w3id.org/def/NyOnLegal#hasRatioDecidendi -->
 
-    <owl:ObjectProperty rdf:about="https://w3id.org/def/NyOn#hasWitness">
-        <rdfs:domain rdf:resource="https://w3id.org/def/NyOn#Case"/>
-        <rdfs:range rdf:resource="https://w3id.org/def/NyOn#Witness"/>
-        <rdfs:comment xml:lang="en">specifies the witnesses present in the case</rdfs:comment>
+    <owl:ObjectProperty rdf:about="https://w3id.org/def/NyOnLegal#hasRatioDecidendi">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="https://w3id.org/def/NyOnLegal#CourtJudgment"/>
+        <rdfs:range rdf:resource="https://w3id.org/def/NyOnLegal#RatioDecidendi"/>
+        <rdfs:label xml:lang="en">hasRtioDecidendi</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/def/NyOnLegal#hasRulingOf -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/def/NyOnLegal#hasRulingOf">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="https://w3id.org/def/NyOnLegal#CourtJudgment"/>
+        <rdfs:range rdf:resource="https://w3id.org/def/NyOnLegal#Court"/>
+        <rdfs:label xml:lang="en">hasRulingOf</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/def/NyOnLegal#hasStatue -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/def/NyOnLegal#hasStatue">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="https://w3id.org/def/NyOnLegal#CourtJudgment"/>
+        <rdfs:range rdf:resource="https://w3id.org/def/NyOnLegal#Statue"/>
+        <rdfs:label xml:lang="en">hasStatue</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/def/NyOnLegal#hasWitness -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/def/NyOnLegal#hasWitness">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="https://w3id.org/def/NyOnLegal#CourtJudgment"/>
+        <rdfs:range rdf:resource="https://w3id.org/def/NyOnLegal#Witness"/>
         <rdfs:label xml:lang="en">hasWitness</rdfs:label>
     </owl:ObjectProperty>
     
 
 
-    <!-- https://w3id.org/def/NyOn#isACase -->
+    <!-- https://w3id.org/def/NyOnLegal#hasWordPhrase -->
 
-    <owl:ObjectProperty rdf:about="https://w3id.org/def/NyOn#isACase">
-        <rdfs:domain rdf:resource="https://w3id.org/def/NyOn#Precedent_Case"/>
-        <rdfs:range rdf:resource="https://w3id.org/def/NyOn#Case"/>
-        <rdfs:comment xml:lang="en">precedent case isA case</rdfs:comment>
-        <rdfs:label xml:lang="en">refers</rdfs:label>
+    <owl:ObjectProperty rdf:about="https://w3id.org/def/NyOnLegal#hasWordPhrase">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="https://w3id.org/def/NyOnLegal#CourtJudgment"/>
+        <rdfs:range rdf:resource="https://w3id.org/def/NyOnLegal#WordAndPhrase"/>
+        <rdfs:label xml:lang="en">hasWordPhrase</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/def/NyOnLegal#hasWords -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/def/NyOnLegal#hasWords">
+        <rdfs:domain rdf:resource="https://w3id.org/def/NyOnLegal#CourtJudgment"/>
+        <rdfs:range rdf:resource="https://w3id.org/def/NyOnLegal#CatchWord"/>
+        <rdfs:comment xml:lang="en">signifies the domain words, facts and issue related words in the case</rdfs:comment>
+        <rdfs:label xml:lang="en">hasWords</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/def/NyOnLegal#makeArgument -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/def/NyOnLegal#makeArgument">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="https://w3id.org/def/NyOnLegal#Party"/>
+        <rdfs:range rdf:resource="https://w3id.org/def/NyOnLegal#Argument"/>
+        <rdfs:label xml:lang="en">makeArgument</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/def/NyOnLegal#withConcurrence -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/def/NyOnLegal#withConcurrence">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="https://w3id.org/def/NyOnLegal#Judge"/>
+        <rdfs:range rdf:resource="https://w3id.org/def/NyOnLegal#Concurrence"/>
+        <rdfs:label xml:lang="en">withConcurrence</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/def/NyOnLegal#withDissent -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/def/NyOnLegal#withDissent">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="https://w3id.org/def/NyOnLegal#Judge"/>
+        <rdfs:range rdf:resource="https://w3id.org/def/NyOnLegal#Dissent"/>
+        <rdfs:label xml:lang="en">withDissent</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/def/NyOnLegal#withMajority -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/def/NyOnLegal#withMajority">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="https://w3id.org/def/NyOnLegal#Judge"/>
+        <rdfs:range rdf:resource="https://w3id.org/def/NyOnLegal#Majority"/>
+        <rdfs:label xml:lang="en">withMajority</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/def/NyOnLegal#worksIn -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/def/NyOnLegal#worksIn">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="https://w3id.org/def/NyOnLegal#Court_Official"/>
+        <rdfs:range rdf:resource="https://w3id.org/def/NyOnLegal#Court"/>
+        <rdfs:label xml:lang="en">worksIn</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -314,127 +454,369 @@
     
 
 
-    <!-- https://w3id.org/def/NyOn#GovernmentName -->
+    <!-- https://w3id.org/def/NyOnLegal#COFirstName -->
 
-    <owl:DatatypeProperty rdf:about="https://w3id.org/def/NyOn#GovernmentName">
-        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
-        <rdfs:domain rdf:resource="https://w3id.org/def/NyOn#Government"/>
+    <owl:DatatypeProperty rdf:about="https://w3id.org/def/NyOnLegal#COFirstName">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/def/NyOnLegal#courtOffName"/>
+        <rdfs:domain rdf:resource="https://w3id.org/def/NyOnLegal#Court_Official"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <rdfs:comment xml:lang="en">Name of the Government</rdfs:comment>
-        <rdfs:label xml:lang="en">governmentName</rdfs:label>
+        <rdfs:label xml:lang="en">COFirstName</rdfs:label>
     </owl:DatatypeProperty>
     
 
 
-    <!-- https://w3id.org/def/NyOn#hasCaseName -->
+    <!-- https://w3id.org/def/NyOnLegal#COLastName -->
 
-    <owl:DatatypeProperty rdf:about="https://w3id.org/def/NyOn#hasCaseName">
-        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
-        <rdfs:domain rdf:resource="https://w3id.org/def/NyOn#Case"/>
+    <owl:DatatypeProperty rdf:about="https://w3id.org/def/NyOnLegal#COLastName">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/def/NyOnLegal#courtOffName"/>
+        <rdfs:domain rdf:resource="https://w3id.org/def/NyOnLegal#Court_Official"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <rdfs:comment xml:lang="en">name of the case</rdfs:comment>
+        <rdfs:label xml:lang="en">COLastName</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/def/NyOnLegal#argumentSequenceNum -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/def/NyOnLegal#argumentSequenceNum">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="https://w3id.org/def/NyOnLegal#Argument"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+        <rdfs:label xml:lang="en">argumentSequenceNum</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/def/NyOnLegal#argumentValue -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/def/NyOnLegal#argumentValue">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="https://w3id.org/def/NyOnLegal#Argument"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label xml:lang="en">argumentValue</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/def/NyOnLegal#catchwordValue -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/def/NyOnLegal#catchwordValue">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="https://w3id.org/def/NyOnLegal#CatchWord"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label xml:lang="en">catchwordValue</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/def/NyOnLegal#courtName -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/def/NyOnLegal#courtName">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="https://w3id.org/def/NyOnLegal#Court"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label xml:lang="en">courtName</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/def/NyOnLegal#courtOffName -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/def/NyOnLegal#courtOffName">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:label xml:lang="en">courtOffName</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/def/NyOnLegal#dateOfJudgment -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/def/NyOnLegal#dateOfJudgment">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:label xml:lang="en">dateOfJudgment</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/def/NyOnLegal#evidenceLocation -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/def/NyOnLegal#evidenceLocation">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="https://w3id.org/def/NyOnLegal#Evidence"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label xml:lang="en">evidenceLocation</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/def/NyOnLegal#factSequenceNum -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/def/NyOnLegal#factSequenceNum">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="https://w3id.org/def/NyOnLegal#Fact"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+        <rdfs:label xml:lang="en">factSequenceNum</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/def/NyOnLegal#factValue -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/def/NyOnLegal#factValue">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="https://w3id.org/def/NyOnLegal#Fact"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label xml:lang="en">factValue</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/def/NyOnLegal#finalDecisionValue -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/def/NyOnLegal#finalDecisionValue">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="https://w3id.org/def/NyOnLegal#Court_Decision"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label xml:lang="en">finalDecisionValue</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/def/NyOnLegal#firstName -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/def/NyOnLegal#firstName">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/def/NyOnLegal#partyName"/>
+        <rdfs:domain rdf:resource="https://w3id.org/def/NyOnLegal#Party"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <owl:propertyDisjointWith rdf:resource="https://w3id.org/def/NyOnLegal#lastName"/>
+        <rdfs:label xml:lang="en">firstName</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/def/NyOnLegal#hasCaseID -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/def/NyOnLegal#hasCaseID">
+        <rdfs:domain rdf:resource="https://w3id.org/def/NyOnLegal#CourtJudgment"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment xml:lang="en">Case has a unique ID</rdfs:comment>
+        <rdfs:label xml:lang="en">hasCaseID</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/def/NyOnLegal#hasCaseName -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/def/NyOnLegal#hasCaseName">
+        <rdfs:domain rdf:resource="https://w3id.org/def/NyOnLegal#CourtJudgment"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment xml:lang="en">represents the name of a case usually contains the name of both the parties</rdfs:comment>
         <rdfs:label xml:lang="en">hasCaseName</rdfs:label>
     </owl:DatatypeProperty>
     
 
 
-    <!-- https://w3id.org/def/NyOn#hasCaseNumber -->
+    <!-- https://w3id.org/def/NyOnLegal#hasDate -->
 
-    <owl:DatatypeProperty rdf:about="https://w3id.org/def/NyOn#hasCaseNumber">
+    <owl:DatatypeProperty rdf:about="https://w3id.org/def/NyOnLegal#hasDate">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/def/NyOnLegal#dateOfJudgment"/>
+        <rdfs:domain rdf:resource="https://w3id.org/def/NyOnLegal#DateOfJudgment"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+        <rdfs:label xml:lang="en">hasDate</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/def/NyOnLegal#hasDesignation -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/def/NyOnLegal#hasDesignation">
+        <rdfs:domain rdf:resource="https://w3id.org/def/NyOnLegal#Investigator"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label xml:lang="en">hasDesignation</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/def/NyOnLegal#hasMonth -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/def/NyOnLegal#hasMonth">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/def/NyOnLegal#dateOfJudgment"/>
+        <rdfs:domain rdf:resource="https://w3id.org/def/NyOnLegal#DateOfJudgment"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label xml:lang="en">hasMonth</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/def/NyOnLegal#hasPolicePersonnelName -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/def/NyOnLegal#hasPolicePersonnelName">
+        <rdfs:domain rdf:resource="https://w3id.org/def/NyOnLegal#Investigator"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment xml:lang="en">represents the name of the police personnel involved in the case</rdfs:comment>
+        <rdfs:label xml:lang="en">hasPolicePersonnelName</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/def/NyOnLegal#hasYear -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/def/NyOnLegal#hasYear">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/def/NyOnLegal#dateOfJudgment"/>
+        <rdfs:domain rdf:resource="https://w3id.org/def/NyOnLegal#DateOfJudgment"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+        <rdfs:label xml:lang="en">hasYear</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/def/NyOnLegal#issueSequenceNum -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/def/NyOnLegal#issueSequenceNum">
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
-        <rdfs:domain rdf:resource="https://w3id.org/def/NyOn#Case"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <rdfs:comment xml:lang="en">case number</rdfs:comment>
-        <rdfs:label xml:lang="en">hasCaseNumber</rdfs:label>
+        <rdfs:domain rdf:resource="https://w3id.org/def/NyOnLegal#Issue"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+        <rdfs:label xml:lang="en">issueSequenceNum</rdfs:label>
     </owl:DatatypeProperty>
     
 
 
-    <!-- https://w3id.org/def/NyOn#hasCourtDecisionDate -->
+    <!-- https://w3id.org/def/NyOnLegal#issueValue -->
 
-    <owl:DatatypeProperty rdf:about="https://w3id.org/def/NyOn#hasCourtDecisionDate">
+    <owl:DatatypeProperty rdf:about="https://w3id.org/def/NyOnLegal#issueValue">
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
-        <rdfs:domain rdf:resource="https://w3id.org/def/NyOn#Court_Decision"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
-        <rdfs:comment xml:lang="en">date on which the court decision is given</rdfs:comment>
-        <rdfs:label xml:lang="en">hasCourtDecisionDate</rdfs:label>
+        <rdfs:domain rdf:resource="https://w3id.org/def/NyOnLegal#Issue"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label xml:lang="en">issueValue</rdfs:label>
     </owl:DatatypeProperty>
     
 
 
-    <!-- https://w3id.org/def/NyOn#hasJudgement -->
+    <!-- https://w3id.org/def/NyOnLegal#lastName -->
 
-    <owl:DatatypeProperty rdf:about="https://w3id.org/def/NyOn#hasJudgement">
+    <owl:DatatypeProperty rdf:about="https://w3id.org/def/NyOnLegal#lastName">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/def/NyOnLegal#partyName"/>
+        <rdfs:domain rdf:resource="https://w3id.org/def/NyOnLegal#Party"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label xml:lang="en">lastName</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/def/NyOnLegal#locationName -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/def/NyOnLegal#locationName">
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
-        <rdfs:domain rdf:resource="https://w3id.org/def/NyOn#Judgement"/>
+        <rdfs:domain rdf:resource="https://w3id.org/def/NyOnLegal#Location"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <rdfs:comment xml:lang="en">judgement given on the case</rdfs:comment>
-        <rdfs:label xml:lang="en">hasJudgement</rdfs:label>
+        <rdfs:label xml:lang="en">locstionName</rdfs:label>
     </owl:DatatypeProperty>
     
 
 
-    <!-- https://w3id.org/def/NyOn#hasName -->
+    <!-- https://w3id.org/def/NyOnLegal#obiterDictumSequenceNum -->
 
-    <owl:DatatypeProperty rdf:about="https://w3id.org/def/NyOn#hasName">
-        <rdfs:domain rdf:resource="https://w3id.org/def/NyOn#Party"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- https://w3id.org/def/NyOn#hasOrder -->
-
-    <owl:DatatypeProperty rdf:about="https://w3id.org/def/NyOn#hasOrder">
+    <owl:DatatypeProperty rdf:about="https://w3id.org/def/NyOnLegal#obiterDictumSequenceNum">
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
-        <rdfs:domain rdf:resource="https://w3id.org/def/NyOn#Order"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <rdfs:comment xml:lang="en">order given in the case as the court decision</rdfs:comment>
-        <rdfs:label xml:lang="en">hasOrder</rdfs:label>
+        <rdfs:domain rdf:resource="https://w3id.org/def/NyOnLegal#ObiterDictum"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+        <rdfs:label xml:lang="en">obiterDictumSequenceNum</rdfs:label>
     </owl:DatatypeProperty>
     
 
 
-    <!-- https://w3id.org/def/NyOn#locatedAt -->
+    <!-- https://w3id.org/def/NyOnLegal#obiterDictumValue -->
 
-    <owl:DatatypeProperty rdf:about="https://w3id.org/def/NyOn#locatedAt">
+    <owl:DatatypeProperty rdf:about="https://w3id.org/def/NyOnLegal#obiterDictumValue">
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
-        <rdfs:domain rdf:resource="https://w3id.org/def/NyOn#Courts"/>
+        <rdfs:domain rdf:resource="https://w3id.org/def/NyOnLegal#ObiterDictum"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <rdfs:comment xml:lang="en">location of the courts</rdfs:comment>
-        <rdfs:label xml:lang="en">locatedAt</rdfs:label>
+        <rdfs:label xml:lang="en">obiterDictumValue</rdfs:label>
     </owl:DatatypeProperty>
     
 
 
-    <!-- https://w3id.org/def/NyOn#organizationName -->
+    <!-- https://w3id.org/def/NyOnLegal#partyName -->
 
-    <owl:DatatypeProperty rdf:about="https://w3id.org/def/NyOn#organizationName">
+    <owl:DatatypeProperty rdf:about="https://w3id.org/def/NyOnLegal#partyName">
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
-        <rdfs:domain rdf:resource="https://schema.org/Organization"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <rdfs:comment xml:lang="en">name of the organization</rdfs:comment>
-        <rdfs:label xml:lang="en">organizationName</rdfs:label>
+        <rdfs:label xml:lang="en">partyName</rdfs:label>
     </owl:DatatypeProperty>
     
 
 
-    <!-- https://w3id.org/def/NyOn#stateName -->
+    <!-- https://w3id.org/def/NyOnLegal#ratioDecidendiSequenceNum -->
 
-    <owl:DatatypeProperty rdf:about="https://w3id.org/def/NyOn#stateName">
-        <rdfs:domain rdf:resource="https://schema.org/State"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <rdfs:comment xml:lang="en">name of the State</rdfs:comment>
-        <rdfs:label xml:lang="en">stateName</rdfs:label>
+    <owl:DatatypeProperty rdf:about="https://w3id.org/def/NyOnLegal#ratioDecidendiSequenceNum">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="https://w3id.org/def/NyOnLegal#RatioDecidendi"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+        <rdfs:label xml:lang="en">ratioDecidendiSequenceNum</rdfs:label>
     </owl:DatatypeProperty>
     
 
 
-    <!-- https://w3id.org/def/NyOn#witnessName -->
+    <!-- https://w3id.org/def/NyOnLegal#ratioDecidendiValue -->
 
-    <owl:DatatypeProperty rdf:about="https://w3id.org/def/NyOn#witnessName">
-        <rdfs:domain rdf:resource="https://w3id.org/def/NyOn#Witness"/>
+    <owl:DatatypeProperty rdf:about="https://w3id.org/def/NyOnLegal#ratioDecidendiValue">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="https://w3id.org/def/NyOnLegal#RatioDecidendi"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label xml:lang="en">ratioDecidendiValue</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/def/NyOnLegal#wFirstName -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/def/NyOnLegal#wFirstName">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/def/NyOnLegal#witnessName"/>
+        <rdfs:domain rdf:resource="https://w3id.org/def/NyOnLegal#Witness"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <owl:propertyDisjointWith rdf:resource="https://w3id.org/def/NyOnLegal#wLastName"/>
+        <rdfs:label xml:lang="en">wFirstName</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/def/NyOnLegal#wLastName -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/def/NyOnLegal#wLastName">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/def/NyOnLegal#witnessName"/>
+        <rdfs:domain rdf:resource="https://w3id.org/def/NyOnLegal#Witness"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label xml:lang="en">wLastName</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/def/NyOnLegal#witnessName -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/def/NyOnLegal#witnessName">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:label xml:lang="en">witnessName</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/def/NyOnLegal#witnessStatement -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/def/NyOnLegal#witnessStatement">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="https://w3id.org/def/NyOnLegal#Witness"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label xml:lang="en">witnessStatement</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/def/NyOnLegal#wordPhraseValue -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/def/NyOnLegal#wordPhraseValue">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="https://w3id.org/def/NyOnLegal#WordAndPhrase"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label xml:lang="en">wordPhraseValue</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -453,7 +835,8 @@
     <!-- http://xmlns.com/foaf/0.1/Person -->
 
     <owl:Class rdf:about="http://xmlns.com/foaf/0.1/Person">
-        <owl:equivalentClass rdf:resource="https://w3id.org/def/NyOn#Individual"/>
+        <owl:equivalentClass rdf:resource="https://w3id.org/def/NyOnLegal#Individual"/>
+        <rdfs:label xml:lang="en">Person</rdfs:label>
     </owl:Class>
     
 
@@ -461,7 +844,7 @@
     <!-- https://schema.org/Organization -->
 
     <owl:Class rdf:about="https://schema.org/Organization">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/def/NyOn#Party_Type"/>
+        <rdfs:subClassOf rdf:resource="https://w3id.org/def/NyOnLegal#Party_Type"/>
         <rdfs:comment xml:lang="en">organization(s) involved as the participant in the case</rdfs:comment>
         <rdfs:comment xml:lang="hi">संगठन (ओं) मामले में प्रतिभागी के रूप में शामिल है</rdfs:comment>
         <rdfs:label xml:lang="de">Organisation</rdfs:label>
@@ -473,774 +856,10 @@
     
 
 
-    <!-- https://schema.org/State -->
+    <!-- https://schema.org/Place -->
 
-    <owl:Class rdf:about="https://schema.org/State">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/def/NyOn#Location"/>
-        <rdfs:subClassOf rdf:resource="https://w3id.org/def/NyOn#Party_Type"/>
-        <rdfs:comment xml:lang="en">represents state name/location</rdfs:comment>
-        <rdfs:comment xml:lang="hi">राज्य का नाम / स्थान का प्रतिनिधित्व करता है</rdfs:comment>
-        <rdfs:label xml:lang="de">Bundesland</rdfs:label>
-        <rdfs:label xml:lang="es">Estado</rdfs:label>
-        <rdfs:label xml:lang="en">State</rdfs:label>
-        <rdfs:label xml:lang="fr">État</rdfs:label>
-        <rdfs:label xml:lang="hi">राज्य</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- https://w3id.org/def/NyOn#Accussed -->
-
-    <owl:Class rdf:about="https://w3id.org/def/NyOn#Accussed">
-        <owl:equivalentClass>
-            <owl:Class>
-                <owl:intersectionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="https://w3id.org/def/NyOn#Respondent"/>
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="https://w3id.org/def/NyOn#caseBelongsToType"/>
-                        <owl:someValuesFrom rdf:resource="https://w3id.org/def/NyOn#Criminal"/>
-                    </owl:Restriction>
-                </owl:intersectionOf>
-            </owl:Class>
-        </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="https://w3id.org/def/NyOn#Party"/>
-        <rdfs:comment xml:lang="en">represents the accused of the case</rdfs:comment>
-        <rdfs:comment xml:lang="hi">मामले के आरोपी का प्रतिनिधित्व करता है</rdfs:comment>
-        <rdfs:label xml:lang="en">Accused</rdfs:label>
-        <rdfs:label xml:lang="fr">Accusé</rdfs:label>
-        <rdfs:label xml:lang="es">Acusado</rdfs:label>
-        <rdfs:label xml:lang="de">Beschuldigt</rdfs:label>
-        <rdfs:label xml:lang="hi">अभियुक्त</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- https://w3id.org/def/NyOn#Acts -->
-
-    <owl:Class rdf:about="https://w3id.org/def/NyOn#Acts">
-        <rdfs:comment xml:lang="en">Acts or Rules common for Civil and Crimnial Law</rdfs:comment>
-        <rdfs:comment xml:lang="hi">नागरिक और क्रूर कानून के लिए आम अधिनियम या नियम</rdfs:comment>
-        <rdfs:label xml:lang="fr">Actes</rdfs:label>
-        <rdfs:label xml:lang="en">Acts</rdfs:label>
-        <rdfs:label xml:lang="de">Handlung</rdfs:label>
-        <rdfs:label xml:lang="es">Hechos</rdfs:label>
-        <rdfs:label xml:lang="hi">अधिनियम</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- https://w3id.org/def/NyOn#Advisory_Jurisdiction -->
-
-    <owl:Class rdf:about="https://w3id.org/def/NyOn#Advisory_Jurisdiction">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/def/NyOn#Jurisdiction"/>
-        <rdfs:comment xml:lang="en">jurisdiction type is a advisory jurisdiction</rdfs:comment>
-        <rdfs:comment xml:lang="hi">क्षेत्राधिकार प्रकार एक सलाहकार क्षेत्राधिकार है</rdfs:comment>
-        <rdfs:label xml:lang="en">Advisory Jurisdiction</rdfs:label>
-        <rdfs:label xml:lang="de">Beratende Gerichtsbarkeit.</rdfs:label>
-        <rdfs:label xml:lang="fr">Compétence consultative</rdfs:label>
-        <rdfs:label xml:lang="es">Jurisdicción de asesoramiento</rdfs:label>
-        <rdfs:label xml:lang="hi">सलाहकार क्षेत्राधिकार</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- https://w3id.org/def/NyOn#Apex_Court -->
-
-    <owl:Class rdf:about="https://w3id.org/def/NyOn#Apex_Court">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/def/NyOn#Courts"/>
-        <rdfs:comment xml:lang="en">highest court in the judicial system</rdfs:comment>
-        <rdfs:comment xml:lang="hi">न्यायिक प्रणाली में सर्वोच्च न्यायालय</rdfs:comment>
-        <rdfs:label xml:lang="de">Apex Court</rdfs:label>
-        <rdfs:label xml:lang="en">Apex Court</rdfs:label>
-        <rdfs:label xml:lang="es">Corte del ápice</rdfs:label>
-        <rdfs:label xml:lang="fr">Tribunal d&apos;apex</rdfs:label>
-        <rdfs:label xml:lang="hi">सर्वोच्च न्यायालय</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- https://w3id.org/def/NyOn#Appeal -->
-
-    <owl:Class rdf:about="https://w3id.org/def/NyOn#Appeal">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/def/NyOn#Documents"/>
-        <rdfs:comment xml:lang="en">document is an appeal document</rdfs:comment>
-        <rdfs:comment xml:lang="hi">दस्तावेज़ एक अपील दस्तावेज है</rdfs:comment>
-        <rdfs:label xml:lang="es">Apelación</rdfs:label>
-        <rdfs:label xml:lang="en">Appeal</rdfs:label>
-        <rdfs:label xml:lang="de">Appellieren</rdfs:label>
-        <rdfs:label xml:lang="fr">Faire appel</rdfs:label>
-        <rdfs:label xml:lang="hi">निवेदन</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- https://w3id.org/def/NyOn#Appellant -->
-
-    <owl:Class rdf:about="https://w3id.org/def/NyOn#Appellant">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/def/NyOn#Party"/>
-        <rdfs:comment xml:lang="en">represents the appellant of the case</rdfs:comment>
-        <rdfs:comment xml:lang="hi">मामले के अपीलकर्ता का प्रतिनिधित्व करता है</rdfs:comment>
-        <rdfs:label xml:lang="es">Apelante</rdfs:label>
-        <rdfs:label xml:lang="fr">Appelant</rdfs:label>
-        <rdfs:label xml:lang="en">Appellant</rdfs:label>
-        <rdfs:label xml:lang="de">Rechtsmittelführerin</rdfs:label>
-        <rdfs:label xml:lang="hi">अपील करनेवाला</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- https://w3id.org/def/NyOn#Appellant_Jurisdiction -->
-
-    <owl:Class rdf:about="https://w3id.org/def/NyOn#Appellant_Jurisdiction">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/def/NyOn#Jurisdiction"/>
-        <rdfs:comment xml:lang="en">jurisdiction type is a appellant jurisdiction</rdfs:comment>
-        <rdfs:comment xml:lang="hi">क्षेत्राधिकार प्रकार एक अपीलकारी क्षेत्राधिकार है</rdfs:comment>
-        <rdfs:label xml:lang="en">Appellant Jurisdiction</rdfs:label>
-        <rdfs:label xml:lang="fr">Juridiction de l&apos;appelant</rdfs:label>
-        <rdfs:label xml:lang="es">Jurisdicción del apelante</rdfs:label>
-        <rdfs:label xml:lang="de">Rechtsmittelgerichtsbarkeit.</rdfs:label>
-        <rdfs:label xml:lang="hi">अपीलकारी क्षेत्राधिकार</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- https://w3id.org/def/NyOn#Author -->
-
-    <owl:Class rdf:about="https://w3id.org/def/NyOn#Author">
-        <rdfs:comment xml:lang="en">Author (Judge) who is responsible for a creation of case document</rdfs:comment>
-        <rdfs:comment xml:lang="hi">लेखक (न्यायाधीश) जो मामले के दस्तावेज़ के निर्माण के लिए जिम्मेदार है</rdfs:comment>
-        <rdfs:label xml:lang="fr">Auteur</rdfs:label>
-        <rdfs:label xml:lang="en">Author</rdfs:label>
-        <rdfs:label xml:lang="de">Autor</rdfs:label>
-        <rdfs:label xml:lang="es">Autor</rdfs:label>
-        <rdfs:label xml:lang="hi">लेखक</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- https://w3id.org/def/NyOn#Bench -->
-
-    <owl:Class rdf:about="https://w3id.org/def/NyOn#Bench">
-        <rdfs:comment xml:lang="en">Defines the bench of the case.</rdfs:comment>
-        <rdfs:comment xml:lang="hi">मामले की बेंच को परिभाषित करता है।</rdfs:comment>
-        <rdfs:label xml:lang="fr">Banc</rdfs:label>
-        <rdfs:label xml:lang="de">Bank</rdfs:label>
-        <rdfs:label xml:lang="en">Bench</rdfs:label>
-        <rdfs:label xml:lang="es">Mesa de trabajo</rdfs:label>
-        <rdfs:label xml:lang="hi">बेंच</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- https://w3id.org/def/NyOn#Case -->
-
-    <owl:Class rdf:about="https://w3id.org/def/NyOn#Case">
-        <rdfs:comment xml:lang="en">a legal court case or court decision or case document</rdfs:comment>
-        <rdfs:comment xml:lang="hi">एक कानूनी न्यायालय केस या अदालत का निर्णय या केस दस्तावेज़</rdfs:comment>
-        <rdfs:label xml:lang="fr">Cas</rdfs:label>
-        <rdfs:label xml:lang="en">Case</rdfs:label>
-        <rdfs:label xml:lang="es">Caso</rdfs:label>
-        <rdfs:label xml:lang="de">Fall</rdfs:label>
-        <rdfs:label xml:lang="hi">मामला</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- https://w3id.org/def/NyOn#Case_Type -->
-
-    <owl:Class rdf:about="https://w3id.org/def/NyOn#Case_Type">
-        <rdfs:comment xml:lang="en">defines the category of the case to which it belongs (Criminal or Civil according to Indian Judicial System)</rdfs:comment>
-        <rdfs:comment xml:lang="hi">इस मामले की श्रेणी को परिभाषित करता है जिस पर यह संबंधित है (भारतीय न्यायिक प्रणाली के अनुसार आपराधिक या नागरिक)</rdfs:comment>
-        <rdfs:label xml:lang="en">Case Type</rdfs:label>
-        <rdfs:label xml:lang="de">Fallart</rdfs:label>
-        <rdfs:label xml:lang="es">Tipo de caso</rdfs:label>
-        <rdfs:label xml:lang="fr">Type de cas</rdfs:label>
-        <rdfs:label xml:lang="hi">मामले का प्रकार</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- https://w3id.org/def/NyOn#Chief_Meterpolitan_Court -->
-
-    <owl:Class rdf:about="https://w3id.org/def/NyOn#Chief_Meterpolitan_Court">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/def/NyOn#Courts_for_Criminal"/>
-        <rdfs:comment xml:lang="en">lower court at metropolitan level after Sessions Court for criminal cases</rdfs:comment>
-        <rdfs:comment xml:lang="hi">आपराधिक मामलों के लिए सत्र अदालत के बाद मेट्रोपॉलिटन स्तर पर निचली अदालत</rdfs:comment>
-        <rdfs:label xml:lang="de">Chief Meterpolitan Court</rdfs:label>
-        <rdfs:label xml:lang="en">Chief Meterpolitan Court</rdfs:label>
-        <rdfs:label xml:lang="fr">Court-compteur en chef</rdfs:label>
-        <rdfs:label xml:lang="es">Jefe Tribunal Metropolitana</rdfs:label>
-        <rdfs:label xml:lang="hi">मुख्य मेटेरपोलिटन कोर्ट</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- https://w3id.org/def/NyOn#City_Civil_Courts -->
-
-    <owl:Class rdf:about="https://w3id.org/def/NyOn#City_Civil_Courts">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/def/NyOn#Courts_for_Civil"/>
-        <rdfs:comment xml:lang="en">lower court at metropolitan level after High Courts for civil cases</rdfs:comment>
-        <rdfs:comment xml:lang="hi">नागरिक मामलों के लिए उच्च न्यायालयों के बाद मेट्रोपॉलिटन स्तर पर निचली अदालत</rdfs:comment>
-        <rdfs:label xml:lang="en">City Civil Court</rdfs:label>
-        <rdfs:label xml:lang="fr">Courts civils de la ville</rdfs:label>
-        <rdfs:label xml:lang="de">Stadtzivilgerichte</rdfs:label>
-        <rdfs:label xml:lang="es">Tribunales civiles de la ciudad</rdfs:label>
-        <rdfs:label xml:lang="hi">सिटी सिविल कोर्ट</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- https://w3id.org/def/NyOn#Civil -->
-
-    <owl:Class rdf:about="https://w3id.org/def/NyOn#Civil">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/def/NyOn#Case_Type"/>
-        <owl:disjointWith rdf:resource="https://w3id.org/def/NyOn#Criminal"/>
-        <rdfs:comment xml:lang="en">case is a civil case</rdfs:comment>
-        <rdfs:comment xml:lang="hi">मामला एक नागरिक मामला है</rdfs:comment>
-        <rdfs:label xml:lang="de">Bürgerlich</rdfs:label>
-        <rdfs:label xml:lang="en">Civil</rdfs:label>
-        <rdfs:label xml:lang="fr">Civil</rdfs:label>
-        <rdfs:label xml:lang="hi">नागरिक</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- https://w3id.org/def/NyOn#Country -->
-
-    <owl:Class rdf:about="https://w3id.org/def/NyOn#Country">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/def/NyOn#Location"/>
-        <rdfs:comment xml:lang="en">represents the country name</rdfs:comment>
-        <rdfs:comment xml:lang="hi">देश के नाम का प्रतिनिधित्व करता है</rdfs:comment>
-        <rdfs:label xml:lang="en">Country</rdfs:label>
-        <rdfs:label xml:lang="fr">De campagne</rdfs:label>
-        <rdfs:label xml:lang="de">Land</rdfs:label>
-        <rdfs:label xml:lang="es">País</rdfs:label>
-        <rdfs:label xml:lang="hi">देश</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- https://w3id.org/def/NyOn#Court_Decision -->
-
-    <owl:Class rdf:about="https://w3id.org/def/NyOn#Court_Decision">
-        <rdfs:comment xml:lang="en">final decision taken by the judge in the court case hearing</rdfs:comment>
-        <rdfs:comment xml:lang="hi">अदालत के मामले में न्यायाधीश द्वारा किए गए अंतिम निर्णय</rdfs:comment>
-        <rdfs:label xml:lang="en">Court Decision</rdfs:label>
-        <rdfs:label xml:lang="es">Decision de la Corte</rdfs:label>
-        <rdfs:label xml:lang="fr">Décision du tribunal</rdfs:label>
-        <rdfs:label xml:lang="de">Gerichtsurteil</rdfs:label>
-        <rdfs:label xml:lang="hi">अदालत का निर्णय</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- https://w3id.org/def/NyOn#Court_Judgements -->
-
-    <owl:Class rdf:about="https://w3id.org/def/NyOn#Court_Judgements">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/def/NyOn#Documents"/>
-        <rdfs:comment xml:lang="en">document is a court judgement</rdfs:comment>
-        <rdfs:comment xml:lang="hi">दस्तावेज़ एक अदालत का निर्णय है</rdfs:comment>
-        <rdfs:label xml:lang="en">Court Judgement</rdfs:label>
-        <rdfs:label xml:lang="de">Gerichtsurteil</rdfs:label>
-        <rdfs:label xml:lang="fr">Jugement de la cour</rdfs:label>
-        <rdfs:label xml:lang="es">Sentencia judicial</rdfs:label>
-        <rdfs:label xml:lang="hi">न्यायालय निर्णय</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- https://w3id.org/def/NyOn#Court_Official -->
-
-    <owl:Class rdf:about="https://w3id.org/def/NyOn#Court_Official">
-        <rdfs:comment xml:lang="en">legal system related people involved in a case</rdfs:comment>
-        <rdfs:comment xml:lang="hi">एक मामले में अदालत के अधिकारी शामिल हैं</rdfs:comment>
-        <rdfs:label xml:lang="en">Court Official</rdfs:label>
-        <rdfs:label xml:lang="de">Gerichtsbeamter</rdfs:label>
-        <rdfs:label xml:lang="fr">Officiel de la cour</rdfs:label>
-        <rdfs:label xml:lang="es">Oficial de la corte</rdfs:label>
-        <rdfs:label xml:lang="hi">न्यायालय अधिकारि</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- https://w3id.org/def/NyOn#Courts -->
-
-    <owl:Class rdf:about="https://w3id.org/def/NyOn#Courts">
-        <rdfs:comment xml:lang="en">courts in the judicial system</rdfs:comment>
-        <rdfs:comment xml:lang="hi">न्यायिक प्रणाली में अदालत</rdfs:comment>
-        <rdfs:label xml:lang="es">Corte</rdfs:label>
-        <rdfs:label xml:lang="en">Court</rdfs:label>
-        <rdfs:label xml:lang="de">Gericht</rdfs:label>
-        <rdfs:label xml:lang="fr">Rechercher</rdfs:label>
-        <rdfs:label xml:lang="hi">अदालत</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- https://w3id.org/def/NyOn#Courts_for_Civil -->
-
-    <owl:Class rdf:about="https://w3id.org/def/NyOn#Courts_for_Civil">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/def/NyOn#Case_Type"/>
-        <rdfs:comment xml:lang="en">court for civil cases</rdfs:comment>
-        <rdfs:comment xml:lang="hi">नागरिक मामलों के लिए न्यायालय</rdfs:comment>
-        <rdfs:label xml:lang="en">Civil Court</rdfs:label>
-        <rdfs:label xml:lang="es">Corte civil</rdfs:label>
-        <rdfs:label xml:lang="fr">Cour civile</rdfs:label>
-        <rdfs:label xml:lang="de">Zivilgericht</rdfs:label>
-        <rdfs:label xml:lang="hi">नागरिक न्यायालय</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- https://w3id.org/def/NyOn#Courts_for_Criminal -->
-
-    <owl:Class rdf:about="https://w3id.org/def/NyOn#Courts_for_Criminal">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/def/NyOn#Case_Type"/>
-        <rdfs:comment xml:lang="en">courts for crimnial cases</rdfs:comment>
-        <rdfs:comment xml:lang="hi">कोर्ट प्रकार जहां केवल आपराधिक मामलों को सुना जाता है</rdfs:comment>
-        <rdfs:label xml:lang="es">Corte Criminal</rdfs:label>
-        <rdfs:label xml:lang="fr">Cour criminelle</rdfs:label>
-        <rdfs:label xml:lang="en">Criminal Courts</rdfs:label>
-        <rdfs:label xml:lang="de">Strafgericht</rdfs:label>
-        <rdfs:label xml:lang="hi">आपराधिक न्यायालय</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- https://w3id.org/def/NyOn#Courts_of_Smaller_Causes -->
-
-    <owl:Class rdf:about="https://w3id.org/def/NyOn#Courts_of_Smaller_Causes">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/def/NyOn#Courts_for_Civil"/>
-        <rdfs:comment xml:lang="en">lowest court after City Civil Courts at metropolitan level for civil cases</rdfs:comment>
-        <rdfs:comment xml:lang="hi">सिविल मामलों के लिए मेट्रोपॉलिटन स्तर पर सिटी सिविल कोर्ट के बाद सबसे कम अदालत</rdfs:comment>
-        <rdfs:label xml:lang="es">Corte de causa más pequeña</rdfs:label>
-        <rdfs:label xml:lang="fr">Cour de petite cause</rdfs:label>
-        <rdfs:label xml:lang="en">Court of Smaller Cause</rdfs:label>
-        <rdfs:label xml:lang="de">Gerichtsversorgung</rdfs:label>
-        <rdfs:label xml:lang="hi">छोटे कारण के न्यायालय</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- https://w3id.org/def/NyOn#Criminal -->
-
-    <owl:Class rdf:about="https://w3id.org/def/NyOn#Criminal">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/def/NyOn#Case_Type"/>
-        <rdfs:comment xml:lang="en">case is a criminal case</rdfs:comment>
-        <rdfs:comment xml:lang="hi">मामला एक आपराधिक मामला है</rdfs:comment>
-        <rdfs:label xml:lang="en">Criminal</rdfs:label>
-        <rdfs:label xml:lang="fr">Criminel</rdfs:label>
-        <rdfs:label xml:lang="es">Delincuente</rdfs:label>
-        <rdfs:label xml:lang="de">Kriminell</rdfs:label>
-        <rdfs:label xml:lang="hi">आपराधिक</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- https://w3id.org/def/NyOn#District -->
-
-    <owl:Class rdf:about="https://w3id.org/def/NyOn#District">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/def/NyOn#Location"/>
-        <rdfs:comment xml:lang="en">represents district name/location</rdfs:comment>
-        <rdfs:comment xml:lang="hi">जिला नाम / स्थान का प्रतिनिधित्व करता है</rdfs:comment>
-        <rdfs:label xml:lang="de">Bezirk</rdfs:label>
-        <rdfs:label xml:lang="en">District</rdfs:label>
-        <rdfs:label xml:lang="es">Distrito</rdfs:label>
-        <rdfs:label xml:lang="fr">Quartier</rdfs:label>
-        <rdfs:label xml:lang="hi">जिला</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- https://w3id.org/def/NyOn#District_Court -->
-
-    <owl:Class rdf:about="https://w3id.org/def/NyOn#District_Court">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/def/NyOn#Courts_for_Civil"/>
-        <rdfs:comment xml:lang="en">lower court at district level after High Courts for civil cases</rdfs:comment>
-        <rdfs:comment xml:lang="hi">नागरिक मामलों के लिए उच्च न्यायालयों के बाद जिला स्तर पर निचली अदालत</rdfs:comment>
-        <rdfs:label xml:lang="de">Bezirksgericht</rdfs:label>
-        <rdfs:label xml:lang="en">District Court</rdfs:label>
-        <rdfs:label xml:lang="es">Tribunal de Distrito</rdfs:label>
-        <rdfs:label xml:lang="fr">Tribunal de district</rdfs:label>
-        <rdfs:label xml:lang="hi">जिला अदालत</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- https://w3id.org/def/NyOn#District_Courts -->
-
-    <owl:Class rdf:about="https://w3id.org/def/NyOn#District_Courts">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/def/NyOn#Courts"/>
-        <rdfs:comment xml:lang="en">a term in judicial system in India in which a case is heard and judged by at least 2 judges</rdfs:comment>
-        <rdfs:comment xml:lang="hi">जिला स्तर पर अदालतें</rdfs:comment>
-        <rdfs:label xml:lang="de">Bezirksgerichte</rdfs:label>
-        <rdfs:label xml:lang="en">District Courts</rdfs:label>
-        <rdfs:label xml:lang="es">Tribunales de distrito</rdfs:label>
-        <rdfs:label xml:lang="fr">Tribunaux de district</rdfs:label>
-        <rdfs:label xml:lang="hi">जिला न्यायालय</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- https://w3id.org/def/NyOn#Division_Bench -->
-
-    <owl:Class rdf:about="https://w3id.org/def/NyOn#Division_Bench">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/def/NyOn#Bench"/>
-        <rdfs:comment xml:lang="en">a term in judicial system in India in which a case is heard and judged by at least 2 judges</rdfs:comment>
-        <rdfs:comment xml:lang="hi">भारत में न्यायिक प्रणाली में एक शब्द जिसमें एक मामला कम से कम 2 न्यायाधीशों द्वारा सुना और न्याय किया जाता है</rdfs:comment>
-        <rdfs:label xml:lang="de">Abteilung Bench</rdfs:label>
-        <rdfs:label xml:lang="fr">Banc de division</rdfs:label>
-        <rdfs:label xml:lang="es">Banco de división</rdfs:label>
-        <rdfs:label xml:lang="en">Division Bench</rdfs:label>
-        <rdfs:label xml:lang="hi">डिवीजन बेंच</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- https://w3id.org/def/NyOn#Documents -->
-
-    <owl:Class rdf:about="https://w3id.org/def/NyOn#Documents">
-        <rdfs:comment xml:lang="en">various documents used in legal domain</rdfs:comment>
-        <rdfs:comment xml:lang="hi">कानूनी डोमेन में उपयोग किए जाने वाले विभिन्न दस्तावेज</rdfs:comment>
-        <rdfs:label xml:lang="en">Document</rdfs:label>
-        <rdfs:label xml:lang="fr">Document</rdfs:label>
-        <rdfs:label xml:lang="es">Documento</rdfs:label>
-        <rdfs:label xml:lang="de">Dokumentieren</rdfs:label>
-        <rdfs:label xml:lang="hi">दस्तावेज़</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- https://w3id.org/def/NyOn#Evidence -->
-
-    <owl:Class rdf:about="https://w3id.org/def/NyOn#Evidence">
-        <rdfs:comment xml:lang="en">evidences presented in front of the court in the case</rdfs:comment>
-        <rdfs:comment xml:lang="hi">मामले में अदालत के सामने प्रस्तुत साक्ष्य</rdfs:comment>
-        <rdfs:label xml:lang="de">Beweis</rdfs:label>
-        <rdfs:label xml:lang="en">Evidence</rdfs:label>
-        <rdfs:label xml:lang="es">Evidencia</rdfs:label>
-        <rdfs:label xml:lang="fr">Preuve</rdfs:label>
-        <rdfs:label xml:lang="hi">सबूत</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- https://w3id.org/def/NyOn#FIR -->
-
-    <owl:Class rdf:about="https://w3id.org/def/NyOn#FIR">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/def/NyOn#Documents"/>
-        <rdfs:comment xml:lang="en">document is a FIR</rdfs:comment>
-        <rdfs:comment xml:lang="hi">दस्तावेज़ एक फ़िर है</rdfs:comment>
-        <rdfs:label xml:lang="es">ABETO</rdfs:label>
-        <rdfs:label xml:lang="en">FIR</rdfs:label>
-        <rdfs:label xml:lang="fr">SAPIN</rdfs:label>
-        <rdfs:label xml:lang="de">TANNE</rdfs:label>
-        <rdfs:label xml:lang="hi">प्राथमिकी</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- https://w3id.org/def/NyOn#Government -->
-
-    <owl:Class rdf:about="https://w3id.org/def/NyOn#Government">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/def/NyOn#Party_Type"/>
-        <rdfs:comment xml:lang="en">party involved (either on both sides or any one) is the government in the case</rdfs:comment>
-        <rdfs:comment xml:lang="hi">प्रतिभागियों में शामिल (या तो दोनों तरफ या किसी एक पर) मामले में सरकार है</rdfs:comment>
-        <rdfs:label xml:lang="es">Gobierno</rdfs:label>
-        <rdfs:label xml:lang="fr">Gouvernement</rdfs:label>
-        <rdfs:label xml:lang="en">Government</rdfs:label>
-        <rdfs:label xml:lang="de">Regierung</rdfs:label>
-        <rdfs:label xml:lang="hi">सरकार</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- https://w3id.org/def/NyOn#Group -->
-
-    <owl:Class rdf:about="https://w3id.org/def/NyOn#Group">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/def/NyOn#Party_Type"/>
-        <rdfs:comment xml:lang="en">party of the case are the group of people on one side against another group of people or individual or state</rdfs:comment>
-        <rdfs:comment xml:lang="hi">मामले के प्रतिभागी लोगों या व्यक्तिगत या राज्य के किसी अन्य समूह के खिलाफ लोगों का समूह हैं</rdfs:comment>
-        <rdfs:label xml:lang="en">Group</rdfs:label>
-        <rdfs:label xml:lang="fr">Grouper</rdfs:label>
-        <rdfs:label xml:lang="es">Grupo</rdfs:label>
-        <rdfs:label xml:lang="de">Gruppe</rdfs:label>
-        <rdfs:label xml:lang="hi">समूह</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- https://w3id.org/def/NyOn#High_Court -->
-
-    <owl:Class rdf:about="https://w3id.org/def/NyOn#High_Court">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/def/NyOn#Courts"/>
-        <rdfs:comment xml:lang="en">court at the state level</rdfs:comment>
-        <rdfs:comment xml:lang="hi">राज्य स्तर पर अदालतें</rdfs:comment>
-        <rdfs:label xml:lang="fr">Cour suprême</rdfs:label>
-        <rdfs:label xml:lang="de">High Court</rdfs:label>
-        <rdfs:label xml:lang="en">High Court</rdfs:label>
-        <rdfs:label xml:lang="es">Suprema Corte</rdfs:label>
-        <rdfs:label xml:lang="hi">हाईकोर्ट</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- https://w3id.org/def/NyOn#Individual -->
-
-    <owl:Class rdf:about="https://w3id.org/def/NyOn#Individual">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/def/NyOn#Party_Type"/>
-        <rdfs:comment xml:lang="en">participants of the case are the individual persons</rdfs:comment>
-        <rdfs:comment xml:lang="hi">मामले के प्रतिभागी व्यक्तिगत व्यक्ति हैं</rdfs:comment>
-        <rdfs:label xml:lang="en">Individual</rdfs:label>
-        <rdfs:label xml:lang="es">Individual</rdfs:label>
-        <rdfs:label xml:lang="fr">Individuel</rdfs:label>
-        <rdfs:label xml:lang="de">Individuell</rdfs:label>
-        <rdfs:label xml:lang="hi">व्यक्ति</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- https://w3id.org/def/NyOn#Investigator -->
-
-    <owl:Class rdf:about="https://w3id.org/def/NyOn#Investigator">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/def/NyOn#Court_Official"/>
-        <rdfs:comment xml:lang="en">represents investigator who files the FIR or investigates a case</rdfs:comment>
-        <rdfs:comment xml:lang="hi">जांचकर्ता का प्रतिनिधित्व करता है जो एफआईआर को फाइल करता है या एक मामले की जांच करता है</rdfs:comment>
-        <rdfs:label xml:lang="fr">Enquêteur</rdfs:label>
-        <rdfs:label xml:lang="de">Ermittler</rdfs:label>
-        <rdfs:label xml:lang="es">Investigador</rdfs:label>
-        <rdfs:label xml:lang="en">Investigator</rdfs:label>
-        <rdfs:label xml:lang="hi">अन्वेषक</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- https://w3id.org/def/NyOn#Judge -->
-
-    <owl:Class rdf:about="https://w3id.org/def/NyOn#Judge">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/def/NyOn#Court_Official"/>
-        <rdfs:comment xml:lang="en">represents the judge of the case</rdfs:comment>
-        <rdfs:comment xml:lang="hi">मामले के न्यायाधीश का प्रतिनिधित्व करता है</rdfs:comment>
-        <rdfs:label xml:lang="en">Judge</rdfs:label>
-        <rdfs:label xml:lang="es">Juez</rdfs:label>
-        <rdfs:label xml:lang="fr">Juge</rdfs:label>
-        <rdfs:label xml:lang="de">Richter</rdfs:label>
-        <rdfs:label xml:lang="hi">न्यायाधीश</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- https://w3id.org/def/NyOn#Judgement -->
-
-    <owl:Class rdf:about="https://w3id.org/def/NyOn#Judgement">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/def/NyOn#Court_Decision"/>
-        <owl:disjointWith rdf:resource="https://w3id.org/def/NyOn#Order"/>
-        <rdfs:comment xml:lang="en">Judgement given by the judge </rdfs:comment>
-        <rdfs:comment xml:lang="hi">जज द्वारा दिया गया निर्णय</rdfs:comment>
-        <rdfs:label xml:lang="de">Beurteilung</rdfs:label>
-        <rdfs:label xml:lang="en">Judgement</rdfs:label>
-        <rdfs:label xml:lang="fr">Jugement</rdfs:label>
-        <rdfs:label xml:lang="es">Juicio</rdfs:label>
-        <rdfs:label xml:lang="hi">निर्णय</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- https://w3id.org/def/NyOn#Jurisdiction -->
-
-    <owl:Class rdf:about="https://w3id.org/def/NyOn#Jurisdiction">
-        <rdfs:comment xml:lang="en">the extent to which a court of law can exercise its authority over any cases filed across a region</rdfs:comment>
-        <rdfs:comment xml:lang="hi">जिस हद तक कानून का न्यायालय किसी क्षेत्र में दायर किसी भी मामले पर अपने अधिकार का उपयोग कर सकता है</rdfs:comment>
-        <rdfs:label xml:lang="fr">Juridiction</rdfs:label>
-        <rdfs:label xml:lang="es">Jurisdicción</rdfs:label>
-        <rdfs:label xml:lang="en">Jurisdiction</rdfs:label>
-        <rdfs:label xml:lang="de">Zuständigkeit</rdfs:label>
-        <rdfs:label xml:lang="hi">क्षेत्राधिकार</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- https://w3id.org/def/NyOn#Larger_Bench -->
-
-    <owl:Class rdf:about="https://w3id.org/def/NyOn#Larger_Bench">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/def/NyOn#Bench"/>
-        <rdfs:comment xml:lang="en">a term in judicial system in India in which a case is heard and judged by three or five judges</rdfs:comment>
-        <rdfs:comment xml:lang="hi">भारत में न्यायिक प्रणाली में एक शब्द जिसमें मामला तीन या पांच न्यायाधीशों द्वारा सुना और न्याय किया जाता है</rdfs:comment>
-        <rdfs:label xml:lang="fr">Banc plus grand</rdfs:label>
-        <rdfs:label xml:lang="es">Banco más grande</rdfs:label>
-        <rdfs:label xml:lang="de">Größere Bank</rdfs:label>
-        <rdfs:label xml:lang="en">Larger Bench</rdfs:label>
-        <rdfs:label xml:lang="hi">बड़ी बेंच</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- https://w3id.org/def/NyOn#Location -->
-
-    <owl:Class rdf:about="https://w3id.org/def/NyOn#Location">
-        <rdfs:comment xml:lang="en">represents the location of the courts, etc and also used for evidence locations</rdfs:comment>
-        <rdfs:comment xml:lang="hi">अदालतों के स्थान का प्रतिनिधित्व करता है, आदि और साक्ष्य स्थानों के लिए भी उपयोग किया जाता है</rdfs:comment>
-        <rdfs:label xml:lang="fr">Lieu</rdfs:label>
-        <rdfs:label xml:lang="en">Location</rdfs:label>
-        <rdfs:label xml:lang="de">Standort</rdfs:label>
-        <rdfs:label xml:lang="es">Ubicación</rdfs:label>
-        <rdfs:label xml:lang="hi">स्थान</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- https://w3id.org/def/NyOn#Metropolitan_Magistrate_Courts -->
-
-    <owl:Class rdf:about="https://w3id.org/def/NyOn#Metropolitan_Magistrate_Courts">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/def/NyOn#Courts_for_Criminal"/>
-        <rdfs:comment xml:lang="en">lowest court after Chief Metropolitan Court at metropolitan level for criminal cases</rdfs:comment>
-        <rdfs:comment xml:lang="hi">आपराधिक मामलों के लिए मेट्रोपॉलिटन स्तर पर मुख्य मेट्रोपॉलिटन कोर्ट के बाद सबसे कम अदालत</rdfs:comment>
-        <rdfs:label xml:lang="fr">Cour magistrat métropolitain</rdfs:label>
-        <rdfs:label xml:lang="de">Metropolitan Magistrat Court</rdfs:label>
-        <rdfs:label xml:lang="en">Metropolitan Magistrate Court</rdfs:label>
-        <rdfs:label xml:lang="es">Tribunal de magistrados metropolitanos</rdfs:label>
-        <rdfs:label xml:lang="hi">मेट्रोपॉलिटन मजिस्ट्रेट कोर्ट</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- https://w3id.org/def/NyOn#Metropolitian_Courts -->
-
-    <owl:Class rdf:about="https://w3id.org/def/NyOn#Metropolitian_Courts">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/def/NyOn#Courts"/>
-        <rdfs:comment xml:lang="hi">10 लाख से अधिक शहर जनसंख्या के लिए न्यायालय</rdfs:comment>
-        <rdfs:comment xml:lang="en">court for population more than 10 lakh city </rdfs:comment>
-        <rdfs:label xml:lang="en">Metropolitan Court</rdfs:label>
-        <rdfs:label xml:lang="de">Metropolitaner Gericht</rdfs:label>
-        <rdfs:label xml:lang="es">Tribunal metropolitana</rdfs:label>
-        <rdfs:label xml:lang="fr">Tribunal métropolitain</rdfs:label>
-        <rdfs:label xml:lang="hi">मेट्रोपॉलिटन कोर्ट</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- https://w3id.org/def/NyOn#Munsif_Court -->
-
-    <owl:Class rdf:about="https://w3id.org/def/NyOn#Munsif_Court">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/def/NyOn#Courts_for_Civil"/>
-        <rdfs:comment xml:lang="en">lowest court in heirarchy for civil ases at district level after Principal Junior Civil Court</rdfs:comment>
-        <rdfs:comment xml:lang="hi">प्रिंसिपल जूनियर सिविल कोर्ट के बाद जिले के स्तर पर नागरिक एएसईएस के लिए उत्तराधिकार में सबसे कम अदालत</rdfs:comment>
-        <rdfs:label xml:lang="es">Cancha de munsif</rdfs:label>
-        <rdfs:label xml:lang="en">Munsif Court</rdfs:label>
-        <rdfs:label xml:lang="de">Munsif-Gericht</rdfs:label>
-        <rdfs:label xml:lang="fr">Tribunal de Munsid</rdfs:label>
-        <rdfs:label xml:lang="hi">मुन्सिफ कोर्ट</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- https://w3id.org/def/NyOn#Order -->
-
-    <owl:Class rdf:about="https://w3id.org/def/NyOn#Order">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/def/NyOn#Court_Decision"/>
-        <rdfs:comment xml:lang="en">order given by the court</rdfs:comment>
-        <rdfs:comment xml:lang="hi">अदालत द्वारा दिया गया आदेश</rdfs:comment>
-        <rdfs:label xml:lang="de">Befehl</rdfs:label>
-        <rdfs:label xml:lang="fr">Commande</rdfs:label>
-        <rdfs:label xml:lang="en">Order</rdfs:label>
-        <rdfs:label xml:lang="es">Pedido</rdfs:label>
-        <rdfs:label xml:lang="hi">आदेश</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- https://w3id.org/def/NyOn#Original_Jurisdiction -->
-
-    <owl:Class rdf:about="https://w3id.org/def/NyOn#Original_Jurisdiction">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/def/NyOn#Jurisdiction"/>
-        <rdfs:comment xml:lang="en">jurisdiction type is a original jurisdiction</rdfs:comment>
-        <rdfs:comment xml:lang="hi">क्षेत्राधिकार प्रकार एक मूल क्षेत्राधिकार है</rdfs:comment>
-        <rdfs:label xml:lang="de">Erstinstanzliche Zuständigkeit</rdfs:label>
-        <rdfs:label xml:lang="fr">Juridiction originale</rdfs:label>
-        <rdfs:label xml:lang="es">Jurisdicción original</rdfs:label>
-        <rdfs:label xml:lang="en">Original Jurisdiction</rdfs:label>
-        <rdfs:label xml:lang="hi">मूल न्यायाधिकार</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- https://w3id.org/def/NyOn#Others -->
-
-    <owl:Class rdf:about="https://w3id.org/def/NyOn#Others">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/def/NyOn#Documents"/>
-        <rdfs:comment xml:lang="en">Other documents</rdfs:comment>
-        <rdfs:comment xml:lang="hi">अन्य कागजात</rdfs:comment>
-        <rdfs:label xml:lang="de">Andere</rdfs:label>
-        <rdfs:label xml:lang="fr">Les autres</rdfs:label>
-        <rdfs:label xml:lang="en">Others</rdfs:label>
-        <rdfs:label xml:lang="es">Otros</rdfs:label>
-        <rdfs:label xml:lang="hi">अन्य</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- https://w3id.org/def/NyOn#Party -->
-
-    <owl:Class rdf:about="https://w3id.org/def/NyOn#Party">
-        <rdfs:comment xml:lang="en">party or people involved in the case</rdfs:comment>
-        <rdfs:comment xml:lang="hi">ऐसे पक्ष जो मामले में शामिल कानूनी डोमेन या भागों से संबंधित नहीं हैं</rdfs:comment>
-        <rdfs:label xml:lang="fr">Des soirées</rdfs:label>
-        <rdfs:label xml:lang="es">Fiestas</rdfs:label>
-        <rdfs:label xml:lang="en">Party</rdfs:label>
-        <rdfs:label xml:lang="de">Partys</rdfs:label>
-        <rdfs:label xml:lang="hi">दलों</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- https://w3id.org/def/NyOn#Party_Type -->
-
-    <owl:Class rdf:about="https://w3id.org/def/NyOn#Party_Type">
-        <rdfs:comment xml:lang="en">represents the types of party involved in the case viz. individual, organization, govt. etc.</rdfs:comment>
-        <rdfs:comment xml:lang="hi">मामले में शामिल पार्टी प्रकार</rdfs:comment>
-        <rdfs:label xml:lang="en">Party Type</rdfs:label>
-        <rdfs:label xml:lang="de">Partytyp.</rdfs:label>
-        <rdfs:label xml:lang="es">Tipo de fiesta</rdfs:label>
-        <rdfs:label xml:lang="fr">Type de fête</rdfs:label>
-        <rdfs:label xml:lang="hi">पार्टी प्रकार</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- https://w3id.org/def/NyOn#Petition -->
-
-    <owl:Class rdf:about="https://w3id.org/def/NyOn#Petition">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/def/NyOn#Documents"/>
-        <rdfs:comment xml:lang="en">document is a petition document</rdfs:comment>
-        <rdfs:comment xml:lang="hi">दस्तावेज़ एक याचिका दस्तावेज है</rdfs:comment>
-        <rdfs:label xml:lang="es">Petición</rdfs:label>
-        <rdfs:label xml:lang="de">Petition</rdfs:label>
-        <rdfs:label xml:lang="en">Petition</rdfs:label>
-        <rdfs:label xml:lang="fr">Pétition</rdfs:label>
-        <rdfs:label xml:lang="hi">याचिका</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- https://w3id.org/def/NyOn#Petitioner -->
-
-    <owl:Class rdf:about="https://w3id.org/def/NyOn#Petitioner">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/def/NyOn#Party"/>
-        <rdfs:comment xml:lang="en">represnts the petitioner of the case</rdfs:comment>
-        <rdfs:comment xml:lang="hi">मामले के याचिकाकर्ता को दर्शाता है</rdfs:comment>
-        <rdfs:label xml:lang="de">Antragsteller</rdfs:label>
-        <rdfs:label xml:lang="es">Peticionario</rdfs:label>
-        <rdfs:label xml:lang="en">Petitioner</rdfs:label>
-        <rdfs:label xml:lang="fr">Pétitionnaire</rdfs:label>
-        <rdfs:label xml:lang="hi">याचिकाकर्ता</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- https://w3id.org/def/NyOn#Place -->
-
-    <owl:Class rdf:about="https://w3id.org/def/NyOn#Place">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/def/NyOn#Location"/>
+    <owl:Class rdf:about="https://schema.org/Place">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/def/NyOnLegal#Location"/>
         <rdfs:comment xml:lang="en">location name or place name</rdfs:comment>
         <rdfs:comment xml:lang="hi">स्थान का नाम या स्थान का नाम</rdfs:comment>
         <rdfs:label xml:lang="fr">Lieu</rdfs:label>
@@ -1252,39 +871,771 @@
     
 
 
-    <!-- https://w3id.org/def/NyOn#Plaintiff -->
+    <!-- https://w3id.org/def/NyOnLegal#Accussed -->
 
-    <owl:Class rdf:about="https://w3id.org/def/NyOn#Plaintiff">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/def/NyOn#Party"/>
-        <rdfs:comment xml:lang="en">represnts the plaintiff of the case</rdfs:comment>
-        <rdfs:comment xml:lang="hi">मामले की वादी को दर्शाता है</rdfs:comment>
-        <rdfs:label xml:lang="es">Demandante</rdfs:label>
-        <rdfs:label xml:lang="fr">Demandeur</rdfs:label>
-        <rdfs:label xml:lang="de">Kläger</rdfs:label>
+    <owl:Class rdf:about="https://w3id.org/def/NyOnLegal#Accussed">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/def/NyOnLegal#Party"/>
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://w3id.org/def/NyOnLegal#Respondent"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="https://w3id.org/def/NyOnLegal#OfDomian"/>
+                        <owl:allValuesFrom rdf:resource="https://w3id.org/def/NyOnLegal#Criminal"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="https://w3id.org/def/NyOnLegal#hasParty"/>
+                        <owl:someValuesFrom rdf:resource="https://w3id.org/def/NyOnLegal#Respondent"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="https://w3id.org/def/NyOnLegal#OfDomian"/>
+                        <owl:allValuesFrom rdf:resource="https://w3id.org/def/NyOnLegal#Criminal"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+        <rdfs:comment xml:lang="en">person against whom an allegation has been made that he has committed an offence, or who is charge with an offence</rdfs:comment>
+        <rdfs:label xml:lang="en">Accused</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/def/NyOnLegal#Advisory_Jurisdiction -->
+
+    <owl:Class rdf:about="https://w3id.org/def/NyOnLegal#Advisory_Jurisdiction">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/def/NyOnLegal#Jurisdiction"/>
+        <rdfs:comment xml:lang="en">jurisdiction type is a advisory jurisdiction</rdfs:comment>
+        <rdfs:comment xml:lang="hi">क्षेत्राधिकार प्रकार एक सलाहकार क्षेत्राधिकार है</rdfs:comment>
+        <rdfs:label xml:lang="en">Advisory Jurisdiction</rdfs:label>
+        <rdfs:label xml:lang="de">Beratende Gerichtsbarkeit.</rdfs:label>
+        <rdfs:label xml:lang="fr">Compétence consultative</rdfs:label>
+        <rdfs:label xml:lang="es">Jurisdicción de asesoramiento</rdfs:label>
+        <rdfs:label xml:lang="hi">सलाहकार क्षेत्राधिकार</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/def/NyOnLegal#Appellant -->
+
+    <owl:Class rdf:about="https://w3id.org/def/NyOnLegal#Appellant">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/def/NyOnLegal#Party"/>
+        <rdfs:comment xml:lang="en">party who makes an appeal</rdfs:comment>
+        <rdfs:label xml:lang="en">Appellant</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/def/NyOnLegal#Appellant_Jurisdiction -->
+
+    <owl:Class rdf:about="https://w3id.org/def/NyOnLegal#Appellant_Jurisdiction">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/def/NyOnLegal#Jurisdiction"/>
+        <rdfs:comment xml:lang="en">jurisdiction type is a appellant jurisdiction</rdfs:comment>
+        <rdfs:comment xml:lang="hi">क्षेत्राधिकार प्रकार एक अपीलकारी क्षेत्राधिकार है</rdfs:comment>
+        <rdfs:label xml:lang="en">Appellant Jurisdiction</rdfs:label>
+        <rdfs:label xml:lang="fr">Juridiction de l&apos;appelant</rdfs:label>
+        <rdfs:label xml:lang="es">Jurisdicción del apelante</rdfs:label>
+        <rdfs:label xml:lang="de">Rechtsmittelgerichtsbarkeit.</rdfs:label>
+        <rdfs:label xml:lang="hi">अपीलकारी क्षेत्राधिकार</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/def/NyOnLegal#Argument -->
+
+    <owl:Class rdf:about="https://w3id.org/def/NyOnLegal#Argument">
+        <rdfs:comment xml:lang="en">Argument made by any of the party</rdfs:comment>
+        <rdfs:label xml:lang="en">Argument</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/def/NyOnLegal#Author -->
+
+    <owl:Class rdf:about="https://w3id.org/def/NyOnLegal#Author">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://w3id.org/def/NyOnLegal#hasAuthor"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="https://w3id.org/def/NyOnLegal#Judge"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:comment xml:lang="en">Author (Judge) who is responsible for a creation of case document</rdfs:comment>
+        <rdfs:comment xml:lang="hi">लेखक (न्यायाधीश) जो मामले के दस्तावेज़ के निर्माण के लिए जिम्मेदार है</rdfs:comment>
+        <rdfs:label xml:lang="fr">Auteur</rdfs:label>
+        <rdfs:label xml:lang="en">Author</rdfs:label>
+        <rdfs:label xml:lang="de">Autor</rdfs:label>
+        <rdfs:label xml:lang="es">Autor</rdfs:label>
+        <rdfs:label xml:lang="hi">लेखक</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/def/NyOnLegal#Bench -->
+
+    <owl:Class rdf:about="https://w3id.org/def/NyOnLegal#Bench">
+        <rdfs:comment xml:lang="en">Defines the bench of the case.</rdfs:comment>
+        <rdfs:comment xml:lang="hi">मामले की बेंच को परिभाषित करता है।</rdfs:comment>
+        <rdfs:label xml:lang="fr">Banc</rdfs:label>
+        <rdfs:label xml:lang="de">Bank</rdfs:label>
+        <rdfs:label xml:lang="en">Bench</rdfs:label>
+        <rdfs:label xml:lang="es">Mesa de trabajo</rdfs:label>
+        <rdfs:label xml:lang="hi">बेंच</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/def/NyOnLegal#CaseDomain -->
+
+    <owl:Class rdf:about="https://w3id.org/def/NyOnLegal#CaseDomain">
+        <rdfs:comment xml:lang="en">case belongs to specific proceeding like civil or criminal</rdfs:comment>
+        <rdfs:label xml:lang="en">Case Domain</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/def/NyOnLegal#CaseType -->
+
+    <owl:Class rdf:about="https://w3id.org/def/NyOnLegal#CaseType">
+        <rdfs:comment xml:lang="en">classification of types of cases</rdfs:comment>
+        <rdfs:label xml:lang="en">Case Type</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/def/NyOnLegal#CatchWord -->
+
+    <owl:Class rdf:about="https://w3id.org/def/NyOnLegal#CatchWord">
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.w3.org/2002/07/owl#Thing"/>
+                    <rdf:Description rdf:about="https://w3id.org/def/NyOnLegal#CaseDomain"/>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="https://w3id.org/def/NyOnLegal#hasWords"/>
+                        <owl:someValuesFrom rdf:resource="https://w3id.org/def/NyOnLegal#CaseDomain"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="https://w3id.org/def/NyOnLegal#hasWords"/>
+                        <owl:someValuesFrom rdf:resource="https://w3id.org/def/NyOnLegal#Issue"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+        <rdfs:comment xml:lang="en">Descriptive words or phrases used to categorise the subject matter of a case along with some keywords representing the issues in the case</rdfs:comment>
+        <rdfs:label xml:lang="en">Catchword</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/def/NyOnLegal#Chief_Meterpolitan_Court -->
+
+    <owl:Class rdf:about="https://w3id.org/def/NyOnLegal#Chief_Meterpolitan_Court">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/def/NyOnLegal#Courts_for_Criminal"/>
+        <rdfs:comment xml:lang="en">lower court at metropolitan level after Sessions Court for criminal cases</rdfs:comment>
+        <rdfs:comment xml:lang="hi">आपराधिक मामलों के लिए सत्र अदालत के बाद मेट्रोपॉलिटन स्तर पर निचली अदालत</rdfs:comment>
+        <rdfs:label xml:lang="de">Chief Meterpolitan Court</rdfs:label>
+        <rdfs:label xml:lang="en">Chief Meterpolitan Court</rdfs:label>
+        <rdfs:label xml:lang="fr">Court-compteur en chef</rdfs:label>
+        <rdfs:label xml:lang="es">Jefe Tribunal Metropolitana</rdfs:label>
+        <rdfs:label xml:lang="hi">मुख्य मेटेरपोलिटन कोर्ट</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/def/NyOnLegal#City_Civil_Courts -->
+
+    <owl:Class rdf:about="https://w3id.org/def/NyOnLegal#City_Civil_Courts">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/def/NyOnLegal#Courts_for_Civil"/>
+        <rdfs:comment xml:lang="en">lower court at metropolitan level after High Courts for civil cases</rdfs:comment>
+        <rdfs:comment xml:lang="hi">नागरिक मामलों के लिए उच्च न्यायालयों के बाद मेट्रोपॉलिटन स्तर पर निचली अदालत</rdfs:comment>
+        <rdfs:label xml:lang="en">City Civil Court</rdfs:label>
+        <rdfs:label xml:lang="fr">Courts civils de la ville</rdfs:label>
+        <rdfs:label xml:lang="de">Stadtzivilgerichte</rdfs:label>
+        <rdfs:label xml:lang="es">Tribunales civiles de la ciudad</rdfs:label>
+        <rdfs:label xml:lang="hi">सिटी सिविल कोर्ट</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/def/NyOnLegal#Civil -->
+
+    <owl:Class rdf:about="https://w3id.org/def/NyOnLegal#Civil">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/def/NyOnLegal#CaseDomain"/>
+        <owl:disjointWith rdf:resource="https://w3id.org/def/NyOnLegal#Criminal"/>
+        <rdfs:comment xml:lang="en">case is a civil case</rdfs:comment>
+        <rdfs:comment xml:lang="hi">मामला एक नागरिक मामला है</rdfs:comment>
+        <rdfs:label xml:lang="de">Bürgerlich</rdfs:label>
+        <rdfs:label xml:lang="en">Civil</rdfs:label>
+        <rdfs:label xml:lang="fr">Civil</rdfs:label>
+        <rdfs:label xml:lang="hi">नागरिक</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/def/NyOnLegal#Concurrence -->
+
+    <owl:Class rdf:about="https://w3id.org/def/NyOnLegal#Concurrence">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/def/NyOnLegal#Opinion"/>
+        <rdfs:label xml:lang="en">Concurrence</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/def/NyOnLegal#Country -->
+
+    <owl:Class rdf:about="https://w3id.org/def/NyOnLegal#Country">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/def/NyOnLegal#Location"/>
+        <rdfs:label xml:lang="en">Country</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/def/NyOnLegal#Court -->
+
+    <owl:Class rdf:about="https://w3id.org/def/NyOnLegal#Court">
+        <rdfs:comment xml:lang="en">courts in the judicial system</rdfs:comment>
+        <rdfs:comment xml:lang="hi">न्यायिक प्रणाली में अदालत</rdfs:comment>
+        <rdfs:label xml:lang="es">Corte</rdfs:label>
+        <rdfs:label xml:lang="en">Court</rdfs:label>
+        <rdfs:label xml:lang="de">Gericht</rdfs:label>
+        <rdfs:label xml:lang="fr">Rechercher</rdfs:label>
+        <rdfs:label xml:lang="hi">अदालत</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/def/NyOnLegal#CourtJudgment -->
+
+    <owl:Class rdf:about="https://w3id.org/def/NyOnLegal#CourtJudgment">
+        <rdfs:comment xml:lang="en">represents the court judgment given by a court of law</rdfs:comment>
+        <rdfs:label xml:lang="en">Court Judgment</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/def/NyOnLegal#Court_Decision -->
+
+    <owl:Class rdf:about="https://w3id.org/def/NyOnLegal#Court_Decision">
+        <rdfs:label xml:lang="en">Court Decision</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/def/NyOnLegal#Court_Official -->
+
+    <owl:Class rdf:about="https://w3id.org/def/NyOnLegal#Court_Official">
+        <rdfs:comment xml:lang="en">legal system related people involved in a case</rdfs:comment>
+        <rdfs:comment xml:lang="hi">एक मामले में अदालत के अधिकारी शामिल हैं</rdfs:comment>
+        <rdfs:label xml:lang="en">Court Official</rdfs:label>
+        <rdfs:label xml:lang="de">Gerichtsbeamter</rdfs:label>
+        <rdfs:label xml:lang="fr">Officiel de la cour</rdfs:label>
+        <rdfs:label xml:lang="es">Oficial de la corte</rdfs:label>
+        <rdfs:label xml:lang="hi">न्यायालय अधिकारि</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/def/NyOnLegal#Courts_for_Civil -->
+
+    <owl:Class rdf:about="https://w3id.org/def/NyOnLegal#Courts_for_Civil">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/def/NyOnLegal#CaseDomain"/>
+        <rdfs:comment xml:lang="en">court for civil cases</rdfs:comment>
+        <rdfs:comment xml:lang="hi">नागरिक मामलों के लिए न्यायालय</rdfs:comment>
+        <rdfs:label xml:lang="en">Civil Court</rdfs:label>
+        <rdfs:label xml:lang="es">Corte civil</rdfs:label>
+        <rdfs:label xml:lang="fr">Cour civile</rdfs:label>
+        <rdfs:label xml:lang="de">Zivilgericht</rdfs:label>
+        <rdfs:label xml:lang="hi">नागरिक न्यायालय</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/def/NyOnLegal#Courts_for_Criminal -->
+
+    <owl:Class rdf:about="https://w3id.org/def/NyOnLegal#Courts_for_Criminal">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/def/NyOnLegal#CaseDomain"/>
+        <rdfs:comment xml:lang="en">courts for crimnial cases</rdfs:comment>
+        <rdfs:comment xml:lang="hi">कोर्ट प्रकार जहां केवल आपराधिक मामलों को सुना जाता है</rdfs:comment>
+        <rdfs:label xml:lang="es">Corte Criminal</rdfs:label>
+        <rdfs:label xml:lang="fr">Cour criminelle</rdfs:label>
+        <rdfs:label xml:lang="en">Criminal Courts</rdfs:label>
+        <rdfs:label xml:lang="de">Strafgericht</rdfs:label>
+        <rdfs:label xml:lang="hi">आपराधिक न्यायालय</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/def/NyOnLegal#Courts_of_Smaller_Causes -->
+
+    <owl:Class rdf:about="https://w3id.org/def/NyOnLegal#Courts_of_Smaller_Causes">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/def/NyOnLegal#Courts_for_Civil"/>
+        <rdfs:comment xml:lang="en">lowest court after City Civil Courts at metropolitan level for civil cases</rdfs:comment>
+        <rdfs:comment xml:lang="hi">सिविल मामलों के लिए मेट्रोपॉलिटन स्तर पर सिटी सिविल कोर्ट के बाद सबसे कम अदालत</rdfs:comment>
+        <rdfs:label xml:lang="es">Corte de causa más pequeña</rdfs:label>
+        <rdfs:label xml:lang="fr">Cour de petite cause</rdfs:label>
+        <rdfs:label xml:lang="en">Court of Smaller Cause</rdfs:label>
+        <rdfs:label xml:lang="de">Gerichtsversorgung</rdfs:label>
+        <rdfs:label xml:lang="hi">छोटे कारण के न्यायालय</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/def/NyOnLegal#Criminal -->
+
+    <owl:Class rdf:about="https://w3id.org/def/NyOnLegal#Criminal">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/def/NyOnLegal#CaseDomain"/>
+        <rdfs:comment xml:lang="en">case is a criminal case</rdfs:comment>
+        <rdfs:comment xml:lang="hi">मामला एक आपराधिक मामला है</rdfs:comment>
+        <rdfs:label xml:lang="en">Criminal</rdfs:label>
+        <rdfs:label xml:lang="fr">Criminel</rdfs:label>
+        <rdfs:label xml:lang="es">Delincuente</rdfs:label>
+        <rdfs:label xml:lang="de">Kriminell</rdfs:label>
+        <rdfs:label xml:lang="hi">आपराधिक</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/def/NyOnLegal#DateOfJudgment -->
+
+    <owl:Class rdf:about="https://w3id.org/def/NyOnLegal#DateOfJudgment">
+        <rdfs:comment xml:lang="en">signifies the final date on which the judgment is given by the court of law</rdfs:comment>
+        <rdfs:label xml:lang="en">Date of Judgment</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/def/NyOnLegal#Decree -->
+
+    <owl:Class rdf:about="https://w3id.org/def/NyOnLegal#Decree">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://w3id.org/def/NyOnLegal#OfDomian"/>
+                <owl:allValuesFrom rdf:resource="https://w3id.org/def/NyOnLegal#Civil"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://w3id.org/def/NyOnLegal#Court_Decision"/>
+        <rdfs:label xml:lang="en">Decree</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/def/NyOnLegal#Defendant -->
+
+    <owl:Class rdf:about="https://w3id.org/def/NyOnLegal#Defendant">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/def/NyOnLegal#Party"/>
+        <rdfs:comment xml:lang="en">a person sued in the court of law</rdfs:comment>
+        <rdfs:label xml:lang="en">Defendant</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/def/NyOnLegal#Dissent -->
+
+    <owl:Class rdf:about="https://w3id.org/def/NyOnLegal#Dissent">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/def/NyOnLegal#Opinion"/>
+        <rdfs:label xml:lang="en">Dissent</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/def/NyOnLegal#District -->
+
+    <owl:Class rdf:about="https://w3id.org/def/NyOnLegal#District">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/def/NyOnLegal#Location"/>
+        <rdfs:comment xml:lang="en">represents district name/location</rdfs:comment>
+        <rdfs:comment xml:lang="hi">जिला नाम / स्थान का प्रतिनिधित्व करता है</rdfs:comment>
+        <rdfs:label xml:lang="de">Bezirk</rdfs:label>
+        <rdfs:label xml:lang="en">District</rdfs:label>
+        <rdfs:label xml:lang="es">Distrito</rdfs:label>
+        <rdfs:label xml:lang="fr">Quartier</rdfs:label>
+        <rdfs:label xml:lang="hi">जिला</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/def/NyOnLegal#District_Court -->
+
+    <owl:Class rdf:about="https://w3id.org/def/NyOnLegal#District_Court">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/def/NyOnLegal#Court"/>
+        <rdfs:subClassOf rdf:resource="https://w3id.org/def/NyOnLegal#Courts_for_Civil"/>
+        <rdfs:comment xml:lang="en">a term in judicial system in India in which a case is heard and judged by at least 2 judges</rdfs:comment>
+        <rdfs:comment xml:lang="en">lower court at district level after High Courts for civil cases</rdfs:comment>
+        <rdfs:comment xml:lang="hi">जिला स्तर पर अदालतें</rdfs:comment>
+        <rdfs:comment xml:lang="hi">नागरिक मामलों के लिए उच्च न्यायालयों के बाद जिला स्तर पर निचली अदालत</rdfs:comment>
+        <rdfs:label xml:lang="de">Bezirksgericht</rdfs:label>
+        <rdfs:label xml:lang="de">Bezirksgerichte</rdfs:label>
+        <rdfs:label xml:lang="en">District Court</rdfs:label>
+        <rdfs:label xml:lang="es">Tribunal de Distrito</rdfs:label>
+        <rdfs:label xml:lang="fr">Tribunal de district</rdfs:label>
+        <rdfs:label xml:lang="es">Tribunales de distrito</rdfs:label>
+        <rdfs:label xml:lang="fr">Tribunaux de district</rdfs:label>
+        <rdfs:label xml:lang="hi">जिला अदालत</rdfs:label>
+        <rdfs:label xml:lang="hi">जिला न्यायालय</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/def/NyOnLegal#Division_Bench -->
+
+    <owl:Class rdf:about="https://w3id.org/def/NyOnLegal#Division_Bench">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/def/NyOnLegal#Bench"/>
+        <rdfs:comment xml:lang="en">a term in judicial system in India in which a case is heard and judged by at least 2 judges</rdfs:comment>
+        <rdfs:comment xml:lang="hi">भारत में न्यायिक प्रणाली में एक शब्द जिसमें एक मामला कम से कम 2 न्यायाधीशों द्वारा सुना और न्याय किया जाता है</rdfs:comment>
+        <rdfs:label xml:lang="de">Abteilung Bench</rdfs:label>
+        <rdfs:label xml:lang="fr">Banc de division</rdfs:label>
+        <rdfs:label xml:lang="es">Banco de división</rdfs:label>
+        <rdfs:label xml:lang="en">Division Bench</rdfs:label>
+        <rdfs:label xml:lang="hi">डिवीजन बेंच</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/def/NyOnLegal#Evidence -->
+
+    <owl:Class rdf:about="https://w3id.org/def/NyOnLegal#Evidence">
+        <rdfs:comment xml:lang="en">evidences presented in front of the court in the case</rdfs:comment>
+        <rdfs:comment xml:lang="hi">मामले में अदालत के सामने प्रस्तुत साक्ष्य</rdfs:comment>
+        <rdfs:label xml:lang="de">Beweis</rdfs:label>
+        <rdfs:label xml:lang="en">Evidence</rdfs:label>
+        <rdfs:label xml:lang="es">Evidencia</rdfs:label>
+        <rdfs:label xml:lang="fr">Preuve</rdfs:label>
+        <rdfs:label xml:lang="hi">सबूत</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/def/NyOnLegal#Fact -->
+
+    <owl:Class rdf:about="https://w3id.org/def/NyOnLegal#Fact">
+        <rdfs:label xml:lang="en">Fact</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/def/NyOnLegal#Government -->
+
+    <owl:Class rdf:about="https://w3id.org/def/NyOnLegal#Government">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/def/NyOnLegal#Party_Type"/>
+        <rdfs:comment xml:lang="en">party involved (either on both sides or any one) is the government in the case</rdfs:comment>
+        <rdfs:comment xml:lang="hi">प्रतिभागियों में शामिल (या तो दोनों तरफ या किसी एक पर) मामले में सरकार है</rdfs:comment>
+        <rdfs:label xml:lang="es">Gobierno</rdfs:label>
+        <rdfs:label xml:lang="fr">Gouvernement</rdfs:label>
+        <rdfs:label xml:lang="en">Government</rdfs:label>
+        <rdfs:label xml:lang="de">Regierung</rdfs:label>
+        <rdfs:label xml:lang="hi">सरकार</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/def/NyOnLegal#Group -->
+
+    <owl:Class rdf:about="https://w3id.org/def/NyOnLegal#Group">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/def/NyOnLegal#Party_Type"/>
+        <rdfs:comment xml:lang="en">party of the case are the group of people on one side against another group of people or individual or state</rdfs:comment>
+        <rdfs:comment xml:lang="hi">मामले के प्रतिभागी लोगों या व्यक्तिगत या राज्य के किसी अन्य समूह के खिलाफ लोगों का समूह हैं</rdfs:comment>
+        <rdfs:label xml:lang="en">Group</rdfs:label>
+        <rdfs:label xml:lang="fr">Grouper</rdfs:label>
+        <rdfs:label xml:lang="es">Grupo</rdfs:label>
+        <rdfs:label xml:lang="de">Gruppe</rdfs:label>
+        <rdfs:label xml:lang="hi">समूह</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/def/NyOnLegal#High_Court -->
+
+    <owl:Class rdf:about="https://w3id.org/def/NyOnLegal#High_Court">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/def/NyOnLegal#Court"/>
+        <rdfs:comment xml:lang="en">court at the state level</rdfs:comment>
+        <rdfs:comment xml:lang="hi">राज्य स्तर पर अदालतें</rdfs:comment>
+        <rdfs:label xml:lang="fr">Cour suprême</rdfs:label>
+        <rdfs:label xml:lang="de">High Court</rdfs:label>
+        <rdfs:label xml:lang="en">High Court</rdfs:label>
+        <rdfs:label xml:lang="es">Suprema Corte</rdfs:label>
+        <rdfs:label xml:lang="hi">हाईकोर्ट</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/def/NyOnLegal#Individual -->
+
+    <owl:Class rdf:about="https://w3id.org/def/NyOnLegal#Individual">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/def/NyOnLegal#Party_Type"/>
+        <rdfs:comment xml:lang="en">participants of the case are the individual persons</rdfs:comment>
+        <rdfs:comment xml:lang="hi">मामले के प्रतिभागी व्यक्तिगत व्यक्ति हैं</rdfs:comment>
+        <rdfs:label xml:lang="en">Individual</rdfs:label>
+        <rdfs:label xml:lang="es">Individual</rdfs:label>
+        <rdfs:label xml:lang="fr">Individuel</rdfs:label>
+        <rdfs:label xml:lang="de">Individuell</rdfs:label>
+        <rdfs:label xml:lang="hi">व्यक्ति</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/def/NyOnLegal#Investigator -->
+
+    <owl:Class rdf:about="https://w3id.org/def/NyOnLegal#Investigator">
+        <rdfs:comment xml:lang="hi">जांचकर्ता का प्रतिनिधित्व करता है जो एफआईआर को फाइल करता है या एक मामले की जांच करता है</rdfs:comment>
+        <rdfs:label xml:lang="en">Police Personnel</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/def/NyOnLegal#Issue -->
+
+    <owl:Class rdf:about="https://w3id.org/def/NyOnLegal#Issue">
+        <rdfs:comment xml:lang="en">issues in the case arised by the party</rdfs:comment>
+        <rdfs:label xml:lang="en">Issue</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/def/NyOnLegal#Judge -->
+
+    <owl:Class rdf:about="https://w3id.org/def/NyOnLegal#Judge">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/def/NyOnLegal#Court_Official"/>
+        <rdfs:comment xml:lang="en">represents the judge of the case</rdfs:comment>
+        <rdfs:comment xml:lang="hi">मामले के न्यायाधीश का प्रतिनिधित्व करता है</rdfs:comment>
+        <rdfs:label xml:lang="en">Judge</rdfs:label>
+        <rdfs:label xml:lang="es">Juez</rdfs:label>
+        <rdfs:label xml:lang="fr">Juge</rdfs:label>
+        <rdfs:label xml:lang="de">Richter</rdfs:label>
+        <rdfs:label xml:lang="hi">न्यायाधीश</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/def/NyOnLegal#Judgement -->
+
+    <owl:Class rdf:about="https://w3id.org/def/NyOnLegal#Judgement">
+        <owl:equivalentClass rdf:resource="https://w3id.org/def/NyOnLegal#Order"/>
+        <rdfs:subClassOf rdf:resource="https://w3id.org/def/NyOnLegal#Court_Decision"/>
+        <rdfs:comment xml:lang="en">Judgement given by the judge </rdfs:comment>
+        <rdfs:comment xml:lang="hi">जज द्वारा दिया गया निर्णय</rdfs:comment>
+        <rdfs:label xml:lang="de">Beurteilung</rdfs:label>
+        <rdfs:label xml:lang="en">Judgement</rdfs:label>
+        <rdfs:label xml:lang="fr">Jugement</rdfs:label>
+        <rdfs:label xml:lang="es">Juicio</rdfs:label>
+        <rdfs:label xml:lang="hi">निर्णय</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/def/NyOnLegal#Jurisdiction -->
+
+    <owl:Class rdf:about="https://w3id.org/def/NyOnLegal#Jurisdiction">
+        <rdfs:comment xml:lang="en">the extent to which a court of law can exercise its authority over any cases filed across a region</rdfs:comment>
+        <rdfs:comment xml:lang="hi">जिस हद तक कानून का न्यायालय किसी क्षेत्र में दायर किसी भी मामले पर अपने अधिकार का उपयोग कर सकता है</rdfs:comment>
+        <rdfs:label xml:lang="fr">Juridiction</rdfs:label>
+        <rdfs:label xml:lang="es">Jurisdicción</rdfs:label>
+        <rdfs:label xml:lang="en">Jurisdiction</rdfs:label>
+        <rdfs:label xml:lang="de">Zuständigkeit</rdfs:label>
+        <rdfs:label xml:lang="hi">क्षेत्राधिकार</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/def/NyOnLegal#Larger_Bench -->
+
+    <owl:Class rdf:about="https://w3id.org/def/NyOnLegal#Larger_Bench">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/def/NyOnLegal#Bench"/>
+        <rdfs:comment xml:lang="en">a term in judicial system in India in which a case is heard and judged by three or five judges</rdfs:comment>
+        <rdfs:comment xml:lang="hi">भारत में न्यायिक प्रणाली में एक शब्द जिसमें मामला तीन या पांच न्यायाधीशों द्वारा सुना और न्याय किया जाता है</rdfs:comment>
+        <rdfs:label xml:lang="fr">Banc plus grand</rdfs:label>
+        <rdfs:label xml:lang="es">Banco más grande</rdfs:label>
+        <rdfs:label xml:lang="de">Größere Bank</rdfs:label>
+        <rdfs:label xml:lang="en">Larger Bench</rdfs:label>
+        <rdfs:label xml:lang="hi">बड़ी बेंच</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/def/NyOnLegal#Location -->
+
+    <owl:Class rdf:about="https://w3id.org/def/NyOnLegal#Location">
+        <rdfs:comment xml:lang="en">represents the location of the courts, etc and also used for evidence locations</rdfs:comment>
+        <rdfs:comment xml:lang="hi">अदालतों के स्थान का प्रतिनिधित्व करता है, आदि और साक्ष्य स्थानों के लिए भी उपयोग किया जाता है</rdfs:comment>
+        <rdfs:label xml:lang="fr">Lieu</rdfs:label>
+        <rdfs:label xml:lang="en">Location</rdfs:label>
+        <rdfs:label xml:lang="de">Standort</rdfs:label>
+        <rdfs:label xml:lang="es">Ubicación</rdfs:label>
+        <rdfs:label xml:lang="hi">स्थल</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/def/NyOnLegal#Majority -->
+
+    <owl:Class rdf:about="https://w3id.org/def/NyOnLegal#Majority">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/def/NyOnLegal#Opinion"/>
+        <rdfs:label xml:lang="en">Majority</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/def/NyOnLegal#Metropolitan_Magistrate_Courts -->
+
+    <owl:Class rdf:about="https://w3id.org/def/NyOnLegal#Metropolitan_Magistrate_Courts">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/def/NyOnLegal#Courts_for_Criminal"/>
+        <rdfs:comment xml:lang="en">lowest court after Chief Metropolitan Court at metropolitan level for criminal cases</rdfs:comment>
+        <rdfs:comment xml:lang="hi">आपराधिक मामलों के लिए मेट्रोपॉलिटन स्तर पर मुख्य मेट्रोपॉलिटन कोर्ट के बाद सबसे कम अदालत</rdfs:comment>
+        <rdfs:label xml:lang="fr">Cour magistrat métropolitain</rdfs:label>
+        <rdfs:label xml:lang="de">Metropolitan Magistrat Court</rdfs:label>
+        <rdfs:label xml:lang="en">Metropolitan Magistrate Court</rdfs:label>
+        <rdfs:label xml:lang="es">Tribunal de magistrados metropolitanos</rdfs:label>
+        <rdfs:label xml:lang="hi">मेट्रोपॉलिटन मजिस्ट्रेट कोर्ट</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/def/NyOnLegal#Metropolitian_Courts -->
+
+    <owl:Class rdf:about="https://w3id.org/def/NyOnLegal#Metropolitian_Courts">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/def/NyOnLegal#Court"/>
+        <rdfs:comment xml:lang="hi">10 लाख से अधिक शहर जनसंख्या के लिए न्यायालय</rdfs:comment>
+        <rdfs:comment xml:lang="en">court for population more than 10 lakh city </rdfs:comment>
+        <rdfs:label xml:lang="en">Metropolitan Court</rdfs:label>
+        <rdfs:label xml:lang="de">Metropolitaner Gericht</rdfs:label>
+        <rdfs:label xml:lang="es">Tribunal metropolitana</rdfs:label>
+        <rdfs:label xml:lang="fr">Tribunal métropolitain</rdfs:label>
+        <rdfs:label xml:lang="hi">मेट्रोपॉलिटन कोर्ट</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/def/NyOnLegal#Munsif_Court -->
+
+    <owl:Class rdf:about="https://w3id.org/def/NyOnLegal#Munsif_Court">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/def/NyOnLegal#Courts_for_Civil"/>
+        <rdfs:comment xml:lang="en">lowest court in heirarchy for civil ases at district level after Principal Junior Civil Court</rdfs:comment>
+        <rdfs:comment xml:lang="hi">प्रिंसिपल जूनियर सिविल कोर्ट के बाद जिले के स्तर पर नागरिक एएसईएस के लिए उत्तराधिकार में सबसे कम अदालत</rdfs:comment>
+        <rdfs:label xml:lang="es">Cancha de munsif</rdfs:label>
+        <rdfs:label xml:lang="en">Munsif Court</rdfs:label>
+        <rdfs:label xml:lang="de">Munsif-Gericht</rdfs:label>
+        <rdfs:label xml:lang="fr">Tribunal de Munsid</rdfs:label>
+        <rdfs:label xml:lang="hi">मुन्सिफ कोर्ट</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/def/NyOnLegal#ObiterDictum -->
+
+    <owl:Class rdf:about="https://w3id.org/def/NyOnLegal#ObiterDictum">
+        <rdfs:comment xml:lang="en">additional obersvations, remarks, and opinions made by the judge that are not the part of the reason for the decision</rdfs:comment>
+        <rdfs:label xml:lang="en">Obiter Dictum</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/def/NyOnLegal#Opinion -->
+
+    <owl:Class rdf:about="https://w3id.org/def/NyOnLegal#Opinion">
+        <rdfs:comment xml:lang="en">judge opinion with respect to case or judgment</rdfs:comment>
+        <rdfs:label xml:lang="en">Opinion</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/def/NyOnLegal#Order -->
+
+    <owl:Class rdf:about="https://w3id.org/def/NyOnLegal#Order">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/def/NyOnLegal#Court_Decision"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://w3id.org/def/NyOnLegal#OfDomian"/>
+                <owl:someValuesFrom rdf:resource="https://w3id.org/def/NyOnLegal#CaseDomain"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment xml:lang="en">order given by the court</rdfs:comment>
+        <rdfs:comment xml:lang="hi">अदालत द्वारा दिया गया आदेश</rdfs:comment>
+        <rdfs:label xml:lang="de">Befehl</rdfs:label>
+        <rdfs:label xml:lang="fr">Commande</rdfs:label>
+        <rdfs:label xml:lang="en">Order</rdfs:label>
+        <rdfs:label xml:lang="es">Pedido</rdfs:label>
+        <rdfs:label xml:lang="hi">आदेश</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/def/NyOnLegal#Original_Jurisdiction -->
+
+    <owl:Class rdf:about="https://w3id.org/def/NyOnLegal#Original_Jurisdiction">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/def/NyOnLegal#Jurisdiction"/>
+        <rdfs:comment xml:lang="en">jurisdiction type is a original jurisdiction</rdfs:comment>
+        <rdfs:comment xml:lang="hi">क्षेत्राधिकार प्रकार एक मूल क्षेत्राधिकार है</rdfs:comment>
+        <rdfs:label xml:lang="de">Erstinstanzliche Zuständigkeit</rdfs:label>
+        <rdfs:label xml:lang="fr">Juridiction originale</rdfs:label>
+        <rdfs:label xml:lang="es">Jurisdicción original</rdfs:label>
+        <rdfs:label xml:lang="en">Original Jurisdiction</rdfs:label>
+        <rdfs:label xml:lang="hi">मूल न्यायाधिकार</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/def/NyOnLegal#Party -->
+
+    <owl:Class rdf:about="https://w3id.org/def/NyOnLegal#Party">
+        <rdfs:comment xml:lang="en">party or people involved in the case</rdfs:comment>
+        <rdfs:comment xml:lang="hi">ऐसे पक्ष जो मामले में शामिल कानूनी डोमेन या भागों से संबंधित नहीं हैं</rdfs:comment>
+        <rdfs:label xml:lang="fr">Des soirées</rdfs:label>
+        <rdfs:label xml:lang="es">Fiestas</rdfs:label>
+        <rdfs:label xml:lang="en">Party</rdfs:label>
+        <rdfs:label xml:lang="de">Partys</rdfs:label>
+        <rdfs:label xml:lang="hi">दलों</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/def/NyOnLegal#Party_Type -->
+
+    <owl:Class rdf:about="https://w3id.org/def/NyOnLegal#Party_Type">
+        <rdfs:comment xml:lang="en">represents the types of party involved in the case viz. individual, organization, govt. etc.</rdfs:comment>
+        <rdfs:comment xml:lang="hi">मामले में शामिल पार्टी प्रकार</rdfs:comment>
+        <rdfs:label xml:lang="en">Party Type</rdfs:label>
+        <rdfs:label xml:lang="de">Partytyp.</rdfs:label>
+        <rdfs:label xml:lang="es">Tipo de fiesta</rdfs:label>
+        <rdfs:label xml:lang="fr">Type de fête</rdfs:label>
+        <rdfs:label xml:lang="hi">पार्टी प्रकार</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/def/NyOnLegal#Petitioner -->
+
+    <owl:Class rdf:about="https://w3id.org/def/NyOnLegal#Petitioner">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/def/NyOnLegal#Party"/>
+        <rdfs:comment xml:lang="en">one who makes the petition</rdfs:comment>
+        <rdfs:label xml:lang="en">Petitioner</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/def/NyOnLegal#Plaintiff -->
+
+    <owl:Class rdf:about="https://w3id.org/def/NyOnLegal#Plaintiff">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/def/NyOnLegal#Party"/>
+        <rdfs:comment xml:lang="en">party who brings the suit in the court of law</rdfs:comment>
         <rdfs:label xml:lang="en">Plaintiff</rdfs:label>
-        <rdfs:label xml:lang="hi">वादी</rdfs:label>
     </owl:Class>
     
 
 
-    <!-- https://w3id.org/def/NyOn#Precedent_Case -->
+    <!-- https://w3id.org/def/NyOnLegal#Principal_Junior_Civil_Court -->
 
-    <owl:Class rdf:about="https://w3id.org/def/NyOn#Precedent_Case">
-        <rdfs:comment xml:lang="en">refers to the precedent cases of the cases</rdfs:comment>
-        <rdfs:comment xml:lang="hi">मामलों के उदाहरण के मामलों को संदर्भित करता है</rdfs:comment>
-        <rdfs:label xml:lang="fr">Cas de précédent</rdfs:label>
-        <rdfs:label xml:lang="es">Caso precedente</rdfs:label>
-        <rdfs:label xml:lang="en">Precedent Case</rdfs:label>
-        <rdfs:label xml:lang="de">Präzedenzfall Fall.</rdfs:label>
-        <rdfs:label xml:lang="hi">पूर्ववर्ती मामला</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- https://w3id.org/def/NyOn#Principal_Junior_Civil_Court -->
-
-    <owl:Class rdf:about="https://w3id.org/def/NyOn#Principal_Junior_Civil_Court">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/def/NyOn#Courts_for_Civil"/>
+    <owl:Class rdf:about="https://w3id.org/def/NyOnLegal#Principal_Junior_Civil_Court">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/def/NyOnLegal#Courts_for_Civil"/>
         <rdfs:comment xml:lang="en">third lower court in hierarchy at district level for civil cases</rdfs:comment>
         <rdfs:comment xml:lang="hi">नागरिक मामलों के लिए जिला स्तर पर पदानुक्रम में तीसरी निचली अदालत</rdfs:comment>
         <rdfs:label xml:lang="es">Director de la Corte Civil Junior</rdfs:label>
@@ -1296,25 +1647,29 @@
     
 
 
-    <!-- https://w3id.org/def/NyOn#Respondent -->
+    <!-- https://w3id.org/def/NyOnLegal#RatioDecidendi -->
 
-    <owl:Class rdf:about="https://w3id.org/def/NyOn#Respondent">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/def/NyOn#Party"/>
-        <rdfs:comment xml:lang="en">represents the respondent of the case</rdfs:comment>
-        <rdfs:comment xml:lang="hi">मामले के प्रतिवादी का प्रतिनिधित्व करता है</rdfs:comment>
-        <rdfs:label xml:lang="de">Befragte</rdfs:label>
-        <rdfs:label xml:lang="es">Demandado</rdfs:label>
-        <rdfs:label xml:lang="fr">Intimé</rdfs:label>
-        <rdfs:label xml:lang="en">Respondent</rdfs:label>
-        <rdfs:label xml:lang="hi">प्रतिवादी</rdfs:label>
+    <owl:Class rdf:about="https://w3id.org/def/NyOnLegal#RatioDecidendi">
+        <rdfs:comment xml:lang="en">the rationale for the decision</rdfs:comment>
+        <rdfs:label xml:lang="en">Ratio Decidendi</rdfs:label>
     </owl:Class>
     
 
 
-    <!-- https://w3id.org/def/NyOn#Review_Jurisdiction -->
+    <!-- https://w3id.org/def/NyOnLegal#Respondent -->
 
-    <owl:Class rdf:about="https://w3id.org/def/NyOn#Review_Jurisdiction">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/def/NyOn#Jurisdiction"/>
+    <owl:Class rdf:about="https://w3id.org/def/NyOnLegal#Respondent">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/def/NyOnLegal#Party"/>
+        <rdfs:comment xml:lang="en">party called upon to respond or answer a petition, a cliam or a appeal</rdfs:comment>
+        <rdfs:label xml:lang="en">Respondent</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/def/NyOnLegal#Review_Jurisdiction -->
+
+    <owl:Class rdf:about="https://w3id.org/def/NyOnLegal#Review_Jurisdiction">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/def/NyOnLegal#Jurisdiction"/>
         <rdfs:comment xml:lang="en">jurisdiction type is a review jurisdiction</rdfs:comment>
         <rdfs:comment xml:lang="hi">क्षेत्राधिकार प्रकार एक समीक्षा क्षेत्राधिकार है</rdfs:comment>
         <rdfs:label xml:lang="fr">Examiner la juridiction</rdfs:label>
@@ -1326,10 +1681,10 @@
     
 
 
-    <!-- https://w3id.org/def/NyOn#Session_Court -->
+    <!-- https://w3id.org/def/NyOnLegal#Session_Court -->
 
-    <owl:Class rdf:about="https://w3id.org/def/NyOn#Session_Court">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/def/NyOn#Courts_for_Criminal"/>
+    <owl:Class rdf:about="https://w3id.org/def/NyOnLegal#Session_Court">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/def/NyOnLegal#Courts_for_Criminal"/>
         <rdfs:comment xml:lang="en">lower court at both distrcit and metropolitan level after High Courts specific for criminal cases</rdfs:comment>
         <rdfs:comment xml:lang="hi">आपराधिक मामलों के लिए विशिष्ट उच्च न्यायालयों के बाद दोनों विचलित और मेट्रोपॉलिटन स्तर पर ओवर कोर्ट</rdfs:comment>
         <rdfs:label xml:lang="en">Sessions Court</rdfs:label>
@@ -1341,10 +1696,10 @@
     
 
 
-    <!-- https://w3id.org/def/NyOn#Single_Judge -->
+    <!-- https://w3id.org/def/NyOnLegal#Single_Judge -->
 
-    <owl:Class rdf:about="https://w3id.org/def/NyOn#Single_Judge">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/def/NyOn#Bench"/>
+    <owl:Class rdf:about="https://w3id.org/def/NyOnLegal#Single_Judge">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/def/NyOnLegal#Bench"/>
         <rdfs:comment xml:lang="en">a case heard and judged by a single judge</rdfs:comment>
         <rdfs:comment xml:lang="hi">एक मामले ने एक ही न्यायाधीश द्वारा सुना और न्याय किया</rdfs:comment>
         <rdfs:label xml:lang="de">Einzelner Richter</rdfs:label>
@@ -1356,10 +1711,10 @@
     
 
 
-    <!-- https://w3id.org/def/NyOn#Solicitor -->
+    <!-- https://w3id.org/def/NyOnLegal#Solicitor -->
 
-    <owl:Class rdf:about="https://w3id.org/def/NyOn#Solicitor">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/def/NyOn#Court_Official"/>
+    <owl:Class rdf:about="https://w3id.org/def/NyOnLegal#Solicitor">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/def/NyOnLegal#Court_Official"/>
         <rdfs:comment xml:lang="en">represents solicitor, learned counsel or laywer of the case</rdfs:comment>
         <rdfs:comment xml:lang="hi">सॉलिसिटर का प्रतिनिधित्व करता है, सीखा वकील या मामले की घंटू</rdfs:comment>
         <rdfs:label xml:lang="es">Abogado</rdfs:label>
@@ -1371,10 +1726,10 @@
     
 
 
-    <!-- https://w3id.org/def/NyOn#Special_Bench -->
+    <!-- https://w3id.org/def/NyOnLegal#Special_Bench -->
 
-    <owl:Class rdf:about="https://w3id.org/def/NyOn#Special_Bench">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/def/NyOn#Bench"/>
+    <owl:Class rdf:about="https://w3id.org/def/NyOnLegal#Special_Bench">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/def/NyOnLegal#Bench"/>
         <rdfs:comment xml:lang="en">means the Bench constituted by or under the orders of the Chief Justice to hear a case or particular class of cases</rdfs:comment>
         <rdfs:comment xml:lang="hi">मामला या विशेष वर्ग के मामलों को सुनने के लिए मुख्य न्यायाधीश के आदेशों के तहत गठित खंडपीठ का मतलब है</rdfs:comment>
         <rdfs:label xml:lang="fr">Banc spécial</rdfs:label>
@@ -1386,10 +1741,31 @@
     
 
 
-    <!-- https://w3id.org/def/NyOn#Sub_Court -->
+    <!-- https://w3id.org/def/NyOnLegal#State -->
 
-    <owl:Class rdf:about="https://w3id.org/def/NyOn#Sub_Court">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/def/NyOn#Courts_for_Civil"/>
+    <owl:Class rdf:about="https://w3id.org/def/NyOnLegal#State">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/def/NyOnLegal#Location"/>
+        <rdfs:subClassOf rdf:resource="https://w3id.org/def/NyOnLegal#Party_Type"/>
+        <rdfs:comment xml:lang="en">represents state name/location</rdfs:comment>
+        <rdfs:comment xml:lang="hi">राज्य का नाम / स्थान का प्रतिनिधित्व करता है</rdfs:comment>
+        <rdfs:label xml:lang="en">State</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/def/NyOnLegal#Statue -->
+
+    <owl:Class rdf:about="https://w3id.org/def/NyOnLegal#Statue">
+        <rdfs:comment xml:lang="en">includes the acts and norms of the law</rdfs:comment>
+        <rdfs:label xml:lang="en">Statue</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/def/NyOnLegal#Sub_Court -->
+
+    <owl:Class rdf:about="https://w3id.org/def/NyOnLegal#Sub_Court">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/def/NyOnLegal#Courts_for_Civil"/>
         <rdfs:comment xml:lang="en">second lower court in hierarchy at District level for civil cases</rdfs:comment>
         <rdfs:comment xml:lang="hi">नागरिक मामलों के लिए जिला स्तर पर पदानुक्रम में दूसरी निचली अदालत</rdfs:comment>
         <rdfs:label xml:lang="en">Sub Court</rdfs:label>
@@ -1401,10 +1777,21 @@
     
 
 
-    <!-- https://w3id.org/def/NyOn#Taluka -->
+    <!-- https://w3id.org/def/NyOnLegal#SupremeCourt -->
 
-    <owl:Class rdf:about="https://w3id.org/def/NyOn#Taluka">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/def/NyOn#Location"/>
+    <owl:Class rdf:about="https://w3id.org/def/NyOnLegal#SupremeCourt">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/def/NyOnLegal#Court"/>
+        <rdfs:comment xml:lang="en">highest court in the judicial system</rdfs:comment>
+        <rdfs:label xml:lang="en">Supreme Court of India</rdfs:label>
+        <rdfs:label xml:lang="hi">सर्वोच्च न्यायालय</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/def/NyOnLegal#Taluka -->
+
+    <owl:Class rdf:about="https://w3id.org/def/NyOnLegal#Taluka">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/def/NyOnLegal#Location"/>
         <rdfs:comment xml:lang="en">represents taluka name/location</rdfs:comment>
         <rdfs:comment xml:lang="hi">तालुका नाम / स्थान का प्रतिनिधित्व करता है</rdfs:comment>
         <rdfs:label xml:lang="fr">Talon</rdfs:label>
@@ -1416,25 +1803,10 @@
     
 
 
-    <!-- https://w3id.org/def/NyOn#Tribunal_Bench -->
+    <!-- https://w3id.org/def/NyOnLegal#Tribunal -->
 
-    <owl:Class rdf:about="https://w3id.org/def/NyOn#Tribunal_Bench">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/def/NyOn#Bench"/>
-        <rdfs:comment xml:lang="en">Bench deals with tribunals cases</rdfs:comment>
-        <rdfs:comment xml:lang="hi">ट्रिब्यूनल मामलों के साथ बेंच सौदों</rdfs:comment>
-        <rdfs:label xml:lang="fr">Banc de tribunal</rdfs:label>
-        <rdfs:label xml:lang="es">Banco Tribunal</rdfs:label>
-        <rdfs:label xml:lang="de">Tribunal Bank.</rdfs:label>
-        <rdfs:label xml:lang="en">Tribunal Bench</rdfs:label>
-        <rdfs:label xml:lang="hi">ट्रिब्यूनल बेंच</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- https://w3id.org/def/NyOn#Tribunals -->
-
-    <owl:Class rdf:about="https://w3id.org/def/NyOn#Tribunals">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/def/NyOn#Courts"/>
+    <owl:Class rdf:about="https://w3id.org/def/NyOnLegal#Tribunal">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/def/NyOnLegal#Court"/>
         <rdfs:comment xml:lang="en">institutions established for discharging judicial or quasi-judicial duties under the Government of India</rdfs:comment>
         <rdfs:comment xml:lang="hi">भारत सरकार के तहत न्यायिक या अर्ध न्यायिक कर्तव्यों को निर्वहन के लिए स्थापित संस्थान</rdfs:comment>
         <rdfs:label xml:lang="de">Gericht</rdfs:label>
@@ -1446,9 +1818,24 @@
     
 
 
-    <!-- https://w3id.org/def/NyOn#Witness -->
+    <!-- https://w3id.org/def/NyOnLegal#Tribunal_Bench -->
 
-    <owl:Class rdf:about="https://w3id.org/def/NyOn#Witness">
+    <owl:Class rdf:about="https://w3id.org/def/NyOnLegal#Tribunal_Bench">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/def/NyOnLegal#Bench"/>
+        <rdfs:comment xml:lang="en">Bench deals with tribunals cases</rdfs:comment>
+        <rdfs:comment xml:lang="hi">ट्रिब्यूनल मामलों के साथ बेंच सौदों</rdfs:comment>
+        <rdfs:label xml:lang="fr">Banc de tribunal</rdfs:label>
+        <rdfs:label xml:lang="es">Banco Tribunal</rdfs:label>
+        <rdfs:label xml:lang="de">Tribunal Bank.</rdfs:label>
+        <rdfs:label xml:lang="en">Tribunal Bench</rdfs:label>
+        <rdfs:label xml:lang="hi">ट्रिब्यूनल बेंच</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/def/NyOnLegal#Witness -->
+
+    <owl:Class rdf:about="https://w3id.org/def/NyOnLegal#Witness">
         <rdfs:comment xml:lang="en">witness involved/presented in the case</rdfs:comment>
         <rdfs:comment xml:lang="hi">साक्षी ने मामले में शामिल / प्रस्तुत किया</rdfs:comment>
         <rdfs:label xml:lang="es">Testigo</rdfs:label>
@@ -1460,10 +1847,19 @@
     
 
 
-    <!-- https://w3id.org/def/NyOn#Writ_Jurisdiction -->
+    <!-- https://w3id.org/def/NyOnLegal#WordAndPhrase -->
 
-    <owl:Class rdf:about="https://w3id.org/def/NyOn#Writ_Jurisdiction">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/def/NyOn#Jurisdiction"/>
+    <owl:Class rdf:about="https://w3id.org/def/NyOnLegal#WordAndPhrase">
+        <rdfs:comment xml:lang="en">words or phrases exctracted from the case to make the search better for the cases or find relevent cases or judgment</rdfs:comment>
+        <rdfs:label xml:lang="en">WordsAndPhrases</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/def/NyOnLegal#Writ_Jurisdiction -->
+
+    <owl:Class rdf:about="https://w3id.org/def/NyOnLegal#Writ_Jurisdiction">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/def/NyOnLegal#Jurisdiction"/>
         <rdfs:comment xml:lang="en">jurisdiction type is a writ jurisdiction</rdfs:comment>
         <rdfs:comment xml:lang="hi">क्षेत्राधिकार प्रकार एक रिट क्षेत्राधिकार है</rdfs:comment>
         <rdfs:label xml:lang="es">Escrito jurisdicción</rdfs:label>
@@ -1475,10 +1871,10 @@
     
 
 
-    <!-- https://w3id.org/def/NyOn#Judicial_Magistrate_Court(First_Class) -->
+    <!-- https://w3id.org/def/NyOnLegal#Judicial_Magistrate_Court(First_Class) -->
 
-    <owl:Class rdf:about="https://w3id.org/def/NyOn#Judicial_Magistrate_Court(First_Class)">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/def/NyOn#Courts_for_Criminal"/>
+    <owl:Class rdf:about="https://w3id.org/def/NyOnLegal#Judicial_Magistrate_Court(First_Class)">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/def/NyOnLegal#Courts_for_Criminal"/>
         <rdfs:comment xml:lang="en">second lower court at distrcit level after districit level Session Court for criminal cases</rdfs:comment>
         <rdfs:comment xml:lang="hi">आपराधिक मामलों के लिए अतिरिक्त स्तर के सत्र अदालत के बाद डिस्ट्रिट स्तर पर दूसरी निचली अदालत</rdfs:comment>
         <rdfs:label xml:lang="es">Corte judicial de magistrados (primera clase)</rdfs:label>
@@ -1490,10 +1886,10 @@
     
 
 
-    <!-- https://w3id.org/def/NyOn#Judicial_Magistrate_Court(Second_Class) -->
+    <!-- https://w3id.org/def/NyOnLegal#Judicial_Magistrate_Court(Second_Class) -->
 
-    <owl:Class rdf:about="https://w3id.org/def/NyOn#Judicial_Magistrate_Court(Second_Class)">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/def/NyOn#Courts_for_Criminal"/>
+    <owl:Class rdf:about="https://w3id.org/def/NyOnLegal#Judicial_Magistrate_Court(Second_Class)">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/def/NyOnLegal#Courts_for_Criminal"/>
         <rdfs:comment xml:lang="en">lowest court after Judicial Magistrate Court (First Class) at distrcit level for criminal cases</rdfs:comment>
         <rdfs:comment xml:lang="hi">आपराधिक मामलों के लिए विचलित स्तर पर न्यायिक मजिस्ट्रेट कोर्ट (प्रथम श्रेणी) के बाद सबसे कम अदालत</rdfs:comment>
         <rdfs:label xml:lang="fr">Cour magistrat judiciaire (deuxième classe)</rdfs:label>
@@ -1517,99 +1913,174 @@
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
         <owl:members rdf:parseType="Collection">
             <rdf:Description rdf:about="https://schema.org/Organization"/>
-            <rdf:Description rdf:about="https://schema.org/State"/>
-            <rdf:Description rdf:about="https://w3id.org/def/NyOn#Government"/>
-            <rdf:Description rdf:about="https://w3id.org/def/NyOn#Group"/>
-            <rdf:Description rdf:about="https://w3id.org/def/NyOn#Individual"/>
+            <rdf:Description rdf:about="https://w3id.org/def/NyOnLegal#Government"/>
+            <rdf:Description rdf:about="https://w3id.org/def/NyOnLegal#Group"/>
+            <rdf:Description rdf:about="https://w3id.org/def/NyOnLegal#Individual"/>
+            <rdf:Description rdf:about="https://w3id.org/def/NyOnLegal#State"/>
         </owl:members>
     </rdf:Description>
     <rdf:Description>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
         <owl:members rdf:parseType="Collection">
-            <rdf:Description rdf:about="https://schema.org/State"/>
-            <rdf:Description rdf:about="https://w3id.org/def/NyOn#Country"/>
-            <rdf:Description rdf:about="https://w3id.org/def/NyOn#District"/>
-            <rdf:Description rdf:about="https://w3id.org/def/NyOn#Place"/>
-            <rdf:Description rdf:about="https://w3id.org/def/NyOn#Taluka"/>
+            <rdf:Description rdf:about="https://schema.org/Place"/>
+            <rdf:Description rdf:about="https://w3id.org/def/NyOnLegal#Country"/>
+            <rdf:Description rdf:about="https://w3id.org/def/NyOnLegal#District"/>
+            <rdf:Description rdf:about="https://w3id.org/def/NyOnLegal#State"/>
+            <rdf:Description rdf:about="https://w3id.org/def/NyOnLegal#Taluka"/>
         </owl:members>
     </rdf:Description>
     <rdf:Description>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
         <owl:members rdf:parseType="Collection">
-            <rdf:Description rdf:about="https://w3id.org/def/NyOn#Accussed"/>
-            <rdf:Description rdf:about="https://w3id.org/def/NyOn#Appellant"/>
-            <rdf:Description rdf:about="https://w3id.org/def/NyOn#Petitioner"/>
-            <rdf:Description rdf:about="https://w3id.org/def/NyOn#Plaintiff"/>
-            <rdf:Description rdf:about="https://w3id.org/def/NyOn#Respondent"/>
-            <rdf:Description rdf:about="https://w3id.org/def/NyOn#Witness"/>
+            <rdf:Description rdf:about="https://w3id.org/def/NyOnLegal#Accussed"/>
+            <rdf:Description rdf:about="https://w3id.org/def/NyOnLegal#Appellant"/>
+            <rdf:Description rdf:about="https://w3id.org/def/NyOnLegal#Petitioner"/>
+            <rdf:Description rdf:about="https://w3id.org/def/NyOnLegal#Plaintiff"/>
+            <rdf:Description rdf:about="https://w3id.org/def/NyOnLegal#Respondent"/>
+            <rdf:Description rdf:about="https://w3id.org/def/NyOnLegal#Witness"/>
         </owl:members>
     </rdf:Description>
     <rdf:Description>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
         <owl:members rdf:parseType="Collection">
-            <rdf:Description rdf:about="https://w3id.org/def/NyOn#Acts"/>
-            <rdf:Description rdf:about="https://w3id.org/def/NyOn#Author"/>
-            <rdf:Description rdf:about="https://w3id.org/def/NyOn#Bench"/>
-            <rdf:Description rdf:about="https://w3id.org/def/NyOn#Case"/>
-            <rdf:Description rdf:about="https://w3id.org/def/NyOn#Case_Type"/>
-            <rdf:Description rdf:about="https://w3id.org/def/NyOn#Court_Decision"/>
-            <rdf:Description rdf:about="https://w3id.org/def/NyOn#Court_Official"/>
-            <rdf:Description rdf:about="https://w3id.org/def/NyOn#Courts"/>
-            <rdf:Description rdf:about="https://w3id.org/def/NyOn#Documents"/>
-            <rdf:Description rdf:about="https://w3id.org/def/NyOn#Evidence"/>
-            <rdf:Description rdf:about="https://w3id.org/def/NyOn#Jurisdiction"/>
-            <rdf:Description rdf:about="https://w3id.org/def/NyOn#Location"/>
-            <rdf:Description rdf:about="https://w3id.org/def/NyOn#Party"/>
-            <rdf:Description rdf:about="https://w3id.org/def/NyOn#Party_Type"/>
-            <rdf:Description rdf:about="https://w3id.org/def/NyOn#Precedent_Case"/>
+            <rdf:Description rdf:about="https://w3id.org/def/NyOnLegal#Advisory_Jurisdiction"/>
+            <rdf:Description rdf:about="https://w3id.org/def/NyOnLegal#Appellant_Jurisdiction"/>
+            <rdf:Description rdf:about="https://w3id.org/def/NyOnLegal#Original_Jurisdiction"/>
+            <rdf:Description rdf:about="https://w3id.org/def/NyOnLegal#Review_Jurisdiction"/>
         </owl:members>
     </rdf:Description>
     <rdf:Description>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
         <owl:members rdf:parseType="Collection">
-            <rdf:Description rdf:about="https://w3id.org/def/NyOn#Advisory_Jurisdiction"/>
-            <rdf:Description rdf:about="https://w3id.org/def/NyOn#Appellant_Jurisdiction"/>
-            <rdf:Description rdf:about="https://w3id.org/def/NyOn#Original_Jurisdiction"/>
-            <rdf:Description rdf:about="https://w3id.org/def/NyOn#Review_Jurisdiction"/>
+            <rdf:Description rdf:about="https://w3id.org/def/NyOnLegal#Chief_Meterpolitan_Court"/>
+            <rdf:Description rdf:about="https://w3id.org/def/NyOnLegal#Metropolitan_Magistrate_Courts"/>
+            <rdf:Description rdf:about="https://w3id.org/def/NyOnLegal#Session_Court"/>
+            <rdf:Description rdf:about="https://w3id.org/def/NyOnLegal#Judicial_Magistrate_Court(First_Class)"/>
+            <rdf:Description rdf:about="https://w3id.org/def/NyOnLegal#Judicial_Magistrate_Court(Second_Class)"/>
         </owl:members>
     </rdf:Description>
     <rdf:Description>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
         <owl:members rdf:parseType="Collection">
-            <rdf:Description rdf:about="https://w3id.org/def/NyOn#Appeal"/>
-            <rdf:Description rdf:about="https://w3id.org/def/NyOn#Court_Judgements"/>
-            <rdf:Description rdf:about="https://w3id.org/def/NyOn#FIR"/>
-            <rdf:Description rdf:about="https://w3id.org/def/NyOn#Others"/>
-            <rdf:Description rdf:about="https://w3id.org/def/NyOn#Petition"/>
+            <rdf:Description rdf:about="https://w3id.org/def/NyOnLegal#City_Civil_Courts"/>
+            <rdf:Description rdf:about="https://w3id.org/def/NyOnLegal#Courts_of_Smaller_Causes"/>
+            <rdf:Description rdf:about="https://w3id.org/def/NyOnLegal#District_Court"/>
+            <rdf:Description rdf:about="https://w3id.org/def/NyOnLegal#Munsif_Court"/>
+            <rdf:Description rdf:about="https://w3id.org/def/NyOnLegal#Principal_Junior_Civil_Court"/>
+            <rdf:Description rdf:about="https://w3id.org/def/NyOnLegal#Sub_Court"/>
         </owl:members>
     </rdf:Description>
     <rdf:Description>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
         <owl:members rdf:parseType="Collection">
-            <rdf:Description rdf:about="https://w3id.org/def/NyOn#Chief_Meterpolitan_Court"/>
-            <rdf:Description rdf:about="https://w3id.org/def/NyOn#Metropolitan_Magistrate_Courts"/>
-            <rdf:Description rdf:about="https://w3id.org/def/NyOn#Session_Court"/>
-            <rdf:Description rdf:about="https://w3id.org/def/NyOn#Judicial_Magistrate_Court(First_Class)"/>
-            <rdf:Description rdf:about="https://w3id.org/def/NyOn#Judicial_Magistrate_Court(Second_Class)"/>
+            <rdf:Description rdf:about="https://w3id.org/def/NyOnLegal#Concurrence"/>
+            <rdf:Description rdf:about="https://w3id.org/def/NyOnLegal#Dissent"/>
+            <rdf:Description rdf:about="https://w3id.org/def/NyOnLegal#Majority"/>
         </owl:members>
     </rdf:Description>
     <rdf:Description>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
         <owl:members rdf:parseType="Collection">
-            <rdf:Description rdf:about="https://w3id.org/def/NyOn#City_Civil_Courts"/>
-            <rdf:Description rdf:about="https://w3id.org/def/NyOn#Courts_of_Smaller_Causes"/>
-            <rdf:Description rdf:about="https://w3id.org/def/NyOn#District_Court"/>
-            <rdf:Description rdf:about="https://w3id.org/def/NyOn#Munsif_Court"/>
-            <rdf:Description rdf:about="https://w3id.org/def/NyOn#Principal_Junior_Civil_Court"/>
-            <rdf:Description rdf:about="https://w3id.org/def/NyOn#Sub_Court"/>
+            <rdf:Description rdf:about="https://w3id.org/def/NyOnLegal#Investigator"/>
+            <rdf:Description rdf:about="https://w3id.org/def/NyOnLegal#Judge"/>
+            <rdf:Description rdf:about="https://w3id.org/def/NyOnLegal#Solicitor"/>
         </owl:members>
     </rdf:Description>
     <rdf:Description>
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointProperties"/>
         <owl:members rdf:parseType="Collection">
-            <rdf:Description rdf:about="https://w3id.org/def/NyOn#Investigator"/>
-            <rdf:Description rdf:about="https://w3id.org/def/NyOn#Judge"/>
-            <rdf:Description rdf:about="https://w3id.org/def/NyOn#Solicitor"/>
+            <rdf:Description rdf:about="https://w3id.org/def/NyOnLegal#OfDomian"/>
+            <rdf:Description rdf:about="https://w3id.org/def/NyOnLegal#citedBy"/>
+            <rdf:Description rdf:about="https://w3id.org/def/NyOnLegal#cites"/>
+            <rdf:Description rdf:about="https://w3id.org/def/NyOnLegal#hasAuthor"/>
+            <rdf:Description rdf:about="https://w3id.org/def/NyOnLegal#hasBench"/>
+            <rdf:Description rdf:about="https://w3id.org/def/NyOnLegal#hasCourtLoc"/>
+            <rdf:Description rdf:about="https://w3id.org/def/NyOnLegal#hasCourtOfficial"/>
+            <rdf:Description rdf:about="https://w3id.org/def/NyOnLegal#hasDateOfJudgment"/>
+            <rdf:Description rdf:about="https://w3id.org/def/NyOnLegal#hasEvidence"/>
+            <rdf:Description rdf:about="https://w3id.org/def/NyOnLegal#hasEvidenceLoc"/>
+            <rdf:Description rdf:about="https://w3id.org/def/NyOnLegal#hasFact"/>
+            <rdf:Description rdf:about="https://w3id.org/def/NyOnLegal#hasFinalDecision"/>
+            <rdf:Description rdf:about="https://w3id.org/def/NyOnLegal#hasIssue"/>
+            <rdf:Description rdf:about="https://w3id.org/def/NyOnLegal#hasJudgmentType"/>
+            <rdf:Description rdf:about="https://w3id.org/def/NyOnLegal#hasJurisdiction"/>
+            <rdf:Description rdf:about="https://w3id.org/def/NyOnLegal#hasObiterDictum"/>
+            <rdf:Description rdf:about="https://w3id.org/def/NyOnLegal#hasParty"/>
+            <rdf:Description rdf:about="https://w3id.org/def/NyOnLegal#hasPartyType"/>
+            <rdf:Description rdf:about="https://w3id.org/def/NyOnLegal#hasPolicePersonnel"/>
+            <rdf:Description rdf:about="https://w3id.org/def/NyOnLegal#hasRatioDecidendi"/>
+            <rdf:Description rdf:about="https://w3id.org/def/NyOnLegal#hasRulingOf"/>
+            <rdf:Description rdf:about="https://w3id.org/def/NyOnLegal#hasStatue"/>
+            <rdf:Description rdf:about="https://w3id.org/def/NyOnLegal#hasWitness"/>
+            <rdf:Description rdf:about="https://w3id.org/def/NyOnLegal#hasWordPhrase"/>
+            <rdf:Description rdf:about="https://w3id.org/def/NyOnLegal#hasWords"/>
+            <rdf:Description rdf:about="https://w3id.org/def/NyOnLegal#makeArgument"/>
+            <rdf:Description rdf:about="https://w3id.org/def/NyOnLegal#withConcurrence"/>
+            <rdf:Description rdf:about="https://w3id.org/def/NyOnLegal#withDissent"/>
+            <rdf:Description rdf:about="https://w3id.org/def/NyOnLegal#withMajority"/>
+            <rdf:Description rdf:about="https://w3id.org/def/NyOnLegal#worksIn"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointProperties"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="https://w3id.org/def/NyOnLegal#citedBy"/>
+            <rdf:Description rdf:about="https://w3id.org/def/NyOnLegal#cites"/>
+            <rdf:Description rdf:about="https://w3id.org/def/NyOnLegal#hasAuthor"/>
+            <rdf:Description rdf:about="https://w3id.org/def/NyOnLegal#hasBench"/>
+            <rdf:Description rdf:about="https://w3id.org/def/NyOnLegal#hasCourtOfficial"/>
+            <rdf:Description rdf:about="https://w3id.org/def/NyOnLegal#hasDateOfJudgment"/>
+            <rdf:Description rdf:about="https://w3id.org/def/NyOnLegal#hasEvidence"/>
+            <rdf:Description rdf:about="https://w3id.org/def/NyOnLegal#hasFact"/>
+            <rdf:Description rdf:about="https://w3id.org/def/NyOnLegal#hasFinalDecision"/>
+            <rdf:Description rdf:about="https://w3id.org/def/NyOnLegal#hasJudgmentType"/>
+            <rdf:Description rdf:about="https://w3id.org/def/NyOnLegal#hasObiterDictum"/>
+            <rdf:Description rdf:about="https://w3id.org/def/NyOnLegal#hasParty"/>
+            <rdf:Description rdf:about="https://w3id.org/def/NyOnLegal#hasPolicePersonnel"/>
+            <rdf:Description rdf:about="https://w3id.org/def/NyOnLegal#hasRatioDecidendi"/>
+            <rdf:Description rdf:about="https://w3id.org/def/NyOnLegal#hasRulingOf"/>
+            <rdf:Description rdf:about="https://w3id.org/def/NyOnLegal#hasStatue"/>
+            <rdf:Description rdf:about="https://w3id.org/def/NyOnLegal#hasWitness"/>
+            <rdf:Description rdf:about="https://w3id.org/def/NyOnLegal#hasWordPhrase"/>
+            <rdf:Description rdf:about="https://w3id.org/def/NyOnLegal#hasWords"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointProperties"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="https://w3id.org/def/NyOnLegal#argumentSequenceNum"/>
+            <rdf:Description rdf:about="https://w3id.org/def/NyOnLegal#argumentValue"/>
+            <rdf:Description rdf:about="https://w3id.org/def/NyOnLegal#catchwordValue"/>
+            <rdf:Description rdf:about="https://w3id.org/def/NyOnLegal#courtName"/>
+            <rdf:Description rdf:about="https://w3id.org/def/NyOnLegal#courtOffName"/>
+            <rdf:Description rdf:about="https://w3id.org/def/NyOnLegal#dateOfJudgment"/>
+            <rdf:Description rdf:about="https://w3id.org/def/NyOnLegal#evidenceLocation"/>
+            <rdf:Description rdf:about="https://w3id.org/def/NyOnLegal#factSequenceNum"/>
+            <rdf:Description rdf:about="https://w3id.org/def/NyOnLegal#factValue"/>
+            <rdf:Description rdf:about="https://w3id.org/def/NyOnLegal#finalDecisionValue"/>
+            <rdf:Description rdf:about="https://w3id.org/def/NyOnLegal#hasCaseID"/>
+            <rdf:Description rdf:about="https://w3id.org/def/NyOnLegal#hasCaseName"/>
+            <rdf:Description rdf:about="https://w3id.org/def/NyOnLegal#hasDesignation"/>
+            <rdf:Description rdf:about="https://w3id.org/def/NyOnLegal#hasPolicePersonnelName"/>
+            <rdf:Description rdf:about="https://w3id.org/def/NyOnLegal#issueSequenceNum"/>
+            <rdf:Description rdf:about="https://w3id.org/def/NyOnLegal#issueValue"/>
+            <rdf:Description rdf:about="https://w3id.org/def/NyOnLegal#locationName"/>
+            <rdf:Description rdf:about="https://w3id.org/def/NyOnLegal#obiterDictumSequenceNum"/>
+            <rdf:Description rdf:about="https://w3id.org/def/NyOnLegal#obiterDictumValue"/>
+            <rdf:Description rdf:about="https://w3id.org/def/NyOnLegal#partyName"/>
+            <rdf:Description rdf:about="https://w3id.org/def/NyOnLegal#ratioDecidendiSequenceNum"/>
+            <rdf:Description rdf:about="https://w3id.org/def/NyOnLegal#ratioDecidendiValue"/>
+            <rdf:Description rdf:about="https://w3id.org/def/NyOnLegal#witnessName"/>
+            <rdf:Description rdf:about="https://w3id.org/def/NyOnLegal#witnessStatement"/>
+            <rdf:Description rdf:about="https://w3id.org/def/NyOnLegal#wordPhraseValue"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointProperties"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="https://w3id.org/def/NyOnLegal#hasDate"/>
+            <rdf:Description rdf:about="https://w3id.org/def/NyOnLegal#hasMonth"/>
+            <rdf:Description rdf:about="https://w3id.org/def/NyOnLegal#hasYear"/>
         </owl:members>
     </rdf:Description>
 </rdf:RDF>
