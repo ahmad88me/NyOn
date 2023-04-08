@@ -2,14 +2,22 @@
 <rdf:RDF xmlns="https://w3id.org/def/NyOn#"
      xml:base="https://w3id.org/def/NyOn"
      xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:v1="http://docs.oasis-open.org/legalruleml/ns/v1.0/"
      xmlns:owl="http://www.w3.org/2002/07/owl#"
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
      xmlns:xml="http://www.w3.org/XML/1998/namespace"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:swrl="http://www.w3.org/2003/11/swrl#"
      xmlns:vann="http://purl.org/vocab/vann/"
-     xmlns:terms="http://purl.org/dc/terms/">
+     xmlns:swrla="http://swrl.stanford.edu/ontologies/3.3/swrla.owl#"
+     xmlns:swrlb="http://www.w3.org/2003/11/swrlb#"
+     xmlns:terms="http://purl.org/dc/terms/"
+     xmlns:lrmlmm="http://docs.oasis-open.org/legalruleml/ns/v1.0/metamodel"
+     xmlns:NyOnLegal="https://w3id.org/def/NyOnLegal#">
     <owl:Ontology rdf:about="https://w3id.org/def/NyOnLegal#">
+        <owl:versionIRI rdf:resource="https://w3id.org/def/NyOnLegal#/2.0"/>
+        <owl:imports rdf:resource="http://docs.oasis-open.org/legalruleml/ns/v1.0/metamodel"/>
         <dc:publisher rdf:resource="https://www.semintelligence.org/projects"/>
         <terms:created>2020-04-04</terms:created>
         <terms:creator>Harde, Pooja</terms:creator>
@@ -20,14 +28,15 @@
         <terms:description xml:lang="es">Una ontología que representa conceptos en el dominio jurídico.</terms:description>
         <terms:description xml:lang="fr">Une ontologie qui représente des concepts du domaine juridique.</terms:description>
         <terms:license rdf:resource="http://purl.org/NET/rdflicense/cc-by4.0"/>
-        <terms:modified>2020-07-16</terms:modified>
+        <terms:modified>2023-04-08</terms:modified>
         <terms:title xml:lang="en">NyOn: A Multilingual Legal Ontology for Globalized Judicial System</terms:title>
         <terms:title xml:lang="de">NyOn: Eine mehrsprachige Rechtsontologie für ein globalisiertes Justizsystem</terms:title>
         <terms:title xml:lang="es">NyOn: Una ontología jurídica multilingüe para el sistema judicial globalizado</terms:title>
         <terms:title xml:lang="fr">NyOn: Une ontologie juridique multilingue pour un système judiciaire mondialisé</terms:title>
         <vann:preferredNamespacePrefix>nyon</vann:preferredNamespacePrefix>
         <vann:preferredNamespaceUri rdf:resource="https://w3id.org/def/NyOnLegal#"/>
-        <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1.0</owl:versionInfo>
+        <owl:priorVersion>https://w3id.org/def/NyOnLegalOntology#</owl:priorVersion>
+        <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">2.0</owl:versionInfo>
     </owl:Ontology>
     
 
@@ -40,6 +49,12 @@
     ///////////////////////////////////////////////////////////////////////////////////////
      -->
 
+    
+
+
+    <!-- http://docs.oasis-open.org/legalruleml/ns/v1.0/FactualStatement -->
+
+    <owl:AnnotationProperty rdf:about="http://docs.oasis-open.org/legalruleml/ns/v1.0/FactualStatement"/>
     
 
 
@@ -97,6 +112,12 @@
     
 
 
+    <!-- http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled -->
+
+    <owl:AnnotationProperty rdf:about="http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled"/>
+    
+
+
     <!-- http://www.w3.org/2002/07/owl#sameAs -->
 
     <owl:AnnotationProperty rdf:about="http://www.w3.org/2002/07/owl#sameAs"/>
@@ -125,12 +146,20 @@
     
 
 
+    <!-- https://w3id.org/def/NyOnLegal#appellantArgument -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/def/NyOnLegal#appellantArgument">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/def/NyOnLegal#makeArgument"/>
+    </owl:ObjectProperty>
+    
+
+
     <!-- https://w3id.org/def/NyOnLegal#citedBy -->
 
     <owl:ObjectProperty rdf:about="https://w3id.org/def/NyOnLegal#citedBy">
         <owl:inverseOf rdf:resource="https://w3id.org/def/NyOnLegal#cites"/>
-        <rdfs:domain rdf:resource="https://w3id.org/def/NyOnLegal#CourtJudgment"/>
-        <rdfs:range rdf:resource="https://w3id.org/def/NyOnLegal#CourtJudgment"/>
+        <rdfs:domain rdf:resource="https://w3id.org/def/NyOnLegal#CourtCase"/>
+        <rdfs:range rdf:resource="https://w3id.org/def/NyOnLegal#CourtCase"/>
         <rdfs:label xml:lang="en">citedBy</rdfs:label>
     </owl:ObjectProperty>
     
@@ -140,9 +169,17 @@
 
     <owl:ObjectProperty rdf:about="https://w3id.org/def/NyOnLegal#cites">
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
-        <rdfs:domain rdf:resource="https://w3id.org/def/NyOnLegal#CourtJudgment"/>
-        <rdfs:range rdf:resource="https://w3id.org/def/NyOnLegal#CourtJudgment"/>
+        <rdfs:domain rdf:resource="https://w3id.org/def/NyOnLegal#CourtCase"/>
+        <rdfs:range rdf:resource="https://w3id.org/def/NyOnLegal#CourtCase"/>
         <rdfs:label xml:lang="en">cites</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/def/NyOnLegal#defendentArgument -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/def/NyOnLegal#defendentArgument">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/def/NyOnLegal#makeArgument"/>
     </owl:ObjectProperty>
     
 
@@ -150,7 +187,7 @@
     <!-- https://w3id.org/def/NyOnLegal#hasAuthor -->
 
     <owl:ObjectProperty rdf:about="https://w3id.org/def/NyOnLegal#hasAuthor">
-        <rdfs:domain rdf:resource="https://w3id.org/def/NyOnLegal#CourtJudgment"/>
+        <rdfs:domain rdf:resource="https://w3id.org/def/NyOnLegal#CourtCase"/>
         <rdfs:range rdf:resource="https://w3id.org/def/NyOnLegal#Judge"/>
         <rdfs:label xml:lang="en">hasAuthor</rdfs:label>
     </owl:ObjectProperty>
@@ -161,7 +198,7 @@
 
     <owl:ObjectProperty rdf:about="https://w3id.org/def/NyOnLegal#hasBench">
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
-        <rdfs:domain rdf:resource="https://w3id.org/def/NyOnLegal#CourtJudgment"/>
+        <rdfs:domain rdf:resource="https://w3id.org/def/NyOnLegal#CourtCase"/>
         <rdfs:range rdf:resource="https://w3id.org/def/NyOnLegal#Bench"/>
         <rdfs:label xml:lang="en">hasBench</rdfs:label>
     </owl:ObjectProperty>
@@ -183,9 +220,9 @@
 
     <owl:ObjectProperty rdf:about="https://w3id.org/def/NyOnLegal#hasCourtOfficial">
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
-        <rdfs:domain rdf:resource="https://w3id.org/def/NyOnLegal#CourtJudgment"/>
+        <rdfs:domain rdf:resource="https://w3id.org/def/NyOnLegal#CourtCase"/>
         <rdfs:range rdf:resource="https://w3id.org/def/NyOnLegal#Court_Official"/>
-        <rdfs:label xml:lang="en">hasCourtOfiicial</rdfs:label>
+        <rdfs:label xml:lang="en">hasCourtOfficial</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -205,7 +242,7 @@
 
     <owl:ObjectProperty rdf:about="https://w3id.org/def/NyOnLegal#hasEvidence">
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
-        <rdfs:domain rdf:resource="https://w3id.org/def/NyOnLegal#CourtJudgment"/>
+        <rdfs:domain rdf:resource="https://w3id.org/def/NyOnLegal#CourtCase"/>
         <rdfs:range rdf:resource="https://w3id.org/def/NyOnLegal#Evidence"/>
         <rdfs:label xml:lang="en">hasEvidence</rdfs:label>
     </owl:ObjectProperty>
@@ -227,7 +264,7 @@
 
     <owl:ObjectProperty rdf:about="https://w3id.org/def/NyOnLegal#hasFact">
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
-        <rdfs:domain rdf:resource="https://w3id.org/def/NyOnLegal#CourtJudgment"/>
+        <rdfs:domain rdf:resource="https://w3id.org/def/NyOnLegal#CourtCase"/>
         <rdfs:range rdf:resource="https://w3id.org/def/NyOnLegal#Fact"/>
         <rdfs:label xml:lang="en">hasFact</rdfs:label>
     </owl:ObjectProperty>
@@ -238,8 +275,8 @@
 
     <owl:ObjectProperty rdf:about="https://w3id.org/def/NyOnLegal#hasFinalDecision">
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
-        <rdfs:domain rdf:resource="https://w3id.org/def/NyOnLegal#CourtJudgment"/>
-        <rdfs:range rdf:resource="https://w3id.org/def/NyOnLegal#Court_Decision"/>
+        <rdfs:domain rdf:resource="https://w3id.org/def/NyOnLegal#CourtCase"/>
+        <rdfs:range rdf:resource="https://w3id.org/def/NyOnLegal#CourtDecision"/>
         <rdfs:label xml:lang="en">hasFinalDecision</rdfs:label>
     </owl:ObjectProperty>
     
@@ -249,9 +286,19 @@
 
     <owl:ObjectProperty rdf:about="https://w3id.org/def/NyOnLegal#hasIssue">
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
-        <rdfs:domain rdf:resource="https://w3id.org/def/NyOnLegal#CourtJudgment"/>
+        <rdfs:domain rdf:resource="https://w3id.org/def/NyOnLegal#CourtCase"/>
         <rdfs:range rdf:resource="https://w3id.org/def/NyOnLegal#Issue"/>
         <rdfs:label xml:lang="en">hasIssue</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/def/NyOnLegal#hasJudge -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/def/NyOnLegal#hasJudge">
+        <rdfs:range rdf:resource="https://w3id.org/def/NyOnLegal#Judge"/>
+        <rdfs:comment xml:lang="en">represent the judicial body (i.e. judge) for the case</rdfs:comment>
+        <rdfs:label xml:lang="en">hasJudge</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -260,7 +307,7 @@
 
     <owl:ObjectProperty rdf:about="https://w3id.org/def/NyOnLegal#hasJudgmentType">
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
-        <rdfs:domain rdf:resource="https://w3id.org/def/NyOnLegal#CourtJudgment"/>
+        <rdfs:domain rdf:resource="https://w3id.org/def/NyOnLegal#CourtCase"/>
         <rdfs:range rdf:resource="https://w3id.org/def/NyOnLegal#CaseType"/>
         <rdfs:label xml:lang="en">hasJudgmentType</rdfs:label>
     </owl:ObjectProperty>
@@ -282,7 +329,7 @@
 
     <owl:ObjectProperty rdf:about="https://w3id.org/def/NyOnLegal#hasObiterDictum">
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
-        <rdfs:domain rdf:resource="https://w3id.org/def/NyOnLegal#CourtJudgment"/>
+        <rdfs:domain rdf:resource="https://w3id.org/def/NyOnLegal#CourtCase"/>
         <rdfs:range rdf:resource="https://w3id.org/def/NyOnLegal#ObiterDictum"/>
         <rdfs:label xml:lang="en">hasObiterDictum</rdfs:label>
     </owl:ObjectProperty>
@@ -293,7 +340,7 @@
 
     <owl:ObjectProperty rdf:about="https://w3id.org/def/NyOnLegal#hasParty">
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
-        <rdfs:domain rdf:resource="https://w3id.org/def/NyOnLegal#CourtJudgment"/>
+        <rdfs:domain rdf:resource="https://w3id.org/def/NyOnLegal#CourtCase"/>
         <rdfs:range rdf:resource="https://w3id.org/def/NyOnLegal#Party"/>
         <rdfs:label xml:lang="en">hasParty</rdfs:label>
     </owl:ObjectProperty>
@@ -314,9 +361,18 @@
     <!-- https://w3id.org/def/NyOnLegal#hasPolicePersonnel -->
 
     <owl:ObjectProperty rdf:about="https://w3id.org/def/NyOnLegal#hasPolicePersonnel">
-        <rdfs:domain rdf:resource="https://w3id.org/def/NyOnLegal#CourtJudgment"/>
+        <rdfs:domain rdf:resource="https://w3id.org/def/NyOnLegal#CourtCase"/>
         <rdfs:range rdf:resource="https://w3id.org/def/NyOnLegal#Investigator"/>
         <rdfs:label xml:lang="en">hasPolicePersonnel</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/def/NyOnLegal#hasPrecedent -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/def/NyOnLegal#hasPrecedent">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:comment xml:lang="en">represents past cases referred by the judge in the judgment</rdfs:comment>
     </owl:ObjectProperty>
     
 
@@ -325,7 +381,7 @@
 
     <owl:ObjectProperty rdf:about="https://w3id.org/def/NyOnLegal#hasRatioDecidendi">
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
-        <rdfs:domain rdf:resource="https://w3id.org/def/NyOnLegal#CourtJudgment"/>
+        <rdfs:domain rdf:resource="https://w3id.org/def/NyOnLegal#CourtCase"/>
         <rdfs:range rdf:resource="https://w3id.org/def/NyOnLegal#RatioDecidendi"/>
         <rdfs:label xml:lang="en">hasRtioDecidendi</rdfs:label>
     </owl:ObjectProperty>
@@ -337,7 +393,7 @@
     <owl:ObjectProperty rdf:about="https://w3id.org/def/NyOnLegal#hasRulingOf">
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
-        <rdfs:domain rdf:resource="https://w3id.org/def/NyOnLegal#CourtJudgment"/>
+        <rdfs:domain rdf:resource="https://w3id.org/def/NyOnLegal#CourtCase"/>
         <rdfs:range rdf:resource="https://w3id.org/def/NyOnLegal#Court"/>
         <rdfs:label xml:lang="en">hasRulingOf</rdfs:label>
     </owl:ObjectProperty>
@@ -348,7 +404,7 @@
 
     <owl:ObjectProperty rdf:about="https://w3id.org/def/NyOnLegal#hasStatue">
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
-        <rdfs:domain rdf:resource="https://w3id.org/def/NyOnLegal#CourtJudgment"/>
+        <rdfs:domain rdf:resource="https://w3id.org/def/NyOnLegal#CourtCase"/>
         <rdfs:range rdf:resource="https://w3id.org/def/NyOnLegal#Statue"/>
         <rdfs:label xml:lang="en">hasStatue</rdfs:label>
     </owl:ObjectProperty>
@@ -359,7 +415,7 @@
 
     <owl:ObjectProperty rdf:about="https://w3id.org/def/NyOnLegal#hasWitness">
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
-        <rdfs:domain rdf:resource="https://w3id.org/def/NyOnLegal#CourtJudgment"/>
+        <rdfs:domain rdf:resource="https://w3id.org/def/NyOnLegal#CourtCase"/>
         <rdfs:range rdf:resource="https://w3id.org/def/NyOnLegal#Witness"/>
         <rdfs:label xml:lang="en">hasWitness</rdfs:label>
     </owl:ObjectProperty>
@@ -370,7 +426,7 @@
 
     <owl:ObjectProperty rdf:about="https://w3id.org/def/NyOnLegal#hasWordPhrase">
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
-        <rdfs:domain rdf:resource="https://w3id.org/def/NyOnLegal#CourtJudgment"/>
+        <rdfs:domain rdf:resource="https://w3id.org/def/NyOnLegal#CourtCase"/>
         <rdfs:range rdf:resource="https://w3id.org/def/NyOnLegal#WordAndPhrase"/>
         <rdfs:label xml:lang="en">hasWordPhrase</rdfs:label>
     </owl:ObjectProperty>
@@ -380,7 +436,7 @@
     <!-- https://w3id.org/def/NyOnLegal#hasWords -->
 
     <owl:ObjectProperty rdf:about="https://w3id.org/def/NyOnLegal#hasWords">
-        <rdfs:domain rdf:resource="https://w3id.org/def/NyOnLegal#CourtJudgment"/>
+        <rdfs:domain rdf:resource="https://w3id.org/def/NyOnLegal#CourtCase"/>
         <rdfs:range rdf:resource="https://w3id.org/def/NyOnLegal#CatchWord"/>
         <rdfs:comment xml:lang="en">signifies the domain words, facts and issue related words in the case</rdfs:comment>
         <rdfs:label xml:lang="en">hasWords</rdfs:label>
@@ -395,6 +451,65 @@
         <rdfs:domain rdf:resource="https://w3id.org/def/NyOnLegal#Party"/>
         <rdfs:range rdf:resource="https://w3id.org/def/NyOnLegal#Argument"/>
         <rdfs:label xml:lang="en">makeArgument</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/def/NyOnLegal#petitionerArgument -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/def/NyOnLegal#petitionerArgument">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/def/NyOnLegal#makeArgument"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/def/NyOnLegal#plaintiffArgument -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/def/NyOnLegal#plaintiffArgument">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/def/NyOnLegal#makeArgument"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/def/NyOnLegal#precedentOverruled -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/def/NyOnLegal#precedentOverruled">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/def/NyOnLegal#hasPrecedent"/>
+        <rdfs:domain rdf:resource="https://w3id.org/def/NyOnLegal#CourtCase"/>
+        <rdfs:range rdf:resource="https://w3id.org/def/NyOnLegal#CourtCase"/>
+        <rdfs:comment xml:lang="en">represents the past cases overruled by the judge in the current case</rdfs:comment>
+        <rdfs:label xml:lang="en">precedentOverruled</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/def/NyOnLegal#precedentReliedUpon -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/def/NyOnLegal#precedentReliedUpon">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/def/NyOnLegal#hasPrecedent"/>
+        <rdfs:domain rdf:resource="https://w3id.org/def/NyOnLegal#CourtCase"/>
+        <rdfs:comment xml:lang="en">represnts the past cases referred by the judge on which the current judgment relies on</rdfs:comment>
+        <rdfs:label xml:lang="en">precedentReliedUpon</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/def/NyOnLegal#precendentNotReliedUpon -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/def/NyOnLegal#precendentNotReliedUpon">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/def/NyOnLegal#hasPrecedent"/>
+        <rdfs:domain rdf:resource="https://w3id.org/def/NyOnLegal#CourtCase"/>
+        <rdfs:range rdf:resource="https://w3id.org/def/NyOnLegal#CourtCase"/>
+        <rdfs:comment xml:lang="en">represent the past cases referred b ythe judge on which the case decision does not rely on</rdfs:comment>
+        <rdfs:label xml:lang="en">precedentNotReliedUpon</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/def/NyOnLegal#respondentArgument -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/def/NyOnLegal#respondentArgument">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/def/NyOnLegal#makeArgument"/>
     </owl:ObjectProperty>
     
 
@@ -432,6 +547,15 @@
     
 
 
+    <!-- https://w3id.org/def/NyOnLegal#withOpinion -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/def/NyOnLegal#withOpinion">
+        <rdfs:comment xml:lang="en">represnts the judge opinion on the case either with majority, dissent or concurrence</rdfs:comment>
+        <rdfs:label xml:lang="en">withOpinion</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
     <!-- https://w3id.org/def/NyOnLegal#worksIn -->
 
     <owl:ObjectProperty rdf:about="https://w3id.org/def/NyOnLegal#worksIn">
@@ -457,7 +581,7 @@
     <!-- https://w3id.org/def/NyOnLegal#COFirstName -->
 
     <owl:DatatypeProperty rdf:about="https://w3id.org/def/NyOnLegal#COFirstName">
-        <rdfs:subPropertyOf rdf:resource="https://w3id.org/def/NyOnLegal#courtOffName"/>
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/def/NyOnLegal#witnessName"/>
         <rdfs:domain rdf:resource="https://w3id.org/def/NyOnLegal#Court_Official"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:label xml:lang="en">COFirstName</rdfs:label>
@@ -533,7 +657,21 @@
 
     <owl:DatatypeProperty rdf:about="https://w3id.org/def/NyOnLegal#dateOfJudgment">
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="https://w3id.org/def/NyOnLegal#DateOfJudgment"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:label xml:lang="en">dateOfJudgment</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/def/NyOnLegal#equivalentCitation -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/def/NyOnLegal#equivalentCitation">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="https://w3id.org/def/NyOnLegal#CourtCase"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <owl:propertyDisjointWith rdf:resource="https://w3id.org/def/NyOnLegal#neutralCitations"/>
+        <rdfs:comment xml:lang="en">equivalent citations provided by the various law reporters.</rdfs:comment>
     </owl:DatatypeProperty>
     
 
@@ -575,7 +713,7 @@
 
     <owl:DatatypeProperty rdf:about="https://w3id.org/def/NyOnLegal#finalDecisionValue">
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
-        <rdfs:domain rdf:resource="https://w3id.org/def/NyOnLegal#Court_Decision"/>
+        <rdfs:domain rdf:resource="https://w3id.org/def/NyOnLegal#CourtDecision"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:label xml:lang="en">finalDecisionValue</rdfs:label>
     </owl:DatatypeProperty>
@@ -597,7 +735,7 @@
     <!-- https://w3id.org/def/NyOnLegal#hasCaseID -->
 
     <owl:DatatypeProperty rdf:about="https://w3id.org/def/NyOnLegal#hasCaseID">
-        <rdfs:domain rdf:resource="https://w3id.org/def/NyOnLegal#CourtJudgment"/>
+        <rdfs:domain rdf:resource="https://w3id.org/def/NyOnLegal#CourtCase"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:comment xml:lang="en">Case has a unique ID</rdfs:comment>
         <rdfs:label xml:lang="en">hasCaseID</rdfs:label>
@@ -608,7 +746,7 @@
     <!-- https://w3id.org/def/NyOnLegal#hasCaseName -->
 
     <owl:DatatypeProperty rdf:about="https://w3id.org/def/NyOnLegal#hasCaseName">
-        <rdfs:domain rdf:resource="https://w3id.org/def/NyOnLegal#CourtJudgment"/>
+        <rdfs:domain rdf:resource="https://w3id.org/def/NyOnLegal#CourtCase"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:comment xml:lang="en">represents the name of a case usually contains the name of both the parties</rdfs:comment>
         <rdfs:label xml:lang="en">hasCaseName</rdfs:label>
@@ -709,7 +847,18 @@
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
         <rdfs:domain rdf:resource="https://w3id.org/def/NyOnLegal#Location"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <rdfs:label xml:lang="en">locstionName</rdfs:label>
+        <rdfs:label xml:lang="en">locationName</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/def/NyOnLegal#neutralCitations -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/def/NyOnLegal#neutralCitations">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="https://w3id.org/def/NyOnLegal#CourtCase"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment xml:lang="en">represents neutral citations given by the court itself</rdfs:comment>
     </owl:DatatypeProperty>
     
 
@@ -763,6 +912,15 @@
         <rdfs:domain rdf:resource="https://w3id.org/def/NyOnLegal#RatioDecidendi"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:label xml:lang="en">ratioDecidendiValue</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/def/NyOnLegal#value -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/def/NyOnLegal#value">
+        <rdfs:domain rdf:resource="https://w3id.org/def/NyOnLegal#Opinion"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     </owl:DatatypeProperty>
     
 
@@ -832,11 +990,34 @@
     
 
 
+    <!-- http://docs.oasis-open.org/legalruleml/ns/v1.0/metamodel#FactualStatement -->
+
+    <owl:Class rdf:about="http://docs.oasis-open.org/legalruleml/ns/v1.0/metamodel#FactualStatement">
+        <owl:equivalentClass rdf:resource="https://w3id.org/def/NyOnLegal#Fact"/>
+    </owl:Class>
+    
+
+
     <!-- http://xmlns.com/foaf/0.1/Person -->
 
     <owl:Class rdf:about="http://xmlns.com/foaf/0.1/Person">
         <owl:equivalentClass rdf:resource="https://w3id.org/def/NyOnLegal#Individual"/>
         <rdfs:label xml:lang="en">Person</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://schema.org/GovernmentOrganization -->
+
+    <owl:Class rdf:about="https://schema.org/GovernmentOrganization">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/def/NyOnLegal#Party_Type"/>
+        <rdfs:comment xml:lang="en">party involved (either on both sides or any one) is the government in the case</rdfs:comment>
+        <rdfs:comment xml:lang="hi">प्रतिभागियों में शामिल (या तो दोनों तरफ या किसी एक पर) मामले में सरकार है</rdfs:comment>
+        <rdfs:label xml:lang="es">Gobierno</rdfs:label>
+        <rdfs:label xml:lang="fr">Gouvernement</rdfs:label>
+        <rdfs:label xml:lang="en">Government</rdfs:label>
+        <rdfs:label xml:lang="de">Regierung</rdfs:label>
+        <rdfs:label xml:lang="hi">सरकार</rdfs:label>
     </owl:Class>
     
 
@@ -994,7 +1175,7 @@
 
     <owl:Class rdf:about="https://w3id.org/def/NyOnLegal#CaseDomain">
         <rdfs:comment xml:lang="en">case belongs to specific proceeding like civil or criminal</rdfs:comment>
-        <rdfs:label xml:lang="en">Case Domain</rdfs:label>
+        <rdfs:label xml:lang="en">CaseDomain</rdfs:label>
     </owl:Class>
     
 
@@ -1003,7 +1184,7 @@
 
     <owl:Class rdf:about="https://w3id.org/def/NyOnLegal#CaseType">
         <rdfs:comment xml:lang="en">classification of types of cases</rdfs:comment>
-        <rdfs:label xml:lang="en">Case Type</rdfs:label>
+        <rdfs:label xml:lang="en">CaseType</rdfs:label>
     </owl:Class>
     
 
@@ -1116,19 +1297,19 @@
     
 
 
-    <!-- https://w3id.org/def/NyOnLegal#CourtJudgment -->
+    <!-- https://w3id.org/def/NyOnLegal#CourtCase -->
 
-    <owl:Class rdf:about="https://w3id.org/def/NyOnLegal#CourtJudgment">
+    <owl:Class rdf:about="https://w3id.org/def/NyOnLegal#CourtCase">
         <rdfs:comment xml:lang="en">represents the court judgment given by a court of law</rdfs:comment>
-        <rdfs:label xml:lang="en">Court Judgment</rdfs:label>
+        <rdfs:label xml:lang="en">CourtCase</rdfs:label>
     </owl:Class>
     
 
 
-    <!-- https://w3id.org/def/NyOnLegal#Court_Decision -->
+    <!-- https://w3id.org/def/NyOnLegal#CourtDecision -->
 
-    <owl:Class rdf:about="https://w3id.org/def/NyOnLegal#Court_Decision">
-        <rdfs:label xml:lang="en">Court Decision</rdfs:label>
+    <owl:Class rdf:about="https://w3id.org/def/NyOnLegal#CourtDecision">
+        <rdfs:label xml:lang="en">CourtDecision</rdfs:label>
     </owl:Class>
     
 
@@ -1138,7 +1319,7 @@
     <owl:Class rdf:about="https://w3id.org/def/NyOnLegal#Court_Official">
         <rdfs:comment xml:lang="en">legal system related people involved in a case</rdfs:comment>
         <rdfs:comment xml:lang="hi">एक मामले में अदालत के अधिकारी शामिल हैं</rdfs:comment>
-        <rdfs:label xml:lang="en">Court Official</rdfs:label>
+        <rdfs:label xml:lang="en">CourtOfficial</rdfs:label>
         <rdfs:label xml:lang="de">Gerichtsbeamter</rdfs:label>
         <rdfs:label xml:lang="fr">Officiel de la cour</rdfs:label>
         <rdfs:label xml:lang="es">Oficial de la corte</rdfs:label>
@@ -1211,7 +1392,7 @@
 
     <owl:Class rdf:about="https://w3id.org/def/NyOnLegal#DateOfJudgment">
         <rdfs:comment xml:lang="en">signifies the final date on which the judgment is given by the court of law</rdfs:comment>
-        <rdfs:label xml:lang="en">Date of Judgment</rdfs:label>
+        <rdfs:label xml:lang="en">DateofJudgment</rdfs:label>
     </owl:Class>
     
 
@@ -1225,7 +1406,7 @@
                 <owl:allValuesFrom rdf:resource="https://w3id.org/def/NyOnLegal#Civil"/>
             </owl:Restriction>
         </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="https://w3id.org/def/NyOnLegal#Court_Decision"/>
+        <rdfs:subClassOf rdf:resource="https://w3id.org/def/NyOnLegal#CourtDecision"/>
         <rdfs:label xml:lang="en">Decree</rdfs:label>
     </owl:Class>
     
@@ -1235,6 +1416,7 @@
 
     <owl:Class rdf:about="https://w3id.org/def/NyOnLegal#Defendant">
         <rdfs:subClassOf rdf:resource="https://w3id.org/def/NyOnLegal#Party"/>
+        <owl:disjointWith rdf:resource="https://w3id.org/def/NyOnLegal#Respondent"/>
         <rdfs:comment xml:lang="en">a person sued in the court of law</rdfs:comment>
         <rdfs:label xml:lang="en">Defendant</rdfs:label>
     </owl:Class>
@@ -1319,22 +1501,8 @@
     <!-- https://w3id.org/def/NyOnLegal#Fact -->
 
     <owl:Class rdf:about="https://w3id.org/def/NyOnLegal#Fact">
+        <rdfs:comment xml:lang="en">represents factual statements in the case law</rdfs:comment>
         <rdfs:label xml:lang="en">Fact</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- https://w3id.org/def/NyOnLegal#Government -->
-
-    <owl:Class rdf:about="https://w3id.org/def/NyOnLegal#Government">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/def/NyOnLegal#Party_Type"/>
-        <rdfs:comment xml:lang="en">party involved (either on both sides or any one) is the government in the case</rdfs:comment>
-        <rdfs:comment xml:lang="hi">प्रतिभागियों में शामिल (या तो दोनों तरफ या किसी एक पर) मामले में सरकार है</rdfs:comment>
-        <rdfs:label xml:lang="es">Gobierno</rdfs:label>
-        <rdfs:label xml:lang="fr">Gouvernement</rdfs:label>
-        <rdfs:label xml:lang="en">Government</rdfs:label>
-        <rdfs:label xml:lang="de">Regierung</rdfs:label>
-        <rdfs:label xml:lang="hi">सरकार</rdfs:label>
     </owl:Class>
     
 
@@ -1388,7 +1556,7 @@
 
     <owl:Class rdf:about="https://w3id.org/def/NyOnLegal#Investigator">
         <rdfs:comment xml:lang="hi">जांचकर्ता का प्रतिनिधित्व करता है जो एफआईआर को फाइल करता है या एक मामले की जांच करता है</rdfs:comment>
-        <rdfs:label xml:lang="en">Police Personnel</rdfs:label>
+        <rdfs:label xml:lang="en">PolicePersonnel</rdfs:label>
     </owl:Class>
     
 
@@ -1421,7 +1589,7 @@
 
     <owl:Class rdf:about="https://w3id.org/def/NyOnLegal#Judgement">
         <owl:equivalentClass rdf:resource="https://w3id.org/def/NyOnLegal#Order"/>
-        <rdfs:subClassOf rdf:resource="https://w3id.org/def/NyOnLegal#Court_Decision"/>
+        <rdfs:subClassOf rdf:resource="https://w3id.org/def/NyOnLegal#CourtDecision"/>
         <rdfs:comment xml:lang="en">Judgement given by the judge </rdfs:comment>
         <rdfs:comment xml:lang="hi">जज द्वारा दिया गया निर्णय</rdfs:comment>
         <rdfs:label xml:lang="de">Beurteilung</rdfs:label>
@@ -1443,6 +1611,7 @@
         <rdfs:label xml:lang="en">Jurisdiction</rdfs:label>
         <rdfs:label xml:lang="de">Zuständigkeit</rdfs:label>
         <rdfs:label xml:lang="hi">क्षेत्राधिकार</rdfs:label>
+        <owl:sameAs xml:lang="en">lmrl:Jurisdiction</owl:sameAs>
     </owl:Class>
     
 
@@ -1458,6 +1627,28 @@
         <rdfs:label xml:lang="de">Größere Bank</rdfs:label>
         <rdfs:label xml:lang="en">Larger Bench</rdfs:label>
         <rdfs:label xml:lang="hi">बड़ी बेंच</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/def/NyOnLegal#Lawyer -->
+
+    <owl:Class rdf:about="https://w3id.org/def/NyOnLegal#Lawyer">
+        <owl:equivalentClass rdf:resource="https://w3id.org/def/NyOnLegal#LearnedCounsel"/>
+        <owl:equivalentClass rdf:resource="https://w3id.org/def/NyOnLegal#Solicitor"/>
+        <rdfs:subClassOf rdf:resource="https://w3id.org/def/NyOnLegal#Court_Official"/>
+        <rdfs:comment xml:lang="en">Lawyer is a term of reference to the attroneys and advocates collectively in litigation</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/def/NyOnLegal#LearnedCounsel -->
+
+    <owl:Class rdf:about="https://w3id.org/def/NyOnLegal#LearnedCounsel">
+        <owl:equivalentClass rdf:resource="https://w3id.org/def/NyOnLegal#Solicitor"/>
+        <rdfs:subClassOf rdf:resource="https://w3id.org/def/NyOnLegal#Court_Official"/>
+        <rdfs:comment xml:lang="en">Learned counsel is a term of reference to the lawyers and advocates collectively in litigation</rdfs:comment>
+        <rdfs:label xml:lang="en">LearnedCounsel</rdfs:label>
     </owl:Class>
     
 
@@ -1551,7 +1742,7 @@
     <!-- https://w3id.org/def/NyOnLegal#Order -->
 
     <owl:Class rdf:about="https://w3id.org/def/NyOnLegal#Order">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/def/NyOnLegal#Court_Decision"/>
+        <rdfs:subClassOf rdf:resource="https://w3id.org/def/NyOnLegal#CourtDecision"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="https://w3id.org/def/NyOnLegal#OfDomian"/>
@@ -1632,6 +1823,34 @@
     
 
 
+    <!-- https://w3id.org/def/NyOnLegal#Precedent -->
+
+    <owl:Class rdf:about="https://w3id.org/def/NyOnLegal#Precedent">
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://w3id.org/def/NyOnLegal#District_Court"/>
+                    <owl:Class>
+                        <owl:intersectionOf rdf:parseType="Collection">
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="https://w3id.org/def/NyOnLegal#hasPrecedent"/>
+                                <owl:someValuesFrom rdf:resource="https://w3id.org/def/NyOnLegal#CourtCase"/>
+                            </owl:Restriction>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="https://w3id.org/def/NyOnLegal#hasRulingOf"/>
+                                <owl:someValuesFrom rdf:resource="https://w3id.org/def/NyOnLegal#High_Court"/>
+                            </owl:Restriction>
+                        </owl:intersectionOf>
+                    </owl:Class>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+        <rdfs:comment xml:lang="en">all the past cases referred in the current judgment b ythe judge</rdfs:comment>
+        <rdfs:label xml:lang="en">Precedent</rdfs:label>
+    </owl:Class>
+    
+
+
     <!-- https://w3id.org/def/NyOnLegal#Principal_Junior_Civil_Court -->
 
     <owl:Class rdf:about="https://w3id.org/def/NyOnLegal#Principal_Junior_Civil_Court">
@@ -1647,11 +1866,20 @@
     
 
 
+    <!-- https://w3id.org/def/NyOnLegal#Provision -->
+
+    <owl:Class rdf:about="https://w3id.org/def/NyOnLegal#Provision">
+        <rdfs:comment xml:lang="en">section number or article number applied/used in the case law</rdfs:comment>
+        <rdfs:label xml:lang="en">Provision</rdfs:label>
+    </owl:Class>
+    
+
+
     <!-- https://w3id.org/def/NyOnLegal#RatioDecidendi -->
 
     <owl:Class rdf:about="https://w3id.org/def/NyOnLegal#RatioDecidendi">
         <rdfs:comment xml:lang="en">the rationale for the decision</rdfs:comment>
-        <rdfs:label xml:lang="en">Ratio Decidendi</rdfs:label>
+        <rdfs:label xml:lang="en">RatioDecidendi</rdfs:label>
     </owl:Class>
     
 
@@ -1912,41 +2140,18 @@
     <rdf:Description>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
         <owl:members rdf:parseType="Collection">
-            <rdf:Description rdf:about="https://schema.org/Organization"/>
-            <rdf:Description rdf:about="https://w3id.org/def/NyOnLegal#Government"/>
-            <rdf:Description rdf:about="https://w3id.org/def/NyOnLegal#Group"/>
-            <rdf:Description rdf:about="https://w3id.org/def/NyOnLegal#Individual"/>
-            <rdf:Description rdf:about="https://w3id.org/def/NyOnLegal#State"/>
-        </owl:members>
-    </rdf:Description>
-    <rdf:Description>
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
-        <owl:members rdf:parseType="Collection">
-            <rdf:Description rdf:about="https://schema.org/Place"/>
-            <rdf:Description rdf:about="https://w3id.org/def/NyOnLegal#Country"/>
-            <rdf:Description rdf:about="https://w3id.org/def/NyOnLegal#District"/>
-            <rdf:Description rdf:about="https://w3id.org/def/NyOnLegal#State"/>
-            <rdf:Description rdf:about="https://w3id.org/def/NyOnLegal#Taluka"/>
-        </owl:members>
-    </rdf:Description>
-    <rdf:Description>
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
-        <owl:members rdf:parseType="Collection">
-            <rdf:Description rdf:about="https://w3id.org/def/NyOnLegal#Accussed"/>
-            <rdf:Description rdf:about="https://w3id.org/def/NyOnLegal#Appellant"/>
-            <rdf:Description rdf:about="https://w3id.org/def/NyOnLegal#Petitioner"/>
-            <rdf:Description rdf:about="https://w3id.org/def/NyOnLegal#Plaintiff"/>
-            <rdf:Description rdf:about="https://w3id.org/def/NyOnLegal#Respondent"/>
-            <rdf:Description rdf:about="https://w3id.org/def/NyOnLegal#Witness"/>
-        </owl:members>
-    </rdf:Description>
-    <rdf:Description>
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
-        <owl:members rdf:parseType="Collection">
             <rdf:Description rdf:about="https://w3id.org/def/NyOnLegal#Advisory_Jurisdiction"/>
             <rdf:Description rdf:about="https://w3id.org/def/NyOnLegal#Appellant_Jurisdiction"/>
             <rdf:Description rdf:about="https://w3id.org/def/NyOnLegal#Original_Jurisdiction"/>
             <rdf:Description rdf:about="https://w3id.org/def/NyOnLegal#Review_Jurisdiction"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="https://w3id.org/def/NyOnLegal#Appellant"/>
+            <rdf:Description rdf:about="https://w3id.org/def/NyOnLegal#Petitioner"/>
+            <rdf:Description rdf:about="https://w3id.org/def/NyOnLegal#Plaintiff"/>
         </owl:members>
     </rdf:Description>
     <rdf:Description>
@@ -1973,14 +2178,6 @@
     <rdf:Description>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
         <owl:members rdf:parseType="Collection">
-            <rdf:Description rdf:about="https://w3id.org/def/NyOnLegal#Concurrence"/>
-            <rdf:Description rdf:about="https://w3id.org/def/NyOnLegal#Dissent"/>
-            <rdf:Description rdf:about="https://w3id.org/def/NyOnLegal#Majority"/>
-        </owl:members>
-    </rdf:Description>
-    <rdf:Description>
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
-        <owl:members rdf:parseType="Collection">
             <rdf:Description rdf:about="https://w3id.org/def/NyOnLegal#Investigator"/>
             <rdf:Description rdf:about="https://w3id.org/def/NyOnLegal#Judge"/>
             <rdf:Description rdf:about="https://w3id.org/def/NyOnLegal#Solicitor"/>
@@ -1989,36 +2186,11 @@
     <rdf:Description>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointProperties"/>
         <owl:members rdf:parseType="Collection">
-            <rdf:Description rdf:about="https://w3id.org/def/NyOnLegal#OfDomian"/>
-            <rdf:Description rdf:about="https://w3id.org/def/NyOnLegal#citedBy"/>
-            <rdf:Description rdf:about="https://w3id.org/def/NyOnLegal#cites"/>
-            <rdf:Description rdf:about="https://w3id.org/def/NyOnLegal#hasAuthor"/>
-            <rdf:Description rdf:about="https://w3id.org/def/NyOnLegal#hasBench"/>
-            <rdf:Description rdf:about="https://w3id.org/def/NyOnLegal#hasCourtLoc"/>
-            <rdf:Description rdf:about="https://w3id.org/def/NyOnLegal#hasCourtOfficial"/>
-            <rdf:Description rdf:about="https://w3id.org/def/NyOnLegal#hasDateOfJudgment"/>
-            <rdf:Description rdf:about="https://w3id.org/def/NyOnLegal#hasEvidence"/>
-            <rdf:Description rdf:about="https://w3id.org/def/NyOnLegal#hasEvidenceLoc"/>
-            <rdf:Description rdf:about="https://w3id.org/def/NyOnLegal#hasFact"/>
-            <rdf:Description rdf:about="https://w3id.org/def/NyOnLegal#hasFinalDecision"/>
-            <rdf:Description rdf:about="https://w3id.org/def/NyOnLegal#hasIssue"/>
-            <rdf:Description rdf:about="https://w3id.org/def/NyOnLegal#hasJudgmentType"/>
-            <rdf:Description rdf:about="https://w3id.org/def/NyOnLegal#hasJurisdiction"/>
-            <rdf:Description rdf:about="https://w3id.org/def/NyOnLegal#hasObiterDictum"/>
-            <rdf:Description rdf:about="https://w3id.org/def/NyOnLegal#hasParty"/>
-            <rdf:Description rdf:about="https://w3id.org/def/NyOnLegal#hasPartyType"/>
-            <rdf:Description rdf:about="https://w3id.org/def/NyOnLegal#hasPolicePersonnel"/>
-            <rdf:Description rdf:about="https://w3id.org/def/NyOnLegal#hasRatioDecidendi"/>
-            <rdf:Description rdf:about="https://w3id.org/def/NyOnLegal#hasRulingOf"/>
-            <rdf:Description rdf:about="https://w3id.org/def/NyOnLegal#hasStatue"/>
-            <rdf:Description rdf:about="https://w3id.org/def/NyOnLegal#hasWitness"/>
-            <rdf:Description rdf:about="https://w3id.org/def/NyOnLegal#hasWordPhrase"/>
-            <rdf:Description rdf:about="https://w3id.org/def/NyOnLegal#hasWords"/>
-            <rdf:Description rdf:about="https://w3id.org/def/NyOnLegal#makeArgument"/>
-            <rdf:Description rdf:about="https://w3id.org/def/NyOnLegal#withConcurrence"/>
-            <rdf:Description rdf:about="https://w3id.org/def/NyOnLegal#withDissent"/>
-            <rdf:Description rdf:about="https://w3id.org/def/NyOnLegal#withMajority"/>
-            <rdf:Description rdf:about="https://w3id.org/def/NyOnLegal#worksIn"/>
+            <rdf:Description rdf:about="https://w3id.org/def/NyOnLegal#appellantArgument"/>
+            <rdf:Description rdf:about="https://w3id.org/def/NyOnLegal#defendentArgument"/>
+            <rdf:Description rdf:about="https://w3id.org/def/NyOnLegal#petitionerArgument"/>
+            <rdf:Description rdf:about="https://w3id.org/def/NyOnLegal#plaintiffArgument"/>
+            <rdf:Description rdf:about="https://w3id.org/def/NyOnLegal#respondentArgument"/>
         </owl:members>
     </rdf:Description>
     <rdf:Description>
@@ -2043,6 +2215,14 @@
             <rdf:Description rdf:about="https://w3id.org/def/NyOnLegal#hasWitness"/>
             <rdf:Description rdf:about="https://w3id.org/def/NyOnLegal#hasWordPhrase"/>
             <rdf:Description rdf:about="https://w3id.org/def/NyOnLegal#hasWords"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointProperties"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="https://w3id.org/def/NyOnLegal#precedentOverruled"/>
+            <rdf:Description rdf:about="https://w3id.org/def/NyOnLegal#precedentReliedUpon"/>
+            <rdf:Description rdf:about="https://w3id.org/def/NyOnLegal#precendentNotReliedUpon"/>
         </owl:members>
     </rdf:Description>
     <rdf:Description>
@@ -2083,9 +2263,416 @@
             <rdf:Description rdf:about="https://w3id.org/def/NyOnLegal#hasYear"/>
         </owl:members>
     </rdf:Description>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Rules
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description rdf:about="https://w3id.org/def/NyOn#x">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="https://w3id.org/def/NyOn#j">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="https://w3id.org/def/NyOn#c">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="https://w3id.org/def/NyOn#cj">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="https://w3id.org/def/NyOn#p">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="https://w3id.org/def/NyOn#a">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="https://w3id.org/def/NyOn#d">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="https://w3id.org/def/NyOn#y">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="https://w3id.org/def/NyOn#m">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="https://w3id.org/def/NyOn#r">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description>
+        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+        <rdfs:comment></rdfs:comment>
+        <rdfs:label>S4</rdfs:label>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="https://w3id.org/def/NyOnLegal#hasJudge"/>
+                        <swrl:argument1 rdf:resource="https://w3id.org/def/NyOn#x"/>
+                        <swrl:argument2 rdf:resource="https://w3id.org/def/NyOn#j"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                                <swrl:classPredicate rdf:resource="https://w3id.org/def/NyOnLegal#Concurrence"/>
+                                <swrl:argument1 rdf:resource="https://w3id.org/def/NyOn#c"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                <rdf:first>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                        <swrl:propertyPredicate rdf:resource="https://w3id.org/def/NyOnLegal#withConcurrence"/>
+                                        <swrl:argument1 rdf:resource="https://w3id.org/def/NyOn#j"/>
+                                        <swrl:argument2 rdf:resource="https://w3id.org/def/NyOn#c"/>
+                                    </rdf:Description>
+                                </rdf:first>
+                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="https://w3id.org/def/NyOnLegal#withOpinion"/>
+                        <swrl:argument1 rdf:resource="https://w3id.org/def/NyOn#j"/>
+                        <swrl:argument2 rdf:resource="https://w3id.org/def/NyOn#c"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+        <rdfs:comment></rdfs:comment>
+        <rdfs:label>S5</rdfs:label>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="https://w3id.org/def/NyOnLegal#CourtCase"/>
+                        <swrl:argument1 rdf:resource="https://w3id.org/def/NyOn#cj"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                                <swrl:classPredicate rdf:resource="https://w3id.org/def/NyOnLegal#Petitioner"/>
+                                <swrl:argument1 rdf:resource="https://w3id.org/def/NyOn#p"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                <rdf:first>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                        <swrl:propertyPredicate rdf:resource="https://w3id.org/def/NyOnLegal#makeArgument"/>
+                                        <swrl:argument1 rdf:resource="https://w3id.org/def/NyOn#p"/>
+                                        <swrl:argument2 rdf:resource="https://w3id.org/def/NyOn#a"/>
+                                    </rdf:Description>
+                                </rdf:first>
+                                <rdf:rest>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                        <rdf:first>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                                <swrl:propertyPredicate rdf:resource="https://w3id.org/def/NyOnLegal#hasParty"/>
+                                                <swrl:argument1 rdf:resource="https://w3id.org/def/NyOn#cj"/>
+                                                <swrl:argument2 rdf:resource="https://w3id.org/def/NyOn#p"/>
+                                            </rdf:Description>
+                                        </rdf:first>
+                                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                    </rdf:Description>
+                                </rdf:rest>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="https://w3id.org/def/NyOnLegal#petitionerArgument"/>
+                        <swrl:argument1 rdf:resource="https://w3id.org/def/NyOn#cj"/>
+                        <swrl:argument2 rdf:resource="https://w3id.org/def/NyOn#a"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+        <rdfs:comment></rdfs:comment>
+        <rdfs:label>S3</rdfs:label>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="https://w3id.org/def/NyOnLegal#hasJudge"/>
+                        <swrl:argument1 rdf:resource="https://w3id.org/def/NyOn#x"/>
+                        <swrl:argument2 rdf:resource="https://w3id.org/def/NyOn#j"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                                <swrl:classPredicate rdf:resource="https://w3id.org/def/NyOnLegal#Dissent"/>
+                                <swrl:argument1 rdf:resource="https://w3id.org/def/NyOn#d"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                <rdf:first>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                        <swrl:propertyPredicate rdf:resource="https://w3id.org/def/NyOnLegal#withDissent"/>
+                                        <swrl:argument1 rdf:resource="https://w3id.org/def/NyOn#j"/>
+                                        <swrl:argument2 rdf:resource="https://w3id.org/def/NyOn#d"/>
+                                    </rdf:Description>
+                                </rdf:first>
+                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="https://w3id.org/def/NyOnLegal#withOpinion"/>
+                        <swrl:argument1 rdf:resource="https://w3id.org/def/NyOn#j"/>
+                        <swrl:argument2 rdf:resource="https://w3id.org/def/NyOn#d"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+        <rdfs:comment></rdfs:comment>
+        <rdfs:label>S1</rdfs:label>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="https://w3id.org/def/NyOnLegal#hasFinalDecision"/>
+                        <swrl:argument1 rdf:resource="https://w3id.org/def/NyOn#x"/>
+                        <swrl:argument2 rdf:resource="https://w3id.org/def/NyOn#y"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                                <swrl:classPredicate rdf:resource="https://w3id.org/def/NyOnLegal#Judge"/>
+                                <swrl:argument1 rdf:resource="https://w3id.org/def/NyOn#j"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                <rdf:first>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                        <swrl:propertyPredicate rdf:resource="https://w3id.org/def/NyOnLegal#hasCourtOfficial"/>
+                                        <swrl:argument1 rdf:resource="https://w3id.org/def/NyOn#y"/>
+                                        <swrl:argument2 rdf:resource="https://w3id.org/def/NyOn#j"/>
+                                    </rdf:Description>
+                                </rdf:first>
+                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="https://w3id.org/def/NyOnLegal#hasJudge"/>
+                        <swrl:argument1 rdf:resource="https://w3id.org/def/NyOn#x"/>
+                        <swrl:argument2 rdf:resource="https://w3id.org/def/NyOn#j"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+        <rdfs:comment></rdfs:comment>
+        <rdfs:label>S2</rdfs:label>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="https://w3id.org/def/NyOnLegal#hasJudge"/>
+                        <swrl:argument1 rdf:resource="https://w3id.org/def/NyOn#x"/>
+                        <swrl:argument2 rdf:resource="https://w3id.org/def/NyOn#j"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                                <swrl:classPredicate rdf:resource="https://w3id.org/def/NyOnLegal#Majority"/>
+                                <swrl:argument1 rdf:resource="https://w3id.org/def/NyOn#m"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                <rdf:first>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                        <swrl:propertyPredicate rdf:resource="https://w3id.org/def/NyOnLegal#withMajority"/>
+                                        <swrl:argument1 rdf:resource="https://w3id.org/def/NyOn#j"/>
+                                        <swrl:argument2 rdf:resource="https://w3id.org/def/NyOn#m"/>
+                                    </rdf:Description>
+                                </rdf:first>
+                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="https://w3id.org/def/NyOnLegal#withOpinion"/>
+                        <swrl:argument1 rdf:resource="https://w3id.org/def/NyOn#j"/>
+                        <swrl:argument2 rdf:resource="https://w3id.org/def/NyOn#m"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+        <rdfs:comment></rdfs:comment>
+        <rdfs:label>S6</rdfs:label>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="https://w3id.org/def/NyOnLegal#makeArgument"/>
+                        <swrl:argument1 rdf:resource="https://w3id.org/def/NyOn#p"/>
+                        <swrl:argument2 rdf:resource="https://w3id.org/def/NyOn#a"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                                <swrl:classPredicate rdf:resource="https://w3id.org/def/NyOnLegal#Respondent"/>
+                                <swrl:argument1 rdf:resource="https://w3id.org/def/NyOn#r"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                <rdf:first>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                        <swrl:propertyPredicate rdf:resource="https://w3id.org/def/NyOnLegal#hasParty"/>
+                                        <swrl:argument1 rdf:resource="https://w3id.org/def/NyOn#cj"/>
+                                        <swrl:argument2 rdf:resource="https://w3id.org/def/NyOn#r"/>
+                                    </rdf:Description>
+                                </rdf:first>
+                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="https://w3id.org/def/NyOnLegal#respondentArgument"/>
+                        <swrl:argument1 rdf:resource="https://w3id.org/def/NyOn#r"/>
+                        <swrl:argument2 rdf:resource="https://w3id.org/def/NyOn#a"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
 </rdf:RDF>
 
 
 
-<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
+<!-- Generated by the OWL API (version 4.5.25.2023-02-15T19:15:49Z) https://github.com/owlcs/owlapi -->
 
