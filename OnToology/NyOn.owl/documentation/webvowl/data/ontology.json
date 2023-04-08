@@ -2,15 +2,15 @@
   "_comment" : "Created with OWL2VOWL (version 0.3.5), http://vowl.visualdataweb.org",
   "header" : {
     "languages" : [ "de", "hi", "en", "fr", "es", "undefined" ],
-    "baseIris" : [ "http://www.w3.org/1999/02/22-rdf-syntax-ns", "http://www.w3.org/2002/07/owl", "http://www.w3.org/2000/01/rdf-schema", "https://schema.org", "http://www.w3.org/2001/XMLSchema", "https://w3id.org/def/NyOnLegal", "http://xmlns.com/foaf/0.1" ],
+    "baseIris" : [ "http://www.w3.org/1999/02/22-rdf-syntax-ns", "http://www.w3.org/2002/07/owl", "http://www.w3.org/2000/01/rdf-schema", "https://schema.org", "http://www.w3.org/2001/XMLSchema", "http://docs.oasis-open.org/legalruleml/ns/v1.0/metamodel", "https://w3id.org/def/NyOnLegal", "http://xmlns.com/foaf/0.1" ],
     "title" : {
       "de" : "NyOn: Eine mehrsprachige Rechtsontologie für ein globalisiertes Justizsystem",
       "en" : "NyOn: A Multilingual Legal Ontology for Globalized Judicial System",
       "fr" : "NyOn: Une ontologie juridique multilingue pour un système judiciaire mondialisé",
       "es" : "NyOn: Una ontología jurídica multilingüe para el sistema judicial globalizado"
     },
-    "iri" : "https://w3id.org/def/NyOnLegal#",
-    "version" : "1.0",
+    "iri" : "http://docs.oasis-open.org/legalruleml/ns/v1.0/metamodel",
+    "version" : "2.0",
     "author" : [ "Harde, Pooja", "Mihindukulasooriya, Nandana", "Jain, Sarika" ],
     "description" : {
       "de" : "Eine Ontologie, die Konzepte im Rechtsbereich darstellt.",
@@ -19,6 +19,12 @@
       "es" : "Una ontología que representa conceptos en el dominio jurídico."
     },
     "other" : {
+      "priorVersion" : [ {
+        "identifier" : "priorVersion",
+        "language" : "undefined",
+        "value" : "https://w3id.org/def/NyOnLegalOntology#",
+        "type" : "label"
+      } ],
       "license" : [ {
         "identifier" : "license",
         "language" : "undefined",
@@ -56,7 +62,7 @@
       "modified" : [ {
         "identifier" : "modified",
         "language" : "undefined",
-        "value" : "2020-07-16",
+        "value" : "2023-04-08",
         "type" : "label"
       } ],
       "publisher" : [ {
@@ -65,24 +71,19 @@
         "value" : "https://www.semintelligence.org/projects",
         "type" : "iri"
       } ],
-      "versionInfo" : [ {
-        "identifier" : "versionInfo",
-        "language" : "undefined",
-        "value" : "1.0",
-        "type" : "label"
-      } ],
       "preferredNamespaceUri" : [ {
         "identifier" : "preferredNamespaceUri",
         "language" : "undefined",
         "value" : "https://w3id.org/def/NyOnLegal#",
         "type" : "iri"
       } ],
-      "title" : [ {
-        "identifier" : "title",
-        "language" : "es",
-        "value" : "NyOn: Una ontología jurídica multilingüe para el sistema judicial globalizado",
+      "versionInfo" : [ {
+        "identifier" : "versionInfo",
+        "language" : "undefined",
+        "value" : "2.0",
         "type" : "label"
-      }, {
+      } ],
+      "title" : [ {
         "identifier" : "title",
         "language" : "en",
         "value" : "NyOn: A Multilingual Legal Ontology for Globalized Judicial System",
@@ -94,6 +95,11 @@
         "type" : "label"
       }, {
         "identifier" : "title",
+        "language" : "es",
+        "value" : "NyOn: Una ontología jurídica multilingüe para el sistema judicial globalizado",
+        "type" : "label"
+      }, {
+        "identifier" : "title",
         "language" : "de",
         "value" : "NyOn: Eine mehrsprachige Rechtsontologie für ein globalisiertes Justizsystem",
         "type" : "label"
@@ -102,347 +108,377 @@
   },
   "namespace" : [ ],
   "class" : [ {
-    "id" : "19",
+    "id" : "8",
     "type" : "owl:Class"
   }, {
-    "id" : "25",
-    "type" : "owl:Class"
-  }, {
-    "id" : "30",
-    "type" : "owl:Class"
-  }, {
-    "id" : "60",
-    "type" : "rdfs:Literal"
-  }, {
-    "id" : "63",
-    "type" : "rdfs:Datatype"
-  }, {
-    "id" : "67",
-    "type" : "rdfs:Datatype"
-  }, {
-    "id" : "68",
-    "type" : "owl:intersectionOf"
-  }, {
-    "id" : "70",
-    "type" : "rdfs:Datatype"
-  }, {
-    "id" : "71",
-    "type" : "rdfs:Datatype"
-  }, {
-    "id" : "33",
-    "type" : "owl:Thing"
-  }, {
-    "id" : "34",
-    "type" : "rdfs:Literal"
-  }, {
-    "id" : "72",
-    "type" : "rdfs:Literal"
-  }, {
-    "id" : "73",
-    "type" : "rdfs:Literal"
-  }, {
-    "id" : "74",
-    "type" : "rdfs:Literal"
-  }, {
-    "id" : "6",
-    "type" : "owl:Class"
-  }, {
-    "id" : "78",
-    "type" : "rdfs:Datatype"
-  }, {
-    "id" : "79",
-    "type" : "rdfs:Datatype"
-  }, {
-    "id" : "66",
-    "type" : "owl:Class"
-  }, {
-    "id" : "81",
-    "type" : "rdfs:Datatype"
-  }, {
-    "id" : "82",
-    "type" : "rdfs:Datatype"
-  }, {
-    "id" : "85",
-    "type" : "owl:Class"
-  }, {
-    "id" : "2",
-    "type" : "owl:Class"
-  }, {
-    "id" : "86",
-    "type" : "owl:Class"
-  }, {
-    "id" : "87",
-    "type" : "owl:Class"
-  }, {
-    "id" : "9",
-    "type" : "owl:Class"
-  }, {
-    "id" : "92",
-    "type" : "owl:Class"
-  }, {
-    "id" : "94",
-    "type" : "owl:Class"
-  }, {
-    "id" : "101",
-    "type" : "owl:Class"
-  }, {
-    "id" : "102",
-    "type" : "owl:Class"
-  }, {
-    "id" : "27",
-    "type" : "owl:Class"
-  }, {
-    "id" : "90",
-    "type" : "owl:Class"
-  }, {
-    "id" : "115",
-    "type" : "owl:Class"
-  }, {
-    "id" : "7",
-    "type" : "owl:Class"
-  }, {
-    "id" : "116",
-    "type" : "owl:Class"
-  }, {
-    "id" : "118",
-    "type" : "owl:Class"
-  }, {
-    "id" : "121",
-    "type" : "owl:Class"
-  }, {
-    "id" : "122",
-    "type" : "owl:Class"
-  }, {
-    "id" : "127",
-    "type" : "owl:intersectionOf"
-  }, {
-    "id" : "130",
-    "type" : "owl:equivalentClass"
-  }, {
-    "id" : "64",
-    "type" : "owl:Class"
-  }, {
-    "id" : "145",
-    "type" : "owl:Class"
-  }, {
-    "id" : "1",
-    "type" : "owl:Class"
-  }, {
-    "id" : "151",
-    "type" : "owl:Class"
-  }, {
-    "id" : "165",
-    "type" : "owl:Class"
-  }, {
-    "id" : "12",
-    "type" : "owl:Class"
-  }, {
-    "id" : "95",
-    "type" : "owl:Class"
-  }, {
-    "id" : "131",
-    "type" : "owl:equivalentClass"
-  }, {
-    "id" : "184",
-    "type" : "owl:Class"
-  }, {
-    "id" : "62",
-    "type" : "owl:Class"
-  }, {
-    "id" : "112",
-    "type" : "owl:Class"
-  }, {
-    "id" : "108",
-    "type" : "owl:Class"
-  }, {
-    "id" : "138",
-    "type" : "owl:Class"
-  }, {
-    "id" : "4",
-    "type" : "owl:Class"
-  }, {
-    "id" : "110",
-    "type" : "owl:Class"
-  }, {
-    "id" : "124",
-    "type" : "owl:Class"
-  }, {
-    "id" : "117",
-    "type" : "owl:Class"
-  }, {
-    "id" : "170",
-    "type" : "owl:Class"
-  }, {
-    "id" : "213",
-    "type" : "owl:Class"
-  }, {
-    "id" : "188",
-    "type" : "owl:Class"
-  }, {
-    "id" : "77",
-    "type" : "owl:Class"
-  }, {
-    "id" : "233",
-    "type" : "owl:equivalentClass"
-  }, {
-    "id" : "175",
-    "type" : "owl:Class"
-  }, {
-    "id" : "59",
-    "type" : "owl:Class"
-  }, {
-    "id" : "224",
-    "type" : "owl:Class"
-  }, {
-    "id" : "240",
-    "type" : "owl:Class"
-  }, {
-    "id" : "93",
-    "type" : "owl:Class"
-  }, {
-    "id" : "161",
-    "type" : "owl:Class"
-  }, {
-    "id" : "164",
-    "type" : "owl:Class"
-  }, {
-    "id" : "186",
-    "type" : "owl:Class"
-  }, {
-    "id" : "173",
-    "type" : "owl:Class"
-  }, {
-    "id" : "142",
-    "type" : "owl:Class"
-  }, {
-    "id" : "20",
-    "type" : "owl:Class"
-  }, {
-    "id" : "76",
-    "type" : "owl:Class"
-  }, {
-    "id" : "22",
-    "type" : "owl:Class"
-  }, {
-    "id" : "223",
-    "type" : "owl:Class"
-  }, {
-    "id" : "18",
-    "type" : "owl:Class"
-  }, {
-    "id" : "11",
-    "type" : "owl:Class"
-  }, {
-    "id" : "177",
-    "type" : "owl:Class"
-  }, {
-    "id" : "169",
-    "type" : "owl:Class"
-  }, {
-    "id" : "36",
-    "type" : "owl:Class"
-  }, {
-    "id" : "150",
-    "type" : "owl:Class"
-  }, {
-    "id" : "156",
-    "type" : "rdfs:Datatype"
-  }, {
-    "id" : "204",
-    "type" : "rdfs:Datatype"
-  }, {
-    "id" : "98",
-    "type" : "rdfs:Datatype"
-  }, {
-    "id" : "84",
-    "type" : "rdfs:Datatype"
-  }, {
-    "id" : "100",
-    "type" : "rdfs:Datatype"
-  }, {
-    "id" : "144",
-    "type" : "rdfs:Datatype"
-  }, {
-    "id" : "104",
-    "type" : "rdfs:Datatype"
-  }, {
-    "id" : "69",
-    "type" : "owl:Class"
-  }, {
-    "id" : "114",
-    "type" : "owl:Class"
-  }, {
-    "id" : "31",
-    "type" : "owl:Class"
-  }, {
-    "id" : "14",
+    "id" : "21",
     "type" : "owl:Class"
   }, {
     "id" : "28",
     "type" : "owl:Class"
   }, {
-    "id" : "97",
-    "type" : "owl:Class"
-  }, {
-    "id" : "207",
-    "type" : "rdfs:Datatype"
-  }, {
-    "id" : "211",
-    "type" : "rdfs:Datatype"
+    "id" : "74",
+    "type" : "owl:intersectionOf"
   }, {
     "id" : "91",
-    "type" : "rdfs:Datatype"
+    "type" : "owl:equivalentClass"
   }, {
-    "id" : "306",
-    "type" : "rdfs:Datatype"
+    "id" : "70",
+    "type" : "owl:Class"
   }, {
-    "id" : "199",
-    "type" : "rdfs:Datatype"
+    "id" : "4",
+    "type" : "owl:Class"
   }, {
-    "id" : "37",
-    "type" : "rdfs:Datatype"
+    "id" : "113",
+    "type" : "owl:Class"
   }, {
-    "id" : "275",
-    "type" : "rdfs:Datatype"
+    "id" : "14",
+    "type" : "owl:Class"
   }, {
-    "id" : "253",
-    "type" : "rdfs:Datatype"
+    "id" : "122",
+    "type" : "owl:Class"
+  }, {
+    "id" : "26",
+    "type" : "owl:Class"
+  }, {
+    "id" : "12",
+    "type" : "owl:Class"
+  }, {
+    "id" : "128",
+    "type" : "owl:Class"
+  }, {
+    "id" : "93",
+    "type" : "owl:equivalentClass"
+  }, {
+    "id" : "134",
+    "type" : "owl:Class"
+  }, {
+    "id" : "136",
+    "type" : "owl:Class"
+  }, {
+    "id" : "126",
+    "type" : "owl:Class"
+  }, {
+    "id" : "143",
+    "type" : "owl:Class"
+  }, {
+    "id" : "92",
+    "type" : "owl:Class"
+  }, {
+    "id" : "109",
+    "type" : "owl:Class"
+  }, {
+    "id" : "1",
+    "type" : "owl:Class"
+  }, {
+    "id" : "104",
+    "type" : "owl:Class"
+  }, {
+    "id" : "73",
+    "type" : "owl:Class"
+  }, {
+    "id" : "94",
+    "type" : "owl:equivalentClass"
+  }, {
+    "id" : "10",
+    "type" : "owl:intersectionOf"
+  }, {
+    "id" : "64",
+    "type" : "owl:equivalentClass"
+  }, {
+    "id" : "68",
+    "type" : "owl:Class"
+  }, {
+    "id" : "23",
+    "type" : "owl:Class"
+  }, {
+    "id" : "120",
+    "type" : "owl:Class"
+  }, {
+    "id" : "158",
+    "type" : "owl:Class"
+  }, {
+    "id" : "166",
+    "type" : "owl:Class"
+  }, {
+    "id" : "59",
+    "type" : "owl:Class"
+  }, {
+    "id" : "102",
+    "type" : "owl:Class"
+  }, {
+    "id" : "61",
+    "type" : "owl:equivalentClass"
+  }, {
+    "id" : "162",
+    "type" : "owl:Class"
+  }, {
+    "id" : "119",
+    "type" : "owl:Class"
+  }, {
+    "id" : "179",
+    "type" : "owl:Class"
   }, {
     "id" : "192",
+    "type" : "owl:Class"
+  }, {
+    "id" : "17",
+    "type" : "owl:Class"
+  }, {
+    "id" : "27",
+    "type" : "owl:Class"
+  }, {
+    "id" : "177",
+    "type" : "owl:Class"
+  }, {
+    "id" : "185",
+    "type" : "owl:Class"
+  }, {
+    "id" : "67",
+    "type" : "owl:Class"
+  }, {
+    "id" : "221",
+    "type" : "owl:Class"
+  }, {
+    "id" : "101",
+    "type" : "owl:Class"
+  }, {
+    "id" : "66",
+    "type" : "owl:Class"
+  }, {
+    "id" : "80",
+    "type" : "owl:Class"
+  }, {
+    "id" : "232",
+    "type" : "owl:Class"
+  }, {
+    "id" : "241",
+    "type" : "owl:equivalentClass"
+  }, {
+    "id" : "34",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "79",
+    "type" : "owl:Class"
+  }, {
+    "id" : "244",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "202",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "58",
+    "type" : "owl:Class"
+  }, {
+    "id" : "168",
+    "type" : "owl:Class"
+  }, {
+    "id" : "62",
+    "type" : "owl:Class"
+  }, {
+    "id" : "246",
+    "type" : "owl:Class"
+  }, {
+    "id" : "31",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "88",
+    "type" : "owl:Class"
+  }, {
+    "id" : "153",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "90",
+    "type" : "owl:Class"
+  }, {
+    "id" : "195",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "116",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "247",
     "type" : "rdfs:Datatype"
   }, {
     "id" : "147",
     "type" : "rdfs:Datatype"
   }, {
-    "id" : "16",
-    "type" : "owl:Class"
-  }, {
-    "id" : "179",
-    "type" : "owl:equivalentClass"
-  }, {
-    "id" : "229",
-    "type" : "owl:Class"
-  }, {
-    "id" : "154",
-    "type" : "owl:Class"
+    "id" : "200",
+    "type" : "rdfs:Datatype"
   }, {
     "id" : "197",
     "type" : "rdfs:Datatype"
   }, {
-    "id" : "126",
-    "type" : "rdfs:Datatype"
-  }, {
-    "id" : "120",
-    "type" : "rdfs:Datatype"
-  }, {
-    "id" : "194",
-    "type" : "rdfs:Datatype"
-  }, {
-    "id" : "23",
+    "id" : "111",
     "type" : "owl:Class"
   }, {
-    "id" : "287",
+    "id" : "145",
     "type" : "rdfs:Datatype"
+  }, {
+    "id" : "77",
+    "type" : "owl:Class"
+  }, {
+    "id" : "208",
+    "type" : "owl:Class"
+  }, {
+    "id" : "2",
+    "type" : "owl:Class"
+  }, {
+    "id" : "124",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "71",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "263",
+    "type" : "owl:unionOf"
+  }, {
+    "id" : "226",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "264",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "15",
+    "type" : "owl:Class"
+  }, {
+    "id" : "96",
+    "type" : "owl:Class"
+  }, {
+    "id" : "114",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "82",
+    "type" : "owl:Class"
+  }, {
+    "id" : "164",
+    "type" : "owl:Class"
+  }, {
+    "id" : "149",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "172",
+    "type" : "owl:Class"
+  }, {
+    "id" : "175",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "213",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "131",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "157",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "255",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "169",
+    "type" : "owl:Class"
+  }, {
+    "id" : "210",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "151",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "267",
+    "type" : "owl:equivalentClass"
+  }, {
+    "id" : "118",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "160",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "84",
+    "type" : "owl:Class"
+  }, {
+    "id" : "173",
+    "type" : "owl:Class"
+  }, {
+    "id" : "33",
+    "type" : "owl:equivalentClass"
+  }, {
+    "id" : "133",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "127",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "156",
+    "type" : "owl:Class"
+  }, {
+    "id" : "138",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "219",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "266",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "271",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "215",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "75",
+    "type" : "owl:Class"
+  }, {
+    "id" : "181",
+    "type" : "owl:Class"
+  }, {
+    "id" : "29",
+    "type" : "owl:Class"
+  }, {
+    "id" : "170",
+    "type" : "owl:Class"
+  }, {
+    "id" : "24",
+    "type" : "owl:Class"
+  }, {
+    "id" : "130",
+    "type" : "owl:Class"
+  }, {
+    "id" : "206",
+    "type" : "owl:Thing"
+  }, {
+    "id" : "270",
+    "type" : "rdfs:Literal"
+  }, {
+    "id" : "171",
+    "type" : "owl:Class"
+  }, {
+    "id" : "86",
+    "type" : "owl:equivalentClass"
+  }, {
+    "id" : "183",
+    "type" : "owl:Class"
+  }, {
+    "id" : "6",
+    "type" : "owl:Class"
+  }, {
+    "id" : "142",
+    "type" : "rdfs:Literal"
+  }, {
+    "id" : "98",
+    "type" : "owl:Thing"
+  }, {
+    "id" : "35",
+    "type" : "owl:Thing"
+  }, {
+    "id" : "140",
+    "type" : "rdfs:Literal"
+  }, {
+    "id" : "19",
+    "type" : "owl:Class"
+  }, {
+    "id" : "107",
+    "type" : "rdfs:Literal"
   } ],
   "classAttribute" : [ {
     "iri" : "https://w3id.org/def/NyOnLegal#Defendant",
@@ -455,8 +491,9 @@
     "comment" : {
       "en" : "a person sued in the court of law"
     },
-    "id" : "19",
-    "superClasses" : [ "20" ]
+    "attributes" : [ "external" ],
+    "id" : "8",
+    "superClasses" : [ "2" ]
   }, {
     "iri" : "https://w3id.org/def/NyOnLegal#SupremeCourt",
     "baseIri" : "https://w3id.org/def/NyOnLegal",
@@ -469,8 +506,9 @@
     "comment" : {
       "en" : "highest court in the judicial system"
     },
-    "id" : "25",
-    "superClasses" : [ "22" ]
+    "attributes" : [ "external" ],
+    "id" : "21",
+    "superClasses" : [ "15" ]
   }, {
     "iri" : "https://w3id.org/def/NyOnLegal#City_Civil_Courts",
     "baseIri" : "https://w3id.org/def/NyOnLegal",
@@ -487,29 +525,9 @@
       "hi" : "नागरिक मामलों के लिए उच्च न्यायालयों के बाद मेट्रोपॉलिटन स्तर पर निचली अदालत",
       "en" : "lower court at metropolitan level after High Courts for civil cases"
     },
-    "id" : "30",
-    "superClasses" : [ "31" ]
-  }, {
-    "iri" : "http://www.w3.org/2000/01/rdf-schema#Literal",
-    "id" : "60",
-    "label" : {
-      "IRI-based" : "Literal",
-      "undefined" : "Literal"
-    }
-  }, {
-    "iri" : "http://www.w3.org/2001/XMLSchema#string",
-    "baseIri" : "http://www.w3.org/2001/XMLSchema",
-    "id" : "63",
-    "label" : {
-      "IRI-based" : "string"
-    }
-  }, {
-    "iri" : "http://www.w3.org/2001/XMLSchema#string",
-    "baseIri" : "http://www.w3.org/2001/XMLSchema",
-    "id" : "67",
-    "label" : {
-      "IRI-based" : "string"
-    }
+    "attributes" : [ "external" ],
+    "id" : "28",
+    "superClasses" : [ "29" ]
   }, {
     "iri" : "https://w3id.org/def/NyOnLegal#CatchWord",
     "baseIri" : "https://w3id.org/def/NyOnLegal",
@@ -518,63 +536,15 @@
       "IRI-based" : "CatchWord",
       "en" : "Catchword"
     },
-    "intersection" : [ "69" ],
+    "intersection" : [ "75" ],
     "comment" : {
       "en" : "Descriptive words or phrases used to categorise the subject matter of a case along with some keywords representing the issues in the case"
     },
-    "attributes" : [ "intersection" ],
-    "id" : "68"
-  }, {
-    "iri" : "http://www.w3.org/2001/XMLSchema#string",
-    "baseIri" : "http://www.w3.org/2001/XMLSchema",
-    "id" : "70",
-    "label" : {
-      "IRI-based" : "string"
-    }
-  }, {
-    "iri" : "http://www.w3.org/2001/XMLSchema#string",
-    "baseIri" : "http://www.w3.org/2001/XMLSchema",
-    "id" : "71",
-    "label" : {
-      "IRI-based" : "string"
-    }
-  }, {
-    "iri" : "http://www.w3.org/2002/07/owl#Thing",
-    "baseIri" : "http://owl2vowl.de",
-    "id" : "33",
-    "label" : {
-      "undefined" : "Thing"
-    }
-  }, {
-    "iri" : "http://www.w3.org/2000/01/rdf-schema#Literal",
-    "id" : "34",
-    "label" : {
-      "IRI-based" : "Literal",
-      "undefined" : "Literal"
-    }
-  }, {
-    "iri" : "http://www.w3.org/2000/01/rdf-schema#Literal",
-    "id" : "72",
-    "label" : {
-      "IRI-based" : "Literal",
-      "undefined" : "Literal"
-    }
-  }, {
-    "iri" : "http://www.w3.org/2000/01/rdf-schema#Literal",
-    "id" : "73",
-    "label" : {
-      "IRI-based" : "Literal",
-      "undefined" : "Literal"
-    }
-  }, {
-    "iri" : "http://www.w3.org/2000/01/rdf-schema#Literal",
-    "id" : "74",
-    "label" : {
-      "IRI-based" : "Literal",
-      "undefined" : "Literal"
-    }
+    "attributes" : [ "intersection", "external" ],
+    "id" : "74"
   }, {
     "iri" : "https://w3id.org/def/NyOnLegal#Solicitor",
+    "equivalent" : [ "93", "94" ],
     "baseIri" : "https://w3id.org/def/NyOnLegal",
     "instances" : 0,
     "label" : {
@@ -589,22 +559,9 @@
       "hi" : "सॉलिसिटर का प्रतिनिधित्व करता है, सीखा वकील या मामले की घंटू",
       "en" : "represents solicitor, learned counsel or laywer of the case"
     },
-    "id" : "6",
-    "superClasses" : [ "7" ]
-  }, {
-    "iri" : "http://www.w3.org/2001/XMLSchema#string",
-    "baseIri" : "http://www.w3.org/2001/XMLSchema",
-    "id" : "78",
-    "label" : {
-      "IRI-based" : "string"
-    }
-  }, {
-    "iri" : "http://www.w3.org/2001/XMLSchema#int",
-    "baseIri" : "http://www.w3.org/2001/XMLSchema",
-    "id" : "79",
-    "label" : {
-      "IRI-based" : "int"
-    }
+    "attributes" : [ "equivalent", "external" ],
+    "id" : "91",
+    "superClasses" : [ "92" ]
   }, {
     "iri" : "https://w3id.org/def/NyOnLegal#Witness",
     "baseIri" : "https://w3id.org/def/NyOnLegal",
@@ -621,21 +578,8 @@
       "hi" : "साक्षी ने मामले में शामिल / प्रस्तुत किया",
       "en" : "witness involved/presented in the case"
     },
-    "id" : "66"
-  }, {
-    "iri" : "http://www.w3.org/2001/XMLSchema#int",
-    "baseIri" : "http://www.w3.org/2001/XMLSchema",
-    "id" : "81",
-    "label" : {
-      "IRI-based" : "int"
-    }
-  }, {
-    "iri" : "http://www.w3.org/2001/XMLSchema#string",
-    "baseIri" : "http://www.w3.org/2001/XMLSchema",
-    "id" : "82",
-    "label" : {
-      "IRI-based" : "string"
-    }
+    "attributes" : [ "external" ],
+    "id" : "70"
   }, {
     "iri" : "https://w3id.org/def/NyOnLegal#Respondent",
     "baseIri" : "https://w3id.org/def/NyOnLegal",
@@ -647,8 +591,9 @@
     "comment" : {
       "en" : "party called upon to respond or answer a petition, a cliam or a appeal"
     },
-    "id" : "85",
-    "superClasses" : [ "20" ]
+    "attributes" : [ "external" ],
+    "id" : "4",
+    "superClasses" : [ "2" ]
   }, {
     "iri" : "https://w3id.org/def/NyOnLegal#Opinion",
     "baseIri" : "https://w3id.org/def/NyOnLegal",
@@ -657,11 +602,12 @@
       "IRI-based" : "Opinion",
       "en" : "Opinion"
     },
-    "subClasses" : [ "62", "1", "4" ],
+    "subClasses" : [ "119", "120", "27" ],
     "comment" : {
       "en" : "judge opinion with respect to case or judgment"
     },
-    "id" : "2"
+    "attributes" : [ "external" ],
+    "id" : "113"
   }, {
     "iri" : "https://w3id.org/def/NyOnLegal#High_Court",
     "baseIri" : "https://w3id.org/def/NyOnLegal",
@@ -678,8 +624,9 @@
       "hi" : "राज्य स्तर पर अदालतें",
       "en" : "court at the state level"
     },
-    "id" : "86",
-    "superClasses" : [ "22" ]
+    "attributes" : [ "external" ],
+    "id" : "14",
+    "superClasses" : [ "15" ]
   }, {
     "iri" : "https://w3id.org/def/NyOnLegal#Principal_Junior_Civil_Court",
     "baseIri" : "https://w3id.org/def/NyOnLegal",
@@ -696,15 +643,16 @@
       "hi" : "नागरिक मामलों के लिए जिला स्तर पर पदानुक्रम में तीसरी निचली अदालत",
       "en" : "third lower court in hierarchy at district level for civil cases"
     },
-    "id" : "87",
-    "superClasses" : [ "31" ]
+    "attributes" : [ "external" ],
+    "id" : "122",
+    "superClasses" : [ "29" ]
   }, {
     "iri" : "https://w3id.org/def/NyOnLegal#Judge",
     "baseIri" : "https://w3id.org/def/NyOnLegal",
     "instances" : 0,
     "label" : {
-      "hi" : "न्यायाधीश",
       "de" : "Richter",
+      "hi" : "न्यायाधीश",
       "IRI-based" : "Judge",
       "en" : "Judge",
       "fr" : "Juge",
@@ -714,8 +662,9 @@
       "hi" : "मामले के न्यायाधीश का प्रतिनिधित्व करता है",
       "en" : "represents the judge of the case"
     },
-    "id" : "9",
-    "superClasses" : [ "7" ]
+    "attributes" : [ "external" ],
+    "id" : "26",
+    "superClasses" : [ "92" ]
   }, {
     "iri" : "https://w3id.org/def/NyOnLegal#Appellant",
     "baseIri" : "https://w3id.org/def/NyOnLegal",
@@ -727,15 +676,16 @@
     "comment" : {
       "en" : "party who makes an appeal"
     },
-    "id" : "92",
-    "superClasses" : [ "20" ]
+    "attributes" : [ "external" ],
+    "id" : "12",
+    "superClasses" : [ "2" ]
   }, {
     "iri" : "https://w3id.org/def/NyOnLegal#Judicial_Magistrate_Court(First_Class)",
     "baseIri" : "https://w3id.org/def/NyOnLegal",
     "instances" : 0,
     "label" : {
-      "de" : "Gerichtsrichtergericht (erstklassig)",
       "hi" : "न्यायिक मजिस्ट्रेट कोर्ट (प्रथम श्रेणी)",
+      "de" : "Gerichtsrichtergericht (erstklassig)",
       "IRI-based" : "Judicial_Magistrate_Court(First_Class)",
       "en" : "Judicial Magistrate Court (First Class)",
       "fr" : "Cour magistrat judiciaire (première classe)",
@@ -745,8 +695,23 @@
       "hi" : "आपराधिक मामलों के लिए अतिरिक्त स्तर के सत्र अदालत के बाद डिस्ट्रिट स्तर पर दूसरी निचली अदालत",
       "en" : "second lower court at distrcit level after districit level Session Court for criminal cases"
     },
-    "id" : "94",
-    "superClasses" : [ "95" ]
+    "attributes" : [ "external" ],
+    "id" : "128",
+    "superClasses" : [ "102" ]
+  }, {
+    "iri" : "https://w3id.org/def/NyOnLegal#Lawyer",
+    "equivalent" : [ "91", "94" ],
+    "baseIri" : "https://w3id.org/def/NyOnLegal",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Lawyer"
+    },
+    "comment" : {
+      "en" : "Lawyer is a term of reference to the attroneys and advocates collectively in litigation"
+    },
+    "attributes" : [ "equivalent", "external" ],
+    "id" : "93",
+    "superClasses" : [ "92" ]
   }, {
     "iri" : "https://w3id.org/def/NyOnLegal#Session_Court",
     "baseIri" : "https://w3id.org/def/NyOnLegal",
@@ -763,15 +728,16 @@
       "hi" : "आपराधिक मामलों के लिए विशिष्ट उच्च न्यायालयों के बाद दोनों विचलित और मेट्रोपॉलिटन स्तर पर ओवर कोर्ट",
       "en" : "lower court at both distrcit and metropolitan level after High Courts specific for criminal cases"
     },
-    "id" : "101",
-    "superClasses" : [ "95" ]
+    "attributes" : [ "external" ],
+    "id" : "134",
+    "superClasses" : [ "102" ]
   }, {
     "iri" : "https://w3id.org/def/NyOnLegal#Criminal",
     "baseIri" : "https://w3id.org/def/NyOnLegal",
     "instances" : 0,
     "label" : {
-      "hi" : "आपराधिक",
       "de" : "Kriminell",
+      "hi" : "आपराधिक",
       "IRI-based" : "Criminal",
       "en" : "Criminal",
       "fr" : "Criminel",
@@ -781,62 +747,54 @@
       "hi" : "मामला एक आपराधिक मामला है",
       "en" : "case is a criminal case"
     },
-    "id" : "102",
-    "superClasses" : [ "69" ]
-  }, {
-    "iri" : "https://w3id.org/def/NyOnLegal#CourtJudgment",
-    "baseIri" : "https://w3id.org/def/NyOnLegal",
-    "instances" : 0,
-    "label" : {
-      "IRI-based" : "CourtJudgment",
-      "en" : "Court Judgment"
-    },
-    "comment" : {
-      "en" : "represents the court judgment given by a court of law"
-    },
-    "id" : "27"
+    "attributes" : [ "external" ],
+    "id" : "136",
+    "superClasses" : [ "75" ]
   }, {
     "iri" : "https://w3id.org/def/NyOnLegal#Investigator",
     "baseIri" : "https://w3id.org/def/NyOnLegal",
     "instances" : 0,
     "label" : {
       "IRI-based" : "Investigator",
-      "en" : "Police Personnel"
+      "en" : "PolicePersonnel"
     },
     "comment" : {
       "hi" : "जांचकर्ता का प्रतिनिधित्व करता है जो एफआईआर को फाइल करता है या एक मामले की जांच करता है"
     },
-    "id" : "90"
+    "attributes" : [ "external" ],
+    "id" : "126"
   }, {
     "iri" : "https://w3id.org/def/NyOnLegal#CaseType",
     "baseIri" : "https://w3id.org/def/NyOnLegal",
     "instances" : 0,
     "label" : {
       "IRI-based" : "CaseType",
-      "en" : "Case Type"
+      "en" : "CaseType"
     },
     "comment" : {
       "en" : "classification of types of cases"
     },
-    "id" : "115"
+    "attributes" : [ "external" ],
+    "id" : "143"
   }, {
     "iri" : "https://w3id.org/def/NyOnLegal#Court_Official",
     "baseIri" : "https://w3id.org/def/NyOnLegal",
     "instances" : 0,
     "label" : {
-      "de" : "Gerichtsbeamter",
       "hi" : "न्यायालय अधिकारि",
+      "de" : "Gerichtsbeamter",
       "IRI-based" : "Court_Official",
-      "en" : "Court Official",
+      "en" : "CourtOfficial",
       "fr" : "Officiel de la cour",
       "es" : "Oficial de la corte"
     },
-    "subClasses" : [ "6", "9" ],
+    "subClasses" : [ "91", "26", "93", "94" ],
     "comment" : {
       "hi" : "एक मामले में अदालत के अधिकारी शामिल हैं",
       "en" : "legal system related people involved in a case"
     },
-    "id" : "7"
+    "attributes" : [ "external" ],
+    "id" : "92"
   }, {
     "iri" : "https://w3id.org/def/NyOnLegal#Advisory_Jurisdiction",
     "baseIri" : "https://w3id.org/def/NyOnLegal",
@@ -853,8 +811,9 @@
       "hi" : "क्षेत्राधिकार प्रकार एक सलाहकार क्षेत्राधिकार है",
       "en" : "jurisdiction type is a advisory jurisdiction"
     },
-    "id" : "116",
-    "superClasses" : [ "117" ]
+    "attributes" : [ "external" ],
+    "id" : "109",
+    "superClasses" : [ "67" ]
   }, {
     "iri" : "https://w3id.org/def/NyOnLegal#Plaintiff",
     "baseIri" : "https://w3id.org/def/NyOnLegal",
@@ -866,15 +825,16 @@
     "comment" : {
       "en" : "party who brings the suit in the court of law"
     },
-    "id" : "118",
-    "superClasses" : [ "20" ]
+    "attributes" : [ "external" ],
+    "id" : "1",
+    "superClasses" : [ "2" ]
   }, {
     "iri" : "https://w3id.org/def/NyOnLegal#Judicial_Magistrate_Court(Second_Class)",
     "baseIri" : "https://w3id.org/def/NyOnLegal",
     "instances" : 0,
     "label" : {
-      "de" : "Gerichtsrichtergericht (zweite Klasse)",
       "hi" : "न्यायिक मजिस्ट्रेट कोर्ट (द्वितीय श्रेणी)",
+      "de" : "Gerichtsrichtergericht (zweite Klasse)",
       "IRI-based" : "Judicial_Magistrate_Court(Second_Class)",
       "en" : "Judicial Magistrate Court (Second Class)",
       "fr" : "Cour magistrat judiciaire (deuxième classe)",
@@ -884,8 +844,9 @@
       "hi" : "आपराधिक मामलों के लिए विचलित स्तर पर न्यायिक मजिस्ट्रेट कोर्ट (प्रथम श्रेणी) के बाद सबसे कम अदालत",
       "en" : "lowest court after Judicial Magistrate Court (First Class) at distrcit level for criminal cases"
     },
-    "id" : "121",
-    "superClasses" : [ "95" ]
+    "attributes" : [ "external" ],
+    "id" : "104",
+    "superClasses" : [ "102" ]
   }, {
     "iri" : "https://w3id.org/def/NyOnLegal#Writ_Jurisdiction",
     "baseIri" : "https://w3id.org/def/NyOnLegal",
@@ -902,8 +863,24 @@
       "hi" : "क्षेत्राधिकार प्रकार एक रिट क्षेत्राधिकार है",
       "en" : "jurisdiction type is a writ jurisdiction"
     },
-    "id" : "122",
-    "superClasses" : [ "117" ]
+    "attributes" : [ "external" ],
+    "id" : "73",
+    "superClasses" : [ "67" ]
+  }, {
+    "iri" : "https://w3id.org/def/NyOnLegal#LearnedCounsel",
+    "equivalent" : [ "91", "93" ],
+    "baseIri" : "https://w3id.org/def/NyOnLegal",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "LearnedCounsel",
+      "en" : "LearnedCounsel"
+    },
+    "comment" : {
+      "en" : "Learned counsel is a term of reference to the lawyers and advocates collectively in litigation"
+    },
+    "attributes" : [ "equivalent", "external" ],
+    "id" : "94",
+    "superClasses" : [ "92" ]
   }, {
     "iri" : "https://w3id.org/def/NyOnLegal#Accussed",
     "baseIri" : "https://w3id.org/def/NyOnLegal",
@@ -912,21 +889,21 @@
       "IRI-based" : "Accussed",
       "en" : "Accused"
     },
-    "intersection" : [ "85" ],
+    "intersection" : [ "4" ],
     "comment" : {
       "en" : "person against whom an allegation has been made that he has committed an offence, or who is charge with an offence"
     },
-    "attributes" : [ "intersection" ],
-    "id" : "127",
-    "superClasses" : [ "20" ]
+    "attributes" : [ "intersection", "external" ],
+    "id" : "10",
+    "superClasses" : [ "2" ]
   }, {
     "iri" : "https://w3id.org/def/NyOnLegal#Order",
-    "equivalent" : [ "131" ],
+    "equivalent" : [ "61" ],
     "baseIri" : "https://w3id.org/def/NyOnLegal",
     "instances" : 0,
     "label" : {
-      "de" : "Befehl",
       "hi" : "आदेश",
+      "de" : "Befehl",
       "IRI-based" : "Order",
       "en" : "Order",
       "fr" : "Commande",
@@ -936,39 +913,35 @@
       "hi" : "अदालत द्वारा दिया गया आदेश",
       "en" : "order given by the court"
     },
-    "attributes" : [ "equivalent" ],
-    "id" : "130",
-    "superClasses" : [ "93" ]
+    "attributes" : [ "equivalent", "external" ],
+    "id" : "64",
+    "superClasses" : [ "62" ]
   }, {
     "iri" : "https://w3id.org/def/NyOnLegal#RatioDecidendi",
     "baseIri" : "https://w3id.org/def/NyOnLegal",
     "instances" : 0,
     "label" : {
       "IRI-based" : "RatioDecidendi",
-      "en" : "Ratio Decidendi"
+      "en" : "RatioDecidendi"
     },
     "comment" : {
       "en" : "the rationale for the decision"
     },
-    "id" : "64"
+    "attributes" : [ "external" ],
+    "id" : "68"
   }, {
-    "iri" : "https://w3id.org/def/NyOnLegal#Government",
+    "iri" : "https://w3id.org/def/NyOnLegal#CourtCase",
     "baseIri" : "https://w3id.org/def/NyOnLegal",
     "instances" : 0,
     "label" : {
-      "hi" : "सरकार",
-      "de" : "Regierung",
-      "IRI-based" : "Government",
-      "en" : "Government",
-      "fr" : "Gouvernement",
-      "es" : "Gobierno"
+      "IRI-based" : "CourtCase",
+      "en" : "CourtCase"
     },
     "comment" : {
-      "hi" : "प्रतिभागियों में शामिल (या तो दोनों तरफ या किसी एक पर) मामले में सरकार है",
-      "en" : "party involved (either on both sides or any one) is the government in the case"
+      "en" : "represents the court judgment given by a court of law"
     },
-    "id" : "145",
-    "superClasses" : [ "77" ]
+    "attributes" : [ "external" ],
+    "id" : "23"
   }, {
     "iri" : "https://w3id.org/def/NyOnLegal#Majority",
     "baseIri" : "https://w3id.org/def/NyOnLegal",
@@ -977,15 +950,16 @@
       "IRI-based" : "Majority",
       "en" : "Majority"
     },
-    "id" : "1",
-    "superClasses" : [ "2" ]
+    "attributes" : [ "external" ],
+    "id" : "120",
+    "superClasses" : [ "113" ]
   }, {
     "iri" : "https://w3id.org/def/NyOnLegal#Single_Judge",
     "baseIri" : "https://w3id.org/def/NyOnLegal",
     "instances" : 0,
     "label" : {
-      "de" : "Einzelner Richter",
       "hi" : "एकल न्यायाधीश",
+      "de" : "Einzelner Richter",
       "IRI-based" : "Single_Judge",
       "en" : "Single Judge",
       "fr" : "Juge unique",
@@ -995,8 +969,9 @@
       "hi" : "एक मामले ने एक ही न्यायाधीश द्वारा सुना और न्याय किया",
       "en" : "a case heard and judged by a single judge"
     },
-    "id" : "151",
-    "superClasses" : [ "12" ]
+    "attributes" : [ "external" ],
+    "id" : "158",
+    "superClasses" : [ "59" ]
   }, {
     "iri" : "https://w3id.org/def/NyOnLegal#Argument",
     "baseIri" : "https://w3id.org/def/NyOnLegal",
@@ -1008,52 +983,55 @@
     "comment" : {
       "en" : "Argument made by any of the party"
     },
-    "id" : "165"
+    "attributes" : [ "external" ],
+    "id" : "166"
   }, {
     "iri" : "https://w3id.org/def/NyOnLegal#Bench",
     "baseIri" : "https://w3id.org/def/NyOnLegal",
     "instances" : 0,
     "label" : {
-      "de" : "Bank",
       "hi" : "बेंच",
+      "de" : "Bank",
       "IRI-based" : "Bench",
       "en" : "Bench",
       "fr" : "Banc",
       "es" : "Mesa de trabajo"
     },
-    "subClasses" : [ "11", "14", "16", "18", "151" ],
+    "subClasses" : [ "169", "170", "171", "172", "158" ],
     "comment" : {
       "hi" : "मामले की बेंच को परिभाषित करता है।",
       "en" : "Defines the bench of the case."
     },
-    "id" : "12"
+    "attributes" : [ "external" ],
+    "id" : "59"
   }, {
     "iri" : "https://w3id.org/def/NyOnLegal#Courts_for_Criminal",
     "baseIri" : "https://w3id.org/def/NyOnLegal",
     "instances" : 0,
     "label" : {
-      "hi" : "आपराधिक न्यायालय",
       "de" : "Strafgericht",
+      "hi" : "आपराधिक न्यायालय",
       "IRI-based" : "Courts_for_Criminal",
       "en" : "Criminal Courts",
       "fr" : "Cour criminelle",
       "es" : "Corte Criminal"
     },
-    "subClasses" : [ "94", "101", "169", "121", "170" ],
+    "subClasses" : [ "128", "134", "173", "104", "101" ],
     "comment" : {
       "hi" : "कोर्ट प्रकार जहां केवल आपराधिक मामलों को सुना जाता है",
       "en" : "courts for crimnial cases"
     },
-    "id" : "95",
-    "superClasses" : [ "69" ]
+    "attributes" : [ "external" ],
+    "id" : "102",
+    "superClasses" : [ "75" ]
   }, {
     "iri" : "https://w3id.org/def/NyOnLegal#Judgement",
-    "equivalent" : [ "130" ],
+    "equivalent" : [ "64" ],
     "baseIri" : "https://w3id.org/def/NyOnLegal",
     "instances" : 0,
     "label" : {
-      "hi" : "निर्णय",
       "de" : "Beurteilung",
+      "hi" : "निर्णय",
       "IRI-based" : "Judgement",
       "en" : "Judgement",
       "fr" : "Jugement",
@@ -1063,9 +1041,9 @@
       "hi" : "जज द्वारा दिया गया निर्णय",
       "en" : "Judgement given by the judge "
     },
-    "attributes" : [ "equivalent" ],
-    "id" : "131",
-    "superClasses" : [ "93" ]
+    "attributes" : [ "equivalent", "external" ],
+    "id" : "61",
+    "superClasses" : [ "62" ]
   }, {
     "iri" : "https://w3id.org/def/NyOnLegal#Country",
     "baseIri" : "https://w3id.org/def/NyOnLegal",
@@ -1074,8 +1052,9 @@
       "IRI-based" : "Country",
       "en" : "Country"
     },
-    "id" : "184",
-    "superClasses" : [ "97" ]
+    "attributes" : [ "external" ],
+    "id" : "162",
+    "superClasses" : [ "130" ]
   }, {
     "iri" : "https://w3id.org/def/NyOnLegal#Dissent",
     "baseIri" : "https://w3id.org/def/NyOnLegal",
@@ -1084,8 +1063,9 @@
       "IRI-based" : "Dissent",
       "en" : "Dissent"
     },
-    "id" : "62",
-    "superClasses" : [ "2" ]
+    "attributes" : [ "external" ],
+    "id" : "119",
+    "superClasses" : [ "113" ]
   }, {
     "iri" : "https://w3id.org/def/NyOnLegal#District_Court",
     "baseIri" : "https://w3id.org/def/NyOnLegal",
@@ -1095,15 +1075,16 @@
       "hi" : "जिला न्यायालय",
       "IRI-based" : "District_Court",
       "en" : "District Court",
-      "fr" : "Tribunaux de district",
-      "es" : "Tribunal de Distrito"
+      "fr" : "Tribunal de district",
+      "es" : "Tribunales de distrito"
     },
     "comment" : {
       "hi" : "नागरिक मामलों के लिए उच्च न्यायालयों के बाद जिला स्तर पर निचली अदालत",
       "en" : "lower court at district level after High Courts for civil cases"
     },
-    "id" : "112",
-    "superClasses" : [ "22", "31" ]
+    "attributes" : [ "external" ],
+    "id" : "179",
+    "superClasses" : [ "15", "29" ]
   }, {
     "iri" : "https://w3id.org/def/NyOnLegal#Courts_of_Smaller_Causes",
     "baseIri" : "https://w3id.org/def/NyOnLegal",
@@ -1120,15 +1101,16 @@
       "hi" : "सिविल मामलों के लिए मेट्रोपॉलिटन स्तर पर सिटी सिविल कोर्ट के बाद सबसे कम अदालत",
       "en" : "lowest court after City Civil Courts at metropolitan level for civil cases"
     },
-    "id" : "108",
-    "superClasses" : [ "31" ]
+    "attributes" : [ "external" ],
+    "id" : "192",
+    "superClasses" : [ "29" ]
   }, {
     "iri" : "https://w3id.org/def/NyOnLegal#Tribunal",
     "baseIri" : "https://w3id.org/def/NyOnLegal",
     "instances" : 0,
     "label" : {
-      "hi" : "न्यायाधिकरण",
       "de" : "Gericht",
+      "hi" : "न्यायाधिकरण",
       "IRI-based" : "Tribunal",
       "en" : "Tribunal",
       "fr" : "Tribunal",
@@ -1138,8 +1120,9 @@
       "hi" : "भारत सरकार के तहत न्यायिक या अर्ध न्यायिक कर्तव्यों को निर्वहन के लिए स्थापित संस्थान",
       "en" : "institutions established for discharging judicial or quasi-judicial duties under the Government of India"
     },
-    "id" : "138",
-    "superClasses" : [ "22" ]
+    "attributes" : [ "external" ],
+    "id" : "17",
+    "superClasses" : [ "15" ]
   }, {
     "iri" : "https://w3id.org/def/NyOnLegal#Concurrence",
     "baseIri" : "https://w3id.org/def/NyOnLegal",
@@ -1148,15 +1131,16 @@
       "IRI-based" : "Concurrence",
       "en" : "Concurrence"
     },
-    "id" : "4",
-    "superClasses" : [ "2" ]
+    "attributes" : [ "external" ],
+    "id" : "27",
+    "superClasses" : [ "113" ]
   }, {
     "iri" : "https://w3id.org/def/NyOnLegal#Munsif_Court",
     "baseIri" : "https://w3id.org/def/NyOnLegal",
     "instances" : 0,
     "label" : {
-      "de" : "Munsif-Gericht",
       "hi" : "मुन्सिफ कोर्ट",
+      "de" : "Munsif-Gericht",
       "IRI-based" : "Munsif_Court",
       "en" : "Munsif Court",
       "fr" : "Tribunal de Munsid",
@@ -1166,15 +1150,16 @@
       "hi" : "प्रिंसिपल जूनियर सिविल कोर्ट के बाद जिले के स्तर पर नागरिक एएसईएस के लिए उत्तराधिकार में सबसे कम अदालत",
       "en" : "lowest court in heirarchy for civil ases at district level after Principal Junior Civil Court"
     },
-    "id" : "110",
-    "superClasses" : [ "31" ]
+    "attributes" : [ "external" ],
+    "id" : "177",
+    "superClasses" : [ "29" ]
   }, {
     "iri" : "https://w3id.org/def/NyOnLegal#Civil",
     "baseIri" : "https://w3id.org/def/NyOnLegal",
     "instances" : 0,
     "label" : {
-      "hi" : "नागरिक",
       "de" : "Bürgerlich",
+      "hi" : "नागरिक",
       "IRI-based" : "Civil",
       "en" : "Civil",
       "fr" : "Civil"
@@ -1183,44 +1168,36 @@
       "hi" : "मामला एक नागरिक मामला है",
       "en" : "case is a civil case"
     },
-    "id" : "124",
-    "superClasses" : [ "69" ]
+    "attributes" : [ "external" ],
+    "id" : "185",
+    "superClasses" : [ "75" ]
   }, {
     "iri" : "https://w3id.org/def/NyOnLegal#Jurisdiction",
     "baseIri" : "https://w3id.org/def/NyOnLegal",
     "instances" : 0,
+    "annotations" : {
+      "sameAs" : [ {
+        "identifier" : "sameAs",
+        "language" : "en",
+        "value" : "lmrl:Jurisdiction",
+        "type" : "label"
+      } ]
+    },
     "label" : {
-      "hi" : "क्षेत्राधिकार",
       "de" : "Zuständigkeit",
+      "hi" : "क्षेत्राधिकार",
       "IRI-based" : "Jurisdiction",
       "en" : "Jurisdiction",
       "fr" : "Juridiction",
       "es" : "Jurisdicción"
     },
-    "subClasses" : [ "116", "186", "188", "122", "173" ],
+    "subClasses" : [ "109", "111", "66", "73", "77" ],
     "comment" : {
       "hi" : "जिस हद तक कानून का न्यायालय किसी क्षेत्र में दायर किसी भी मामले पर अपने अधिकार का उपयोग कर सकता है",
       "en" : "the extent to which a court of law can exercise its authority over any cases filed across a region"
     },
-    "id" : "117"
-  }, {
-    "iri" : "https://w3id.org/def/NyOnLegal#Metropolitan_Magistrate_Courts",
-    "baseIri" : "https://w3id.org/def/NyOnLegal",
-    "instances" : 0,
-    "label" : {
-      "de" : "Metropolitan Magistrat Court",
-      "hi" : "मेट्रोपॉलिटन मजिस्ट्रेट कोर्ट",
-      "IRI-based" : "Metropolitan_Magistrate_Courts",
-      "en" : "Metropolitan Magistrate Court",
-      "fr" : "Cour magistrat métropolitain",
-      "es" : "Tribunal de magistrados metropolitanos"
-    },
-    "comment" : {
-      "hi" : "आपराधिक मामलों के लिए मेट्रोपॉलिटन स्तर पर मुख्य मेट्रोपॉलिटन कोर्ट के बाद सबसे कम अदालत",
-      "en" : "lowest court after Chief Metropolitan Court at metropolitan level for criminal cases"
-    },
-    "id" : "170",
-    "superClasses" : [ "95" ]
+    "attributes" : [ "external" ],
+    "id" : "67"
   }, {
     "iri" : "https://w3id.org/def/NyOnLegal#Author",
     "baseIri" : "https://w3id.org/def/NyOnLegal",
@@ -1237,7 +1214,27 @@
       "hi" : "लेखक (न्यायाधीश) जो मामले के दस्तावेज़ के निर्माण के लिए जिम्मेदार है",
       "en" : "Author (Judge) who is responsible for a creation of case document"
     },
-    "id" : "213"
+    "attributes" : [ "external" ],
+    "id" : "221"
+  }, {
+    "iri" : "https://w3id.org/def/NyOnLegal#Metropolitan_Magistrate_Courts",
+    "baseIri" : "https://w3id.org/def/NyOnLegal",
+    "instances" : 0,
+    "label" : {
+      "de" : "Metropolitan Magistrat Court",
+      "hi" : "मेट्रोपॉलिटन मजिस्ट्रेट कोर्ट",
+      "IRI-based" : "Metropolitan_Magistrate_Courts",
+      "en" : "Metropolitan Magistrate Court",
+      "fr" : "Cour magistrat métropolitain",
+      "es" : "Tribunal de magistrados metropolitanos"
+    },
+    "comment" : {
+      "hi" : "आपराधिक मामलों के लिए मेट्रोपॉलिटन स्तर पर मुख्य मेट्रोपॉलिटन कोर्ट के बाद सबसे कम अदालत",
+      "en" : "lowest court after Chief Metropolitan Court at metropolitan level for criminal cases"
+    },
+    "attributes" : [ "external" ],
+    "id" : "101",
+    "superClasses" : [ "102" ]
   }, {
     "iri" : "https://w3id.org/def/NyOnLegal#Review_Jurisdiction",
     "baseIri" : "https://w3id.org/def/NyOnLegal",
@@ -1254,43 +1251,66 @@
       "hi" : "क्षेत्राधिकार प्रकार एक समीक्षा क्षेत्राधिकार है",
       "en" : "jurisdiction type is a review jurisdiction"
     },
-    "id" : "188",
-    "superClasses" : [ "117" ]
+    "attributes" : [ "external" ],
+    "id" : "66",
+    "superClasses" : [ "67" ]
   }, {
     "iri" : "https://w3id.org/def/NyOnLegal#Party_Type",
     "baseIri" : "https://w3id.org/def/NyOnLegal",
     "instances" : 0,
     "label" : {
-      "de" : "Partytyp.",
       "hi" : "पार्टी प्रकार",
+      "de" : "Partytyp.",
       "IRI-based" : "Party_Type",
       "en" : "Party Type",
       "fr" : "Type de fête",
       "es" : "Tipo de fiesta"
     },
-    "subClasses" : [ "175", "177", "179", "161", "145" ],
+    "subClasses" : [ "79", "82", "84", "86", "88" ],
     "comment" : {
       "hi" : "मामले में शामिल पार्टी प्रकार",
       "en" : "represents the types of party involved in the case viz. individual, organization, govt. etc."
     },
-    "id" : "77"
+    "attributes" : [ "external" ],
+    "id" : "80"
+  }, {
+    "iri" : "https://w3id.org/def/NyOnLegal#Provision",
+    "baseIri" : "https://w3id.org/def/NyOnLegal",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Provision",
+      "en" : "Provision"
+    },
+    "comment" : {
+      "en" : "section number or article number applied/used in the case law"
+    },
+    "attributes" : [ "external" ],
+    "id" : "232"
   }, {
     "iri" : "http://xmlns.com/foaf/0.1/Person",
+    "equivalent" : [ "86" ],
     "baseIri" : "http://xmlns.com/foaf/0.1",
     "instances" : 0,
     "label" : {
       "IRI-based" : "Person",
       "en" : "Person"
     },
-    "attributes" : [ "external", "equivalent" ],
-    "id" : "233"
+    "attributes" : [ "equivalent", "external" ],
+    "id" : "241"
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#int",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "34",
+    "label" : {
+      "IRI-based" : "int"
+    }
   }, {
     "iri" : "https://w3id.org/def/NyOnLegal#Group",
     "baseIri" : "https://w3id.org/def/NyOnLegal",
     "instances" : 0,
     "label" : {
-      "de" : "Gruppe",
       "hi" : "समूह",
+      "de" : "Gruppe",
       "IRI-based" : "Group",
       "en" : "Group",
       "fr" : "Grouper",
@@ -1300,15 +1320,30 @@
       "hi" : "मामले के प्रतिभागी लोगों या व्यक्तिगत या राज्य के किसी अन्य समूह के खिलाफ लोगों का समूह हैं",
       "en" : "party of the case are the group of people on one side against another group of people or individual or state"
     },
-    "id" : "175",
-    "superClasses" : [ "77" ]
+    "attributes" : [ "external" ],
+    "id" : "79",
+    "superClasses" : [ "80" ]
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#string",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "244",
+    "label" : {
+      "IRI-based" : "string"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#string",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "202",
+    "label" : {
+      "IRI-based" : "string"
+    }
   }, {
     "iri" : "https://w3id.org/def/NyOnLegal#Evidence",
     "baseIri" : "https://w3id.org/def/NyOnLegal",
     "instances" : 0,
     "label" : {
-      "de" : "Beweis",
       "hi" : "सबूत",
+      "de" : "Beweis",
       "IRI-based" : "Evidence",
       "en" : "Evidence",
       "fr" : "Preuve",
@@ -1318,14 +1353,15 @@
       "hi" : "मामले में अदालत के सामने प्रस्तुत साक्ष्य",
       "en" : "evidences presented in front of the court in the case"
     },
-    "id" : "59"
+    "attributes" : [ "external" ],
+    "id" : "58"
   }, {
     "iri" : "https://w3id.org/def/NyOnLegal#Taluka",
     "baseIri" : "https://w3id.org/def/NyOnLegal",
     "instances" : 0,
     "label" : {
-      "de" : "Taluka",
       "hi" : "तालुका",
+      "de" : "Taluka",
       "IRI-based" : "Taluka",
       "en" : "Taluka",
       "fr" : "Talon",
@@ -1335,8 +1371,20 @@
       "hi" : "तालुका नाम / स्थान का प्रतिनिधित्व करता है",
       "en" : "represents taluka name/location"
     },
-    "id" : "224",
-    "superClasses" : [ "97" ]
+    "attributes" : [ "external" ],
+    "id" : "168",
+    "superClasses" : [ "130" ]
+  }, {
+    "iri" : "https://w3id.org/def/NyOnLegal#CourtDecision",
+    "baseIri" : "https://w3id.org/def/NyOnLegal",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "CourtDecision",
+      "en" : "CourtDecision"
+    },
+    "subClasses" : [ "90", "61", "64" ],
+    "attributes" : [ "external" ],
+    "id" : "62"
   }, {
     "iri" : "https://w3id.org/def/NyOnLegal#Statue",
     "baseIri" : "https://w3id.org/def/NyOnLegal",
@@ -1348,17 +1396,15 @@
     "comment" : {
       "en" : "includes the acts and norms of the law"
     },
-    "id" : "240"
+    "attributes" : [ "external" ],
+    "id" : "246"
   }, {
-    "iri" : "https://w3id.org/def/NyOnLegal#Court_Decision",
-    "baseIri" : "https://w3id.org/def/NyOnLegal",
-    "instances" : 0,
+    "iri" : "http://www.w3.org/2001/XMLSchema#string",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "31",
     "label" : {
-      "IRI-based" : "Court_Decision",
-      "en" : "Court Decision"
-    },
-    "subClasses" : [ "164", "131", "130" ],
-    "id" : "93"
+      "IRI-based" : "string"
+    }
   }, {
     "iri" : "https://w3id.org/def/NyOnLegal#State",
     "baseIri" : "https://w3id.org/def/NyOnLegal",
@@ -1371,8 +1417,16 @@
       "hi" : "राज्य का नाम / स्थान का प्रतिनिधित्व करता है",
       "en" : "represents state name/location"
     },
-    "id" : "161",
-    "superClasses" : [ "97", "77" ]
+    "attributes" : [ "external" ],
+    "id" : "88",
+    "superClasses" : [ "130", "80" ]
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#string",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "153",
+    "label" : {
+      "IRI-based" : "string"
+    }
   }, {
     "iri" : "https://w3id.org/def/NyOnLegal#Decree",
     "baseIri" : "https://w3id.org/def/NyOnLegal",
@@ -1381,8 +1435,51 @@
       "IRI-based" : "Decree",
       "en" : "Decree"
     },
-    "id" : "164",
-    "superClasses" : [ "93" ]
+    "attributes" : [ "external" ],
+    "id" : "90",
+    "superClasses" : [ "62" ]
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#string",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "195",
+    "label" : {
+      "IRI-based" : "string"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#string",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "116",
+    "label" : {
+      "IRI-based" : "string"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#int",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "247",
+    "label" : {
+      "IRI-based" : "int"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#string",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "147",
+    "label" : {
+      "IRI-based" : "string"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#string",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "200",
+    "label" : {
+      "IRI-based" : "string"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#string",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "197",
+    "label" : {
+      "IRI-based" : "string"
+    }
   }, {
     "iri" : "https://w3id.org/def/NyOnLegal#Appellant_Jurisdiction",
     "baseIri" : "https://w3id.org/def/NyOnLegal",
@@ -1399,8 +1496,16 @@
       "hi" : "क्षेत्राधिकार प्रकार एक अपीलकारी क्षेत्राधिकार है",
       "en" : "jurisdiction type is a appellant jurisdiction"
     },
-    "id" : "186",
-    "superClasses" : [ "117" ]
+    "attributes" : [ "external" ],
+    "id" : "111",
+    "superClasses" : [ "67" ]
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#string",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "145",
+    "label" : {
+      "IRI-based" : "string"
+    }
   }, {
     "iri" : "https://w3id.org/def/NyOnLegal#Original_Jurisdiction",
     "baseIri" : "https://w3id.org/def/NyOnLegal",
@@ -1417,15 +1522,16 @@
       "hi" : "क्षेत्राधिकार प्रकार एक मूल क्षेत्राधिकार है",
       "en" : "jurisdiction type is a original jurisdiction"
     },
-    "id" : "173",
-    "superClasses" : [ "117" ]
+    "attributes" : [ "external" ],
+    "id" : "77",
+    "superClasses" : [ "67" ]
   }, {
     "iri" : "https://w3id.org/def/NyOnLegal#Metropolitian_Courts",
     "baseIri" : "https://w3id.org/def/NyOnLegal",
     "instances" : 0,
     "label" : {
-      "hi" : "मेट्रोपॉलिटन कोर्ट",
       "de" : "Metropolitaner Gericht",
+      "hi" : "मेट्रोपॉलिटन कोर्ट",
       "IRI-based" : "Metropolitian_Courts",
       "en" : "Metropolitan Court",
       "fr" : "Tribunal métropolitain",
@@ -1435,8 +1541,9 @@
       "hi" : "10 लाख से अधिक शहर जनसंख्या के लिए न्यायालय",
       "en" : "court for population more than 10 lakh city "
     },
-    "id" : "142",
-    "superClasses" : [ "22" ]
+    "attributes" : [ "external" ],
+    "id" : "208",
+    "superClasses" : [ "15" ]
   }, {
     "iri" : "https://w3id.org/def/NyOnLegal#Party",
     "baseIri" : "https://w3id.org/def/NyOnLegal",
@@ -1449,12 +1556,74 @@
       "fr" : "Des soirées",
       "es" : "Fiestas"
     },
-    "subClasses" : [ "118", "85", "154", "19", "127", "92" ],
+    "subClasses" : [ "1", "4", "6", "8", "10", "12" ],
     "comment" : {
       "hi" : "ऐसे पक्ष जो मामले में शामिल कानूनी डोमेन या भागों से संबंधित नहीं हैं",
       "en" : "party or people involved in the case"
     },
-    "id" : "20"
+    "attributes" : [ "external" ],
+    "id" : "2"
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#string",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "124",
+    "label" : {
+      "IRI-based" : "string"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#string",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "71",
+    "label" : {
+      "IRI-based" : "string"
+    }
+  }, {
+    "iri" : "https://w3id.org/def/NyOnLegal#Precedent",
+    "baseIri" : "https://w3id.org/def/NyOnLegal",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Precedent",
+      "en" : "Precedent"
+    },
+    "union" : [ "179" ],
+    "comment" : {
+      "en" : "all the past cases referred in the current judgment b ythe judge"
+    },
+    "attributes" : [ "external", "union" ],
+    "id" : "263"
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#string",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "226",
+    "label" : {
+      "IRI-based" : "string"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#string",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "264",
+    "label" : {
+      "IRI-based" : "string"
+    }
+  }, {
+    "iri" : "https://w3id.org/def/NyOnLegal#Court",
+    "baseIri" : "https://w3id.org/def/NyOnLegal",
+    "instances" : 0,
+    "label" : {
+      "de" : "Gericht",
+      "hi" : "अदालत",
+      "IRI-based" : "Court",
+      "en" : "Court",
+      "fr" : "Rechercher",
+      "es" : "Corte"
+    },
+    "subClasses" : [ "14", "17", "21", "179", "208" ],
+    "comment" : {
+      "hi" : "न्यायिक प्रणाली में अदालत",
+      "en" : "courts in the judicial system"
+    },
+    "attributes" : [ "external" ],
+    "id" : "15"
   }, {
     "iri" : "https://w3id.org/def/NyOnLegal#Issue",
     "baseIri" : "https://w3id.org/def/NyOnLegal",
@@ -1466,32 +1635,41 @@
     "comment" : {
       "en" : "issues in the case arised by the party"
     },
-    "id" : "76"
+    "attributes" : [ "external" ],
+    "id" : "96"
   }, {
-    "iri" : "https://w3id.org/def/NyOnLegal#Court",
-    "baseIri" : "https://w3id.org/def/NyOnLegal",
+    "iri" : "http://www.w3.org/2001/XMLSchema#string",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "114",
+    "label" : {
+      "IRI-based" : "string"
+    }
+  }, {
+    "iri" : "https://schema.org/GovernmentOrganization",
+    "baseIri" : "https://schema.org",
     "instances" : 0,
     "label" : {
-      "hi" : "अदालत",
-      "de" : "Gericht",
-      "IRI-based" : "Court",
-      "en" : "Court",
-      "fr" : "Rechercher",
-      "es" : "Corte"
+      "hi" : "सरकार",
+      "de" : "Regierung",
+      "IRI-based" : "GovernmentOrganization",
+      "en" : "Government",
+      "fr" : "Gouvernement",
+      "es" : "Gobierno"
     },
-    "subClasses" : [ "86", "138", "25", "112", "142" ],
     "comment" : {
-      "hi" : "न्यायिक प्रणाली में अदालत",
-      "en" : "courts in the judicial system"
+      "hi" : "प्रतिभागियों में शामिल (या तो दोनों तरफ या किसी एक पर) मामले में सरकार है",
+      "en" : "party involved (either on both sides or any one) is the government in the case"
     },
-    "id" : "22"
+    "attributes" : [ "external" ],
+    "id" : "82",
+    "superClasses" : [ "80" ]
   }, {
     "iri" : "https://w3id.org/def/NyOnLegal#District",
     "baseIri" : "https://w3id.org/def/NyOnLegal",
     "instances" : 0,
     "label" : {
-      "de" : "Bezirk",
       "hi" : "जिला",
+      "de" : "Bezirk",
       "IRI-based" : "District",
       "en" : "District",
       "fr" : "Quartier",
@@ -1501,15 +1679,23 @@
       "hi" : "जिला नाम / स्थान का प्रतिनिधित्व करता है",
       "en" : "represents district name/location"
     },
-    "id" : "223",
-    "superClasses" : [ "97" ]
+    "attributes" : [ "external" ],
+    "id" : "164",
+    "superClasses" : [ "130" ]
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#string",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "149",
+    "label" : {
+      "IRI-based" : "string"
+    }
   }, {
     "iri" : "https://w3id.org/def/NyOnLegal#Larger_Bench",
     "baseIri" : "https://w3id.org/def/NyOnLegal",
     "instances" : 0,
     "label" : {
-      "de" : "Größere Bank",
       "hi" : "बड़ी बेंच",
+      "de" : "Größere Bank",
       "IRI-based" : "Larger_Bench",
       "en" : "Larger Bench",
       "fr" : "Banc plus grand",
@@ -1519,8 +1705,44 @@
       "hi" : "भारत में न्यायिक प्रणाली में एक शब्द जिसमें मामला तीन या पांच न्यायाधीशों द्वारा सुना और न्याय किया जाता है",
       "en" : "a term in judicial system in India in which a case is heard and judged by three or five judges"
     },
-    "id" : "18",
-    "superClasses" : [ "12" ]
+    "attributes" : [ "external" ],
+    "id" : "172",
+    "superClasses" : [ "59" ]
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#int",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "175",
+    "label" : {
+      "IRI-based" : "int"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#string",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "213",
+    "label" : {
+      "IRI-based" : "string"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#string",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "131",
+    "label" : {
+      "IRI-based" : "string"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#string",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "157",
+    "label" : {
+      "IRI-based" : "string"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#int",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "255",
+    "label" : {
+      "IRI-based" : "int"
+    }
   }, {
     "iri" : "https://w3id.org/def/NyOnLegal#Special_Bench",
     "baseIri" : "https://w3id.org/def/NyOnLegal",
@@ -1537,8 +1759,47 @@
       "hi" : "मामला या विशेष वर्ग के मामलों को सुनने के लिए मुख्य न्यायाधीश के आदेशों के तहत गठित खंडपीठ का मतलब है",
       "en" : "means the Bench constituted by or under the orders of the Chief Justice to hear a case or particular class of cases"
     },
-    "id" : "11",
-    "superClasses" : [ "12" ]
+    "attributes" : [ "external" ],
+    "id" : "169",
+    "superClasses" : [ "59" ]
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#int",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "210",
+    "label" : {
+      "IRI-based" : "int"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#int",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "151",
+    "label" : {
+      "IRI-based" : "int"
+    }
+  }, {
+    "iri" : "http://docs.oasis-open.org/legalruleml/ns/v1.0/metamodel#FactualStatement",
+    "equivalent" : [ "33" ],
+    "baseIri" : "http://docs.oasis-open.org/legalruleml/ns/v1.0/metamodel",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "FactualStatement"
+    },
+    "attributes" : [ "equivalent" ],
+    "id" : "267"
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#string",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "118",
+    "label" : {
+      "IRI-based" : "string"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#string",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "160",
+    "label" : {
+      "IRI-based" : "string"
+    }
   }, {
     "iri" : "https://schema.org/Organization",
     "baseIri" : "https://schema.org",
@@ -1556,8 +1817,8 @@
       "en" : "organization(s) involved as the participant in the case"
     },
     "attributes" : [ "external" ],
-    "id" : "177",
-    "superClasses" : [ "77" ]
+    "id" : "84",
+    "superClasses" : [ "80" ]
   }, {
     "iri" : "https://w3id.org/def/NyOnLegal#Chief_Meterpolitan_Court",
     "baseIri" : "https://w3id.org/def/NyOnLegal",
@@ -1574,8 +1835,9 @@
       "hi" : "आपराधिक मामलों के लिए सत्र अदालत के बाद मेट्रोपॉलिटन स्तर पर निचली अदालत",
       "en" : "lower court at metropolitan level after Sessions Court for criminal cases"
     },
-    "id" : "169",
-    "superClasses" : [ "95" ]
+    "attributes" : [ "external" ],
+    "id" : "173",
+    "superClasses" : [ "102" ]
   }, {
     "iri" : "https://w3id.org/def/NyOnLegal#Fact",
     "baseIri" : "https://w3id.org/def/NyOnLegal",
@@ -1584,7 +1846,25 @@
       "IRI-based" : "Fact",
       "en" : "Fact"
     },
-    "id" : "36"
+    "comment" : {
+      "en" : "represents factual statements in the case law"
+    },
+    "attributes" : [ "equivalent", "external" ],
+    "id" : "33"
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#string",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "133",
+    "label" : {
+      "IRI-based" : "string"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#string",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "127",
+    "label" : {
+      "IRI-based" : "string"
+    }
   }, {
     "iri" : "https://w3id.org/def/NyOnLegal#ObiterDictum",
     "baseIri" : "https://w3id.org/def/NyOnLegal",
@@ -1596,53 +1876,40 @@
     "comment" : {
       "en" : "additional obersvations, remarks, and opinions made by the judge that are not the part of the reason for the decision"
     },
-    "id" : "150"
+    "attributes" : [ "external" ],
+    "id" : "156"
   }, {
     "iri" : "http://www.w3.org/2001/XMLSchema#string",
     "baseIri" : "http://www.w3.org/2001/XMLSchema",
-    "id" : "156",
+    "id" : "138",
+    "label" : {
+      "IRI-based" : "string"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#string",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "219",
+    "label" : {
+      "IRI-based" : "string"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#string",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "266",
     "label" : {
       "IRI-based" : "string"
     }
   }, {
     "iri" : "http://www.w3.org/2001/XMLSchema#int",
     "baseIri" : "http://www.w3.org/2001/XMLSchema",
-    "id" : "204",
+    "id" : "271",
     "label" : {
       "IRI-based" : "int"
     }
   }, {
     "iri" : "http://www.w3.org/2001/XMLSchema#string",
     "baseIri" : "http://www.w3.org/2001/XMLSchema",
-    "id" : "98",
-    "label" : {
-      "IRI-based" : "string"
-    }
-  }, {
-    "iri" : "http://www.w3.org/2001/XMLSchema#string",
-    "baseIri" : "http://www.w3.org/2001/XMLSchema",
-    "id" : "84",
-    "label" : {
-      "IRI-based" : "string"
-    }
-  }, {
-    "iri" : "http://www.w3.org/2001/XMLSchema#string",
-    "baseIri" : "http://www.w3.org/2001/XMLSchema",
-    "id" : "100",
-    "label" : {
-      "IRI-based" : "string"
-    }
-  }, {
-    "iri" : "http://www.w3.org/2001/XMLSchema#int",
-    "baseIri" : "http://www.w3.org/2001/XMLSchema",
-    "id" : "144",
-    "label" : {
-      "IRI-based" : "int"
-    }
-  }, {
-    "iri" : "http://www.w3.org/2001/XMLSchema#string",
-    "baseIri" : "http://www.w3.org/2001/XMLSchema",
-    "id" : "104",
+    "id" : "215",
     "label" : {
       "IRI-based" : "string"
     }
@@ -1652,13 +1919,14 @@
     "instances" : 0,
     "label" : {
       "IRI-based" : "CaseDomain",
-      "en" : "Case Domain"
+      "en" : "CaseDomain"
     },
-    "subClasses" : [ "124", "102", "31", "95" ],
+    "subClasses" : [ "185", "136", "29", "102" ],
     "comment" : {
       "en" : "case belongs to specific proceeding like civil or criminal"
     },
-    "id" : "69"
+    "attributes" : [ "external" ],
+    "id" : "75"
   }, {
     "iri" : "https://w3id.org/def/NyOnLegal#Sub_Court",
     "baseIri" : "https://w3id.org/def/NyOnLegal",
@@ -1675,8 +1943,9 @@
       "hi" : "नागरिक मामलों के लिए जिला स्तर पर पदानुक्रम में दूसरी निचली अदालत",
       "en" : "second lower court in hierarchy at District level for civil cases"
     },
-    "id" : "114",
-    "superClasses" : [ "31" ]
+    "attributes" : [ "external" ],
+    "id" : "181",
+    "superClasses" : [ "29" ]
   }, {
     "iri" : "https://w3id.org/def/NyOnLegal#Courts_for_Civil",
     "baseIri" : "https://w3id.org/def/NyOnLegal",
@@ -1689,13 +1958,14 @@
       "fr" : "Cour civile",
       "es" : "Corte civil"
     },
-    "subClasses" : [ "87", "30", "108", "110", "112", "114" ],
+    "subClasses" : [ "122", "28", "192", "177", "179", "181" ],
     "comment" : {
       "hi" : "नागरिक मामलों के लिए न्यायालय",
       "en" : "court for civil cases"
     },
-    "id" : "31",
-    "superClasses" : [ "69" ]
+    "attributes" : [ "external" ],
+    "id" : "29",
+    "superClasses" : [ "75" ]
   }, {
     "iri" : "https://w3id.org/def/NyOnLegal#Division_Bench",
     "baseIri" : "https://w3id.org/def/NyOnLegal",
@@ -1712,8 +1982,9 @@
       "hi" : "भारत में न्यायिक प्रणाली में एक शब्द जिसमें एक मामला कम से कम 2 न्यायाधीशों द्वारा सुना और न्याय किया जाता है",
       "en" : "a term in judicial system in India in which a case is heard and judged by at least 2 judges"
     },
-    "id" : "14",
-    "superClasses" : [ "12" ]
+    "attributes" : [ "external" ],
+    "id" : "170",
+    "superClasses" : [ "59" ]
   }, {
     "iri" : "https://w3id.org/def/NyOnLegal#WordAndPhrase",
     "baseIri" : "https://w3id.org/def/NyOnLegal",
@@ -1725,94 +1996,40 @@
     "comment" : {
       "en" : "words or phrases exctracted from the case to make the search better for the cases or find relevent cases or judgment"
     },
-    "id" : "28"
+    "attributes" : [ "external" ],
+    "id" : "24"
   }, {
     "iri" : "https://w3id.org/def/NyOnLegal#Location",
     "baseIri" : "https://w3id.org/def/NyOnLegal",
     "instances" : 0,
     "label" : {
-      "de" : "Standort",
       "hi" : "स्थल",
+      "de" : "Standort",
       "IRI-based" : "Location",
       "en" : "Location",
       "fr" : "Lieu",
       "es" : "Ubicación"
     },
-    "subClasses" : [ "229", "184", "223", "161", "224" ],
+    "subClasses" : [ "183", "162", "164", "88", "168" ],
     "comment" : {
       "hi" : "अदालतों के स्थान का प्रतिनिधित्व करता है, आदि और साक्ष्य स्थानों के लिए भी उपयोग किया जाता है",
       "en" : "represents the location of the courts, etc and also used for evidence locations"
     },
-    "id" : "97"
+    "attributes" : [ "external" ],
+    "id" : "130"
   }, {
-    "iri" : "http://www.w3.org/2001/XMLSchema#string",
-    "baseIri" : "http://www.w3.org/2001/XMLSchema",
-    "id" : "207",
+    "iri" : "http://www.w3.org/2002/07/owl#Thing",
+    "baseIri" : "http://owl2vowl.de",
+    "id" : "206",
     "label" : {
-      "IRI-based" : "string"
+      "undefined" : "Thing"
     }
   }, {
-    "iri" : "http://www.w3.org/2001/XMLSchema#string",
-    "baseIri" : "http://www.w3.org/2001/XMLSchema",
-    "id" : "211",
+    "iri" : "http://www.w3.org/2000/01/rdf-schema#Literal",
+    "id" : "270",
     "label" : {
-      "IRI-based" : "string"
-    }
-  }, {
-    "iri" : "http://www.w3.org/2001/XMLSchema#string",
-    "baseIri" : "http://www.w3.org/2001/XMLSchema",
-    "id" : "91",
-    "label" : {
-      "IRI-based" : "string"
-    }
-  }, {
-    "iri" : "http://www.w3.org/2001/XMLSchema#int",
-    "baseIri" : "http://www.w3.org/2001/XMLSchema",
-    "id" : "306",
-    "label" : {
-      "IRI-based" : "int"
-    }
-  }, {
-    "iri" : "http://www.w3.org/2001/XMLSchema#string",
-    "baseIri" : "http://www.w3.org/2001/XMLSchema",
-    "id" : "199",
-    "label" : {
-      "IRI-based" : "string"
-    }
-  }, {
-    "iri" : "http://www.w3.org/2001/XMLSchema#int",
-    "baseIri" : "http://www.w3.org/2001/XMLSchema",
-    "id" : "37",
-    "label" : {
-      "IRI-based" : "int"
-    }
-  }, {
-    "iri" : "http://www.w3.org/2001/XMLSchema#string",
-    "baseIri" : "http://www.w3.org/2001/XMLSchema",
-    "id" : "275",
-    "label" : {
-      "IRI-based" : "string"
-    }
-  }, {
-    "iri" : "http://www.w3.org/2001/XMLSchema#string",
-    "baseIri" : "http://www.w3.org/2001/XMLSchema",
-    "id" : "253",
-    "label" : {
-      "IRI-based" : "string"
-    }
-  }, {
-    "iri" : "http://www.w3.org/2001/XMLSchema#string",
-    "baseIri" : "http://www.w3.org/2001/XMLSchema",
-    "id" : "192",
-    "label" : {
-      "IRI-based" : "string"
-    }
-  }, {
-    "iri" : "http://www.w3.org/2001/XMLSchema#string",
-    "baseIri" : "http://www.w3.org/2001/XMLSchema",
-    "id" : "147",
-    "label" : {
-      "IRI-based" : "string"
+      "IRI-based" : "Literal",
+      "undefined" : "Literal"
     }
   }, {
     "iri" : "https://w3id.org/def/NyOnLegal#Tribunal_Bench",
@@ -1830,11 +2047,12 @@
       "hi" : "ट्रिब्यूनल मामलों के साथ बेंच सौदों",
       "en" : "Bench deals with tribunals cases"
     },
-    "id" : "16",
-    "superClasses" : [ "12" ]
+    "attributes" : [ "external" ],
+    "id" : "171",
+    "superClasses" : [ "59" ]
   }, {
     "iri" : "https://w3id.org/def/NyOnLegal#Individual",
-    "equivalent" : [ "233" ],
+    "equivalent" : [ "241" ],
     "baseIri" : "https://w3id.org/def/NyOnLegal",
     "instances" : 0,
     "label" : {
@@ -1849,9 +2067,9 @@
       "hi" : "मामले के प्रतिभागी व्यक्तिगत व्यक्ति हैं",
       "en" : "participants of the case are the individual persons"
     },
-    "attributes" : [ "equivalent" ],
-    "id" : "179",
-    "superClasses" : [ "77" ]
+    "attributes" : [ "equivalent", "external" ],
+    "id" : "86",
+    "superClasses" : [ "80" ]
   }, {
     "iri" : "https://schema.org/Place",
     "baseIri" : "https://schema.org",
@@ -1869,8 +2087,8 @@
       "en" : "location name or place name"
     },
     "attributes" : [ "external" ],
-    "id" : "229",
-    "superClasses" : [ "97" ]
+    "id" : "183",
+    "superClasses" : [ "130" ]
   }, {
     "iri" : "https://w3id.org/def/NyOnLegal#Petitioner",
     "baseIri" : "https://w3id.org/def/NyOnLegal",
@@ -1882,35 +2100,36 @@
     "comment" : {
       "en" : "one who makes the petition"
     },
-    "id" : "154",
-    "superClasses" : [ "20" ]
+    "attributes" : [ "external" ],
+    "id" : "6",
+    "superClasses" : [ "2" ]
   }, {
-    "iri" : "http://www.w3.org/2001/XMLSchema#string",
-    "baseIri" : "http://www.w3.org/2001/XMLSchema",
-    "id" : "197",
+    "iri" : "http://www.w3.org/2000/01/rdf-schema#Literal",
+    "id" : "142",
     "label" : {
-      "IRI-based" : "string"
+      "IRI-based" : "Literal",
+      "undefined" : "Literal"
     }
   }, {
-    "iri" : "http://www.w3.org/2001/XMLSchema#string",
-    "baseIri" : "http://www.w3.org/2001/XMLSchema",
-    "id" : "126",
+    "iri" : "http://www.w3.org/2002/07/owl#Thing",
+    "baseIri" : "http://owl2vowl.de",
+    "id" : "98",
     "label" : {
-      "IRI-based" : "string"
+      "undefined" : "Thing"
     }
   }, {
-    "iri" : "http://www.w3.org/2001/XMLSchema#string",
-    "baseIri" : "http://www.w3.org/2001/XMLSchema",
-    "id" : "120",
+    "iri" : "http://www.w3.org/2002/07/owl#Thing",
+    "baseIri" : "http://owl2vowl.de",
+    "id" : "35",
     "label" : {
-      "IRI-based" : "string"
+      "undefined" : "Thing"
     }
   }, {
-    "iri" : "http://www.w3.org/2001/XMLSchema#string",
-    "baseIri" : "http://www.w3.org/2001/XMLSchema",
-    "id" : "194",
+    "iri" : "http://www.w3.org/2000/01/rdf-schema#Literal",
+    "id" : "140",
     "label" : {
-      "IRI-based" : "string"
+      "IRI-based" : "Literal",
+      "undefined" : "Literal"
     }
   }, {
     "iri" : "https://w3id.org/def/NyOnLegal#DateOfJudgment",
@@ -1918,18 +2137,19 @@
     "instances" : 0,
     "label" : {
       "IRI-based" : "DateOfJudgment",
-      "en" : "Date of Judgment"
+      "en" : "DateofJudgment"
     },
     "comment" : {
       "en" : "signifies the final date on which the judgment is given by the court of law"
     },
-    "id" : "23"
+    "attributes" : [ "external" ],
+    "id" : "19"
   }, {
-    "iri" : "http://www.w3.org/2001/XMLSchema#int",
-    "baseIri" : "http://www.w3.org/2001/XMLSchema",
-    "id" : "287",
+    "iri" : "http://www.w3.org/2000/01/rdf-schema#Literal",
+    "id" : "107",
     "label" : {
-      "IRI-based" : "int"
+      "IRI-based" : "Literal",
+      "undefined" : "Literal"
     }
   } ],
   "property" : [ {
@@ -1942,212 +2162,203 @@
     "id" : "5",
     "type" : "rdfs:SubClassOf"
   }, {
-    "id" : "8",
+    "id" : "7",
     "type" : "rdfs:SubClassOf"
   }, {
-    "id" : "10",
+    "id" : "9",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "11",
     "type" : "rdfs:SubClassOf"
   }, {
     "id" : "13",
     "type" : "rdfs:SubClassOf"
   }, {
-    "id" : "15",
+    "id" : "16",
     "type" : "rdfs:SubClassOf"
   }, {
-    "id" : "17",
-    "type" : "rdfs:SubClassOf"
-  }, {
-    "id" : "21",
+    "id" : "18",
     "type" : "owl:objectProperty"
   }, {
-    "id" : "26",
+    "id" : "22",
     "type" : "owl:objectProperty"
   }, {
-    "id" : "29",
+    "id" : "25",
     "type" : "owl:objectProperty"
+  }, {
+    "id" : "30",
+    "type" : "owl:datatypeProperty"
   }, {
     "id" : "32",
     "type" : "owl:datatypeProperty"
   }, {
-    "id" : "35",
-    "type" : "owl:datatypeProperty"
-  }, {
-    "id" : "24",
+    "id" : "20",
     "type" : "owl:objectProperty"
-  }, {
-    "id" : "57",
-    "type" : "owl:objectProperty"
-  }, {
-    "id" : "56",
-    "type" : "owl:objectProperty"
-  }, {
-    "id" : "61",
-    "type" : "rdfs:SubClassOf"
-  }, {
-    "id" : "40",
-    "type" : "owl:objectProperty"
-  }, {
-    "id" : "65",
-    "type" : "owl:datatypeProperty"
-  }, {
-    "id" : "75",
-    "type" : "owl:objectProperty"
-  }, {
-    "id" : "48",
-    "type" : "owl:objectProperty"
-  }, {
-    "id" : "80",
-    "type" : "owl:datatypeProperty"
-  }, {
-    "id" : "83",
-    "type" : "owl:datatypeProperty"
   }, {
     "id" : "45",
     "type" : "owl:objectProperty"
   }, {
-    "id" : "88",
+    "id" : "44",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "60",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "63",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "65",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "48",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "69",
     "type" : "owl:datatypeProperty"
   }, {
+    "id" : "72",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "76",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "78",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "81",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "83",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "85",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "87",
+    "type" : "rdfs:SubClassOf"
+  }, {
     "id" : "89",
-    "type" : "owl:datatypeProperty"
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "95",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "97",
+    "type" : "owl:objectProperty"
   }, {
     "id" : "53",
     "type" : "owl:objectProperty"
   }, {
-    "id" : "96",
-    "type" : "owl:datatypeProperty"
-  }, {
     "id" : "99",
-    "type" : "owl:datatypeProperty"
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "100",
+    "type" : "rdfs:SubClassOf"
   }, {
     "id" : "103",
-    "type" : "owl:datatypeProperty"
+    "type" : "rdfs:SubClassOf"
   }, {
     "id" : "105",
-    "type" : "owl:datatypeProperty"
+    "type" : "owl:objectProperty"
   }, {
     "id" : "106",
     "type" : "owl:datatypeProperty"
   }, {
-    "id" : "107",
+    "id" : "108",
     "type" : "rdfs:SubClassOf"
   }, {
-    "id" : "109",
+    "id" : "110",
     "type" : "rdfs:SubClassOf"
   }, {
-    "id" : "111",
-    "type" : "rdfs:SubClassOf"
-  }, {
-    "id" : "113",
-    "type" : "rdfs:SubClassOf"
-  }, {
-    "id" : "119",
+    "id" : "112",
     "type" : "owl:datatypeProperty"
   }, {
-    "id" : "123",
-    "type" : "rdfs:SubClassOf"
-  }, {
-    "id" : "125",
+    "id" : "115",
     "type" : "owl:datatypeProperty"
   }, {
-    "id" : "128",
-    "type" : "rdfs:SubClassOf"
-  }, {
-    "id" : "129",
-    "type" : "rdfs:SubClassOf"
-  }, {
-    "id" : "132",
-    "type" : "rdfs:SubClassOf"
-  }, {
-    "id" : "133",
+    "id" : "117",
     "type" : "owl:datatypeProperty"
   }, {
-    "id" : "134",
-    "type" : "rdfs:SubClassOf"
-  }, {
-    "id" : "135",
-    "type" : "rdfs:SubClassOf"
+    "id" : "121",
+    "type" : "owl:objectProperty"
   }, {
     "id" : "38",
     "type" : "owl:objectProperty"
   }, {
-    "id" : "136",
-    "type" : "rdfs:SubClassOf"
+    "id" : "123",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "125",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "42",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "129",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "132",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "51",
+    "type" : "owl:objectProperty"
   }, {
     "id" : "137",
-    "type" : "rdfs:SubClassOf"
+    "type" : "owl:datatypeProperty"
   }, {
     "id" : "139",
-    "type" : "rdfs:SubClassOf"
-  }, {
-    "id" : "140",
-    "type" : "rdfs:SubClassOf"
+    "type" : "owl:datatypeProperty"
   }, {
     "id" : "141",
-    "type" : "rdfs:SubClassOf"
+    "type" : "owl:datatypeProperty"
   }, {
-    "id" : "143",
+    "id" : "144",
     "type" : "owl:datatypeProperty"
   }, {
     "id" : "146",
     "type" : "owl:datatypeProperty"
   }, {
     "id" : "148",
-    "type" : "owl:objectProperty"
-  }, {
-    "id" : "149",
     "type" : "owl:datatypeProperty"
   }, {
-    "id" : "51",
+    "id" : "46",
     "type" : "owl:objectProperty"
   }, {
-    "id" : "152",
-    "type" : "rdfs:SubClassOf"
+    "id" : "150",
+    "type" : "owl:datatypeProperty"
   }, {
-    "id" : "153",
-    "type" : "rdfs:SubClassOf"
+    "id" : "152",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "154",
+    "type" : "owl:objectProperty"
   }, {
     "id" : "155",
     "type" : "owl:datatypeProperty"
   }, {
-    "id" : "157",
-    "type" : "rdfs:SubClassOf"
-  }, {
-    "id" : "158",
-    "type" : "rdfs:SubClassOf"
+    "id" : "55",
+    "type" : "owl:objectProperty"
   }, {
     "id" : "159",
-    "type" : "rdfs:SubClassOf"
+    "type" : "owl:datatypeProperty"
   }, {
-    "id" : "160",
-    "type" : "rdfs:SubClassOf"
-  }, {
-    "id" : "162",
+    "id" : "161",
     "type" : "rdfs:SubClassOf"
   }, {
     "id" : "163",
     "type" : "rdfs:SubClassOf"
   }, {
-    "id" : "166",
+    "id" : "165",
     "type" : "rdfs:SubClassOf"
   }, {
     "id" : "167",
     "type" : "rdfs:SubClassOf"
   }, {
-    "id" : "168",
-    "type" : "rdfs:SubClassOf"
-  }, {
-    "id" : "43",
+    "id" : "36",
     "type" : "owl:objectProperty"
   }, {
-    "id" : "171",
-    "type" : "owl:datatypeProperty"
-  }, {
-    "id" : "172",
-    "type" : "rdfs:SubClassOf"
-  }, {
     "id" : "174",
-    "type" : "rdfs:SubClassOf"
+    "type" : "owl:datatypeProperty"
   }, {
     "id" : "176",
     "type" : "rdfs:SubClassOf"
@@ -2155,130 +2366,127 @@
     "id" : "178",
     "type" : "rdfs:SubClassOf"
   }, {
-    "id" : "39",
-    "type" : "owl:objectProperty"
-  }, {
     "id" : "180",
     "type" : "rdfs:SubClassOf"
   }, {
-    "id" : "181",
-    "type" : "rdfs:SubClassOf"
-  }, {
-    "id" : "41",
+    "id" : "135",
     "type" : "owl:objectProperty"
   }, {
     "id" : "182",
     "type" : "rdfs:SubClassOf"
   }, {
-    "id" : "183",
+    "id" : "47",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "184",
     "type" : "rdfs:SubClassOf"
   }, {
-    "id" : "185",
+    "id" : "186",
     "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "49",
+    "type" : "owl:objectProperty"
   }, {
     "id" : "187",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "188",
     "type" : "rdfs:SubClassOf"
   }, {
     "id" : "189",
     "type" : "rdfs:SubClassOf"
   }, {
     "id" : "190",
-    "type" : "owl:objectProperty"
+    "type" : "rdfs:SubClassOf"
   }, {
     "id" : "191",
-    "type" : "owl:datatypeProperty"
+    "type" : "rdfs:SubClassOf"
   }, {
     "id" : "193",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "194",
     "type" : "owl:datatypeProperty"
-  }, {
-    "id" : "195",
-    "type" : "owl:objectProperty"
-  }, {
-    "id" : "47",
-    "type" : "owl:objectProperty"
   }, {
     "id" : "196",
     "type" : "owl:datatypeProperty"
   }, {
     "id" : "198",
-    "type" : "owl:datatypeProperty"
-  }, {
-    "id" : "200",
-    "type" : "rdfs:SubClassOf"
-  }, {
-    "id" : "201",
-    "type" : "rdfs:SubClassOf"
-  }, {
-    "id" : "202",
-    "type" : "rdfs:SubClassOf"
-  }, {
-    "id" : "203",
-    "type" : "owl:datatypeProperty"
-  }, {
-    "id" : "205",
-    "type" : "owl:disjointWith"
-  }, {
-    "id" : "206",
-    "type" : "owl:datatypeProperty"
-  }, {
-    "id" : "208",
-    "type" : "owl:disjointWith"
-  }, {
-    "id" : "49",
     "type" : "owl:objectProperty"
-  }, {
-    "id" : "209",
-    "type" : "owl:disjointWith"
-  }, {
-    "id" : "210",
-    "type" : "owl:datatypeProperty"
-  }, {
-    "id" : "212",
-    "type" : "owl:disjointWith"
   }, {
     "id" : "52",
     "type" : "owl:objectProperty"
   }, {
-    "id" : "214",
+    "id" : "199",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "201",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "203",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "204",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "205",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "207",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "209",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "211",
     "type" : "owl:disjointWith"
   }, {
-    "id" : "215",
-    "type" : "owl:disjointWith"
+    "id" : "212",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "214",
+    "type" : "owl:datatypeProperty"
   }, {
     "id" : "216",
     "type" : "owl:disjointWith"
   }, {
-    "id" : "217",
-    "type" : "owl:datatypeProperty"
-  }, {
-    "id" : "218",
-    "type" : "owl:disjointWith"
-  }, {
-    "id" : "54",
+    "id" : "40",
     "type" : "owl:objectProperty"
   }, {
-    "id" : "219",
+    "id" : "217",
     "type" : "owl:disjointWith"
+  }, {
+    "id" : "218",
+    "type" : "owl:datatypeProperty"
   }, {
     "id" : "220",
     "type" : "owl:disjointWith"
   }, {
-    "id" : "221",
-    "type" : "owl:disjointWith"
+    "id" : "41",
+    "type" : "owl:objectProperty"
   }, {
     "id" : "222",
     "type" : "owl:disjointWith"
   }, {
-    "id" : "225",
+    "id" : "223",
     "type" : "owl:disjointWith"
   }, {
-    "id" : "226",
+    "id" : "224",
     "type" : "owl:disjointWith"
+  }, {
+    "id" : "225",
+    "type" : "owl:datatypeProperty"
   }, {
     "id" : "227",
     "type" : "owl:disjointWith"
   }, {
+    "id" : "43",
+    "type" : "owl:objectProperty"
+  }, {
     "id" : "228",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "229",
     "type" : "owl:disjointWith"
   }, {
     "id" : "230",
@@ -2287,7 +2495,7 @@
     "id" : "231",
     "type" : "owl:disjointWith"
   }, {
-    "id" : "232",
+    "id" : "233",
     "type" : "owl:disjointWith"
   }, {
     "id" : "234",
@@ -2306,12 +2514,9 @@
     "type" : "owl:disjointWith"
   }, {
     "id" : "239",
-    "type" : "owl:objectProperty"
+    "type" : "owl:disjointWith"
   }, {
-    "id" : "44",
-    "type" : "owl:objectProperty"
-  }, {
-    "id" : "241",
+    "id" : "240",
     "type" : "owl:disjointWith"
   }, {
     "id" : "242",
@@ -2320,107 +2525,89 @@
     "id" : "243",
     "type" : "owl:disjointWith"
   }, {
-    "id" : "244",
-    "type" : "owl:disjointWith"
-  }, {
     "id" : "245",
-    "type" : "owl:disjointWith"
+    "type" : "owl:objectProperty"
   }, {
-    "id" : "246",
-    "type" : "owl:disjointWith"
-  }, {
-    "id" : "247",
-    "type" : "owl:disjointWith"
+    "id" : "37",
+    "type" : "owl:objectProperty"
   }, {
     "id" : "248",
-    "type" : "owl:disjointWith"
+    "type" : "owl:someValuesFrom"
   }, {
     "id" : "249",
-    "type" : "owl:disjointWith"
+    "type" : "owl:objectProperty"
   }, {
     "id" : "250",
-    "type" : "owl:disjointWith"
+    "type" : "owl:datatypeProperty"
   }, {
     "id" : "251",
     "type" : "owl:objectProperty"
   }, {
     "id" : "252",
-    "type" : "owl:datatypeProperty"
+    "type" : "owl:disjointWith"
+  }, {
+    "id" : "253",
+    "type" : "owl:disjointWith"
   }, {
     "id" : "254",
-    "type" : "owl:disjointWith"
-  }, {
-    "id" : "255",
-    "type" : "owl:disjointWith"
+    "type" : "owl:datatypeProperty"
   }, {
     "id" : "256",
-    "type" : "owl:datatypeProperty"
+    "type" : "owl:allValuesFrom"
   }, {
     "id" : "257",
     "type" : "owl:disjointWith"
   }, {
     "id" : "258",
-    "type" : "rdfs:SubClassOf"
+    "type" : "owl:disjointWith"
   }, {
     "id" : "259",
     "type" : "owl:disjointWith"
   }, {
     "id" : "260",
-    "type" : "rdfs:SubClassOf"
+    "type" : "owl:disjointWith"
   }, {
     "id" : "261",
     "type" : "owl:disjointWith"
   }, {
     "id" : "262",
-    "type" : "rdfs:SubClassOf"
-  }, {
-    "id" : "263",
     "type" : "owl:disjointWith"
-  }, {
-    "id" : "264",
-    "type" : "rdfs:SubClassOf"
   }, {
     "id" : "265",
-    "type" : "owl:disjointWith"
-  }, {
-    "id" : "266",
-    "type" : "rdfs:SubClassOf"
-  }, {
-    "id" : "267",
-    "type" : "owl:disjointWith"
-  }, {
-    "id" : "268",
-    "type" : "owl:disjointWith"
-  }, {
-    "id" : "269",
-    "type" : "owl:disjointWith"
-  }, {
-    "id" : "270",
-    "type" : "owl:disjointWith"
-  }, {
-    "id" : "271",
-    "type" : "owl:someValuesFrom"
-  }, {
-    "id" : "272",
-    "type" : "owl:disjointWith"
-  }, {
-    "id" : "273",
-    "type" : "owl:allValuesFrom"
-  }, {
-    "id" : "274",
     "type" : "owl:datatypeProperty"
   }, {
+    "id" : "50",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "268",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "269",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "272",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "273",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "274",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "275",
+    "type" : "rdfs:SubClassOf"
+  }, {
     "id" : "276",
-    "type" : "owl:disjointWith"
+    "type" : "rdfs:SubClassOf"
   }, {
     "id" : "277",
-    "type" : "owl:disjointWith"
+    "type" : "rdfs:SubClassOf"
   }, {
     "id" : "278",
-    "type" : "owl:disjointWith"
+    "type" : "rdfs:SubClassOf"
   }, {
     "id" : "279",
-    "type" : "owl:disjointWith"
+    "type" : "owl:objectProperty"
   }, {
     "id" : "280",
     "type" : "owl:disjointWith"
@@ -2440,1504 +2627,1503 @@
     "id" : "285",
     "type" : "owl:disjointWith"
   }, {
-    "id" : "42",
+    "id" : "286",
+    "type" : "owl:disjointWith"
+  }, {
+    "id" : "287",
+    "type" : "owl:disjointWith"
+  }, {
+    "id" : "39",
     "type" : "owl:objectProperty"
   }, {
-    "id" : "286",
-    "type" : "owl:datatypeProperty"
-  }, {
     "id" : "288",
-    "type" : "owl:datatypeProperty"
+    "type" : "owl:disjointWith"
   }, {
     "id" : "289",
     "type" : "owl:disjointWith"
   }, {
     "id" : "290",
-    "type" : "owl:disjointWith"
+    "type" : "rdfs:SubClassOf"
   }, {
     "id" : "291",
-    "type" : "owl:disjointWith"
+    "type" : "rdfs:SubClassOf"
   }, {
     "id" : "292",
-    "type" : "owl:disjointWith"
+    "type" : "rdfs:SubClassOf"
   }, {
     "id" : "293",
-    "type" : "owl:disjointWith"
+    "type" : "rdfs:SubClassOf"
   }, {
     "id" : "294",
-    "type" : "owl:disjointWith"
+    "type" : "rdfs:SubClassOf"
   }, {
     "id" : "295",
-    "type" : "owl:disjointWith"
+    "type" : "owl:datatypeProperty"
   }, {
     "id" : "296",
-    "type" : "owl:disjointWith"
+    "type" : "rdfs:SubClassOf"
   }, {
     "id" : "297",
-    "type" : "owl:disjointWith"
+    "type" : "rdfs:SubClassOf"
   }, {
     "id" : "298",
-    "type" : "owl:disjointWith"
+    "type" : "rdfs:SubClassOf"
   }, {
     "id" : "299",
-    "type" : "owl:disjointWith"
+    "type" : "owl:objectProperty"
   }, {
     "id" : "300",
-    "type" : "owl:disjointWith"
-  }, {
-    "id" : "301",
-    "type" : "owl:disjointWith"
-  }, {
-    "id" : "302",
-    "type" : "owl:disjointWith"
-  }, {
-    "id" : "303",
-    "type" : "owl:disjointWith"
-  }, {
-    "id" : "46",
-    "type" : "owl:objectProperty"
-  }, {
-    "id" : "304",
-    "type" : "owl:disjointWith"
-  }, {
-    "id" : "305",
-    "type" : "owl:disjointWith"
-  }, {
-    "id" : "307",
     "type" : "owl:datatypeProperty"
   }, {
-    "id" : "308",
-    "type" : "owl:datatypeProperty"
-  }, {
-    "id" : "50",
+    "id" : "54",
     "type" : "owl:objectProperty"
   }, {
-    "id" : "55",
+    "id" : "56",
     "type" : "owl:objectProperty"
   }, {
-    "id" : "58",
+    "id" : "57",
     "type" : "owl:objectProperty"
   } ],
   "propertyAttribute" : [ {
     "range" : "2",
     "domain" : "1",
-    "attributes" : [ "object", "anonymous" ],
+    "attributes" : [ "anonymous", "object" ],
     "id" : "0"
   }, {
     "range" : "2",
     "domain" : "4",
-    "attributes" : [ "object", "anonymous" ],
+    "attributes" : [ "anonymous", "object" ],
     "id" : "3"
   }, {
-    "range" : "7",
+    "range" : "2",
     "domain" : "6",
-    "attributes" : [ "object", "anonymous" ],
+    "attributes" : [ "anonymous", "object" ],
     "id" : "5"
   }, {
-    "range" : "7",
-    "domain" : "9",
-    "attributes" : [ "object", "anonymous" ],
-    "id" : "8"
+    "range" : "2",
+    "domain" : "8",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "7"
   }, {
-    "range" : "12",
-    "domain" : "11",
-    "attributes" : [ "object", "anonymous" ],
-    "id" : "10"
+    "range" : "2",
+    "domain" : "10",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "9"
   }, {
-    "range" : "12",
+    "range" : "2",
+    "domain" : "12",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "11"
+  }, {
+    "range" : "15",
     "domain" : "14",
-    "attributes" : [ "object", "anonymous" ],
+    "attributes" : [ "anonymous", "object" ],
     "id" : "13"
   }, {
-    "range" : "12",
-    "domain" : "16",
-    "attributes" : [ "object", "anonymous" ],
-    "id" : "15"
-  }, {
-    "range" : "12",
-    "domain" : "18",
-    "attributes" : [ "object", "anonymous" ],
-    "id" : "17"
+    "range" : "15",
+    "domain" : "17",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "16"
   }, {
     "iri" : "https://w3id.org/def/NyOnLegal#hasDateOfJudgment",
     "baseIri" : "https://w3id.org/def/NyOnLegal",
-    "range" : "23",
+    "range" : "19",
     "label" : {
       "IRI-based" : "hasDateOfJudgment",
       "en" : "hasDateOfJudgment"
     },
-    "superproperty" : [ "24" ],
-    "domain" : "22",
-    "attributes" : [ "object" ],
-    "id" : "21"
+    "superproperty" : [ "20" ],
+    "domain" : "15",
+    "attributes" : [ "external", "object" ],
+    "id" : "18"
   }, {
     "iri" : "https://w3id.org/def/NyOnLegal#hasWordPhrase",
     "baseIri" : "https://w3id.org/def/NyOnLegal",
-    "range" : "28",
+    "range" : "24",
     "label" : {
       "IRI-based" : "hasWordPhrase",
       "en" : "hasWordPhrase"
     },
-    "superproperty" : [ "24" ],
-    "domain" : "27",
-    "attributes" : [ "object" ],
-    "id" : "26"
+    "superproperty" : [ "20" ],
+    "domain" : "23",
+    "attributes" : [ "external", "object" ],
+    "id" : "22"
   }, {
     "iri" : "https://w3id.org/def/NyOnLegal#withConcurrence",
     "baseIri" : "https://w3id.org/def/NyOnLegal",
-    "range" : "4",
+    "range" : "27",
     "label" : {
       "IRI-based" : "withConcurrence",
       "en" : "withConcurrence"
     },
-    "superproperty" : [ "24" ],
-    "domain" : "9",
-    "attributes" : [ "object" ],
-    "id" : "29"
+    "superproperty" : [ "20" ],
+    "domain" : "26",
+    "attributes" : [ "external", "object" ],
+    "id" : "25"
   }, {
     "iri" : "https://w3id.org/def/NyOnLegal#dateOfJudgment",
     "baseIri" : "https://w3id.org/def/NyOnLegal",
-    "range" : "34",
+    "range" : "31",
     "label" : {
       "IRI-based" : "dateOfJudgment",
       "en" : "dateOfJudgment"
     },
-    "domain" : "33",
-    "attributes" : [ "datatype" ],
-    "id" : "32"
+    "domain" : "19",
+    "attributes" : [ "datatype", "external" ],
+    "id" : "30"
   }, {
     "iri" : "https://w3id.org/def/NyOnLegal#factSequenceNum",
     "baseIri" : "https://w3id.org/def/NyOnLegal",
-    "range" : "37",
+    "range" : "34",
     "label" : {
       "IRI-based" : "factSequenceNum",
       "en" : "factSequenceNum"
     },
-    "domain" : "36",
-    "attributes" : [ "datatype" ],
-    "id" : "35"
+    "domain" : "33",
+    "attributes" : [ "datatype", "external" ],
+    "id" : "32"
   }, {
     "iri" : "http://www.w3.org/2002/07/owl#topObjectProperty",
     "baseIri" : "http://www.w3.org/2002/07/owl",
-    "range" : "33",
+    "range" : "35",
     "label" : {
       "IRI-based" : "topObjectProperty"
     },
-    "domain" : "33",
-    "subproperty" : [ "38", "39", "40", "41", "42", "43", "21", "44", "26", "45", "29", "46", "47", "48", "49", "50", "51", "52", "53", "54", "55", "56", "57", "58" ],
+    "domain" : "35",
+    "subproperty" : [ "36", "18", "37", "22", "38", "25", "39", "40", "41", "42", "43", "44", "45", "46", "47", "48", "49", "50", "51", "52", "53", "54", "55", "56", "57" ],
     "attributes" : [ "external", "object" ],
-    "id" : "24"
+    "id" : "20"
   }, {
     "iri" : "https://w3id.org/def/NyOnLegal#hasEvidence",
     "baseIri" : "https://w3id.org/def/NyOnLegal",
-    "range" : "59",
+    "range" : "58",
     "label" : {
       "IRI-based" : "hasEvidence",
       "en" : "hasEvidence"
     },
-    "superproperty" : [ "24" ],
-    "domain" : "27",
-    "attributes" : [ "object" ],
-    "id" : "57"
+    "superproperty" : [ "20" ],
+    "domain" : "23",
+    "attributes" : [ "external", "object" ],
+    "id" : "45"
   }, {
     "iri" : "https://w3id.org/def/NyOnLegal#hasBench",
     "baseIri" : "https://w3id.org/def/NyOnLegal",
-    "range" : "12",
+    "range" : "59",
     "label" : {
       "IRI-based" : "hasBench",
       "en" : "hasBench"
     },
-    "superproperty" : [ "24" ],
-    "domain" : "27",
-    "attributes" : [ "object" ],
-    "id" : "56"
+    "superproperty" : [ "20" ],
+    "domain" : "23",
+    "attributes" : [ "external", "object" ],
+    "id" : "44"
   }, {
-    "range" : "2",
-    "domain" : "62",
-    "attributes" : [ "object", "anonymous" ],
-    "id" : "61"
+    "range" : "62",
+    "domain" : "61",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "60"
+  }, {
+    "range" : "62",
+    "domain" : "64",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "63"
+  }, {
+    "range" : "67",
+    "domain" : "66",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "65"
   }, {
     "iri" : "https://w3id.org/def/NyOnLegal#hasRatioDecidendi",
     "baseIri" : "https://w3id.org/def/NyOnLegal",
-    "range" : "64",
+    "range" : "68",
     "label" : {
       "IRI-based" : "hasRatioDecidendi",
       "en" : "hasRtioDecidendi"
     },
-    "superproperty" : [ "24" ],
-    "domain" : "27",
-    "attributes" : [ "object" ],
-    "id" : "40"
+    "superproperty" : [ "20" ],
+    "domain" : "23",
+    "attributes" : [ "external", "object" ],
+    "id" : "48"
   }, {
     "iri" : "https://w3id.org/def/NyOnLegal#wFirstName",
     "baseIri" : "https://w3id.org/def/NyOnLegal",
-    "range" : "63",
+    "range" : "71",
     "label" : {
       "IRI-based" : "wFirstName",
       "en" : "wFirstName"
     },
-    "domain" : "66",
-    "attributes" : [ "datatype" ],
-    "id" : "65"
+    "domain" : "70",
+    "attributes" : [ "datatype", "external" ],
+    "id" : "69"
+  }, {
+    "range" : "67",
+    "domain" : "73",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "72"
+  }, {
+    "range" : "67",
+    "domain" : "77",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "76"
+  }, {
+    "range" : "80",
+    "domain" : "79",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "78"
+  }, {
+    "range" : "80",
+    "domain" : "82",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "81"
+  }, {
+    "range" : "80",
+    "domain" : "84",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "83"
+  }, {
+    "range" : "80",
+    "domain" : "86",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "85"
+  }, {
+    "range" : "80",
+    "domain" : "88",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "87"
+  }, {
+    "range" : "62",
+    "domain" : "90",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "89"
   }, {
     "iri" : "https://w3id.org/def/NyOnLegal#hasIssue",
     "baseIri" : "https://w3id.org/def/NyOnLegal",
-    "range" : "76",
+    "range" : "96",
     "label" : {
       "IRI-based" : "hasIssue",
       "en" : "hasIssue"
     },
-    "domain" : "27",
-    "attributes" : [ "object", "functional" ],
-    "id" : "75"
+    "domain" : "23",
+    "attributes" : [ "functional", "external", "object" ],
+    "id" : "95"
+  }, {
+    "iri" : "https://w3id.org/def/NyOnLegal#precedentReliedUpon",
+    "baseIri" : "https://w3id.org/def/NyOnLegal",
+    "range" : "98",
+    "label" : {
+      "IRI-based" : "precedentReliedUpon",
+      "en" : "precedentReliedUpon"
+    },
+    "superproperty" : [ "51" ],
+    "domain" : "23",
+    "comment" : {
+      "en" : "represnts the past cases referred by the judge on which the current judgment relies on"
+    },
+    "attributes" : [ "external", "object" ],
+    "id" : "97"
   }, {
     "iri" : "https://w3id.org/def/NyOnLegal#hasPartyType",
     "baseIri" : "https://w3id.org/def/NyOnLegal",
-    "range" : "77",
+    "range" : "80",
     "label" : {
       "IRI-based" : "hasPartyType",
       "en" : "hasPartyType"
     },
-    "superproperty" : [ "24" ],
-    "domain" : "20",
-    "attributes" : [ "object" ],
-    "id" : "48"
+    "superproperty" : [ "20" ],
+    "domain" : "2",
+    "attributes" : [ "external", "object" ],
+    "id" : "53"
+  }, {
+    "iri" : "https://w3id.org/def/NyOnLegal#appellantArgument",
+    "baseIri" : "https://w3id.org/def/NyOnLegal",
+    "range" : "35",
+    "label" : {
+      "IRI-based" : "appellantArgument"
+    },
+    "superproperty" : [ "54" ],
+    "domain" : "35",
+    "attributes" : [ "external", "object" ],
+    "id" : "99"
+  }, {
+    "range" : "102",
+    "domain" : "101",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "100"
+  }, {
+    "range" : "102",
+    "domain" : "104",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "103"
+  }, {
+    "iri" : "https://w3id.org/def/NyOnLegal#precedentOverruled",
+    "baseIri" : "https://w3id.org/def/NyOnLegal",
+    "range" : "23",
+    "label" : {
+      "IRI-based" : "precedentOverruled",
+      "en" : "precedentOverruled"
+    },
+    "superproperty" : [ "51" ],
+    "domain" : "23",
+    "comment" : {
+      "en" : "represents the past cases overruled by the judge in the current case"
+    },
+    "attributes" : [ "external", "object" ],
+    "id" : "105"
   }, {
     "iri" : "https://w3id.org/def/NyOnLegal#partyName",
     "baseIri" : "https://w3id.org/def/NyOnLegal",
-    "range" : "72",
+    "range" : "107",
     "label" : {
       "IRI-based" : "partyName",
       "en" : "partyName"
     },
-    "domain" : "33",
-    "attributes" : [ "datatype" ],
-    "id" : "80"
+    "domain" : "35",
+    "attributes" : [ "datatype", "external" ],
+    "id" : "106"
+  }, {
+    "range" : "67",
+    "domain" : "109",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "108"
+  }, {
+    "range" : "67",
+    "domain" : "111",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "110"
+  }, {
+    "iri" : "https://w3id.org/def/NyOnLegal#value",
+    "baseIri" : "https://w3id.org/def/NyOnLegal",
+    "range" : "114",
+    "label" : {
+      "IRI-based" : "value"
+    },
+    "domain" : "113",
+    "attributes" : [ "datatype", "external" ],
+    "id" : "112"
+  }, {
+    "iri" : "https://w3id.org/def/NyOnLegal#equivalentCitation",
+    "baseIri" : "https://w3id.org/def/NyOnLegal",
+    "range" : "116",
+    "label" : {
+      "IRI-based" : "equivalentCitation"
+    },
+    "domain" : "23",
+    "comment" : {
+      "en" : "equivalent citations provided by the various law reporters."
+    },
+    "attributes" : [ "datatype", "external" ],
+    "id" : "115"
   }, {
     "iri" : "https://w3id.org/def/NyOnLegal#lastName",
     "baseIri" : "https://w3id.org/def/NyOnLegal",
-    "range" : "84",
+    "range" : "118",
     "label" : {
       "IRI-based" : "lastName",
       "en" : "lastName"
     },
-    "domain" : "20",
-    "attributes" : [ "datatype" ],
-    "id" : "83"
+    "domain" : "2",
+    "attributes" : [ "datatype", "external" ],
+    "id" : "117"
+  }, {
+    "iri" : "https://w3id.org/def/NyOnLegal#petitionerArgument",
+    "baseIri" : "https://w3id.org/def/NyOnLegal",
+    "range" : "35",
+    "label" : {
+      "IRI-based" : "petitionerArgument"
+    },
+    "superproperty" : [ "54" ],
+    "domain" : "35",
+    "attributes" : [ "external", "object" ],
+    "id" : "121"
   }, {
     "iri" : "https://w3id.org/def/NyOnLegal#hasWitness",
     "baseIri" : "https://w3id.org/def/NyOnLegal",
-    "range" : "66",
+    "range" : "70",
     "label" : {
       "IRI-based" : "hasWitness",
       "en" : "hasWitness"
     },
-    "superproperty" : [ "24" ],
-    "domain" : "27",
-    "attributes" : [ "object" ],
-    "id" : "45"
+    "superproperty" : [ "20" ],
+    "domain" : "23",
+    "attributes" : [ "external", "object" ],
+    "id" : "38"
   }, {
     "iri" : "https://w3id.org/def/NyOnLegal#wLastName",
     "baseIri" : "https://w3id.org/def/NyOnLegal",
-    "range" : "67",
+    "range" : "124",
     "label" : {
       "IRI-based" : "wLastName",
       "en" : "wLastName"
     },
-    "domain" : "66",
-    "attributes" : [ "datatype" ],
-    "id" : "88"
+    "domain" : "70",
+    "attributes" : [ "datatype", "external" ],
+    "id" : "123"
   }, {
     "iri" : "https://w3id.org/def/NyOnLegal#hasDesignation",
     "baseIri" : "https://w3id.org/def/NyOnLegal",
-    "range" : "91",
+    "range" : "127",
     "label" : {
       "IRI-based" : "hasDesignation",
       "en" : "hasDesignation"
     },
-    "domain" : "90",
-    "attributes" : [ "datatype" ],
-    "id" : "89"
+    "domain" : "126",
+    "attributes" : [ "datatype", "external" ],
+    "id" : "125"
   }, {
     "iri" : "https://w3id.org/def/NyOnLegal#hasFinalDecision",
     "baseIri" : "https://w3id.org/def/NyOnLegal",
-    "range" : "93",
+    "range" : "62",
     "label" : {
       "IRI-based" : "hasFinalDecision",
       "en" : "hasFinalDecision"
     },
-    "superproperty" : [ "24" ],
-    "domain" : "27",
-    "attributes" : [ "object" ],
-    "id" : "53"
+    "superproperty" : [ "20" ],
+    "domain" : "23",
+    "attributes" : [ "external", "object" ],
+    "id" : "42"
   }, {
     "iri" : "https://w3id.org/def/NyOnLegal#locationName",
     "baseIri" : "https://w3id.org/def/NyOnLegal",
-    "range" : "98",
+    "range" : "131",
     "label" : {
       "IRI-based" : "locationName",
-      "en" : "locstionName"
+      "en" : "locationName"
     },
-    "domain" : "97",
-    "attributes" : [ "datatype" ],
-    "id" : "96"
+    "domain" : "130",
+    "attributes" : [ "datatype", "external" ],
+    "id" : "129"
   }, {
     "iri" : "https://w3id.org/def/NyOnLegal#hasMonth",
     "baseIri" : "https://w3id.org/def/NyOnLegal",
-    "range" : "100",
+    "range" : "133",
     "label" : {
       "IRI-based" : "hasMonth",
       "en" : "hasMonth"
     },
-    "domain" : "23",
-    "attributes" : [ "datatype" ],
-    "id" : "99"
+    "domain" : "19",
+    "attributes" : [ "datatype", "external" ],
+    "id" : "132"
+  }, {
+    "iri" : "https://w3id.org/def/NyOnLegal#hasPrecedent",
+    "baseIri" : "https://w3id.org/def/NyOnLegal",
+    "range" : "35",
+    "label" : {
+      "IRI-based" : "hasPrecedent"
+    },
+    "superproperty" : [ "20" ],
+    "domain" : "35",
+    "subproperty" : [ "97", "105", "135" ],
+    "comment" : {
+      "en" : "represents past cases referred by the judge in the judgment"
+    },
+    "attributes" : [ "external", "object" ],
+    "id" : "51"
   }, {
     "iri" : "https://w3id.org/def/NyOnLegal#hasPolicePersonnelName",
     "baseIri" : "https://w3id.org/def/NyOnLegal",
-    "range" : "104",
+    "range" : "138",
     "label" : {
       "IRI-based" : "hasPolicePersonnelName",
       "en" : "hasPolicePersonnelName"
     },
-    "domain" : "90",
+    "domain" : "126",
     "comment" : {
       "en" : "represents the name of the police personnel involved in the case"
     },
-    "attributes" : [ "datatype" ],
-    "id" : "103"
+    "attributes" : [ "datatype", "external" ],
+    "id" : "137"
   }, {
     "iri" : "http://www.w3.org/2002/07/owl#topDataProperty",
     "baseIri" : "http://www.w3.org/2002/07/owl",
-    "range" : "73",
+    "range" : "140",
     "label" : {
       "IRI-based" : "topDataProperty"
     },
-    "domain" : "33",
-    "attributes" : [ "external", "datatype" ],
-    "id" : "105"
+    "domain" : "35",
+    "attributes" : [ "datatype", "external" ],
+    "id" : "139"
   }, {
     "iri" : "https://w3id.org/def/NyOnLegal#courtOffName",
     "baseIri" : "https://w3id.org/def/NyOnLegal",
-    "range" : "74",
+    "range" : "142",
     "label" : {
       "IRI-based" : "courtOffName",
       "en" : "courtOffName"
     },
-    "domain" : "33",
-    "attributes" : [ "datatype" ],
-    "id" : "106"
-  }, {
-    "range" : "31",
-    "domain" : "108",
-    "attributes" : [ "object", "anonymous" ],
-    "id" : "107"
-  }, {
-    "range" : "31",
-    "domain" : "110",
-    "attributes" : [ "object", "anonymous" ],
-    "id" : "109"
-  }, {
-    "range" : "31",
-    "domain" : "112",
-    "attributes" : [ "object", "anonymous" ],
-    "id" : "111"
-  }, {
-    "range" : "31",
-    "domain" : "114",
-    "attributes" : [ "object", "anonymous" ],
-    "id" : "113"
+    "domain" : "35",
+    "attributes" : [ "datatype", "external" ],
+    "id" : "141"
   }, {
     "iri" : "https://w3id.org/def/NyOnLegal#COFirstName",
     "baseIri" : "https://w3id.org/def/NyOnLegal",
-    "range" : "120",
+    "range" : "145",
     "label" : {
       "IRI-based" : "COFirstName",
       "en" : "COFirstName"
     },
-    "domain" : "7",
-    "attributes" : [ "datatype" ],
-    "id" : "119"
-  }, {
-    "range" : "69",
-    "domain" : "124",
-    "attributes" : [ "object", "anonymous" ],
-    "id" : "123"
+    "domain" : "92",
+    "attributes" : [ "datatype", "external" ],
+    "id" : "144"
   }, {
     "iri" : "https://w3id.org/def/NyOnLegal#COLastName",
     "baseIri" : "https://w3id.org/def/NyOnLegal",
-    "range" : "126",
+    "range" : "147",
     "label" : {
       "IRI-based" : "COLastName",
       "en" : "COLastName"
     },
-    "domain" : "7",
-    "attributes" : [ "datatype" ],
-    "id" : "125"
-  }, {
-    "range" : "69",
-    "domain" : "102",
-    "attributes" : [ "object", "anonymous" ],
-    "id" : "128"
-  }, {
-    "range" : "69",
-    "domain" : "31",
-    "attributes" : [ "object", "anonymous" ],
-    "id" : "129"
-  }, {
-    "range" : "69",
-    "domain" : "95",
-    "attributes" : [ "object", "anonymous" ],
-    "id" : "132"
+    "domain" : "92",
+    "attributes" : [ "datatype", "external" ],
+    "id" : "146"
   }, {
     "iri" : "https://w3id.org/def/NyOnLegal#ratioDecidendiValue",
     "baseIri" : "https://w3id.org/def/NyOnLegal",
-    "range" : "82",
+    "range" : "149",
     "label" : {
       "IRI-based" : "ratioDecidendiValue",
       "en" : "ratioDecidendiValue"
     },
-    "domain" : "64",
-    "attributes" : [ "datatype" ],
-    "id" : "133"
-  }, {
-    "range" : "31",
-    "domain" : "87",
-    "attributes" : [ "object", "anonymous" ],
-    "id" : "134"
-  }, {
-    "range" : "31",
-    "domain" : "30",
-    "attributes" : [ "object", "anonymous" ],
-    "id" : "135"
+    "domain" : "68",
+    "attributes" : [ "datatype", "external" ],
+    "id" : "148"
   }, {
     "iri" : "https://w3id.org/def/NyOnLegal#hasFact",
     "baseIri" : "https://w3id.org/def/NyOnLegal",
-    "range" : "36",
+    "range" : "33",
     "label" : {
       "IRI-based" : "hasFact",
       "en" : "hasFact"
     },
-    "superproperty" : [ "24" ],
-    "domain" : "27",
-    "attributes" : [ "object" ],
-    "id" : "38"
-  }, {
-    "range" : "22",
-    "domain" : "86",
-    "attributes" : [ "object", "anonymous" ],
-    "id" : "136"
-  }, {
-    "range" : "22",
-    "domain" : "138",
-    "attributes" : [ "object", "anonymous" ],
-    "id" : "137"
-  }, {
-    "range" : "22",
-    "domain" : "25",
-    "attributes" : [ "object", "anonymous" ],
-    "id" : "139"
-  }, {
-    "range" : "22",
-    "domain" : "112",
-    "attributes" : [ "object", "anonymous" ],
-    "id" : "140"
-  }, {
-    "range" : "22",
-    "domain" : "142",
-    "attributes" : [ "object", "anonymous" ],
-    "id" : "141"
+    "superproperty" : [ "20" ],
+    "domain" : "23",
+    "attributes" : [ "external", "object" ],
+    "id" : "46"
   }, {
     "iri" : "https://w3id.org/def/NyOnLegal#hasYear",
     "baseIri" : "https://w3id.org/def/NyOnLegal",
-    "range" : "144",
+    "range" : "151",
     "label" : {
       "IRI-based" : "hasYear",
       "en" : "hasYear"
     },
-    "domain" : "23",
-    "attributes" : [ "datatype" ],
-    "id" : "143"
+    "domain" : "19",
+    "attributes" : [ "datatype", "external" ],
+    "id" : "150"
   }, {
     "iri" : "https://w3id.org/def/NyOnLegal#courtName",
     "baseIri" : "https://w3id.org/def/NyOnLegal",
-    "range" : "147",
+    "range" : "153",
     "label" : {
       "IRI-based" : "courtName",
       "en" : "courtName"
     },
-    "domain" : "22",
-    "attributes" : [ "datatype" ],
-    "id" : "146"
+    "domain" : "15",
+    "attributes" : [ "datatype", "external" ],
+    "id" : "152"
   }, {
     "iri" : "https://w3id.org/def/NyOnLegal#cites",
     "baseIri" : "https://w3id.org/def/NyOnLegal",
-    "range" : "27",
+    "range" : "23",
     "label" : {
       "IRI-based" : "cites",
       "en" : "cites"
     },
-    "domain" : "27",
-    "attributes" : [ "object", "functional" ],
-    "id" : "148"
+    "domain" : "23",
+    "attributes" : [ "functional", "external", "object" ],
+    "id" : "154"
   }, {
     "iri" : "https://w3id.org/def/NyOnLegal#obiterDictumValue",
     "baseIri" : "https://w3id.org/def/NyOnLegal",
-    "range" : "78",
+    "range" : "157",
     "label" : {
       "IRI-based" : "obiterDictumValue",
       "en" : "obiterDictumValue"
     },
-    "domain" : "150",
-    "attributes" : [ "datatype" ],
-    "id" : "149"
+    "domain" : "156",
+    "attributes" : [ "datatype", "external" ],
+    "id" : "155"
   }, {
     "iri" : "https://w3id.org/def/NyOnLegal#hasJudgmentType",
     "baseIri" : "https://w3id.org/def/NyOnLegal",
-    "range" : "115",
+    "range" : "143",
     "label" : {
       "IRI-based" : "hasJudgmentType",
       "en" : "hasJudgmentType"
     },
-    "superproperty" : [ "24" ],
-    "domain" : "27",
-    "attributes" : [ "object" ],
-    "id" : "51"
-  }, {
-    "range" : "20",
-    "domain" : "85",
-    "attributes" : [ "object", "anonymous" ],
-    "id" : "152"
-  }, {
-    "range" : "20",
-    "domain" : "154",
-    "attributes" : [ "object", "anonymous" ],
-    "id" : "153"
+    "superproperty" : [ "20" ],
+    "domain" : "23",
+    "attributes" : [ "external", "object" ],
+    "id" : "55"
   }, {
     "iri" : "https://w3id.org/def/NyOnLegal#issueValue",
     "baseIri" : "https://w3id.org/def/NyOnLegal",
-    "range" : "156",
+    "range" : "160",
     "label" : {
       "IRI-based" : "issueValue",
       "en" : "issueValue"
     },
-    "domain" : "76",
-    "attributes" : [ "datatype" ],
-    "id" : "155"
-  }, {
-    "range" : "20",
-    "domain" : "19",
-    "attributes" : [ "object", "anonymous" ],
-    "id" : "157"
-  }, {
-    "range" : "20",
-    "domain" : "127",
-    "attributes" : [ "object", "anonymous" ],
-    "id" : "158"
-  }, {
-    "range" : "20",
-    "domain" : "92",
-    "attributes" : [ "object", "anonymous" ],
+    "domain" : "96",
+    "attributes" : [ "datatype", "external" ],
     "id" : "159"
   }, {
-    "range" : "77",
-    "domain" : "161",
-    "attributes" : [ "object", "anonymous" ],
-    "id" : "160"
+    "range" : "130",
+    "domain" : "162",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "161"
   }, {
-    "range" : "77",
-    "domain" : "145",
-    "attributes" : [ "object", "anonymous" ],
-    "id" : "162"
-  }, {
-    "range" : "93",
+    "range" : "130",
     "domain" : "164",
-    "attributes" : [ "object", "anonymous" ],
+    "attributes" : [ "anonymous", "object" ],
     "id" : "163"
   }, {
-    "range" : "93",
-    "domain" : "131",
-    "attributes" : [ "object", "anonymous" ],
-    "id" : "166"
+    "range" : "130",
+    "domain" : "88",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "165"
   }, {
-    "range" : "93",
-    "domain" : "130",
-    "attributes" : [ "object", "anonymous" ],
+    "range" : "130",
+    "domain" : "168",
+    "attributes" : [ "anonymous", "object" ],
     "id" : "167"
-  }, {
-    "range" : "20",
-    "domain" : "118",
-    "attributes" : [ "object", "anonymous" ],
-    "id" : "168"
   }, {
     "iri" : "https://w3id.org/def/NyOnLegal#hasCourtOfficial",
     "baseIri" : "https://w3id.org/def/NyOnLegal",
-    "range" : "7",
+    "range" : "92",
     "label" : {
       "IRI-based" : "hasCourtOfficial",
-      "en" : "hasCourtOfiicial"
+      "en" : "hasCourtOfficial"
     },
-    "superproperty" : [ "24" ],
-    "domain" : "27",
-    "attributes" : [ "object" ],
-    "id" : "43"
+    "superproperty" : [ "20" ],
+    "domain" : "23",
+    "attributes" : [ "external", "object" ],
+    "id" : "36"
   }, {
     "iri" : "https://w3id.org/def/NyOnLegal#ratioDecidendiSequenceNum",
     "baseIri" : "https://w3id.org/def/NyOnLegal",
-    "range" : "81",
+    "range" : "175",
     "label" : {
       "IRI-based" : "ratioDecidendiSequenceNum",
       "en" : "ratioDecidendiSequenceNum"
     },
-    "domain" : "64",
-    "attributes" : [ "datatype" ],
-    "id" : "171"
-  }, {
-    "range" : "117",
-    "domain" : "173",
-    "attributes" : [ "object", "anonymous" ],
-    "id" : "172"
-  }, {
-    "range" : "77",
-    "domain" : "175",
-    "attributes" : [ "object", "anonymous" ],
+    "domain" : "68",
+    "attributes" : [ "datatype", "external" ],
     "id" : "174"
   }, {
-    "range" : "77",
+    "range" : "29",
     "domain" : "177",
-    "attributes" : [ "object", "anonymous" ],
+    "attributes" : [ "anonymous", "object" ],
     "id" : "176"
   }, {
-    "range" : "77",
+    "range" : "29",
     "domain" : "179",
-    "attributes" : [ "object", "anonymous" ],
+    "attributes" : [ "anonymous", "object" ],
     "id" : "178"
+  }, {
+    "range" : "29",
+    "domain" : "181",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "180"
+  }, {
+    "iri" : "https://w3id.org/def/NyOnLegal#precendentNotReliedUpon",
+    "baseIri" : "https://w3id.org/def/NyOnLegal",
+    "range" : "23",
+    "label" : {
+      "IRI-based" : "precendentNotReliedUpon",
+      "en" : "precedentNotReliedUpon"
+    },
+    "superproperty" : [ "51" ],
+    "domain" : "23",
+    "comment" : {
+      "en" : "represent the past cases referred b ythe judge on which the case decision does not rely on"
+    },
+    "attributes" : [ "external", "object" ],
+    "id" : "135"
+  }, {
+    "range" : "130",
+    "domain" : "183",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "182"
   }, {
     "iri" : "https://w3id.org/def/NyOnLegal#hasParty",
     "baseIri" : "https://w3id.org/def/NyOnLegal",
-    "range" : "20",
+    "range" : "2",
     "label" : {
       "IRI-based" : "hasParty",
       "en" : "hasParty"
     },
-    "superproperty" : [ "24" ],
-    "domain" : "27",
-    "attributes" : [ "object" ],
-    "id" : "39"
+    "superproperty" : [ "20" ],
+    "domain" : "23",
+    "attributes" : [ "external", "object" ],
+    "id" : "47"
   }, {
-    "range" : "95",
-    "domain" : "169",
-    "attributes" : [ "object", "anonymous" ],
-    "id" : "180"
+    "range" : "75",
+    "domain" : "185",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "184"
   }, {
-    "range" : "95",
-    "domain" : "121",
-    "attributes" : [ "object", "anonymous" ],
-    "id" : "181"
+    "range" : "75",
+    "domain" : "136",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "186"
   }, {
     "iri" : "https://w3id.org/def/NyOnLegal#hasJurisdiction",
     "baseIri" : "https://w3id.org/def/NyOnLegal",
-    "range" : "117",
+    "range" : "67",
     "label" : {
       "IRI-based" : "hasJurisdiction",
       "en" : "hasJurisdiction"
     },
-    "superproperty" : [ "24" ],
-    "domain" : "22",
-    "attributes" : [ "object" ],
-    "id" : "41"
+    "superproperty" : [ "20" ],
+    "domain" : "15",
+    "attributes" : [ "external", "object" ],
+    "id" : "49"
   }, {
-    "range" : "95",
-    "domain" : "170",
-    "attributes" : [ "object", "anonymous" ],
-    "id" : "182"
-  }, {
-    "range" : "117",
-    "domain" : "116",
-    "attributes" : [ "object", "anonymous" ],
-    "id" : "183"
-  }, {
-    "range" : "117",
-    "domain" : "186",
-    "attributes" : [ "object", "anonymous" ],
-    "id" : "185"
-  }, {
-    "range" : "117",
-    "domain" : "188",
-    "attributes" : [ "object", "anonymous" ],
+    "range" : "75",
+    "domain" : "29",
+    "attributes" : [ "anonymous", "object" ],
     "id" : "187"
   }, {
-    "range" : "117",
+    "range" : "75",
+    "domain" : "102",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "188"
+  }, {
+    "range" : "29",
     "domain" : "122",
-    "attributes" : [ "object", "anonymous" ],
+    "attributes" : [ "anonymous", "object" ],
     "id" : "189"
+  }, {
+    "range" : "29",
+    "domain" : "28",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "190"
+  }, {
+    "range" : "29",
+    "domain" : "192",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "191"
   }, {
     "iri" : "https://w3id.org/def/NyOnLegal#hasAuthor",
     "baseIri" : "https://w3id.org/def/NyOnLegal",
-    "range" : "9",
+    "range" : "26",
     "label" : {
       "IRI-based" : "hasAuthor",
       "en" : "hasAuthor"
     },
-    "domain" : "27",
-    "attributes" : [ "object" ],
-    "id" : "190"
+    "domain" : "23",
+    "attributes" : [ "external", "object" ],
+    "id" : "193"
   }, {
     "iri" : "https://w3id.org/def/NyOnLegal#evidenceLocation",
     "baseIri" : "https://w3id.org/def/NyOnLegal",
-    "range" : "192",
+    "range" : "195",
     "label" : {
       "IRI-based" : "evidenceLocation",
       "en" : "evidenceLocation"
     },
-    "domain" : "59",
-    "attributes" : [ "datatype" ],
-    "id" : "191"
+    "domain" : "58",
+    "attributes" : [ "datatype", "external" ],
+    "id" : "194"
   }, {
     "iri" : "https://w3id.org/def/NyOnLegal#argumentValue",
     "baseIri" : "https://w3id.org/def/NyOnLegal",
-    "range" : "194",
+    "range" : "197",
     "label" : {
       "IRI-based" : "argumentValue",
       "en" : "argumentValue"
     },
-    "domain" : "165",
-    "attributes" : [ "datatype" ],
-    "id" : "193"
+    "domain" : "166",
+    "attributes" : [ "datatype", "external" ],
+    "id" : "196"
   }, {
     "iri" : "https://w3id.org/def/NyOnLegal#citedBy",
-    "inverse" : "148",
+    "inverse" : "154",
     "baseIri" : "https://w3id.org/def/NyOnLegal",
-    "range" : "27",
+    "range" : "23",
     "label" : {
       "IRI-based" : "citedBy",
       "en" : "citedBy"
     },
-    "domain" : "27",
-    "attributes" : [ "object" ],
-    "id" : "195"
+    "domain" : "23",
+    "attributes" : [ "external", "object" ],
+    "id" : "198"
   }, {
     "iri" : "https://w3id.org/def/NyOnLegal#hasCourtLoc",
     "baseIri" : "https://w3id.org/def/NyOnLegal",
-    "range" : "97",
+    "range" : "130",
     "label" : {
       "IRI-based" : "hasCourtLoc",
       "en" : "hasCourtLoc"
     },
-    "superproperty" : [ "24" ],
-    "domain" : "22",
-    "attributes" : [ "object" ],
-    "id" : "47"
+    "superproperty" : [ "20" ],
+    "domain" : "15",
+    "attributes" : [ "external", "object" ],
+    "id" : "52"
   }, {
     "iri" : "https://w3id.org/def/NyOnLegal#catchwordValue",
     "baseIri" : "https://w3id.org/def/NyOnLegal",
-    "range" : "197",
+    "range" : "200",
     "label" : {
       "IRI-based" : "catchwordValue",
       "en" : "catchwordValue"
     },
-    "domain" : "68",
-    "attributes" : [ "datatype" ],
-    "id" : "196"
+    "domain" : "74",
+    "attributes" : [ "datatype", "external" ],
+    "id" : "199"
   }, {
     "iri" : "https://w3id.org/def/NyOnLegal#factValue",
     "baseIri" : "https://w3id.org/def/NyOnLegal",
-    "range" : "199",
+    "range" : "202",
     "label" : {
       "IRI-based" : "factValue",
       "en" : "factValue"
     },
-    "domain" : "36",
-    "attributes" : [ "datatype" ],
-    "id" : "198"
-  }, {
-    "range" : "12",
-    "domain" : "151",
-    "attributes" : [ "object", "anonymous" ],
-    "id" : "200"
-  }, {
-    "range" : "95",
-    "domain" : "94",
-    "attributes" : [ "object", "anonymous" ],
+    "domain" : "33",
+    "attributes" : [ "datatype", "external" ],
     "id" : "201"
   }, {
-    "range" : "95",
-    "domain" : "101",
-    "attributes" : [ "object", "anonymous" ],
-    "id" : "202"
+    "range" : "15",
+    "domain" : "21",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "203"
+  }, {
+    "range" : "15",
+    "domain" : "179",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "204"
+  }, {
+    "iri" : "https://w3id.org/def/NyOnLegal#hasJudge",
+    "baseIri" : "https://w3id.org/def/NyOnLegal",
+    "range" : "26",
+    "label" : {
+      "IRI-based" : "hasJudge",
+      "en" : "hasJudge"
+    },
+    "domain" : "206",
+    "comment" : {
+      "en" : "represent the judicial body (i.e. judge) for the case"
+    },
+    "attributes" : [ "external", "object" ],
+    "id" : "205"
+  }, {
+    "range" : "15",
+    "domain" : "208",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "207"
   }, {
     "iri" : "https://w3id.org/def/NyOnLegal#issueSequenceNum",
     "baseIri" : "https://w3id.org/def/NyOnLegal",
-    "range" : "204",
+    "range" : "210",
     "label" : {
       "IRI-based" : "issueSequenceNum",
       "en" : "issueSequenceNum"
     },
-    "domain" : "76",
-    "attributes" : [ "datatype" ],
-    "id" : "203"
+    "domain" : "96",
+    "attributes" : [ "datatype", "external" ],
+    "id" : "209"
   }, {
-    "range" : "85",
-    "domain" : "154",
-    "attributes" : [ "object", "anonymous" ],
-    "id" : "205"
+    "range" : "181",
+    "domain" : "179",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "211"
+  }, {
+    "iri" : "https://w3id.org/def/NyOnLegal#neutralCitations",
+    "baseIri" : "https://w3id.org/def/NyOnLegal",
+    "range" : "213",
+    "label" : {
+      "IRI-based" : "neutralCitations"
+    },
+    "domain" : "23",
+    "comment" : {
+      "en" : "represents neutral citations given by the court itself"
+    },
+    "attributes" : [ "datatype", "external" ],
+    "id" : "212"
   }, {
     "iri" : "https://w3id.org/def/NyOnLegal#hasCaseName",
     "baseIri" : "https://w3id.org/def/NyOnLegal",
-    "range" : "207",
+    "range" : "215",
     "label" : {
       "IRI-based" : "hasCaseName",
       "en" : "hasCaseName"
     },
-    "domain" : "27",
+    "domain" : "23",
     "comment" : {
       "en" : "represents the name of a case usually contains the name of both the parties"
     },
-    "attributes" : [ "datatype" ],
-    "id" : "206"
+    "attributes" : [ "datatype", "external" ],
+    "id" : "214"
   }, {
-    "range" : "118",
-    "domain" : "154",
-    "attributes" : [ "object", "anonymous" ],
-    "id" : "208"
+    "range" : "122",
+    "domain" : "179",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "216"
   }, {
     "iri" : "https://w3id.org/def/NyOnLegal#hasRulingOf",
     "baseIri" : "https://w3id.org/def/NyOnLegal",
-    "range" : "22",
+    "range" : "15",
     "label" : {
       "IRI-based" : "hasRulingOf",
       "en" : "hasRulingOf"
     },
-    "superproperty" : [ "24" ],
-    "domain" : "27",
-    "attributes" : [ "object", "functional" ],
-    "id" : "49"
+    "superproperty" : [ "20" ],
+    "domain" : "23",
+    "attributes" : [ "functional", "external", "object" ],
+    "id" : "40"
   }, {
-    "range" : "66",
-    "domain" : "92",
-    "attributes" : [ "object", "anonymous" ],
-    "id" : "209"
+    "range" : "177",
+    "domain" : "179",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "217"
   }, {
     "iri" : "https://w3id.org/def/NyOnLegal#hasCaseID",
     "baseIri" : "https://w3id.org/def/NyOnLegal",
-    "range" : "211",
+    "range" : "219",
     "label" : {
       "IRI-based" : "hasCaseID",
       "en" : "hasCaseID"
     },
-    "domain" : "27",
+    "domain" : "23",
     "comment" : {
       "en" : "Case has a unique ID"
     },
-    "attributes" : [ "datatype" ],
-    "id" : "210"
+    "attributes" : [ "datatype", "external" ],
+    "id" : "218"
   }, {
-    "range" : "154",
-    "domain" : "92",
-    "attributes" : [ "object", "anonymous" ],
-    "id" : "212"
+    "range" : "177",
+    "domain" : "192",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "220"
   }, {
     "iri" : "https://w3id.org/def/NyOnLegal#OfDomian",
     "baseIri" : "https://w3id.org/def/NyOnLegal",
-    "range" : "69",
+    "range" : "75",
     "label" : {
       "IRI-based" : "OfDomian",
       "en" : "OfDomain"
     },
-    "superproperty" : [ "24" ],
-    "domain" : "115",
-    "attributes" : [ "object" ],
-    "id" : "52"
+    "superproperty" : [ "20" ],
+    "domain" : "143",
+    "attributes" : [ "external", "object" ],
+    "id" : "41"
   }, {
-    "range" : "66",
-    "domain" : "127",
-    "attributes" : [ "object", "anonymous" ],
-    "id" : "214"
+    "range" : "179",
+    "domain" : "192",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "222"
   }, {
-    "range" : "85",
-    "domain" : "92",
-    "attributes" : [ "object", "anonymous" ],
-    "id" : "215"
+    "range" : "181",
+    "domain" : "192",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "223"
   }, {
-    "range" : "118",
-    "domain" : "92",
-    "attributes" : [ "object", "anonymous" ],
-    "id" : "216"
+    "range" : "122",
+    "domain" : "192",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "224"
   }, {
     "iri" : "https://w3id.org/def/NyOnLegal#wordPhraseValue",
     "baseIri" : "https://w3id.org/def/NyOnLegal",
-    "range" : "71",
+    "range" : "226",
     "label" : {
       "IRI-based" : "wordPhraseValue",
       "en" : "wordPhraseValue"
     },
-    "domain" : "28",
-    "attributes" : [ "datatype" ],
-    "id" : "217"
+    "domain" : "24",
+    "attributes" : [ "datatype", "external" ],
+    "id" : "225"
   }, {
-    "range" : "154",
-    "domain" : "127",
-    "attributes" : [ "object", "anonymous" ],
-    "id" : "218"
+    "range" : "177",
+    "domain" : "28",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "227"
   }, {
     "iri" : "https://w3id.org/def/NyOnLegal#hasObiterDictum",
     "baseIri" : "https://w3id.org/def/NyOnLegal",
-    "range" : "150",
+    "range" : "156",
     "label" : {
       "IRI-based" : "hasObiterDictum",
       "en" : "hasObiterDictum"
     },
-    "superproperty" : [ "24" ],
-    "domain" : "27",
-    "attributes" : [ "object" ],
-    "id" : "54"
+    "superproperty" : [ "20" ],
+    "domain" : "23",
+    "attributes" : [ "external", "object" ],
+    "id" : "43"
   }, {
-    "range" : "92",
-    "domain" : "127",
-    "attributes" : [ "object", "anonymous" ],
-    "id" : "219"
-  }, {
-    "range" : "85",
-    "domain" : "127",
-    "attributes" : [ "object", "anonymous" ],
-    "id" : "220"
-  }, {
-    "range" : "118",
-    "domain" : "127",
-    "attributes" : [ "object", "anonymous" ],
-    "id" : "221"
-  }, {
-    "range" : "224",
-    "domain" : "223",
-    "attributes" : [ "object", "anonymous" ],
-    "id" : "222"
-  }, {
-    "range" : "161",
-    "domain" : "223",
-    "attributes" : [ "object", "anonymous" ],
-    "id" : "225"
-  }, {
-    "range" : "224",
-    "domain" : "161",
-    "attributes" : [ "object", "anonymous" ],
-    "id" : "226"
-  }, {
-    "range" : "223",
-    "domain" : "184",
-    "attributes" : [ "object", "anonymous" ],
-    "id" : "227"
-  }, {
-    "range" : "224",
-    "domain" : "229",
-    "attributes" : [ "object", "anonymous" ],
+    "iri" : "https://w3id.org/def/NyOnLegal#defendentArgument",
+    "baseIri" : "https://w3id.org/def/NyOnLegal",
+    "range" : "35",
+    "label" : {
+      "IRI-based" : "defendentArgument"
+    },
+    "superproperty" : [ "54" ],
+    "domain" : "35",
+    "attributes" : [ "external", "object" ],
     "id" : "228"
   }, {
-    "range" : "224",
-    "domain" : "184",
-    "attributes" : [ "object", "anonymous" ],
+    "range" : "179",
+    "domain" : "28",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "229"
+  }, {
+    "range" : "181",
+    "domain" : "28",
+    "attributes" : [ "anonymous", "object" ],
     "id" : "230"
   }, {
-    "range" : "161",
-    "domain" : "184",
-    "attributes" : [ "object", "anonymous" ],
+    "range" : "122",
+    "domain" : "28",
+    "attributes" : [ "anonymous", "object" ],
     "id" : "231"
   }, {
-    "range" : "184",
-    "domain" : "229",
-    "attributes" : [ "object", "anonymous" ],
-    "id" : "232"
+    "range" : "104",
+    "domain" : "128",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "233"
   }, {
-    "range" : "161",
-    "domain" : "229",
-    "attributes" : [ "object", "anonymous" ],
+    "range" : "104",
+    "domain" : "134",
+    "attributes" : [ "anonymous", "object" ],
     "id" : "234"
   }, {
-    "range" : "223",
-    "domain" : "229",
-    "attributes" : [ "object", "anonymous" ],
+    "range" : "192",
+    "domain" : "28",
+    "attributes" : [ "anonymous", "object" ],
     "id" : "235"
   }, {
-    "range" : "121",
-    "domain" : "94",
-    "attributes" : [ "object", "anonymous" ],
+    "range" : "128",
+    "domain" : "101",
+    "attributes" : [ "anonymous", "object" ],
     "id" : "236"
   }, {
-    "range" : "112",
-    "domain" : "30",
-    "attributes" : [ "object", "anonymous" ],
+    "range" : "134",
+    "domain" : "101",
+    "attributes" : [ "anonymous", "object" ],
     "id" : "237"
   }, {
-    "range" : "108",
-    "domain" : "30",
-    "attributes" : [ "object", "anonymous" ],
+    "range" : "128",
+    "domain" : "134",
+    "attributes" : [ "anonymous", "object" ],
     "id" : "238"
+  }, {
+    "range" : "104",
+    "domain" : "101",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "239"
+  }, {
+    "range" : "134",
+    "domain" : "173",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "240"
+  }, {
+    "range" : "104",
+    "domain" : "173",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "242"
+  }, {
+    "range" : "128",
+    "domain" : "173",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "243"
   }, {
     "iri" : "https://w3id.org/def/NyOnLegal#hasWords",
     "baseIri" : "https://w3id.org/def/NyOnLegal",
-    "range" : "68",
+    "range" : "74",
     "label" : {
       "IRI-based" : "hasWords",
       "en" : "hasWords"
     },
-    "domain" : "27",
+    "domain" : "23",
     "comment" : {
       "en" : "signifies the domain words, facts and issue related words in the case"
     },
-    "attributes" : [ "object" ],
-    "id" : "239"
+    "attributes" : [ "external", "object" ],
+    "id" : "245"
   }, {
     "iri" : "https://w3id.org/def/NyOnLegal#withDissent",
     "baseIri" : "https://w3id.org/def/NyOnLegal",
-    "range" : "62",
+    "range" : "119",
     "label" : {
       "IRI-based" : "withDissent",
       "en" : "withDissent"
     },
-    "superproperty" : [ "24" ],
-    "domain" : "9",
-    "attributes" : [ "object" ],
-    "id" : "44"
+    "superproperty" : [ "20" ],
+    "domain" : "26",
+    "attributes" : [ "external", "object" ],
+    "id" : "37"
   }, {
-    "range" : "121",
-    "domain" : "170",
-    "attributes" : [ "object", "anonymous" ],
-    "id" : "241"
-  }, {
-    "range" : "94",
-    "domain" : "170",
-    "attributes" : [ "object", "anonymous" ],
-    "id" : "242"
-  }, {
-    "range" : "121",
-    "domain" : "101",
-    "attributes" : [ "object", "anonymous" ],
-    "id" : "243"
-  }, {
-    "range" : "94",
-    "domain" : "101",
-    "attributes" : [ "object", "anonymous" ],
-    "id" : "244"
-  }, {
-    "range" : "94",
-    "domain" : "169",
-    "attributes" : [ "object", "anonymous" ],
-    "id" : "245"
-  }, {
-    "range" : "101",
-    "domain" : "169",
-    "attributes" : [ "object", "anonymous" ],
-    "id" : "246"
-  }, {
-    "range" : "101",
-    "domain" : "170",
-    "attributes" : [ "object", "anonymous" ],
-    "id" : "247"
-  }, {
-    "range" : "121",
-    "domain" : "169",
-    "attributes" : [ "object", "anonymous" ],
+    "iri" : "https://w3id.org/def/NyOnLegal#OfDomian",
+    "baseIri" : "https://w3id.org/def/NyOnLegal",
+    "range" : "75",
+    "label" : {
+      "IRI-based" : "OfDomian",
+      "en" : "OfDomain"
+    },
+    "superproperty" : [ "20" ],
+    "domain" : "64",
+    "attributes" : [ "someValues", "external", "object" ],
     "id" : "248"
-  }, {
-    "range" : "170",
-    "domain" : "169",
-    "attributes" : [ "object", "anonymous" ],
-    "id" : "249"
-  }, {
-    "range" : "188",
-    "domain" : "173",
-    "attributes" : [ "object", "anonymous" ],
-    "id" : "250"
   }, {
     "iri" : "https://w3id.org/def/NyOnLegal#hasPolicePersonnel",
     "baseIri" : "https://w3id.org/def/NyOnLegal",
-    "range" : "90",
+    "range" : "126",
     "label" : {
       "IRI-based" : "hasPolicePersonnel",
       "en" : "hasPolicePersonnel"
     },
-    "domain" : "27",
-    "attributes" : [ "object" ],
-    "id" : "251"
+    "domain" : "23",
+    "attributes" : [ "external", "object" ],
+    "id" : "249"
   }, {
     "iri" : "https://w3id.org/def/NyOnLegal#finalDecisionValue",
     "baseIri" : "https://w3id.org/def/NyOnLegal",
-    "range" : "253",
+    "range" : "244",
     "label" : {
       "IRI-based" : "finalDecisionValue",
       "en" : "finalDecisionValue"
     },
-    "domain" : "93",
-    "attributes" : [ "datatype" ],
+    "domain" : "62",
+    "attributes" : [ "datatype", "external" ],
+    "id" : "250"
+  }, {
+    "iri" : "https://w3id.org/def/NyOnLegal#respondentArgument",
+    "baseIri" : "https://w3id.org/def/NyOnLegal",
+    "range" : "35",
+    "label" : {
+      "IRI-based" : "respondentArgument"
+    },
+    "superproperty" : [ "54" ],
+    "domain" : "35",
+    "attributes" : [ "external", "object" ],
+    "id" : "251"
+  }, {
+    "range" : "91",
+    "domain" : "26",
+    "attributes" : [ "anonymous", "object" ],
     "id" : "252"
   }, {
-    "range" : "188",
-    "domain" : "186",
-    "attributes" : [ "object", "anonymous" ],
-    "id" : "254"
-  }, {
-    "range" : "173",
-    "domain" : "116",
-    "attributes" : [ "object", "anonymous" ],
-    "id" : "255"
+    "range" : "4",
+    "domain" : "8",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "253"
   }, {
     "iri" : "https://w3id.org/def/NyOnLegal#obiterDictumSequenceNum",
     "baseIri" : "https://w3id.org/def/NyOnLegal",
-    "range" : "79",
+    "range" : "255",
     "label" : {
       "IRI-based" : "obiterDictumSequenceNum",
       "en" : "obiterDictumSequenceNum"
     },
-    "domain" : "150",
-    "attributes" : [ "datatype" ],
+    "domain" : "156",
+    "attributes" : [ "datatype", "external" ],
+    "id" : "254"
+  }, {
+    "iri" : "https://w3id.org/def/NyOnLegal#OfDomian",
+    "baseIri" : "https://w3id.org/def/NyOnLegal",
+    "range" : "185",
+    "label" : {
+      "IRI-based" : "OfDomian",
+      "en" : "OfDomain"
+    },
+    "superproperty" : [ "20" ],
+    "domain" : "90",
+    "attributes" : [ "allValues", "external", "object" ],
     "id" : "256"
   }, {
-    "range" : "186",
-    "domain" : "116",
-    "attributes" : [ "object", "anonymous" ],
+    "range" : "91",
+    "domain" : "126",
+    "attributes" : [ "anonymous", "object" ],
     "id" : "257"
   }, {
-    "range" : "97",
-    "domain" : "229",
-    "attributes" : [ "object", "anonymous" ],
+    "range" : "26",
+    "domain" : "126",
+    "attributes" : [ "anonymous", "object" ],
     "id" : "258"
   }, {
-    "range" : "173",
-    "domain" : "186",
-    "attributes" : [ "object", "anonymous" ],
+    "range" : "181",
+    "domain" : "177",
+    "attributes" : [ "anonymous", "object" ],
     "id" : "259"
   }, {
-    "range" : "97",
-    "domain" : "184",
-    "attributes" : [ "object", "anonymous" ],
+    "range" : "122",
+    "domain" : "177",
+    "attributes" : [ "anonymous", "object" ],
     "id" : "260"
   }, {
-    "range" : "188",
-    "domain" : "116",
-    "attributes" : [ "object", "anonymous" ],
+    "range" : "136",
+    "domain" : "185",
+    "attributes" : [ "anonymous", "object" ],
     "id" : "261"
   }, {
-    "range" : "97",
-    "domain" : "223",
-    "attributes" : [ "object", "anonymous" ],
+    "range" : "181",
+    "domain" : "122",
+    "attributes" : [ "anonymous", "object" ],
     "id" : "262"
-  }, {
-    "range" : "85",
-    "domain" : "118",
-    "attributes" : [ "object", "anonymous" ],
-    "id" : "263"
-  }, {
-    "range" : "97",
-    "domain" : "161",
-    "attributes" : [ "object", "anonymous" ],
-    "id" : "264"
-  }, {
-    "range" : "66",
-    "domain" : "154",
-    "attributes" : [ "object", "anonymous" ],
-    "id" : "265"
-  }, {
-    "range" : "97",
-    "domain" : "224",
-    "attributes" : [ "object", "anonymous" ],
-    "id" : "266"
-  }, {
-    "range" : "66",
-    "domain" : "85",
-    "attributes" : [ "object", "anonymous" ],
-    "id" : "267"
-  }, {
-    "range" : "66",
-    "domain" : "118",
-    "attributes" : [ "object", "anonymous" ],
-    "id" : "268"
-  }, {
-    "range" : "6",
-    "domain" : "90",
-    "attributes" : [ "object", "anonymous" ],
-    "id" : "269"
-  }, {
-    "range" : "9",
-    "domain" : "90",
-    "attributes" : [ "object", "anonymous" ],
-    "id" : "270"
-  }, {
-    "iri" : "https://w3id.org/def/NyOnLegal#OfDomian",
-    "baseIri" : "https://w3id.org/def/NyOnLegal",
-    "range" : "69",
-    "label" : {
-      "IRI-based" : "OfDomian",
-      "en" : "OfDomain"
-    },
-    "superproperty" : [ "24" ],
-    "domain" : "130",
-    "attributes" : [ "someValues", "object" ],
-    "id" : "271"
-  }, {
-    "range" : "6",
-    "domain" : "9",
-    "attributes" : [ "object", "anonymous" ],
-    "id" : "272"
-  }, {
-    "iri" : "https://w3id.org/def/NyOnLegal#OfDomian",
-    "baseIri" : "https://w3id.org/def/NyOnLegal",
-    "range" : "124",
-    "label" : {
-      "IRI-based" : "OfDomian",
-      "en" : "OfDomain"
-    },
-    "superproperty" : [ "24" ],
-    "domain" : "164",
-    "attributes" : [ "object", "allValues" ],
-    "id" : "273"
   }, {
     "iri" : "https://w3id.org/def/NyOnLegal#firstName",
     "baseIri" : "https://w3id.org/def/NyOnLegal",
-    "range" : "275",
+    "range" : "266",
     "label" : {
       "IRI-based" : "firstName",
       "en" : "firstName"
     },
-    "domain" : "20",
-    "attributes" : [ "datatype" ],
-    "id" : "274"
-  }, {
-    "range" : "1",
-    "domain" : "62",
-    "attributes" : [ "object", "anonymous" ],
-    "id" : "276"
-  }, {
-    "range" : "1",
-    "domain" : "4",
-    "attributes" : [ "object", "anonymous" ],
-    "id" : "277"
-  }, {
-    "range" : "114",
-    "domain" : "87",
-    "attributes" : [ "object", "anonymous" ],
-    "id" : "278"
-  }, {
-    "range" : "114",
-    "domain" : "110",
-    "attributes" : [ "object", "anonymous" ],
-    "id" : "279"
-  }, {
-    "range" : "62",
-    "domain" : "4",
-    "attributes" : [ "object", "anonymous" ],
-    "id" : "280"
-  }, {
-    "range" : "102",
-    "domain" : "124",
-    "attributes" : [ "object", "anonymous" ],
-    "id" : "281"
-  }, {
-    "range" : "87",
-    "domain" : "112",
-    "attributes" : [ "object", "anonymous" ],
-    "id" : "282"
-  }, {
-    "range" : "110",
-    "domain" : "112",
-    "attributes" : [ "object", "anonymous" ],
-    "id" : "283"
-  }, {
-    "range" : "87",
-    "domain" : "110",
-    "attributes" : [ "object", "anonymous" ],
-    "id" : "284"
-  }, {
-    "range" : "114",
-    "domain" : "112",
-    "attributes" : [ "object", "anonymous" ],
-    "id" : "285"
+    "domain" : "2",
+    "attributes" : [ "datatype", "external" ],
+    "id" : "265"
   }, {
     "iri" : "https://w3id.org/def/NyOnLegal#worksIn",
     "baseIri" : "https://w3id.org/def/NyOnLegal",
-    "range" : "22",
+    "range" : "15",
     "label" : {
       "IRI-based" : "worksIn",
       "en" : "worksIn"
     },
-    "superproperty" : [ "24" ],
-    "domain" : "7",
-    "attributes" : [ "object" ],
-    "id" : "42"
+    "superproperty" : [ "20" ],
+    "domain" : "92",
+    "attributes" : [ "external", "object" ],
+    "id" : "50"
   }, {
     "iri" : "https://w3id.org/def/NyOnLegal#argumentSequenceNum",
     "baseIri" : "https://w3id.org/def/NyOnLegal",
-    "range" : "287",
+    "range" : "247",
     "label" : {
       "IRI-based" : "argumentSequenceNum",
       "en" : "argumentSequenceNum"
     },
-    "domain" : "165",
-    "attributes" : [ "datatype" ],
-    "id" : "286"
+    "domain" : "166",
+    "attributes" : [ "datatype", "external" ],
+    "id" : "268"
   }, {
     "iri" : "https://w3id.org/def/NyOnLegal#witnessName",
     "baseIri" : "https://w3id.org/def/NyOnLegal",
-    "range" : "60",
+    "range" : "270",
     "label" : {
       "IRI-based" : "witnessName",
       "en" : "witnessName"
     },
-    "domain" : "33",
-    "attributes" : [ "datatype" ],
-    "id" : "288"
+    "domain" : "35",
+    "attributes" : [ "datatype", "external" ],
+    "id" : "269"
   }, {
-    "range" : "87",
-    "domain" : "108",
-    "attributes" : [ "object", "anonymous" ],
-    "id" : "289"
+    "range" : "102",
+    "domain" : "128",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "272"
   }, {
-    "range" : "110",
-    "domain" : "108",
-    "attributes" : [ "object", "anonymous" ],
-    "id" : "290"
+    "range" : "59",
+    "domain" : "158",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "273"
   }, {
-    "range" : "114",
-    "domain" : "108",
-    "attributes" : [ "object", "anonymous" ],
-    "id" : "291"
+    "range" : "102",
+    "domain" : "173",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "274"
   }, {
-    "range" : "87",
-    "domain" : "30",
-    "attributes" : [ "object", "anonymous" ],
-    "id" : "292"
+    "range" : "102",
+    "domain" : "134",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "275"
   }, {
-    "range" : "110",
-    "domain" : "30",
-    "attributes" : [ "object", "anonymous" ],
-    "id" : "293"
+    "range" : "59",
+    "domain" : "170",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "276"
   }, {
-    "range" : "112",
-    "domain" : "108",
-    "attributes" : [ "object", "anonymous" ],
-    "id" : "294"
+    "range" : "59",
+    "domain" : "172",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "277"
   }, {
-    "range" : "114",
-    "domain" : "30",
-    "attributes" : [ "object", "anonymous" ],
-    "id" : "295"
+    "range" : "59",
+    "domain" : "171",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "278"
   }, {
-    "range" : "179",
-    "domain" : "177",
-    "attributes" : [ "object", "anonymous" ],
-    "id" : "296"
+    "iri" : "https://w3id.org/def/NyOnLegal#withOpinion",
+    "baseIri" : "https://w3id.org/def/NyOnLegal",
+    "range" : "35",
+    "label" : {
+      "IRI-based" : "withOpinion",
+      "en" : "withOpinion"
+    },
+    "domain" : "35",
+    "comment" : {
+      "en" : "represnts the judge opinion on the case either with majority, dissent or concurrence"
+    },
+    "attributes" : [ "external", "object" ],
+    "id" : "279"
   }, {
-    "range" : "161",
-    "domain" : "177",
-    "attributes" : [ "object", "anonymous" ],
-    "id" : "297"
+    "range" : "66",
+    "domain" : "109",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "280"
   }, {
-    "range" : "175",
-    "domain" : "145",
-    "attributes" : [ "object", "anonymous" ],
-    "id" : "298"
+    "range" : "77",
+    "domain" : "111",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "281"
   }, {
-    "range" : "179",
-    "domain" : "145",
-    "attributes" : [ "object", "anonymous" ],
-    "id" : "299"
+    "range" : "66",
+    "domain" : "111",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "282"
   }, {
-    "range" : "161",
-    "domain" : "145",
-    "attributes" : [ "object", "anonymous" ],
-    "id" : "300"
+    "range" : "66",
+    "domain" : "77",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "283"
   }, {
-    "range" : "179",
-    "domain" : "175",
-    "attributes" : [ "object", "anonymous" ],
-    "id" : "301"
+    "range" : "6",
+    "domain" : "12",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "284"
   }, {
-    "range" : "161",
-    "domain" : "175",
-    "attributes" : [ "object", "anonymous" ],
-    "id" : "302"
+    "range" : "1",
+    "domain" : "12",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "285"
   }, {
-    "range" : "161",
-    "domain" : "179",
-    "attributes" : [ "object", "anonymous" ],
-    "id" : "303"
+    "range" : "1",
+    "domain" : "6",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "286"
+  }, {
+    "range" : "101",
+    "domain" : "173",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "287"
   }, {
     "iri" : "https://w3id.org/def/NyOnLegal#hasEvidenceLoc",
     "baseIri" : "https://w3id.org/def/NyOnLegal",
-    "range" : "97",
+    "range" : "130",
     "label" : {
       "IRI-based" : "hasEvidenceLoc",
       "en" : "hasEvidenceLoc"
     },
-    "superproperty" : [ "24" ],
-    "domain" : "59",
-    "attributes" : [ "object" ],
-    "id" : "46"
+    "superproperty" : [ "20" ],
+    "domain" : "58",
+    "attributes" : [ "external", "object" ],
+    "id" : "39"
   }, {
-    "range" : "145",
-    "domain" : "177",
-    "attributes" : [ "object", "anonymous" ],
-    "id" : "304"
+    "range" : "111",
+    "domain" : "109",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "288"
   }, {
-    "range" : "175",
-    "domain" : "177",
-    "attributes" : [ "object", "anonymous" ],
-    "id" : "305"
+    "range" : "77",
+    "domain" : "109",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "289"
+  }, {
+    "range" : "92",
+    "domain" : "93",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "290"
+  }, {
+    "range" : "92",
+    "domain" : "26",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "291"
+  }, {
+    "range" : "59",
+    "domain" : "169",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "292"
+  }, {
+    "range" : "92",
+    "domain" : "94",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "293"
+  }, {
+    "range" : "113",
+    "domain" : "120",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "294"
   }, {
     "iri" : "https://w3id.org/def/NyOnLegal#witnessStatement",
     "baseIri" : "https://w3id.org/def/NyOnLegal",
-    "range" : "70",
+    "range" : "264",
     "label" : {
       "IRI-based" : "witnessStatement",
       "en" : "witnessStatement"
     },
-    "domain" : "66",
-    "attributes" : [ "datatype" ],
-    "id" : "307"
+    "domain" : "70",
+    "attributes" : [ "datatype", "external" ],
+    "id" : "295"
+  }, {
+    "range" : "113",
+    "domain" : "119",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "296"
+  }, {
+    "range" : "92",
+    "domain" : "91",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "297"
+  }, {
+    "range" : "113",
+    "domain" : "27",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "298"
+  }, {
+    "iri" : "https://w3id.org/def/NyOnLegal#plaintiffArgument",
+    "baseIri" : "https://w3id.org/def/NyOnLegal",
+    "range" : "35",
+    "label" : {
+      "IRI-based" : "plaintiffArgument"
+    },
+    "superproperty" : [ "54" ],
+    "domain" : "35",
+    "attributes" : [ "external", "object" ],
+    "id" : "299"
   }, {
     "iri" : "https://w3id.org/def/NyOnLegal#hasDate",
     "baseIri" : "https://w3id.org/def/NyOnLegal",
-    "range" : "306",
+    "range" : "271",
     "label" : {
       "IRI-based" : "hasDate",
       "en" : "hasDate"
     },
-    "domain" : "23",
-    "attributes" : [ "datatype" ],
-    "id" : "308"
+    "domain" : "19",
+    "attributes" : [ "datatype", "external" ],
+    "id" : "300"
   }, {
     "iri" : "https://w3id.org/def/NyOnLegal#makeArgument",
     "baseIri" : "https://w3id.org/def/NyOnLegal",
-    "range" : "165",
+    "range" : "166",
     "label" : {
       "IRI-based" : "makeArgument",
       "en" : "makeArgument"
     },
-    "superproperty" : [ "24" ],
-    "domain" : "20",
-    "attributes" : [ "object" ],
-    "id" : "50"
+    "superproperty" : [ "20" ],
+    "domain" : "2",
+    "subproperty" : [ "251", "99", "228", "121", "299" ],
+    "attributes" : [ "external", "object" ],
+    "id" : "54"
   }, {
     "iri" : "https://w3id.org/def/NyOnLegal#hasStatue",
     "baseIri" : "https://w3id.org/def/NyOnLegal",
-    "range" : "240",
+    "range" : "246",
     "label" : {
       "IRI-based" : "hasStatue",
       "en" : "hasStatue"
     },
-    "superproperty" : [ "24" ],
-    "domain" : "27",
-    "attributes" : [ "object" ],
-    "id" : "55"
+    "superproperty" : [ "20" ],
+    "domain" : "23",
+    "attributes" : [ "external", "object" ],
+    "id" : "56"
   }, {
     "iri" : "https://w3id.org/def/NyOnLegal#withMajority",
     "baseIri" : "https://w3id.org/def/NyOnLegal",
-    "range" : "1",
+    "range" : "120",
     "label" : {
       "IRI-based" : "withMajority",
       "en" : "withMajority"
     },
-    "superproperty" : [ "24" ],
-    "domain" : "9",
-    "attributes" : [ "object" ],
-    "id" : "58"
+    "superproperty" : [ "20" ],
+    "domain" : "26",
+    "attributes" : [ "external", "object" ],
+    "id" : "57"
   } ]
 }

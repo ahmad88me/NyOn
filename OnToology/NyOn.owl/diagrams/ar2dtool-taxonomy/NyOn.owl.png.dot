@@ -1,15 +1,16 @@
 digraph ar2dtool_diagram { 
 rankdir=LR;
 size="1000"
-node [shape = rectangle, color="black"]; "nyon:Division_Bench" "7e619d5:1847c6a2286:-7ffc" "nyon:Order" "nyon:Decree" "nyon:Bench" "nyon:Party" "nyon:Court_Decision" "nyon:Defendant" "7e619d5:1847c6a2286:-7ff2" "https://schema.org/Place" "nyon:Accussed" "nyon:Civil" "nyon:Taluka" "nyon:Principal_Junior_Civil_Court" "nyon:Solicitor" "nyon:Advisory_Jurisdiction" "nyon:Single_Judge" "7e619d5:1847c6a2286:-7fef" "nyon:Session_Court" "nyon:Metropolitan_Magistrate_Courts" "nyon:District_Court" "nyon:Chief_Meterpolitan_Court" "nyon:Original_Jurisdiction" "nyon:Court_Official" "nyon:Court" "nyon:High_Court" "https://w3id.org/def/NyOnLegal#Judicial_Magistrate_Court(Second_Class)" "nyon:State" "nyon:Concurrence" "nyon:Courts_for_Criminal" "nyon:Courts_for_Civil" "nyon:Writ_Jurisdiction" "nyon:Location" "nyon:District" "nyon:Review_Jurisdiction" "nyon:City_Civil_Courts" "nyon:Appellant_Jurisdiction" "nyon:SupremeCourt" "nyon:Special_Bench" "nyon:Individual" "nyon:Opinion" "nyon:Judge" "nyon:Courts_of_Smaller_Causes" "nyon:Judgement" "nyon:Tribunal_Bench" "nyon:Jurisdiction" "https://schema.org/Organization" "nyon:Metropolitian_Courts" "nyon:Criminal" "nyon:Group" "nyon:Appellant" "nyon:Munsif_Court" "nyon:CatchWord" "nyon:Dissent" "nyon:Party_Type" "nyon:Plaintiff" "nyon:Country" "nyon:Tribunal" "nyon:Majority" "nyon:Petitioner" "nyon:CaseDomain" "nyon:Sub_Court" "nyon:Larger_Bench" "7e619d5:1847c6a2286:-7ff8" "https://w3id.org/def/NyOnLegal#Judicial_Magistrate_Court(First_Class)" "nyon:Respondent" "nyon:Government" ; /*classes style*/
+node [shape = rectangle, color="black"]; "nyon:Division_Bench" "nyon:Order" "nyon:Decree" "nyon:Bench" "nyon:Party" "nyon:Defendant" "nyon:Lawyer" "https://schema.org/Place" "nyon:Accussed" "nyon:Civil" "nyon:Taluka" "nyon:Principal_Junior_Civil_Court" "nyon:Solicitor" "nyon:Advisory_Jurisdiction" "nyon:Single_Judge" "nyon:Session_Court" "nyon:Metropolitan_Magistrate_Courts" "nyon:District_Court" "nyon:Chief_Meterpolitan_Court" "nyon:Original_Jurisdiction" "nyon:Court_Official" "nyon:Precedent" "nyon:Court" "nyon:High_Court" "https://w3id.org/def/NyOnLegal#Judicial_Magistrate_Court(Second_Class)" "nyon:State" "nyon:Concurrence" "nyon:Courts_for_Criminal" "nyon:Courts_for_Civil" "nyon:Writ_Jurisdiction" "nyon:Location" "nyon:District" "nyon:Review_Jurisdiction" "nyon:City_Civil_Courts" "nyon:Appellant_Jurisdiction" "nyon:SupremeCourt" "nyon:Special_Bench" "nyon:Individual" "-430c414e:18760f2731d:-7ffc" "nyon:Opinion" "nyon:Judge" "nyon:Courts_of_Smaller_Causes" "nyon:Judgement" "nyon:LearnedCounsel" "nyon:Tribunal_Bench" "nyon:Jurisdiction" "-430c414e:18760f2731d:-7fef" "https://schema.org/Organization" "nyon:Metropolitian_Courts" "nyon:Criminal" "nyon:Group" "nyon:Appellant" "nyon:Munsif_Court" "nyon:CatchWord" "-430c414e:18760f2731d:-7ff2" "nyon:Dissent" "nyon:Party_Type" "nyon:Plaintiff" "nyon:Country" "nyon:CourtDecision" "nyon:Tribunal" "nyon:Majority" "nyon:Petitioner" "-430c414e:18760f2731d:-7fe8" "-430c414e:18760f2731d:-7ff8" "nyon:CaseDomain" "nyon:Sub_Court" "https://schema.org/GovernmentOrganization" "nyon:Larger_Bench" "https://w3id.org/def/NyOnLegal#Judicial_Magistrate_Court(First_Class)" "nyon:Respondent" ; /*classes style*/
 	"nyon:Writ_Jurisdiction" -> "nyon:Jurisdiction" [ label = "rdfs:subClassOf" ];
 	"nyon:Special_Bench" -> "nyon:Bench" [ label = "rdfs:subClassOf" ];
 	"https://schema.org/Place" -> "nyon:Location" [ label = "rdfs:subClassOf" ];
 	"nyon:Judge" -> "nyon:Court_Official" [ label = "rdfs:subClassOf" ];
 	"nyon:Petitioner" -> "nyon:Party" [ label = "rdfs:subClassOf" ];
+	"https://schema.org/GovernmentOrganization" -> "nyon:Party_Type" [ label = "rdfs:subClassOf" ];
 	"nyon:Original_Jurisdiction" -> "nyon:Jurisdiction" [ label = "rdfs:subClassOf" ];
 	"nyon:Appellant" -> "nyon:Party" [ label = "rdfs:subClassOf" ];
-	"nyon:Order" -> "nyon:Court_Decision" [ label = "rdfs:subClassOf" ];
+	"nyon:Order" -> "nyon:CourtDecision" [ label = "rdfs:subClassOf" ];
 	"nyon:Review_Jurisdiction" -> "nyon:Jurisdiction" [ label = "rdfs:subClassOf" ];
 	"https://schema.org/Organization" -> "nyon:Party_Type" [ label = "rdfs:subClassOf" ];
 	"nyon:District_Court" -> "nyon:Courts_for_Civil" [ label = "rdfs:subClassOf" ];
@@ -20,14 +21,14 @@ node [shape = rectangle, color="black"]; "nyon:Division_Bench" "7e619d5:1847c6a2
 	"nyon:Chief_Meterpolitan_Court" -> "nyon:Courts_for_Criminal" [ label = "rdfs:subClassOf" ];
 	"nyon:Session_Court" -> "nyon:Courts_for_Criminal" [ label = "rdfs:subClassOf" ];
 	"nyon:Majority" -> "nyon:Opinion" [ label = "rdfs:subClassOf" ];
+	"nyon:LearnedCounsel" -> "nyon:Court_Official" [ label = "rdfs:subClassOf" ];
 	"nyon:SupremeCourt" -> "nyon:Court" [ label = "rdfs:subClassOf" ];
 	"nyon:Larger_Bench" -> "nyon:Bench" [ label = "rdfs:subClassOf" ];
 	"nyon:Single_Judge" -> "nyon:Bench" [ label = "rdfs:subClassOf" ];
 	"nyon:Dissent" -> "nyon:Opinion" [ label = "rdfs:subClassOf" ];
-	"nyon:Government" -> "nyon:Party_Type" [ label = "rdfs:subClassOf" ];
 	"nyon:City_Civil_Courts" -> "nyon:Courts_for_Civil" [ label = "rdfs:subClassOf" ];
 	"nyon:District" -> "nyon:Location" [ label = "rdfs:subClassOf" ];
-	"nyon:Decree" -> "nyon:Court_Decision" [ label = "rdfs:subClassOf" ];
+	"nyon:Decree" -> "nyon:CourtDecision" [ label = "rdfs:subClassOf" ];
 	"nyon:High_Court" -> "nyon:Court" [ label = "rdfs:subClassOf" ];
 	"nyon:Courts_for_Civil" -> "nyon:CaseDomain" [ label = "rdfs:subClassOf" ];
 	"nyon:Sub_Court" -> "nyon:Courts_for_Civil" [ label = "rdfs:subClassOf" ];
@@ -40,20 +41,22 @@ node [shape = rectangle, color="black"]; "nyon:Division_Bench" "7e619d5:1847c6a2
 	"nyon:Tribunal" -> "nyon:Court" [ label = "rdfs:subClassOf" ];
 	"https://w3id.org/def/NyOnLegal#Judicial_Magistrate_Court(Second_Class)" -> "nyon:Courts_for_Criminal" [ label = "rdfs:subClassOf" ];
 	"nyon:Courts_for_Criminal" -> "nyon:CaseDomain" [ label = "rdfs:subClassOf" ];
+	"nyon:Precedent" -> "-430c414e:18760f2731d:-7fe8" [ label = "rdfs:subClassOf" ];
 	"nyon:Concurrence" -> "nyon:Opinion" [ label = "rdfs:subClassOf" ];
-	"nyon:CatchWord" -> "7e619d5:1847c6a2286:-7fef" [ label = "rdfs:subClassOf" ];
-	"nyon:CatchWord" -> "7e619d5:1847c6a2286:-7ff2" [ label = "rdfs:subClassOf" ];
+	"nyon:CatchWord" -> "-430c414e:18760f2731d:-7fef" [ label = "rdfs:subClassOf" ];
+	"nyon:CatchWord" -> "-430c414e:18760f2731d:-7ff2" [ label = "rdfs:subClassOf" ];
 	"nyon:Solicitor" -> "nyon:Court_Official" [ label = "rdfs:subClassOf" ];
 	"nyon:Courts_of_Smaller_Causes" -> "nyon:Courts_for_Civil" [ label = "rdfs:subClassOf" ];
 	"nyon:Defendant" -> "nyon:Party" [ label = "rdfs:subClassOf" ];
-	"nyon:Accussed" -> "7e619d5:1847c6a2286:-7ff8" [ label = "rdfs:subClassOf" ];
-	"nyon:Accussed" -> "7e619d5:1847c6a2286:-7ffc" [ label = "rdfs:subClassOf" ];
+	"nyon:Accussed" -> "-430c414e:18760f2731d:-7ff8" [ label = "rdfs:subClassOf" ];
+	"nyon:Accussed" -> "-430c414e:18760f2731d:-7ffc" [ label = "rdfs:subClassOf" ];
 	"nyon:Accussed" -> "nyon:Party" [ label = "rdfs:subClassOf" ];
 	"nyon:Group" -> "nyon:Party_Type" [ label = "rdfs:subClassOf" ];
 	"nyon:Country" -> "nyon:Location" [ label = "rdfs:subClassOf" ];
 	"nyon:Tribunal_Bench" -> "nyon:Bench" [ label = "rdfs:subClassOf" ];
+	"nyon:Lawyer" -> "nyon:Court_Official" [ label = "rdfs:subClassOf" ];
 	"nyon:Taluka" -> "nyon:Location" [ label = "rdfs:subClassOf" ];
-	"nyon:Judgement" -> "nyon:Court_Decision" [ label = "rdfs:subClassOf" ];
+	"nyon:Judgement" -> "nyon:CourtDecision" [ label = "rdfs:subClassOf" ];
 	"nyon:Division_Bench" -> "nyon:Bench" [ label = "rdfs:subClassOf" ];
 	"nyon:Advisory_Jurisdiction" -> "nyon:Jurisdiction" [ label = "rdfs:subClassOf" ];
 	"nyon:Metropolitan_Magistrate_Courts" -> "nyon:Courts_for_Criminal" [ label = "rdfs:subClassOf" ];
