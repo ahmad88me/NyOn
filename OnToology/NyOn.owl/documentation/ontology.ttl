@@ -1605,30 +1605,6 @@ owl:sameAs rdf:type owl:AnnotationProperty .
 
 
 #################################################################
-#    Individuals
-#################################################################
-
-###  https://w3id.org/def/NyOnLegal#C1
-:C1 rdf:type owl:NamedIndividual ,
-             :CourtCase ;
-    :hasJudge :J1 ;
-    :hasCaseName "A vs B"@en .
-
-
-###  https://w3id.org/def/NyOnLegal#J1
-:J1 rdf:type owl:NamedIndividual ,
-             :Judge ;
-    :withOpinion :M0 ;
-    :COFirstName "Arjit Pasayat"@en .
-
-
-###  https://w3id.org/def/NyOnLegal#M0
-:M0 rdf:type owl:NamedIndividual ,
-             :Majority ;
-    :value "7 Yes, 5 No"@en .
-
-
-#################################################################
 #    General axioms
 #################################################################
 

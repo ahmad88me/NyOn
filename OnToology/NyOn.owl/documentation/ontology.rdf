@@ -12,8 +12,7 @@
      xmlns:vann="http://purl.org/vocab/vann/"
      xmlns:swrla="http://swrl.stanford.edu/ontologies/3.3/swrla.owl#"
      xmlns:swrlb="http://www.w3.org/2003/11/swrlb#"
-     xmlns:terms="http://purl.org/dc/terms/"
-     xmlns:NyOnLegal="https://w3id.org/def/NyOnLegal#">
+     xmlns:terms="http://purl.org/dc/terms/">
     <owl:Ontology rdf:about="https://w3id.org/def/NyOnLegal#">
         <dc:publisher rdf:resource="https://www.semintelligence.org/projects"/>
         <terms:created>2020-04-04</terms:created>
@@ -2369,50 +2368,6 @@
         <rdfs:label xml:lang="es">Tribunal de Magistrados Judiciales (Segunda Clase)</rdfs:label>
         <rdfs:label xml:lang="hi">न्यायिक मजिस्ट्रेट कोर्ट (द्वितीय श्रेणी)</rdfs:label>
     </owl:Class>
-    
-
-
-    <!-- 
-    ///////////////////////////////////////////////////////////////////////////////////////
-    //
-    // Individuals
-    //
-    ///////////////////////////////////////////////////////////////////////////////////////
-     -->
-
-
-    
-
-
-    <!-- https://w3id.org/def/NyOnLegal#C1 -->
-
-
-    <owl:NamedIndividual rdf:about="https://w3id.org/def/NyOnLegal#C1">
-        <rdf:type rdf:resource="https://w3id.org/def/NyOnLegal#CourtCase"/>
-        <hasJudge rdf:resource="https://w3id.org/def/NyOnLegal#J1"/>
-        <hasCaseName xml:lang="en">A vs B</hasCaseName>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- https://w3id.org/def/NyOnLegal#J1 -->
-
-
-    <owl:NamedIndividual rdf:about="https://w3id.org/def/NyOnLegal#J1">
-        <rdf:type rdf:resource="https://w3id.org/def/NyOnLegal#Judge"/>
-        <withOpinion rdf:resource="https://w3id.org/def/NyOnLegal#M0"/>
-        <COFirstName xml:lang="en">Arjit Pasayat</COFirstName>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- https://w3id.org/def/NyOnLegal#M0 -->
-
-
-    <owl:NamedIndividual rdf:about="https://w3id.org/def/NyOnLegal#M0">
-        <rdf:type rdf:resource="https://w3id.org/def/NyOnLegal#Majority"/>
-        <value xml:lang="en">7 Yes, 5 No</value>
-    </owl:NamedIndividual>
     
 
 
