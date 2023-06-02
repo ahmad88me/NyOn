@@ -121,12 +121,6 @@ Cette section donne les d&eacute;tails de chaque classe et propri&eacute;t&eacut
          <a href="#https://w3id.org/def/NyOnLegal#Fact" title="https://w3id.org/def/NyOnLegal#Fact">Fact</a>
       </li>
       <li>
-         <a href="#http://docs.oasis-open.org/legalruleml/ns/v1.0/metamodel#FactualStatement"
-            title="http://docs.oasis-open.org/legalruleml/ns/v1.0/metamodel#FactualStatement">
-            <span>factual statement</span>
-         </a>
-      </li>
-      <li>
          <a href="#https://schema.org/GovernmentOrganization" title="https://schema.org/GovernmentOrganization">Gouvernement</a>
       </li>
       <li>
@@ -163,9 +157,7 @@ Cette section donne les d&eacute;tails de chaque classe et propri&eacute;t&eacut
             title="https://w3id.org/def/NyOnLegal#Writ_Jurisdiction">Juridiction écrite</a>
       </li>
       <li>
-         <a href="#https://w3id.org/def/NyOnLegal#Lawyer" title="https://w3id.org/def/NyOnLegal#Lawyer">
-            <span>lawyer</span>
-         </a>
+         <a href="#https://w3id.org/def/NyOnLegal#Lawyer" title="https://w3id.org/def/NyOnLegal#Lawyer">Lawyer</a>
       </li>
       <li>
          <a href="#https://w3id.org/def/NyOnLegal#LearnedCounsel" title="https://w3id.org/def/NyOnLegal#LearnedCounsel">LearnedCounsel</a>
@@ -235,6 +227,9 @@ Cette section donne les d&eacute;tails de chaque classe et propri&eacute;t&eacut
          <a href="#https://w3id.org/def/NyOnLegal#Solicitor" title="https://w3id.org/def/NyOnLegal#Solicitor">Solliciteur</a>
       </li>
       <li>
+         <a href="#https://w3id.org/def/NyOnLegal#Sub_Court" title="https://w3id.org/def/NyOnLegal#Sub_Court">Sous-Tribunal</a>
+      </li>
+      <li>
          <a href="#https://w3id.org/def/NyOnLegal#State" title="https://w3id.org/def/NyOnLegal#State">State</a>
       </li>
       <li>
@@ -245,9 +240,6 @@ Cette section donne les d&eacute;tails de chaque classe et propri&eacute;t&eacut
       </li>
       <li>
          <a href="#https://w3id.org/def/NyOnLegal#Taluka" title="https://w3id.org/def/NyOnLegal#Taluka">Talon</a>
-      </li>
-      <li>
-         <a href="#https://w3id.org/def/NyOnLegal#Sub_Court" title="https://w3id.org/def/NyOnLegal#Sub_Court">Tribunal</a>
       </li>
       <li>
          <a href="#https://w3id.org/def/NyOnLegal#Tribunal" title="https://w3id.org/def/NyOnLegal#Tribunal">Tribunal</a>
@@ -306,12 +298,6 @@ Cette section donne les d&eacute;tails de chaque classe et propri&eacute;t&eacut
             <a href="#https://w3id.org/def/NyOnLegal#Party" title="https://w3id.org/def/NyOnLegal#Party">Des soirées</a>
             <sup class="type-c" title="classe">c</sup>
          </dd>
-         <dt>est disjoint avec</dt>
-         <dd>
-            <a href="#https://w3id.org/def/NyOnLegal#Petitioner" title="https://w3id.org/def/NyOnLegal#Petitioner">Petitioner</a>
-            <sup class="type-c" title="classe">c</sup>, <a href="#https://w3id.org/def/NyOnLegal#Plaintiff" title="https://w3id.org/def/NyOnLegal#Plaintiff">Plaintiff</a>
-            <sup class="type-c" title="classe">c</sup>
-         </dd>
       </dl>
    </div>
    <div class="entity" id="https://w3id.org/def/NyOnLegal#Argument">
@@ -356,6 +342,11 @@ Cette section donne les d&eacute;tails de chaque classe et propri&eacute;t&eacut
             <sup class="type-op" title="Propriété d'objet">op</sup> 
             <span class="logic">exactly</span> 1 <a href="#https://w3id.org/def/NyOnLegal#Judge" title="https://w3id.org/def/NyOnLegal#Judge">Juge</a>
             <sup class="type-c" title="classe">c</sup>
+         </dd>
+         <dt>a pour cible</dt>
+         <dd>
+            <a href="#https://w3id.org/def/NyOnLegal#hasAuthor" title="https://w3id.org/def/NyOnLegal#hasAuthor">hasAuthor</a>
+            <sup class="type-op" title="Propriété d'objet">op</sup>
          </dd>
       </dl>
    </div>
@@ -620,6 +611,12 @@ Cette section donne les d&eacute;tails de chaque classe et propri&eacute;t&eacut
             <a href="#https://w3id.org/def/NyOnLegal#withConcurrence" title="https://w3id.org/def/NyOnLegal#withConcurrence">withConcurrence</a>
             <sup class="type-op" title="Propriété d'objet">op</sup>
          </dd>
+         <dt>est disjoint avec</dt>
+         <dd>
+            <a href="#https://w3id.org/def/NyOnLegal#Dissent" title="https://w3id.org/def/NyOnLegal#Dissent">Dissent</a>
+            <sup class="type-c" title="classe">c</sup>, <a href="#https://w3id.org/def/NyOnLegal#Majority" title="https://w3id.org/def/NyOnLegal#Majority">Majority</a>
+            <sup class="type-c" title="classe">c</sup>
+         </dd>
       </dl>
    </div>
    <div class="entity" id="https://w3id.org/def/NyOnLegal#Country">
@@ -633,6 +630,14 @@ Cette section donne les d&eacute;tails de chaque classe et propri&eacute;t&eacut
          <dt>a pour super-classes</dt>
          <dd>
             <a href="#https://w3id.org/def/NyOnLegal#Location" title="https://w3id.org/def/NyOnLegal#Location">Lieu</a>
+            <sup class="type-c" title="classe">c</sup>
+         </dd>
+         <dt>est disjoint avec</dt>
+         <dd>
+            <a href="#https://schema.org/Place" title="https://schema.org/Place">Lieu</a>
+            <sup class="type-c" title="classe">c</sup>, <a href="#https://w3id.org/def/NyOnLegal#District" title="https://w3id.org/def/NyOnLegal#District">Quartier</a>
+            <sup class="type-c" title="classe">c</sup>, <a href="#https://w3id.org/def/NyOnLegal#State" title="https://w3id.org/def/NyOnLegal#State">State</a>
+            <sup class="type-c" title="classe">c</sup>, <a href="#https://w3id.org/def/NyOnLegal#Taluka" title="https://w3id.org/def/NyOnLegal#Taluka">Talon</a>
             <sup class="type-c" title="classe">c</sup>
          </dd>
       </dl>
@@ -661,7 +666,7 @@ Cette section donne les d&eacute;tails de chaque classe et propri&eacute;t&eacut
                title="https://w3id.org/def/NyOnLegal#City_Civil_Courts">Courts civils de la ville</a>
             <sup class="type-c" title="classe">c</sup>, <a href="#https://w3id.org/def/NyOnLegal#Principal_Junior_Civil_Court"
                title="https://w3id.org/def/NyOnLegal#Principal_Junior_Civil_Court">Principal Cour civil junior</a>
-            <sup class="type-c" title="classe">c</sup>, <a href="#https://w3id.org/def/NyOnLegal#Sub_Court" title="https://w3id.org/def/NyOnLegal#Sub_Court">Tribunal</a>
+            <sup class="type-c" title="classe">c</sup>, <a href="#https://w3id.org/def/NyOnLegal#Sub_Court" title="https://w3id.org/def/NyOnLegal#Sub_Court">Sous-Tribunal</a>
             <sup class="type-c" title="classe">c</sup>, <a href="#https://w3id.org/def/NyOnLegal#Munsif_Court" title="https://w3id.org/def/NyOnLegal#Munsif_Court">Tribunal de Munsid</a>
             <sup class="type-c" title="classe">c</sup>, <a href="#https://w3id.org/def/NyOnLegal#District_Court" title="https://w3id.org/def/NyOnLegal#District_Court">Tribunal de district</a>
             <sup class="type-c" title="classe">c</sup>
@@ -723,7 +728,7 @@ Cette section donne les d&eacute;tails de chaque classe et propri&eacute;t&eacut
             <sup class="type-c" title="classe">c</sup>, <a href="#https://w3id.org/def/NyOnLegal#Munsif_Court" title="https://w3id.org/def/NyOnLegal#Munsif_Court">Tribunal de Munsid</a>
             <sup class="type-c" title="classe">c</sup>, <a href="#https://w3id.org/def/NyOnLegal#Principal_Junior_Civil_Court"
                title="https://w3id.org/def/NyOnLegal#Principal_Junior_Civil_Court">Principal Cour civil junior</a>
-            <sup class="type-c" title="classe">c</sup>, <a href="#https://w3id.org/def/NyOnLegal#Sub_Court" title="https://w3id.org/def/NyOnLegal#Sub_Court">Tribunal</a>
+            <sup class="type-c" title="classe">c</sup>, <a href="#https://w3id.org/def/NyOnLegal#Sub_Court" title="https://w3id.org/def/NyOnLegal#Sub_Court">Sous-Tribunal</a>
             <sup class="type-c" title="classe">c</sup>
          </dd>
       </dl>
@@ -897,6 +902,7 @@ Cette section donne les d&eacute;tails de chaque classe et propri&eacute;t&eacut
             <sup class="type-op" title="Propriété d'objet">op</sup>, <a href="#https://w3id.org/def/NyOnLegal#hasParty" title="https://w3id.org/def/NyOnLegal#hasParty">hasParty</a>
             <sup class="type-op" title="Propriété d'objet">op</sup>, <a href="#https://w3id.org/def/NyOnLegal#hasPolicePersonnel"
                title="https://w3id.org/def/NyOnLegal#hasPolicePersonnel">hasPolicePersonnel</a>
+            <sup class="type-op" title="Propriété d'objet">op</sup>, <a href="#https://w3id.org/def/NyOnLegal#hasProvision" title="https://w3id.org/def/NyOnLegal#hasProvision">hasProvision</a>
             <sup class="type-op" title="Propriété d'objet">op</sup>, <a href="#https://w3id.org/def/NyOnLegal#hasRatioDecidendi" title="https://w3id.org/def/NyOnLegal#hasRatioDecidendi">hasRtioDecidendi</a>
             <sup class="type-op" title="Propriété d'objet">op</sup>, <a href="#https://w3id.org/def/NyOnLegal#hasRulingOf" title="https://w3id.org/def/NyOnLegal#hasRulingOf">hasRulingOf</a>
             <sup class="type-op" title="Propriété d'objet">op</sup>, <a href="#https://w3id.org/def/NyOnLegal#hasStatue" title="https://w3id.org/def/NyOnLegal#hasStatue">hasStatue</a>
@@ -920,7 +926,14 @@ Cette section donne les d&eacute;tails de chaque classe et propri&eacute;t&eacut
                title="https://w3id.org/def/NyOnLegal#precendentNotReliedUpon">precedentNotReliedUpon</a>
             <sup class="type-op" title="Propriété d'objet">op</sup>, <a href="#https://w3id.org/def/NyOnLegal#precedentOverruled"
                title="https://w3id.org/def/NyOnLegal#precedentOverruled">precedentOverruled</a>
+            <sup class="type-op" title="Propriété d'objet">op</sup>, <a href="#https://w3id.org/def/NyOnLegal#precedentReliedUpon"
+               title="https://w3id.org/def/NyOnLegal#precedentReliedUpon">precedentReliedUpon</a>
             <sup class="type-op" title="Propriété d'objet">op</sup>
+         </dd>
+         <dt>a pour membres</dt>
+         <dd>
+            <a href="#https://w3id.org/def/NyOnLegal#C1" title="https://w3id.org/def/NyOnLegal#C1">c1</a>
+            <sup class="type-ni" title="Individu nommé">ni</sup>
          </dd>
       </dl>
    </div>
@@ -976,7 +989,7 @@ Cette section donne les d&eacute;tails de chaque classe et propri&eacute;t&eacut
             <sup class="type-c" title="classe">c</sup>, <a href="#https://w3id.org/def/NyOnLegal#Munsif_Court" title="https://w3id.org/def/NyOnLegal#Munsif_Court">Tribunal de Munsid</a>
             <sup class="type-c" title="classe">c</sup>, <a href="#https://w3id.org/def/NyOnLegal#Principal_Junior_Civil_Court"
                title="https://w3id.org/def/NyOnLegal#Principal_Junior_Civil_Court">Principal Cour civil junior</a>
-            <sup class="type-c" title="classe">c</sup>, <a href="#https://w3id.org/def/NyOnLegal#Sub_Court" title="https://w3id.org/def/NyOnLegal#Sub_Court">Tribunal</a>
+            <sup class="type-c" title="classe">c</sup>, <a href="#https://w3id.org/def/NyOnLegal#Sub_Court" title="https://w3id.org/def/NyOnLegal#Sub_Court">Sous-Tribunal</a>
             <sup class="type-c" title="classe">c</sup>
          </dd>
       </dl>
@@ -1017,8 +1030,7 @@ Cette section donne les d&eacute;tails de chaque classe et propri&eacute;t&eacut
       <dl class="description">
          <dt>a pour domaine</dt>
          <dd>
-            <a href="#https://w3id.org/def/NyOnLegal#dateOfJudgment" title="https://w3id.org/def/NyOnLegal#dateOfJudgment">dateOfJudgment</a>
-            <sup class="type-dp" title="Propriété de donnée">dp</sup>, <a href="#https://w3id.org/def/NyOnLegal#hasDate" title="https://w3id.org/def/NyOnLegal#hasDate">hasDate</a>
+            <a href="#https://w3id.org/def/NyOnLegal#hasDate" title="https://w3id.org/def/NyOnLegal#hasDate">hasDate</a>
             <sup class="type-dp" title="Propriété de donnée">dp</sup>, <a href="#https://w3id.org/def/NyOnLegal#hasMonth" title="https://w3id.org/def/NyOnLegal#hasMonth">hasMonth</a>
             <sup class="type-dp" title="Propriété de donnée">dp</sup>, <a href="#https://w3id.org/def/NyOnLegal#hasYear" title="https://w3id.org/def/NyOnLegal#hasYear">hasYear</a>
             <sup class="type-dp" title="Propriété de donnée">dp</sup>
@@ -1067,11 +1079,6 @@ Cette section donne les d&eacute;tails de chaque classe et propri&eacute;t&eacut
          <dt>a pour super-classes</dt>
          <dd>
             <a href="#https://w3id.org/def/NyOnLegal#Party" title="https://w3id.org/def/NyOnLegal#Party">Des soirées</a>
-            <sup class="type-c" title="classe">c</sup>
-         </dd>
-         <dt>est disjoint avec</dt>
-         <dd>
-            <a href="#https://w3id.org/def/NyOnLegal#Respondent" title="https://w3id.org/def/NyOnLegal#Respondent">Respondent</a>
             <sup class="type-c" title="classe">c</sup>
          </dd>
       </dl>
@@ -1130,6 +1137,12 @@ Cette section donne les d&eacute;tails de chaque classe et propri&eacute;t&eacut
             <a href="#https://w3id.org/def/NyOnLegal#withDissent" title="https://w3id.org/def/NyOnLegal#withDissent">withDissent</a>
             <sup class="type-op" title="Propriété d'objet">op</sup>
          </dd>
+         <dt>est disjoint avec</dt>
+         <dd>
+            <a href="#https://w3id.org/def/NyOnLegal#Concurrence" title="https://w3id.org/def/NyOnLegal#Concurrence">Concurrence</a>
+            <sup class="type-c" title="classe">c</sup>, <a href="#https://w3id.org/def/NyOnLegal#Majority" title="https://w3id.org/def/NyOnLegal#Majority">Majority</a>
+            <sup class="type-c" title="classe">c</sup>
+         </dd>
       </dl>
    </div>
    <div class="entity" id="https://w3id.org/def/NyOnLegal#Review_Jurisdiction">
@@ -1184,21 +1197,6 @@ Cette section donne les d&eacute;tails de chaque classe et propri&eacute;t&eacut
          </dd>
       </dl>
    </div>
-   <div class="entity" id="http://docs.oasis-open.org/legalruleml/ns/v1.0/metamodel#FactualStatement">
-      <h3>factual statement<sup class="type-c" title="classe">c</sup>
-         <span class="backlink"> Retour à <a href="#toc">Table des matières</a> ou <a href="#classes">Retour vers les classes</a>
-         </span>
-      </h3>
-      <p>
-         <strong>IRI:</strong> http://docs.oasis-open.org/legalruleml/ns/v1.0/metamodel#FactualStatement</p>
-      <dl class="description">
-         <dt>Est équivalent à</dt>
-         <dd>
-            <a href="#https://w3id.org/def/NyOnLegal#Fact" title="https://w3id.org/def/NyOnLegal#Fact">Fact</a>
-            <sup class="type-c" title="classe">c</sup>
-         </dd>
-      </dl>
-   </div>
    <div class="entity" id="https://schema.org/GovernmentOrganization">
       <h3>Gouvernement<sup class="type-c" title="classe">c</sup>
          <span class="backlink"> Retour à <a href="#toc">Table des matières</a> ou <a href="#classes">Retour vers les classes</a>
@@ -1213,6 +1211,14 @@ Cette section donne les d&eacute;tails de chaque classe et propri&eacute;t&eacut
          <dt>a pour super-classes</dt>
          <dd>
             <a href="#https://w3id.org/def/NyOnLegal#Party_Type" title="https://w3id.org/def/NyOnLegal#Party_Type">Type de fête</a>
+            <sup class="type-c" title="classe">c</sup>
+         </dd>
+         <dt>est disjoint avec</dt>
+         <dd>
+            <a href="#https://schema.org/Organization" title="https://schema.org/Organization">Organisation</a>
+            <sup class="type-c" title="classe">c</sup>, <a href="#https://w3id.org/def/NyOnLegal#Group" title="https://w3id.org/def/NyOnLegal#Group">Grouper</a>
+            <sup class="type-c" title="classe">c</sup>, <a href="#https://w3id.org/def/NyOnLegal#Individual" title="https://w3id.org/def/NyOnLegal#Individual">Individuel</a>
+            <sup class="type-c" title="classe">c</sup>, <a href="#https://w3id.org/def/NyOnLegal#State" title="https://w3id.org/def/NyOnLegal#State">State</a>
             <sup class="type-c" title="classe">c</sup>
          </dd>
       </dl>
@@ -1233,6 +1239,14 @@ Cette section donne les d&eacute;tails de chaque classe et propri&eacute;t&eacut
             <a href="#https://w3id.org/def/NyOnLegal#Party_Type" title="https://w3id.org/def/NyOnLegal#Party_Type">Type de fête</a>
             <sup class="type-c" title="classe">c</sup>
          </dd>
+         <dt>est disjoint avec</dt>
+         <dd>
+            <a href="#https://schema.org/GovernmentOrganization" title="https://schema.org/GovernmentOrganization">Gouvernement</a>
+            <sup class="type-c" title="classe">c</sup>, <a href="#https://schema.org/Organization" title="https://schema.org/Organization">Organisation</a>
+            <sup class="type-c" title="classe">c</sup>, <a href="#https://w3id.org/def/NyOnLegal#Individual" title="https://w3id.org/def/NyOnLegal#Individual">Individuel</a>
+            <sup class="type-c" title="classe">c</sup>, <a href="#https://w3id.org/def/NyOnLegal#State" title="https://w3id.org/def/NyOnLegal#State">State</a>
+            <sup class="type-c" title="classe">c</sup>
+         </dd>
       </dl>
    </div>
    <div class="entity" id="https://w3id.org/def/NyOnLegal#Individual">
@@ -1249,6 +1263,14 @@ Cette section donne les d&eacute;tails de chaque classe et propri&eacute;t&eacut
          <dt>a pour super-classes</dt>
          <dd>
             <a href="#https://w3id.org/def/NyOnLegal#Party_Type" title="https://w3id.org/def/NyOnLegal#Party_Type">Type de fête</a>
+            <sup class="type-c" title="classe">c</sup>
+         </dd>
+         <dt>est disjoint avec</dt>
+         <dd>
+            <a href="#https://schema.org/GovernmentOrganization" title="https://schema.org/GovernmentOrganization">Gouvernement</a>
+            <sup class="type-c" title="classe">c</sup>, <a href="#https://schema.org/Organization" title="https://schema.org/Organization">Organisation</a>
+            <sup class="type-c" title="classe">c</sup>, <a href="#https://w3id.org/def/NyOnLegal#Group" title="https://w3id.org/def/NyOnLegal#Group">Grouper</a>
+            <sup class="type-c" title="classe">c</sup>, <a href="#https://w3id.org/def/NyOnLegal#State" title="https://w3id.org/def/NyOnLegal#State">State</a>
             <sup class="type-c" title="classe">c</sup>
          </dd>
       </dl>
@@ -1302,9 +1324,13 @@ Cette section donne les d&eacute;tails de chaque classe et propri&eacute;t&eacut
          </dd>
          <dt>a pour cible</dt>
          <dd>
-            <a href="#https://w3id.org/def/NyOnLegal#hasAuthor" title="https://w3id.org/def/NyOnLegal#hasAuthor">hasAuthor</a>
-            <sup class="type-op" title="Propriété d'objet">op</sup>, <a href="#https://w3id.org/def/NyOnLegal#hasJudge" title="https://w3id.org/def/NyOnLegal#hasJudge">hasJudge</a>
+            <a href="#https://w3id.org/def/NyOnLegal#hasJudge" title="https://w3id.org/def/NyOnLegal#hasJudge">hasJudge</a>
             <sup class="type-op" title="Propriété d'objet">op</sup>
+         </dd>
+         <dt>a pour membres</dt>
+         <dd>
+            <a href="#https://w3id.org/def/NyOnLegal#J1" title="https://w3id.org/def/NyOnLegal#J1">j1</a>
+            <sup class="type-ni" title="Individu nommé">ni</sup>
          </dd>
          <dt>est disjoint avec</dt>
          <dd>
@@ -1325,6 +1351,28 @@ Cette section donne les d&eacute;tails de chaque classe et propri&eacute;t&eacut
          <span class="markdown">a case heard and judged by a single judge</span>
       </div>
       <dl class="description">
+         <dt>Est équivalent à</dt>
+         <dd>(<a href="#https://w3id.org/def/NyOnLegal#hasBench" title="https://w3id.org/def/NyOnLegal#hasBench">hasBench</a>
+            <sup class="type-op" title="Propriété d'objet">op</sup> 
+            <span class="logic">some</span> 
+            <a href="#https://w3id.org/def/NyOnLegal#Judge" title="https://w3id.org/def/NyOnLegal#Judge">Juge</a>
+            <sup class="type-c" title="classe">c</sup>) <span class="logic">and</span> (<a href="#https://w3id.org/def/NyOnLegal#hasJudge" title="https://w3id.org/def/NyOnLegal#hasJudge">hasJudge</a>
+            <sup class="type-op" title="Propriété d'objet">op</sup> 
+            <span class="logic">max</span> 1 <a href="#https://w3id.org/def/NyOnLegal#Judge" title="https://w3id.org/def/NyOnLegal#Judge">Juge</a>
+            <sup class="type-c" title="classe">c</sup>)</dd>
+         <dd>
+            <span class="logic">not</span> (<a href="#https://w3id.org/def/NyOnLegal#Judge" title="https://w3id.org/def/NyOnLegal#Judge">Juge</a>
+            <sup class="type-c" title="classe">c</sup>)</dd>
+         <dd>
+            <span class="logic">not</span> ((<a href="#https://w3id.org/def/NyOnLegal#hasCourtOfficial" title="https://w3id.org/def/NyOnLegal#hasCourtOfficial">hasCourtOfficial</a>
+            <sup class="type-op" title="Propriété d'objet">op</sup> 
+            <span class="logic">some</span> 
+            <a href="#https://w3id.org/def/NyOnLegal#Judge" title="https://w3id.org/def/NyOnLegal#Judge">Juge</a>
+            <sup class="type-c" title="classe">c</sup>) <span class="logic">and</span> (<a href="#https://w3id.org/def/NyOnLegal#hasJudge" title="https://w3id.org/def/NyOnLegal#hasJudge">hasJudge</a>
+            <sup class="type-op" title="Propriété d'objet">op</sup> 
+            <span class="logic">some</span> 
+            <a href="#https://w3id.org/def/NyOnLegal#Judge" title="https://w3id.org/def/NyOnLegal#Judge">Juge</a>
+            <sup class="type-c" title="classe">c</sup>))</dd>
          <dt>a pour super-classes</dt>
          <dd>
             <a href="#https://w3id.org/def/NyOnLegal#Bench" title="https://w3id.org/def/NyOnLegal#Bench">Banc</a>
@@ -1345,9 +1393,8 @@ Cette section donne les d&eacute;tails de chaque classe et propri&eacute;t&eacut
       <dl class="description">
          <dt>Est équivalent à</dt>
          <dd>
-            <a href="#https://w3id.org/def/NyOnLegal#Order" title="https://w3id.org/def/NyOnLegal#Order">Commande</a>
-            <sup class="type-c" title="classe">c</sup>
-         </dd>
+            <span class="logic">not</span> (<a href="#https://w3id.org/def/NyOnLegal#Opinion" title="https://w3id.org/def/NyOnLegal#Opinion">Opinion</a>
+            <sup class="type-c" title="classe">c</sup>)</dd>
          <dt>a pour super-classes</dt>
          <dd>
             <a href="#https://w3id.org/def/NyOnLegal#CourtDecision" title="https://w3id.org/def/NyOnLegal#CourtDecision">CourtDecision</a>
@@ -1462,7 +1509,7 @@ Cette section donne les d&eacute;tails de chaque classe et propri&eacute;t&eacut
       </dl>
    </div>
    <div class="entity" id="https://w3id.org/def/NyOnLegal#Lawyer">
-      <h3>lawyer<sup class="type-c" title="classe">c</sup>
+      <h3>Lawyer<sup class="type-c" title="classe">c</sup>
          <span class="backlink"> Retour à <a href="#toc">Table des matières</a> ou <a href="#classes">Retour vers les classes</a>
          </span>
       </h3>
@@ -1472,15 +1519,6 @@ Cette section donne les d&eacute;tails de chaque classe et propri&eacute;t&eacut
          <span class="markdown">Lawyer is a term of reference to the attroneys and advocates collectively in litigation</span>
       </div>
       <dl class="description">
-         <dt>Est équivalent à</dt>
-         <dd>
-            <a href="#https://w3id.org/def/NyOnLegal#LearnedCounsel" title="https://w3id.org/def/NyOnLegal#LearnedCounsel">LearnedCounsel</a>
-            <sup class="type-c" title="classe">c</sup>
-         </dd>
-         <dd>
-            <a href="#https://w3id.org/def/NyOnLegal#Solicitor" title="https://w3id.org/def/NyOnLegal#Solicitor">Solliciteur</a>
-            <sup class="type-c" title="classe">c</sup>
-         </dd>
          <dt>a pour super-classes</dt>
          <dd>
             <a href="#https://w3id.org/def/NyOnLegal#Court_Official" title="https://w3id.org/def/NyOnLegal#Court_Official">Officiel de la cour</a>
@@ -1499,11 +1537,6 @@ Cette section donne les d&eacute;tails de chaque classe et propri&eacute;t&eacut
          <span class="markdown">Learned counsel is a term of reference to the lawyers and advocates collectively in litigation</span>
       </div>
       <dl class="description">
-         <dt>Est équivalent à</dt>
-         <dd>
-            <a href="#https://w3id.org/def/NyOnLegal#Solicitor" title="https://w3id.org/def/NyOnLegal#Solicitor">Solliciteur</a>
-            <sup class="type-c" title="classe">c</sup>
-         </dd>
          <dt>a pour super-classes</dt>
          <dd>
             <a href="#https://w3id.org/def/NyOnLegal#Court_Official" title="https://w3id.org/def/NyOnLegal#Court_Official">Officiel de la cour</a>
@@ -1522,9 +1555,21 @@ Cette section donne les d&eacute;tails de chaque classe et propri&eacute;t&eacut
          <span class="markdown">location name or place name</span>
       </div>
       <dl class="description">
+         <dt>Est équivalent à</dt>
+         <dd>
+            <span class="logic">not</span> (<a href="#https://w3id.org/def/NyOnLegal#Location" title="https://w3id.org/def/NyOnLegal#Location">Lieu</a>
+            <sup class="type-c" title="classe">c</sup>)</dd>
          <dt>a pour super-classes</dt>
          <dd>
             <a href="#https://w3id.org/def/NyOnLegal#Location" title="https://w3id.org/def/NyOnLegal#Location">Lieu</a>
+            <sup class="type-c" title="classe">c</sup>
+         </dd>
+         <dt>est disjoint avec</dt>
+         <dd>
+            <a href="#https://w3id.org/def/NyOnLegal#Country" title="https://w3id.org/def/NyOnLegal#Country">Country</a>
+            <sup class="type-c" title="classe">c</sup>, <a href="#https://w3id.org/def/NyOnLegal#District" title="https://w3id.org/def/NyOnLegal#District">Quartier</a>
+            <sup class="type-c" title="classe">c</sup>, <a href="#https://w3id.org/def/NyOnLegal#State" title="https://w3id.org/def/NyOnLegal#State">State</a>
+            <sup class="type-c" title="classe">c</sup>, <a href="#https://w3id.org/def/NyOnLegal#Taluka" title="https://w3id.org/def/NyOnLegal#Taluka">Talon</a>
             <sup class="type-c" title="classe">c</sup>
          </dd>
       </dl>
@@ -1540,6 +1585,10 @@ Cette section donne les d&eacute;tails de chaque classe et propri&eacute;t&eacut
          <span class="markdown">represents the location of the courts, etc and also used for evidence locations</span>
       </div>
       <dl class="description">
+         <dt>Est équivalent à</dt>
+         <dd>
+            <span class="logic">not</span> (<a href="#https://schema.org/Place" title="https://schema.org/Place">Lieu</a>
+            <sup class="type-c" title="classe">c</sup>)</dd>
          <dt>a pour sous-classes</dt>
          <dd>
             <a href="#https://w3id.org/def/NyOnLegal#Country" title="https://w3id.org/def/NyOnLegal#Country">Country</a>
@@ -1579,6 +1628,17 @@ Cette section donne les d&eacute;tails de chaque classe et propri&eacute;t&eacut
          <dd>
             <a href="#https://w3id.org/def/NyOnLegal#withMajority" title="https://w3id.org/def/NyOnLegal#withMajority">withMajority</a>
             <sup class="type-op" title="Propriété d'objet">op</sup>
+         </dd>
+         <dt>a pour membres</dt>
+         <dd>
+            <a href="#https://w3id.org/def/NyOnLegal#M0" title="https://w3id.org/def/NyOnLegal#M0">m0</a>
+            <sup class="type-ni" title="Individu nommé">ni</sup>
+         </dd>
+         <dt>est disjoint avec</dt>
+         <dd>
+            <a href="#https://w3id.org/def/NyOnLegal#Concurrence" title="https://w3id.org/def/NyOnLegal#Concurrence">Concurrence</a>
+            <sup class="type-c" title="classe">c</sup>, <a href="#https://w3id.org/def/NyOnLegal#Dissent" title="https://w3id.org/def/NyOnLegal#Dissent">Dissent</a>
+            <sup class="type-c" title="classe">c</sup>
          </dd>
       </dl>
    </div>
@@ -1622,9 +1682,9 @@ Cette section donne les d&eacute;tails de chaque classe et propri&eacute;t&eacut
          <dt>a pour sous-classes</dt>
          <dd>
             <a href="#https://w3id.org/def/NyOnLegal#Judge" title="https://w3id.org/def/NyOnLegal#Judge">Juge</a>
+            <sup class="type-c" title="classe">c</sup>, <a href="#https://w3id.org/def/NyOnLegal#Lawyer" title="https://w3id.org/def/NyOnLegal#Lawyer">Lawyer</a>
             <sup class="type-c" title="classe">c</sup>, <a href="#https://w3id.org/def/NyOnLegal#LearnedCounsel" title="https://w3id.org/def/NyOnLegal#LearnedCounsel">LearnedCounsel</a>
             <sup class="type-c" title="classe">c</sup>, <a href="#https://w3id.org/def/NyOnLegal#Solicitor" title="https://w3id.org/def/NyOnLegal#Solicitor">Solliciteur</a>
-            <sup class="type-c" title="classe">c</sup>, <a href="#https://w3id.org/def/NyOnLegal#Lawyer" title="https://w3id.org/def/NyOnLegal#Lawyer">lawyer</a>
             <sup class="type-c" title="classe">c</sup>
          </dd>
          <dt>a pour domaine</dt>
@@ -1652,6 +1712,10 @@ Cette section donne les d&eacute;tails de chaque classe et propri&eacute;t&eacut
          <span class="markdown">judge opinion with respect to case or judgment</span>
       </div>
       <dl class="description">
+         <dt>Est équivalent à</dt>
+         <dd>
+            <span class="logic">not</span> (<a href="#https://w3id.org/def/NyOnLegal#Judgement" title="https://w3id.org/def/NyOnLegal#Judgement">Jugement</a>
+            <sup class="type-c" title="classe">c</sup>)</dd>
          <dt>a pour sous-classes</dt>
          <dd>
             <a href="#https://w3id.org/def/NyOnLegal#Concurrence" title="https://w3id.org/def/NyOnLegal#Concurrence">Concurrence</a>
@@ -1680,6 +1744,14 @@ Cette section donne les d&eacute;tails de chaque classe et propri&eacute;t&eacut
          <dt>a pour super-classes</dt>
          <dd>
             <a href="#https://w3id.org/def/NyOnLegal#Party_Type" title="https://w3id.org/def/NyOnLegal#Party_Type">Type de fête</a>
+            <sup class="type-c" title="classe">c</sup>
+         </dd>
+         <dt>est disjoint avec</dt>
+         <dd>
+            <a href="#https://schema.org/GovernmentOrganization" title="https://schema.org/GovernmentOrganization">Gouvernement</a>
+            <sup class="type-c" title="classe">c</sup>, <a href="#https://w3id.org/def/NyOnLegal#Group" title="https://w3id.org/def/NyOnLegal#Group">Grouper</a>
+            <sup class="type-c" title="classe">c</sup>, <a href="#https://w3id.org/def/NyOnLegal#Individual" title="https://w3id.org/def/NyOnLegal#Individual">Individuel</a>
+            <sup class="type-c" title="classe">c</sup>, <a href="#https://w3id.org/def/NyOnLegal#State" title="https://w3id.org/def/NyOnLegal#State">State</a>
             <sup class="type-c" title="classe">c</sup>
          </dd>
       </dl>
@@ -1715,12 +1787,6 @@ Cette section donne les d&eacute;tails de chaque classe et propri&eacute;t&eacut
             <a href="#https://w3id.org/def/NyOnLegal#Party" title="https://w3id.org/def/NyOnLegal#Party">Des soirées</a>
             <sup class="type-c" title="classe">c</sup>
          </dd>
-         <dt>est disjoint avec</dt>
-         <dd>
-            <a href="#https://w3id.org/def/NyOnLegal#Appellant" title="https://w3id.org/def/NyOnLegal#Appellant">Appellant</a>
-            <sup class="type-c" title="classe">c</sup>, <a href="#https://w3id.org/def/NyOnLegal#Plaintiff" title="https://w3id.org/def/NyOnLegal#Plaintiff">Plaintiff</a>
-            <sup class="type-c" title="classe">c</sup>
-         </dd>
       </dl>
    </div>
    <div class="entity" id="https://w3id.org/def/NyOnLegal#Plaintiff">
@@ -1737,12 +1803,6 @@ Cette section donne les d&eacute;tails de chaque classe et propri&eacute;t&eacut
          <dt>a pour super-classes</dt>
          <dd>
             <a href="#https://w3id.org/def/NyOnLegal#Party" title="https://w3id.org/def/NyOnLegal#Party">Des soirées</a>
-            <sup class="type-c" title="classe">c</sup>
-         </dd>
-         <dt>est disjoint avec</dt>
-         <dd>
-            <a href="#https://w3id.org/def/NyOnLegal#Appellant" title="https://w3id.org/def/NyOnLegal#Appellant">Appellant</a>
-            <sup class="type-c" title="classe">c</sup>, <a href="#https://w3id.org/def/NyOnLegal#Petitioner" title="https://w3id.org/def/NyOnLegal#Petitioner">Petitioner</a>
             <sup class="type-c" title="classe">c</sup>
          </dd>
       </dl>
@@ -1842,7 +1902,7 @@ Cette section donne les d&eacute;tails de chaque classe et propri&eacute;t&eacut
                title="https://w3id.org/def/NyOnLegal#Courts_of_Smaller_Causes">Cour de petite cause</a>
             <sup class="type-c" title="classe">c</sup>, <a href="#https://w3id.org/def/NyOnLegal#District_Court" title="https://w3id.org/def/NyOnLegal#District_Court">Tribunal de district</a>
             <sup class="type-c" title="classe">c</sup>, <a href="#https://w3id.org/def/NyOnLegal#Munsif_Court" title="https://w3id.org/def/NyOnLegal#Munsif_Court">Tribunal de Munsid</a>
-            <sup class="type-c" title="classe">c</sup>, <a href="#https://w3id.org/def/NyOnLegal#Sub_Court" title="https://w3id.org/def/NyOnLegal#Sub_Court">Tribunal</a>
+            <sup class="type-c" title="classe">c</sup>, <a href="#https://w3id.org/def/NyOnLegal#Sub_Court" title="https://w3id.org/def/NyOnLegal#Sub_Court">Sous-Tribunal</a>
             <sup class="type-c" title="classe">c</sup>
          </dd>
       </dl>
@@ -1855,8 +1915,15 @@ Cette section donne les d&eacute;tails de chaque classe et propri&eacute;t&eacut
       <p>
          <strong>IRI:</strong> https://w3id.org/def/NyOnLegal#Provision</p>
       <div class="comment">
-         <span class="markdown">section number or article number applied/used in the case law</span>
+         <span class="markdown">clause or section number or article number applied/used in the case law</span>
       </div>
+      <dl class="description">
+         <dt>a pour cible</dt>
+         <dd>
+            <a href="#https://w3id.org/def/NyOnLegal#hasProvision" title="https://w3id.org/def/NyOnLegal#hasProvision">hasProvision</a>
+            <sup class="type-op" title="Propriété d'objet">op</sup>
+         </dd>
+      </dl>
    </div>
    <div class="entity" id="https://w3id.org/def/NyOnLegal#District">
       <h3>Quartier<sup class="type-c" title="classe">c</sup>
@@ -1872,6 +1939,14 @@ Cette section donne les d&eacute;tails de chaque classe et propri&eacute;t&eacut
          <dt>a pour super-classes</dt>
          <dd>
             <a href="#https://w3id.org/def/NyOnLegal#Location" title="https://w3id.org/def/NyOnLegal#Location">Lieu</a>
+            <sup class="type-c" title="classe">c</sup>
+         </dd>
+         <dt>est disjoint avec</dt>
+         <dd>
+            <a href="#https://schema.org/Place" title="https://schema.org/Place">Lieu</a>
+            <sup class="type-c" title="classe">c</sup>, <a href="#https://w3id.org/def/NyOnLegal#Country" title="https://w3id.org/def/NyOnLegal#Country">Country</a>
+            <sup class="type-c" title="classe">c</sup>, <a href="#https://w3id.org/def/NyOnLegal#State" title="https://w3id.org/def/NyOnLegal#State">State</a>
+            <sup class="type-c" title="classe">c</sup>, <a href="#https://w3id.org/def/NyOnLegal#Taluka" title="https://w3id.org/def/NyOnLegal#Taluka">Talon</a>
             <sup class="type-c" title="classe">c</sup>
          </dd>
       </dl>
@@ -1955,11 +2030,6 @@ Cette section donne les d&eacute;tails de chaque classe et propri&eacute;t&eacut
             <a href="#https://w3id.org/def/NyOnLegal#Party" title="https://w3id.org/def/NyOnLegal#Party">Des soirées</a>
             <sup class="type-c" title="classe">c</sup>
          </dd>
-         <dt>est disjoint avec</dt>
-         <dd>
-            <a href="#https://w3id.org/def/NyOnLegal#Defendant" title="https://w3id.org/def/NyOnLegal#Defendant">Defendant</a>
-            <sup class="type-c" title="classe">c</sup>
-         </dd>
       </dl>
    </div>
    <div class="entity" id="https://w3id.org/def/NyOnLegal#Session_Court">
@@ -2017,6 +2087,40 @@ Cette section donne les d&eacute;tails de chaque classe et propri&eacute;t&eacut
          </dd>
       </dl>
    </div>
+   <div class="entity" id="https://w3id.org/def/NyOnLegal#Sub_Court">
+      <h3>Sous-Tribunal<sup class="type-c" title="classe">c</sup>
+         <span class="backlink"> Retour à <a href="#toc">Table des matières</a> ou <a href="#classes">Retour vers les classes</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/def/NyOnLegal#Sub_Court</p>
+      <div class="comment">
+         <span class="markdown">second lower court in hierarchy at District level for civil cases</span>
+      </div>
+      <dl class="description">
+         <dt>Est équivalent à</dt>
+         <dd>
+            <span class="logic">not</span> (<a href="#https://w3id.org/def/NyOnLegal#Tribunal" title="https://w3id.org/def/NyOnLegal#Tribunal">Tribunal</a>
+            <sup class="type-c" title="classe">c</sup>)</dd>
+         <dt>a pour super-classes</dt>
+         <dd>
+            <a href="#https://w3id.org/def/NyOnLegal#Courts_for_Civil" title="https://w3id.org/def/NyOnLegal#Courts_for_Civil">Cour civile</a>
+            <sup class="type-c" title="classe">c</sup>
+         </dd>
+         <dt>est disjoint avec</dt>
+         <dd>
+            <a href="#https://w3id.org/def/NyOnLegal#City_Civil_Courts"
+               title="https://w3id.org/def/NyOnLegal#City_Civil_Courts">Courts civils de la ville</a>
+            <sup class="type-c" title="classe">c</sup>, <a href="#https://w3id.org/def/NyOnLegal#Courts_of_Smaller_Causes"
+               title="https://w3id.org/def/NyOnLegal#Courts_of_Smaller_Causes">Cour de petite cause</a>
+            <sup class="type-c" title="classe">c</sup>, <a href="#https://w3id.org/def/NyOnLegal#District_Court" title="https://w3id.org/def/NyOnLegal#District_Court">Tribunal de district</a>
+            <sup class="type-c" title="classe">c</sup>, <a href="#https://w3id.org/def/NyOnLegal#Munsif_Court" title="https://w3id.org/def/NyOnLegal#Munsif_Court">Tribunal de Munsid</a>
+            <sup class="type-c" title="classe">c</sup>, <a href="#https://w3id.org/def/NyOnLegal#Principal_Junior_Civil_Court"
+               title="https://w3id.org/def/NyOnLegal#Principal_Junior_Civil_Court">Principal Cour civil junior</a>
+            <sup class="type-c" title="classe">c</sup>
+         </dd>
+      </dl>
+   </div>
    <div class="entity" id="https://w3id.org/def/NyOnLegal#State">
       <h3>State<sup class="type-c" title="classe">c</sup>
          <span class="backlink"> Retour à <a href="#toc">Table des matières</a> ou <a href="#classes">Retour vers les classes</a>
@@ -2032,6 +2136,18 @@ Cette section donne les d&eacute;tails de chaque classe et propri&eacute;t&eacut
          <dd>
             <a href="#https://w3id.org/def/NyOnLegal#Location" title="https://w3id.org/def/NyOnLegal#Location">Lieu</a>
             <sup class="type-c" title="classe">c</sup>, <a href="#https://w3id.org/def/NyOnLegal#Party_Type" title="https://w3id.org/def/NyOnLegal#Party_Type">Type de fête</a>
+            <sup class="type-c" title="classe">c</sup>
+         </dd>
+         <dt>est disjoint avec</dt>
+         <dd>
+            <a href="#https://schema.org/GovernmentOrganization" title="https://schema.org/GovernmentOrganization">Gouvernement</a>
+            <sup class="type-c" title="classe">c</sup>, <a href="#https://schema.org/Organization" title="https://schema.org/Organization">Organisation</a>
+            <sup class="type-c" title="classe">c</sup>, <a href="#https://w3id.org/def/NyOnLegal#Group" title="https://w3id.org/def/NyOnLegal#Group">Grouper</a>
+            <sup class="type-c" title="classe">c</sup>, <a href="#https://w3id.org/def/NyOnLegal#Individual" title="https://w3id.org/def/NyOnLegal#Individual">Individuel</a>
+            <sup class="type-c" title="classe">c</sup>, <a href="#https://schema.org/Place" title="https://schema.org/Place">Lieu</a>
+            <sup class="type-c" title="classe">c</sup>, <a href="#https://w3id.org/def/NyOnLegal#Country" title="https://w3id.org/def/NyOnLegal#Country">Country</a>
+            <sup class="type-c" title="classe">c</sup>, <a href="#https://w3id.org/def/NyOnLegal#District" title="https://w3id.org/def/NyOnLegal#District">Quartier</a>
+            <sup class="type-c" title="classe">c</sup>, <a href="#https://w3id.org/def/NyOnLegal#Taluka" title="https://w3id.org/def/NyOnLegal#Taluka">Talon</a>
             <sup class="type-c" title="classe">c</sup>
          </dd>
       </dl>
@@ -2088,34 +2204,12 @@ Cette section donne les d&eacute;tails de chaque classe et propri&eacute;t&eacut
             <a href="#https://w3id.org/def/NyOnLegal#Location" title="https://w3id.org/def/NyOnLegal#Location">Lieu</a>
             <sup class="type-c" title="classe">c</sup>
          </dd>
-      </dl>
-   </div>
-   <div class="entity" id="https://w3id.org/def/NyOnLegal#Sub_Court">
-      <h3>Tribunal<sup class="type-c" title="classe">c</sup>
-         <span class="backlink"> Retour à <a href="#toc">Table des matières</a> ou <a href="#classes">Retour vers les classes</a>
-         </span>
-      </h3>
-      <p>
-         <strong>IRI:</strong> https://w3id.org/def/NyOnLegal#Sub_Court</p>
-      <div class="comment">
-         <span class="markdown">second lower court in hierarchy at District level for civil cases</span>
-      </div>
-      <dl class="description">
-         <dt>a pour super-classes</dt>
-         <dd>
-            <a href="#https://w3id.org/def/NyOnLegal#Courts_for_Civil" title="https://w3id.org/def/NyOnLegal#Courts_for_Civil">Cour civile</a>
-            <sup class="type-c" title="classe">c</sup>
-         </dd>
          <dt>est disjoint avec</dt>
          <dd>
-            <a href="#https://w3id.org/def/NyOnLegal#City_Civil_Courts"
-               title="https://w3id.org/def/NyOnLegal#City_Civil_Courts">Courts civils de la ville</a>
-            <sup class="type-c" title="classe">c</sup>, <a href="#https://w3id.org/def/NyOnLegal#Courts_of_Smaller_Causes"
-               title="https://w3id.org/def/NyOnLegal#Courts_of_Smaller_Causes">Cour de petite cause</a>
-            <sup class="type-c" title="classe">c</sup>, <a href="#https://w3id.org/def/NyOnLegal#District_Court" title="https://w3id.org/def/NyOnLegal#District_Court">Tribunal de district</a>
-            <sup class="type-c" title="classe">c</sup>, <a href="#https://w3id.org/def/NyOnLegal#Munsif_Court" title="https://w3id.org/def/NyOnLegal#Munsif_Court">Tribunal de Munsid</a>
-            <sup class="type-c" title="classe">c</sup>, <a href="#https://w3id.org/def/NyOnLegal#Principal_Junior_Civil_Court"
-               title="https://w3id.org/def/NyOnLegal#Principal_Junior_Civil_Court">Principal Cour civil junior</a>
+            <a href="#https://schema.org/Place" title="https://schema.org/Place">Lieu</a>
+            <sup class="type-c" title="classe">c</sup>, <a href="#https://w3id.org/def/NyOnLegal#Country" title="https://w3id.org/def/NyOnLegal#Country">Country</a>
+            <sup class="type-c" title="classe">c</sup>, <a href="#https://w3id.org/def/NyOnLegal#District" title="https://w3id.org/def/NyOnLegal#District">Quartier</a>
+            <sup class="type-c" title="classe">c</sup>, <a href="#https://w3id.org/def/NyOnLegal#State" title="https://w3id.org/def/NyOnLegal#State">State</a>
             <sup class="type-c" title="classe">c</sup>
          </dd>
       </dl>
@@ -2164,7 +2258,7 @@ Cette section donne les d&eacute;tails de chaque classe et propri&eacute;t&eacut
             <sup class="type-c" title="classe">c</sup>, <a href="#https://w3id.org/def/NyOnLegal#Munsif_Court" title="https://w3id.org/def/NyOnLegal#Munsif_Court">Tribunal de Munsid</a>
             <sup class="type-c" title="classe">c</sup>, <a href="#https://w3id.org/def/NyOnLegal#Principal_Junior_Civil_Court"
                title="https://w3id.org/def/NyOnLegal#Principal_Junior_Civil_Court">Principal Cour civil junior</a>
-            <sup class="type-c" title="classe">c</sup>, <a href="#https://w3id.org/def/NyOnLegal#Sub_Court" title="https://w3id.org/def/NyOnLegal#Sub_Court">Tribunal</a>
+            <sup class="type-c" title="classe">c</sup>, <a href="#https://w3id.org/def/NyOnLegal#Sub_Court" title="https://w3id.org/def/NyOnLegal#Sub_Court">Sous-Tribunal</a>
             <sup class="type-c" title="classe">c</sup>
          </dd>
       </dl>
@@ -2194,7 +2288,7 @@ Cette section donne les d&eacute;tails de chaque classe et propri&eacute;t&eacut
             <sup class="type-c" title="classe">c</sup>, <a href="#https://w3id.org/def/NyOnLegal#District_Court" title="https://w3id.org/def/NyOnLegal#District_Court">Tribunal de district</a>
             <sup class="type-c" title="classe">c</sup>, <a href="#https://w3id.org/def/NyOnLegal#Principal_Junior_Civil_Court"
                title="https://w3id.org/def/NyOnLegal#Principal_Junior_Civil_Court">Principal Cour civil junior</a>
-            <sup class="type-c" title="classe">c</sup>, <a href="#https://w3id.org/def/NyOnLegal#Sub_Court" title="https://w3id.org/def/NyOnLegal#Sub_Court">Tribunal</a>
+            <sup class="type-c" title="classe">c</sup>, <a href="#https://w3id.org/def/NyOnLegal#Sub_Court" title="https://w3id.org/def/NyOnLegal#Sub_Court">Sous-Tribunal</a>
             <sup class="type-c" title="classe">c</sup>
          </dd>
       </dl>
@@ -2367,6 +2461,9 @@ Cette section donne les d&eacute;tails de chaque classe et propri&eacute;t&eacut
       <li>
          <a href="#https://w3id.org/def/NyOnLegal#hasPolicePersonnel"
             title="https://w3id.org/def/NyOnLegal#hasPolicePersonnel">hasPolicePersonnel</a>
+      </li>
+      <li>
+         <a href="#https://w3id.org/def/NyOnLegal#hasProvision" title="https://w3id.org/def/NyOnLegal#hasProvision">hasProvision</a>
       </li>
       <li>
          <a href="#https://w3id.org/def/NyOnLegal#hasRatioDecidendi" title="https://w3id.org/def/NyOnLegal#hasRatioDecidendi">hasRtioDecidendi</a>
@@ -2575,7 +2672,7 @@ Cette section donne les d&eacute;tails de chaque classe et propri&eacute;t&eacut
             </dd>
             <dt>a pour cible</dt>
             <dd>
-               <a href="#https://w3id.org/def/NyOnLegal#Judge" title="https://w3id.org/def/NyOnLegal#Judge">Juge</a>
+               <a href="#https://w3id.org/def/NyOnLegal#Author" title="https://w3id.org/def/NyOnLegal#Author">Auteur</a>
                <sup class="type-c" title="classe">c</sup>
             </dd>
          </dl>
@@ -3012,6 +3109,31 @@ Cette section donne les d&eacute;tails de chaque classe et propri&eacute;t&eacut
          </dl>
       </div>
    </div>
+   <div class="entity" id="https://w3id.org/def/NyOnLegal#hasProvision">
+      <h3>hasProvision<sup class="type-op" title="Propriété d'objet">op</sup>
+         <span class="backlink"> Retour à <a href="#toc">Table des matières</a> ou <a href="#objectproperties">Retour vers les propriétés d'objet</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/def/NyOnLegal#hasProvision</p>
+      <div class="comment">
+         <span class="markdown">a clause or norm in a legal instrument or a law</span>
+      </div>
+      <div class="description">
+         <dl>
+            <dt>a pour domaine</dt>
+            <dd>
+               <a href="#https://w3id.org/def/NyOnLegal#CourtCase" title="https://w3id.org/def/NyOnLegal#CourtCase">CourtCase</a>
+               <sup class="type-c" title="classe">c</sup>
+            </dd>
+            <dt>a pour cible</dt>
+            <dd>
+               <a href="#https://w3id.org/def/NyOnLegal#Provision" title="https://w3id.org/def/NyOnLegal#Provision">Provision</a>
+               <sup class="type-c" title="classe">c</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
    <div class="entity" id="https://w3id.org/def/NyOnLegal#hasRatioDecidendi">
       <h3>hasRtioDecidendi<sup class="type-op" title="Propriété d'objet">op</sup>
          <span class="backlink"> Retour à <a href="#toc">Table des matières</a> ou <a href="#objectproperties">Retour vers les propriétés d'objet</a>
@@ -3359,6 +3481,11 @@ Cette section donne les d&eacute;tails de chaque classe et propri&eacute;t&eacut
                <sup class="type-op" title="Propriété d'objet">op</sup>
             </dd>
             <dt>a pour domaine</dt>
+            <dd>
+               <a href="#https://w3id.org/def/NyOnLegal#CourtCase" title="https://w3id.org/def/NyOnLegal#CourtCase">CourtCase</a>
+               <sup class="type-c" title="classe">c</sup>
+            </dd>
+            <dt>a pour cible</dt>
             <dd>
                <a href="#https://w3id.org/def/NyOnLegal#CourtCase" title="https://w3id.org/def/NyOnLegal#CourtCase">CourtCase</a>
                <sup class="type-c" title="classe">c</sup>
@@ -3733,7 +3860,7 @@ Cette section donne les d&eacute;tails de chaque classe et propri&eacute;t&eacut
          <dl>
             <dt>a pour super-propriétés</dt>
             <dd>
-               <a href="#https://w3id.org/def/NyOnLegal#witnessName" title="https://w3id.org/def/NyOnLegal#witnessName">witnessName</a>
+               <a href="#https://w3id.org/def/NyOnLegal#courtOffName" title="https://w3id.org/def/NyOnLegal#courtOffName">courtOffName</a>
                <sup class="type-dp" title="Propriété de donnée">dp</sup>
             </dd>
             <dt>a pour domaine</dt>
@@ -3824,7 +3951,8 @@ Cette section donne les d&eacute;tails de chaque classe et propri&eacute;t&eacut
             </dd>
             <dt>a pour sous-propriétés</dt>
             <dd>
-               <a href="#https://w3id.org/def/NyOnLegal#COLastName" title="https://w3id.org/def/NyOnLegal#COLastName">COLastName</a>
+               <a href="#https://w3id.org/def/NyOnLegal#COFirstName" title="https://w3id.org/def/NyOnLegal#COFirstName">COFirstName</a>
+               <sup class="type-dp" title="Propriété de donnée">dp</sup>, <a href="#https://w3id.org/def/NyOnLegal#COLastName" title="https://w3id.org/def/NyOnLegal#COLastName">COLastName</a>
                <sup class="type-dp" title="Propriété de donnée">dp</sup>
             </dd>
          </dl>
@@ -3854,6 +3982,9 @@ Cette section donne les d&eacute;tails de chaque classe et propri&eacute;t&eacut
             </dd>
             <dt>a pour domaine</dt>
             <dd>
+               <a href="#https://w3id.org/def/NyOnLegal#Argument" title="https://w3id.org/def/NyOnLegal#Argument">Argument</a>
+               <sup class="type-c" title="classe">c</sup> 
+               <span class="logic">or</span> 
                <a href="#https://w3id.org/def/NyOnLegal#DateOfJudgment" title="https://w3id.org/def/NyOnLegal#DateOfJudgment">DateofJudgment</a>
                <sup class="type-c" title="classe">c</sup>
             </dd>
@@ -4582,8 +4713,7 @@ Cette section donne les d&eacute;tails de chaque classe et propri&eacute;t&eacut
             </dd>
             <dt>a pour sous-propriétés</dt>
             <dd>
-               <a href="#https://w3id.org/def/NyOnLegal#COFirstName" title="https://w3id.org/def/NyOnLegal#COFirstName">COFirstName</a>
-               <sup class="type-dp" title="Propriété de donnée">dp</sup>, <a href="#https://w3id.org/def/NyOnLegal#wFirstName" title="https://w3id.org/def/NyOnLegal#wFirstName">wFirstName</a>
+               <a href="#https://w3id.org/def/NyOnLegal#wFirstName" title="https://w3id.org/def/NyOnLegal#wFirstName">wFirstName</a>
                <sup class="type-dp" title="Propriété de donnée">dp</sup>, <a href="#https://w3id.org/def/NyOnLegal#wLastName" title="https://w3id.org/def/NyOnLegal#wLastName">wLastName</a>
                <sup class="type-dp" title="Propriété de donnée">dp</sup>
             </dd>
@@ -4676,11 +4806,104 @@ Cette section donne les d&eacute;tails de chaque classe et propri&eacute;t&eacut
          </dl>
       </div>
    </div>
+</div><div xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="namedindividuals">
+   <h2>Individus nommés</h2>
+   <ul class="hlist">
+      <li>
+         <a href="#https://w3id.org/def/NyOnLegal#C1" title="https://w3id.org/def/NyOnLegal#C1">
+            <span>c1</span>
+         </a>
+      </li>
+      <li>
+         <a href="#https://w3id.org/def/NyOnLegal#J1" title="https://w3id.org/def/NyOnLegal#J1">
+            <span>j1</span>
+         </a>
+      </li>
+      <li>
+         <a href="#https://w3id.org/def/NyOnLegal#M0" title="https://w3id.org/def/NyOnLegal#M0">
+            <span>m0</span>
+         </a>
+      </li>
+   </ul>
+   <div class="entity" id="https://w3id.org/def/NyOnLegal#C1">
+      <h3>c1<sup class="type-ni" title="Individu nommé">ni</sup>
+         <span class="backlink"> Retour à <a href="#toc">Table des matières</a> ou <a href="#namedindividuals">Retour vers l'individu nommé</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/def/NyOnLegal#C1</p>
+      <dl class="description">
+         <dt>appartient à</dt>
+         <dd>
+            <a href="#https://w3id.org/def/NyOnLegal#CourtCase" title="https://w3id.org/def/NyOnLegal#CourtCase">CourtCase</a>
+            <sup class="type-c" title="classe">c</sup>
+         </dd>
+         <dt>a pour assertions</dt>
+         <dd>
+            <a href="#https://w3id.org/def/NyOnLegal#hasJudge" title="https://w3id.org/def/NyOnLegal#hasJudge">hasJudge</a>
+            <sup class="type-op" title="Propriété d'objet">op</sup> 
+            <a href="#https://w3id.org/def/NyOnLegal#J1" title="https://w3id.org/def/NyOnLegal#J1">j1</a>
+         </dd>
+         <dd>
+            <a href="#https://w3id.org/def/NyOnLegal#hasCaseName" title="https://w3id.org/def/NyOnLegal#hasCaseName">hasCaseName</a>
+            <sup class="type-dp" title="Propriété de donnée">dp</sup> 
+            <span class="literal">"A vs B"@en</span>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="https://w3id.org/def/NyOnLegal#J1">
+      <h3>j1<sup class="type-ni" title="Individu nommé">ni</sup>
+         <span class="backlink"> Retour à <a href="#toc">Table des matières</a> ou <a href="#namedindividuals">Retour vers l'individu nommé</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/def/NyOnLegal#J1</p>
+      <dl class="description">
+         <dt>appartient à</dt>
+         <dd>
+            <a href="#https://w3id.org/def/NyOnLegal#Judge" title="https://w3id.org/def/NyOnLegal#Judge">Juge</a>
+            <sup class="type-c" title="classe">c</sup>
+         </dd>
+         <dt>a pour assertions</dt>
+         <dd>
+            <a href="#https://w3id.org/def/NyOnLegal#withOpinion" title="https://w3id.org/def/NyOnLegal#withOpinion">withOpinion</a>
+            <sup class="type-op" title="Propriété d'objet">op</sup> 
+            <a href="#https://w3id.org/def/NyOnLegal#M0" title="https://w3id.org/def/NyOnLegal#M0">m0</a>
+         </dd>
+         <dd>
+            <a href="#https://w3id.org/def/NyOnLegal#COFirstName" title="https://w3id.org/def/NyOnLegal#COFirstName">COFirstName</a>
+            <sup class="type-dp" title="Propriété de donnée">dp</sup> 
+            <span class="literal">"Arjit Pasayat"@en</span>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="https://w3id.org/def/NyOnLegal#M0">
+      <h3>m0<sup class="type-ni" title="Individu nommé">ni</sup>
+         <span class="backlink"> Retour à <a href="#toc">Table des matières</a> ou <a href="#namedindividuals">Retour vers l'individu nommé</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/def/NyOnLegal#M0</p>
+      <dl class="description">
+         <dt>appartient à</dt>
+         <dd>
+            <a href="#https://w3id.org/def/NyOnLegal#Majority" title="https://w3id.org/def/NyOnLegal#Majority">Majority</a>
+            <sup class="type-c" title="classe">c</sup>
+         </dd>
+         <dt>a pour assertions</dt>
+         <dd>
+            <a href="#https://w3id.org/def/NyOnLegal#value" title="https://w3id.org/def/NyOnLegal#value">value</a>
+            <sup class="type-dp" title="Propriété de donnée">dp</sup> 
+            <span class="literal">"7 Yes, 5 No"@en</span>
+         </dd>
+      </dl>
+   </div>
 </div><div id="legend">
 <h2>L&eacute;gende <span class="backlink"> Retour  <a href="#toc">ToC</a></span></h2>
 <div   class="entity">
 <sup class="type-c" title="Classes">c</sup>: Classes <br/>
 <sup class="type-op" title="Object Properties">op</sup>: Object Properties <br/>
 <sup class="type-dp" title="Data Properties">dp</sup>: Data Properties <br/>
+<sup class="type-ni" title="Individus nomm&eacute;s">ni</sup>: Individus nomm&eacute;s
 </div>
 </div>
