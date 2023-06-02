@@ -1343,19 +1343,6 @@
     "@value" : "बेंच"
   } ]
 }, {
-  "@id" : "https://w3id.org/def/NyOnLegal#C1",
-  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
-  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
-    "@id" : "https://w3id.org/def/NyOnLegal#CourtCase"
-  } ],
-  "https://w3id.org/def/NyOnLegal#hasCaseName" : [ {
-    "@language" : "en",
-    "@value" : "A vs B"
-  } ],
-  "https://w3id.org/def/NyOnLegal#hasJudge" : [ {
-    "@id" : "https://w3id.org/def/NyOnLegal#J1"
-  } ]
-}, {
   "@id" : "https://w3id.org/def/NyOnLegal#COFirstName",
   "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
@@ -2020,19 +2007,6 @@
     "@value" : "Issue"
   } ]
 }, {
-  "@id" : "https://w3id.org/def/NyOnLegal#J1",
-  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
-  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
-    "@id" : "https://w3id.org/def/NyOnLegal#Judge"
-  } ],
-  "https://w3id.org/def/NyOnLegal#COFirstName" : [ {
-    "@language" : "en",
-    "@value" : "Arjit Pasayat"
-  } ],
-  "https://w3id.org/def/NyOnLegal#withOpinion" : [ {
-    "@id" : "https://w3id.org/def/NyOnLegal#M0"
-  } ]
-}, {
   "@id" : "https://w3id.org/def/NyOnLegal#Judge",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
@@ -2266,16 +2240,6 @@
   } ],
   "http://www.w3.org/2002/07/owl#equivalentClass" : [ {
     "@id" : "_:genid25"
-  } ]
-}, {
-  "@id" : "https://w3id.org/def/NyOnLegal#M0",
-  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
-  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
-    "@id" : "https://w3id.org/def/NyOnLegal#Majority"
-  } ],
-  "https://w3id.org/def/NyOnLegal#value" : [ {
-    "@language" : "en",
-    "@value" : "7 Yes, 5 No"
   } ]
 }, {
   "@id" : "https://w3id.org/def/NyOnLegal#Majority",

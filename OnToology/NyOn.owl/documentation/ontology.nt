@@ -1482,32 +1482,6 @@ _:genid48 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2
 # 
 # #################################################################
 # #
-# #    Individuals
-# #
-# #################################################################
-# 
-# 
-# https://w3id.org/def/NyOnLegal#C1
-<https://w3id.org/def/NyOnLegal#C1> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
-<https://w3id.org/def/NyOnLegal#C1> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/def/NyOnLegal#CourtCase> .
-<https://w3id.org/def/NyOnLegal#C1> <https://w3id.org/def/NyOnLegal#hasJudge> <https://w3id.org/def/NyOnLegal#J1> .
-<https://w3id.org/def/NyOnLegal#C1> <https://w3id.org/def/NyOnLegal#hasCaseName> "A vs B"@en .
-# 
-# https://w3id.org/def/NyOnLegal#J1
-<https://w3id.org/def/NyOnLegal#J1> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
-<https://w3id.org/def/NyOnLegal#J1> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/def/NyOnLegal#Judge> .
-<https://w3id.org/def/NyOnLegal#J1> <https://w3id.org/def/NyOnLegal#withOpinion> <https://w3id.org/def/NyOnLegal#M0> .
-<https://w3id.org/def/NyOnLegal#J1> <https://w3id.org/def/NyOnLegal#COFirstName> "Arjit Pasayat"@en .
-# 
-# https://w3id.org/def/NyOnLegal#M0
-<https://w3id.org/def/NyOnLegal#M0> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
-<https://w3id.org/def/NyOnLegal#M0> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/def/NyOnLegal#Majority> .
-<https://w3id.org/def/NyOnLegal#M0> <https://w3id.org/def/NyOnLegal#value> "7 Yes, 5 No"@en .
-# 
-# 
-# 
-# #################################################################
-# #
 # #    General axioms
 # #
 # #################################################################
