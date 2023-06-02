@@ -2194,47 +2194,7 @@
     
 
 
-    <!-- 
-    ///////////////////////////////////////////////////////////////////////////////////////
-    //
-    // Individuals
-    //
-    ///////////////////////////////////////////////////////////////////////////////////////
-     -->
-
-    
-
-
-    <!-- https://w3id.org/def/NyOnLegal#C1 -->
-
-    <owl:NamedIndividual rdf:about="https://w3id.org/def/NyOnLegal#C1">
-        <rdf:type rdf:resource="https://w3id.org/def/NyOnLegal#CourtCase"/>
-        <NyOnLegal:hasJudge rdf:resource="https://w3id.org/def/NyOnLegal#J1"/>
-        <NyOnLegal:hasCaseName xml:lang="en">A vs B</NyOnLegal:hasCaseName>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- https://w3id.org/def/NyOnLegal#J1 -->
-
-    <owl:NamedIndividual rdf:about="https://w3id.org/def/NyOnLegal#J1">
-        <rdf:type rdf:resource="https://w3id.org/def/NyOnLegal#Judge"/>
-        <NyOnLegal:withOpinion rdf:resource="https://w3id.org/def/NyOnLegal#M0"/>
-        <NyOnLegal:COFirstName xml:lang="en">Arjit Pasayat</NyOnLegal:COFirstName>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- https://w3id.org/def/NyOnLegal#M0 -->
-
-    <owl:NamedIndividual rdf:about="https://w3id.org/def/NyOnLegal#M0">
-        <rdf:type rdf:resource="https://w3id.org/def/NyOnLegal#Majority"/>
-        <NyOnLegal:value xml:lang="en">7 Yes, 5 No</NyOnLegal:value>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- 
+   <!-- 
     ///////////////////////////////////////////////////////////////////////////////////////
     //
     // General axioms
