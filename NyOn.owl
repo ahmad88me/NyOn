@@ -2,7 +2,6 @@
 <rdf:RDF xmlns="https://w3id.org/def/NyOn#"
      xml:base="https://w3id.org/def/NyOn"
      xmlns:dc="http://purl.org/dc/elements/1.1/"
-     xmlns:v1="http://docs.oasis-open.org/legalruleml/ns/v1.0/"
      xmlns:owl="http://www.w3.org/2002/07/owl#"
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
      xmlns:xml="http://www.w3.org/XML/1998/namespace"
